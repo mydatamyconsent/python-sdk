@@ -13,7 +13,7 @@
                 "inputSpec": "https://api.mydatamyconsent.com/swagger/v1/swagger.json",
                 "removeOperationIdPrefix": true,
                 "additionalProperties": {
-                    "packageName": "com.mydatamyconsent",
+                    "packageName": "mydatamyconsent",
                     "developerEmail": "developers@mydatamyconsent.com",
                     "developerName": "Balamurali Pandranki",
                     "developerOrganization": "DataConsent, Inc.",

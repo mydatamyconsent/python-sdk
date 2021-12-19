@@ -1,4 +1,4 @@
-# com.mydatamyconsent.DocumentsApi
+# mydatamyconsent.DocumentsApi
 
 All URIs are relative to *http://localhost*
 
@@ -19,20 +19,20 @@ Issue a new document.
 
 ```python
 import time
-import com.mydatamyconsent
-from com.mydatamyconsent.api import documents_api
-from com.mydatamyconsent.model.document_issue_request import DocumentIssueRequest
-from com.mydatamyconsent.model.problem_details import ProblemDetails
+import mydatamyconsent
+from mydatamyconsent.api import documents_api
+from mydatamyconsent.model.document_issue_request import DocumentIssueRequest
+from mydatamyconsent.model.problem_details import ProblemDetails
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = com.mydatamyconsent.Configuration(
+configuration = mydatamyconsent.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with com.mydatamyconsent.ApiClient() as api_client:
+with mydatamyconsent.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = documents_api.DocumentsApi(api_client)
     document_issue_request = DocumentIssueRequest(
@@ -61,7 +61,7 @@ with com.mydatamyconsent.ApiClient() as api_client:
         # Issue a new document.
         api_response = api_instance.issue_document(document_issue_request=document_issue_request)
         pprint(api_response)
-    except com.mydatamyconsent.ApiException as e:
+    except mydatamyconsent.ApiException as e:
         print("Exception when calling DocumentsApi->issue_document: %s\n" % e)
 ```
 
@@ -105,18 +105,18 @@ Get issued document.
 
 ```python
 import time
-import com.mydatamyconsent
-from com.mydatamyconsent.api import documents_api
+import mydatamyconsent
+from mydatamyconsent.api import documents_api
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = com.mydatamyconsent.Configuration(
+configuration = mydatamyconsent.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with com.mydatamyconsent.ApiClient() as api_client:
+with mydatamyconsent.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = documents_api.DocumentsApi(api_client)
     document_id = "documentId_example" # str | Document id.
@@ -125,7 +125,7 @@ with com.mydatamyconsent.ApiClient() as api_client:
     try:
         # Get issued document.
         api_instance.v1_documents_issued_document_id_get(document_id)
-    except com.mydatamyconsent.ApiException as e:
+    except mydatamyconsent.ApiException as e:
         print("Exception when calling DocumentsApi->v1_documents_issued_document_id_get: %s\n" % e)
 ```
 
@@ -166,18 +166,18 @@ Get issued documents.
 
 ```python
 import time
-import com.mydatamyconsent
-from com.mydatamyconsent.api import documents_api
+import mydatamyconsent
+from mydatamyconsent.api import documents_api
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = com.mydatamyconsent.Configuration(
+configuration = mydatamyconsent.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with com.mydatamyconsent.ApiClient() as api_client:
+with mydatamyconsent.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = documents_api.DocumentsApi(api_client)
     document_type_id = "documentTypeId_example" # str |  (optional)
@@ -191,7 +191,7 @@ with com.mydatamyconsent.ApiClient() as api_client:
     try:
         # Get issued documents.
         api_instance.v1_documents_issued_get(document_type_id=document_type_id, from_date_time=from_date_time, to_date_time=to_date_time, page_size=page_size, page_no=page_no)
-    except com.mydatamyconsent.ApiException as e:
+    except mydatamyconsent.ApiException as e:
         print("Exception when calling DocumentsApi->v1_documents_issued_get: %s\n" % e)
 ```
 
@@ -236,18 +236,18 @@ Get registered document types.
 
 ```python
 import time
-import com.mydatamyconsent
-from com.mydatamyconsent.api import documents_api
+import mydatamyconsent
+from mydatamyconsent.api import documents_api
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = com.mydatamyconsent.Configuration(
+configuration = mydatamyconsent.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with com.mydatamyconsent.ApiClient() as api_client:
+with mydatamyconsent.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = documents_api.DocumentsApi(api_client)
     page_size = 1 # int |  (optional)
@@ -258,7 +258,7 @@ with com.mydatamyconsent.ApiClient() as api_client:
     try:
         # Get registered document types.
         api_instance.v1_documents_types_get(page_size=page_size, page_no=page_no)
-    except com.mydatamyconsent.ApiException as e:
+    except mydatamyconsent.ApiException as e:
         print("Exception when calling DocumentsApi->v1_documents_types_get: %s\n" % e)
 ```
 

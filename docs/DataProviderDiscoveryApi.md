@@ -1,4 +1,4 @@
-# com.mydatamyconsent.DataProviderDiscoveryApi
+# mydatamyconsent.DataProviderDiscoveryApi
 
 All URIs are relative to *http://localhost*
 
@@ -19,19 +19,19 @@ Discover all data providers in My Data My Consent by country and filters.
 
 ```python
 import time
-import com.mydatamyconsent
-from com.mydatamyconsent.api import data_provider_discovery_api
-from com.mydatamyconsent.model.data_provider_paginated_list import DataProviderPaginatedList
+import mydatamyconsent
+from mydatamyconsent.api import data_provider_discovery_api
+from mydatamyconsent.model.data_provider_paginated_list import DataProviderPaginatedList
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = com.mydatamyconsent.Configuration(
+configuration = mydatamyconsent.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with com.mydatamyconsent.ApiClient() as api_client:
+with mydatamyconsent.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = data_provider_discovery_api.DataProviderDiscoveryApi(api_client)
     account_type = "accountType_example" # str | Account type. (optional)
@@ -47,7 +47,7 @@ with com.mydatamyconsent.ApiClient() as api_client:
         # Discover all data providers in My Data My Consent by country and filters.
         api_response = api_instance.v1_data_providers_get(account_type=account_type, document_type=document_type, organization_category=organization_category, page_no=page_no, page_size=page_size, country=country)
         pprint(api_response)
-    except com.mydatamyconsent.ApiException as e:
+    except mydatamyconsent.ApiException as e:
         print("Exception when calling DataProviderDiscoveryApi->v1_data_providers_get: %s\n" % e)
 ```
 
@@ -97,19 +97,19 @@ Get a Data Provider details.
 
 ```python
 import time
-import com.mydatamyconsent
-from com.mydatamyconsent.api import data_provider_discovery_api
-from com.mydatamyconsent.model.data_provider import DataProvider
+import mydatamyconsent
+from mydatamyconsent.api import data_provider_discovery_api
+from mydatamyconsent.model.data_provider import DataProvider
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = com.mydatamyconsent.Configuration(
+configuration = mydatamyconsent.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with com.mydatamyconsent.ApiClient() as api_client:
+with mydatamyconsent.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = data_provider_discovery_api.DataProviderDiscoveryApi(api_client)
     provider_id = "providerId_example" # str | Provider Id.
@@ -119,7 +119,7 @@ with com.mydatamyconsent.ApiClient() as api_client:
         # Get a Data Provider details.
         api_response = api_instance.v1_data_providers_provider_id_get(provider_id)
         pprint(api_response)
-    except com.mydatamyconsent.ApiException as e:
+    except mydatamyconsent.ApiException as e:
         print("Exception when calling DataProviderDiscoveryApi->v1_data_providers_provider_id_get: %s\n" % e)
 ```
 

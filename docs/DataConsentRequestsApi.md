@@ -1,4 +1,4 @@
-# com.mydatamyconsent.DataConsentRequestsApi
+# mydatamyconsent.DataConsentRequestsApi
 
 All URIs are relative to *http://localhost*
 
@@ -21,18 +21,18 @@ Cancel a Consent Request by ID.
 
 ```python
 import time
-import com.mydatamyconsent
-from com.mydatamyconsent.api import data_consent_requests_api
+import mydatamyconsent
+from mydatamyconsent.api import data_consent_requests_api
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = com.mydatamyconsent.Configuration(
+configuration = mydatamyconsent.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with com.mydatamyconsent.ApiClient() as api_client:
+with mydatamyconsent.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = data_consent_requests_api.DataConsentRequestsApi(api_client)
     request_id = "requestId_example" # str | consent request id.
@@ -41,7 +41,7 @@ with com.mydatamyconsent.ApiClient() as api_client:
     try:
         # Cancel a Consent Request by ID.
         api_instance.cancel_consent_request(request_id)
-    except com.mydatamyconsent.ApiException as e:
+    except mydatamyconsent.ApiException as e:
         print("Exception when calling DataConsentRequestsApi->cancel_consent_request: %s\n" % e)
 ```
 
@@ -82,21 +82,21 @@ Create a consent request.
 
 ```python
 import time
-import com.mydatamyconsent
-from com.mydatamyconsent.api import data_consent_requests_api
-from com.mydatamyconsent.model.data_consent import DataConsent
-from com.mydatamyconsent.model.data_consent_request_model import DataConsentRequestModel
-from com.mydatamyconsent.model.problem_details import ProblemDetails
+import mydatamyconsent
+from mydatamyconsent.api import data_consent_requests_api
+from mydatamyconsent.model.problem_details import ProblemDetails
+from mydatamyconsent.model.data_consent_request_model import DataConsentRequestModel
+from mydatamyconsent.model.data_consent import DataConsent
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = com.mydatamyconsent.Configuration(
+configuration = mydatamyconsent.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with com.mydatamyconsent.ApiClient() as api_client:
+with mydatamyconsent.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = data_consent_requests_api.DataConsentRequestsApi(api_client)
     data_consent_request_model = DataConsentRequestModel(
@@ -154,7 +154,7 @@ with com.mydatamyconsent.ApiClient() as api_client:
         # Create a consent request.
         api_response = api_instance.create_request(data_consent_request_model=data_consent_request_model)
         pprint(api_response)
-    except com.mydatamyconsent.ApiException as e:
+    except mydatamyconsent.ApiException as e:
         print("Exception when calling DataConsentRequestsApi->create_request: %s\n" % e)
 ```
 
@@ -197,20 +197,20 @@ Get all Consent Requests.
 
 ```python
 import time
-import com.mydatamyconsent
-from com.mydatamyconsent.api import data_consent_requests_api
-from com.mydatamyconsent.model.data_consent_status import DataConsentStatus
-from com.mydatamyconsent.model.problem_details import ProblemDetails
+import mydatamyconsent
+from mydatamyconsent.api import data_consent_requests_api
+from mydatamyconsent.model.problem_details import ProblemDetails
+from mydatamyconsent.model.data_consent_status import DataConsentStatus
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = com.mydatamyconsent.Configuration(
+configuration = mydatamyconsent.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with com.mydatamyconsent.ApiClient() as api_client:
+with mydatamyconsent.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = data_consent_requests_api.DataConsentRequestsApi(api_client)
     status = DataConsentStatus("Pending") # DataConsentStatus |  (optional)
@@ -221,7 +221,7 @@ with com.mydatamyconsent.ApiClient() as api_client:
         # Get all Consent Requests.
         api_response = api_instance.get_all_consent_requests(status=status)
         pprint(api_response)
-    except com.mydatamyconsent.ApiException as e:
+    except mydatamyconsent.ApiException as e:
         print("Exception when calling DataConsentRequestsApi->get_all_consent_requests: %s\n" % e)
 ```
 
@@ -264,20 +264,20 @@ Get a Consent Request by ID.
 
 ```python
 import time
-import com.mydatamyconsent
-from com.mydatamyconsent.api import data_consent_requests_api
-from com.mydatamyconsent.model.data_consent_details_dto import DataConsentDetailsDto
-from com.mydatamyconsent.model.problem_details import ProblemDetails
+import mydatamyconsent
+from mydatamyconsent.api import data_consent_requests_api
+from mydatamyconsent.model.data_consent_details_dto import DataConsentDetailsDto
+from mydatamyconsent.model.problem_details import ProblemDetails
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = com.mydatamyconsent.Configuration(
+configuration = mydatamyconsent.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with com.mydatamyconsent.ApiClient() as api_client:
+with mydatamyconsent.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = data_consent_requests_api.DataConsentRequestsApi(api_client)
     request_id = "requestId_example" # str | 
@@ -287,7 +287,7 @@ with com.mydatamyconsent.ApiClient() as api_client:
         # Get a Consent Request by ID.
         api_response = api_instance.get_consent_request_by_id(request_id)
         pprint(api_response)
-    except com.mydatamyconsent.ApiException as e:
+    except mydatamyconsent.ApiException as e:
         print("Exception when calling DataConsentRequestsApi->get_consent_request_by_id: %s\n" % e)
 ```
 

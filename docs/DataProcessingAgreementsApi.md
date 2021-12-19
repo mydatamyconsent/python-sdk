@@ -1,4 +1,4 @@
-# com.mydatamyconsent.DataProcessingAgreementsApi
+# mydatamyconsent.DataProcessingAgreementsApi
 
 All URIs are relative to *http://localhost*
 
@@ -21,20 +21,20 @@ Get all data processing agreements.
 
 ```python
 import time
-import com.mydatamyconsent
-from com.mydatamyconsent.api import data_processing_agreements_api
-from com.mydatamyconsent.model.data_processing_agreement_paginated_list import DataProcessingAgreementPaginatedList
-from com.mydatamyconsent.model.problem_details import ProblemDetails
+import mydatamyconsent
+from mydatamyconsent.api import data_processing_agreements_api
+from mydatamyconsent.model.data_processing_agreement_paginated_list import DataProcessingAgreementPaginatedList
+from mydatamyconsent.model.problem_details import ProblemDetails
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = com.mydatamyconsent.Configuration(
+configuration = mydatamyconsent.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with com.mydatamyconsent.ApiClient() as api_client:
+with mydatamyconsent.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = data_processing_agreements_api.DataProcessingAgreementsApi(api_client)
     page_no = 1 # int | Page number. (optional) if omitted the server will use the default value of 1
@@ -46,7 +46,7 @@ with com.mydatamyconsent.ApiClient() as api_client:
         # Get all data processing agreements.
         api_response = api_instance.v1_data_agreements_get(page_no=page_no, page_size=page_size)
         pprint(api_response)
-    except com.mydatamyconsent.ApiException as e:
+    except mydatamyconsent.ApiException as e:
         print("Exception when calling DataProcessingAgreementsApi->v1_data_agreements_get: %s\n" % e)
 ```
 
@@ -90,19 +90,19 @@ Delete a data processing agreement. This will not delete a published or a agreem
 
 ```python
 import time
-import com.mydatamyconsent
-from com.mydatamyconsent.api import data_processing_agreements_api
-from com.mydatamyconsent.model.problem_details import ProblemDetails
+import mydatamyconsent
+from mydatamyconsent.api import data_processing_agreements_api
+from mydatamyconsent.model.problem_details import ProblemDetails
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = com.mydatamyconsent.Configuration(
+configuration = mydatamyconsent.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with com.mydatamyconsent.ApiClient() as api_client:
+with mydatamyconsent.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = data_processing_agreements_api.DataProcessingAgreementsApi(api_client)
     id = "id_example" # str | 
@@ -111,7 +111,7 @@ with com.mydatamyconsent.ApiClient() as api_client:
     try:
         # Delete a data processing agreement. This will not delete a published or a agreement in use with consents.
         api_instance.v1_data_agreements_id_delete(id)
-    except com.mydatamyconsent.ApiException as e:
+    except mydatamyconsent.ApiException as e:
         print("Exception when calling DataProcessingAgreementsApi->v1_data_agreements_id_delete: %s\n" % e)
 ```
 
@@ -155,20 +155,20 @@ Get data processing agreement by Id.
 
 ```python
 import time
-import com.mydatamyconsent
-from com.mydatamyconsent.api import data_processing_agreements_api
-from com.mydatamyconsent.model.problem_details import ProblemDetails
-from com.mydatamyconsent.model.data_processing_agreement import DataProcessingAgreement
+import mydatamyconsent
+from mydatamyconsent.api import data_processing_agreements_api
+from mydatamyconsent.model.problem_details import ProblemDetails
+from mydatamyconsent.model.data_processing_agreement import DataProcessingAgreement
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = com.mydatamyconsent.Configuration(
+configuration = mydatamyconsent.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with com.mydatamyconsent.ApiClient() as api_client:
+with mydatamyconsent.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = data_processing_agreements_api.DataProcessingAgreementsApi(api_client)
     id = "id_example" # str | 
@@ -178,7 +178,7 @@ with com.mydatamyconsent.ApiClient() as api_client:
         # Get data processing agreement by Id.
         api_response = api_instance.v1_data_agreements_id_get(id)
         pprint(api_response)
-    except com.mydatamyconsent.ApiException as e:
+    except mydatamyconsent.ApiException as e:
         print("Exception when calling DataProcessingAgreementsApi->v1_data_agreements_id_get: %s\n" % e)
 ```
 
@@ -221,20 +221,20 @@ Update a data processing agreement.
 
 ```python
 import time
-import com.mydatamyconsent
-from com.mydatamyconsent.api import data_processing_agreements_api
-from com.mydatamyconsent.model.problem_details import ProblemDetails
-from com.mydatamyconsent.model.data_processing_agreement import DataProcessingAgreement
+import mydatamyconsent
+from mydatamyconsent.api import data_processing_agreements_api
+from mydatamyconsent.model.problem_details import ProblemDetails
+from mydatamyconsent.model.data_processing_agreement import DataProcessingAgreement
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = com.mydatamyconsent.Configuration(
+configuration = mydatamyconsent.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with com.mydatamyconsent.ApiClient() as api_client:
+with mydatamyconsent.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = data_processing_agreements_api.DataProcessingAgreementsApi(api_client)
     id = "id_example" # str | 
@@ -1902,7 +1902,7 @@ with com.mydatamyconsent.ApiClient() as api_client:
         # Update a data processing agreement.
         api_response = api_instance.v1_data_agreements_id_put(id)
         pprint(api_response)
-    except com.mydatamyconsent.ApiException as e:
+    except mydatamyconsent.ApiException as e:
         print("Exception when calling DataProcessingAgreementsApi->v1_data_agreements_id_put: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -1911,7 +1911,7 @@ with com.mydatamyconsent.ApiClient() as api_client:
         # Update a data processing agreement.
         api_response = api_instance.v1_data_agreements_id_put(id, data_processing_agreement=data_processing_agreement)
         pprint(api_response)
-    except com.mydatamyconsent.ApiException as e:
+    except mydatamyconsent.ApiException as e:
         print("Exception when calling DataProcessingAgreementsApi->v1_data_agreements_id_put: %s\n" % e)
 ```
 
@@ -1956,19 +1956,19 @@ Terminate a data processing agreement.
 
 ```python
 import time
-import com.mydatamyconsent
-from com.mydatamyconsent.api import data_processing_agreements_api
-from com.mydatamyconsent.model.problem_details import ProblemDetails
+import mydatamyconsent
+from mydatamyconsent.api import data_processing_agreements_api
+from mydatamyconsent.model.problem_details import ProblemDetails
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = com.mydatamyconsent.Configuration(
+configuration = mydatamyconsent.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with com.mydatamyconsent.ApiClient() as api_client:
+with mydatamyconsent.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = data_processing_agreements_api.DataProcessingAgreementsApi(api_client)
     id = "id_example" # str | 
@@ -1977,7 +1977,7 @@ with com.mydatamyconsent.ApiClient() as api_client:
     try:
         # Terminate a data processing agreement.
         api_instance.v1_data_agreements_id_terminate_put(id)
-    except com.mydatamyconsent.ApiException as e:
+    except mydatamyconsent.ApiException as e:
         print("Exception when calling DataProcessingAgreementsApi->v1_data_agreements_id_terminate_put: %s\n" % e)
 ```
 
@@ -2021,20 +2021,20 @@ Create a data processing agreement.
 
 ```python
 import time
-import com.mydatamyconsent
-from com.mydatamyconsent.api import data_processing_agreements_api
-from com.mydatamyconsent.model.problem_details import ProblemDetails
-from com.mydatamyconsent.model.data_processing_agreement import DataProcessingAgreement
+import mydatamyconsent
+from mydatamyconsent.api import data_processing_agreements_api
+from mydatamyconsent.model.problem_details import ProblemDetails
+from mydatamyconsent.model.data_processing_agreement import DataProcessingAgreement
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = com.mydatamyconsent.Configuration(
+configuration = mydatamyconsent.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with com.mydatamyconsent.ApiClient() as api_client:
+with mydatamyconsent.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = data_processing_agreements_api.DataProcessingAgreementsApi(api_client)
     data_processing_agreement = DataProcessingAgreement(
@@ -3702,7 +3702,7 @@ with com.mydatamyconsent.ApiClient() as api_client:
         # Create a data processing agreement.
         api_response = api_instance.v1_data_agreements_post(data_processing_agreement=data_processing_agreement)
         pprint(api_response)
-    except com.mydatamyconsent.ApiException as e:
+    except mydatamyconsent.ApiException as e:
         print("Exception when calling DataProcessingAgreementsApi->v1_data_agreements_post: %s\n" % e)
 ```
 

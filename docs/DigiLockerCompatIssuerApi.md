@@ -1,4 +1,4 @@
-# com.mydatamyconsent.DigiLockerCompatIssuerApi
+# mydatamyconsent.DigiLockerCompatIssuerApi
 
 All URIs are relative to *http://localhost*
 
@@ -16,21 +16,21 @@ Digilocker Compatible endpoint to Issue Documents.
 
 ```python
 import time
-import com.mydatamyconsent
-from com.mydatamyconsent.api import digi_locker_compat_issuer_api
-from com.mydatamyconsent.model.push_uri_response import PushUriResponse
-from com.mydatamyconsent.model.problem_details import ProblemDetails
-from com.mydatamyconsent.model.push_uri_request import PushUriRequest
+import mydatamyconsent
+from mydatamyconsent.api import digi_locker_compat_issuer_api
+from mydatamyconsent.model.push_uri_request import PushUriRequest
+from mydatamyconsent.model.problem_details import ProblemDetails
+from mydatamyconsent.model.push_uri_response import PushUriResponse
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = com.mydatamyconsent.Configuration(
+configuration = mydatamyconsent.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with com.mydatamyconsent.ApiClient() as api_client:
+with mydatamyconsent.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = digi_locker_compat_issuer_api.DigiLockerCompatIssuerApi(api_client)
     push_uri_request = PushUriRequest(
@@ -60,7 +60,7 @@ with com.mydatamyconsent.ApiClient() as api_client:
         # Digilocker Compatible endpoint to Issue Documents.
         api_response = api_instance.issuer_issuedoc1_xml_post(push_uri_request=push_uri_request)
         pprint(api_response)
-    except com.mydatamyconsent.ApiException as e:
+    except mydatamyconsent.ApiException as e:
         print("Exception when calling DigiLockerCompatIssuerApi->issuer_issuedoc1_xml_post: %s\n" % e)
 ```
 

@@ -43,5 +43,4 @@ jobs:
                   author_email: balamurali@live.com
                   default_author: github_actor
                   message: 'Regenerate API SDKs'
-                  pull: 'NO-PULL'
                   push: true

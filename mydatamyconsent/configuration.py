@@ -74,9 +74,10 @@ class Configuration(object):
     :param server_operation_variables: Mapping from operation ID to a mapping with
       string values to replace variables in templated server configuration.
       The validation of enums is performed for variables with defined enum values before.
-    :param ssl_ca_cert: str - the path to a file of concatenated CA certificates 
+    :param ssl_ca_cert: str - the path to a file of concatenated CA certificates
       in PEM format
 
+    :Example:
     """
 
     _default = None
@@ -179,6 +180,9 @@ class Configuration(object):
 
         self.proxy = None
         """Proxy URL
+        """
+        self.no_proxy = None
+        """bypass proxy for host in the no_proxy list.
         """
         self.proxy_headers = None
         """Proxy headers
@@ -367,6 +371,13 @@ class Configuration(object):
         :return: The Auth Settings information dict.
         """
         auth = {}
+        if self.access_token is not None:
+            auth['oauth2'] = {
+                'type': 'oauth2',
+                'in': 'header',
+                'key': 'Authorization',
+                'value': 'Bearer ' + self.access_token
+            }
         return auth
 
     def to_debug_report(self):

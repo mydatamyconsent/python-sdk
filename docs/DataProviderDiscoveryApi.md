@@ -17,6 +17,7 @@ Discover all data providers in My Data My Consent by country and filters.
 
 ### Example
 
+
 ```python
 import time
 import mydatamyconsent
@@ -37,8 +38,8 @@ with mydatamyconsent.ApiClient() as api_client:
     account_type = "accountType_example" # str | Account type. (optional)
     document_type = "documentType_example" # str | Document type. (optional)
     organization_category = "organizationCategory_example" # str | Organization category. (optional)
-    page_no = 1 # int | Page number. (optional)
-    page_size = 1 # int | Page size. (optional)
+    page_no = 1 # int | Page number. (optional) if omitted the server will use the default value of 1
+    page_size = 25 # int | Page size. (optional) if omitted the server will use the default value of 25
     country = "IN" # str | ISO2 Country code. (optional) if omitted the server will use the default value of "IN"
 
     # example passing only required values which don't have defaults set
@@ -59,8 +60,8 @@ Name | Type | Description  | Notes
  **account_type** | **str**| Account type. | [optional]
  **document_type** | **str**| Document type. | [optional]
  **organization_category** | **str**| Organization category. | [optional]
- **page_no** | **int**| Page number. | [optional]
- **page_size** | **int**| Page size. | [optional]
+ **page_no** | **int**| Page number. | [optional] if omitted the server will use the default value of 1
+ **page_size** | **int**| Page size. | [optional] if omitted the server will use the default value of 25
  **country** | **str**| ISO2 Country code. | [optional] if omitted the server will use the default value of "IN"
 
 ### Return type
@@ -78,6 +79,7 @@ No authorization required
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK. |  -  |
@@ -94,6 +96,7 @@ Get a Data Provider details.
 .
 
 ### Example
+
 
 ```python
 import time
@@ -145,6 +148,7 @@ No authorization required
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK. |  -  |

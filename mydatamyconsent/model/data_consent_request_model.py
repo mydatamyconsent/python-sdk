@@ -25,24 +25,14 @@ from mydatamyconsent.model_utils import (  # noqa: F401
     file_type,
     none_type,
     validate_get_composed_info,
+    OpenApiModel
 )
-from ..model_utils import OpenApiModel
 from mydatamyconsent.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from mydatamyconsent.model.data_consent_requested_document_dto import DataConsentRequestedDocumentDto
-    from mydatamyconsent.model.data_consent_requested_fa_dto import DataConsentRequestedFaDto
-    from mydatamyconsent.model.data_fetch_frequency_unit import DataFetchFrequencyUnit
-    from mydatamyconsent.model.data_fetch_type import DataFetchType
-    from mydatamyconsent.model.data_life_unit import DataLifeUnit
-    from mydatamyconsent.model.identity_claim import IdentityClaim
-    globals()['DataConsentRequestedDocumentDto'] = DataConsentRequestedDocumentDto
-    globals()['DataConsentRequestedFaDto'] = DataConsentRequestedFaDto
-    globals()['DataFetchFrequencyUnit'] = DataFetchFrequencyUnit
-    globals()['DataFetchType'] = DataFetchType
-    globals()['DataLifeUnit'] = DataLifeUnit
-    globals()['IdentityClaim'] = IdentityClaim
+    from mydatamyconsent.model.receiver import Receiver
+    globals()['Receiver'] = Receiver
 
 
 class DataConsentRequestModel(ModelNormal):
@@ -91,23 +81,10 @@ class DataConsentRequestModel(ModelNormal):
         """
         lazy_import()
         return {
-            'organization_id': (str,),  # noqa: E501
-            'transaction_id': (str, none_type,),  # noqa: E501
-            'identifiers': ({str: (str,)}, none_type,),  # noqa: E501
-            'start_date_time': (datetime, none_type,),  # noqa: E501
+            'receiver': (Receiver,),  # noqa: E501
+            'consent_template_id': (str,),  # noqa: E501
+            'start_date_time': (datetime,),  # noqa: E501
             'expiry_date_time': (datetime,),  # noqa: E501
-            'description': (str, none_type,),  # noqa: E501
-            'purpose_code': (str, none_type,),  # noqa: E501
-            'purpose_link': (str, none_type,),  # noqa: E501
-            'data_life_unit': (DataLifeUnit,),  # noqa: E501
-            'data_life_value': (int,),  # noqa: E501
-            'data_fetch_frequency_unit': (DataFetchFrequencyUnit,),  # noqa: E501
-            'data_fetch_frequency_unit_value': (int,),  # noqa: E501
-            'data_fetch_type': (DataFetchType,),  # noqa: E501
-            'agreement_id': (str,),  # noqa: E501
-            'identity_claims': ([IdentityClaim], none_type,),  # noqa: E501
-            'financial_accounts': ([DataConsentRequestedFaDto], none_type,),  # noqa: E501
-            'documents': ([DataConsentRequestedDocumentDto], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -116,23 +93,10 @@ class DataConsentRequestModel(ModelNormal):
 
 
     attribute_map = {
-        'organization_id': 'organizationId',  # noqa: E501
-        'transaction_id': 'transactionId',  # noqa: E501
-        'identifiers': 'identifiers',  # noqa: E501
+        'receiver': 'receiver',  # noqa: E501
+        'consent_template_id': 'consentTemplateId',  # noqa: E501
         'start_date_time': 'startDateTime',  # noqa: E501
         'expiry_date_time': 'expiryDateTime',  # noqa: E501
-        'description': 'description',  # noqa: E501
-        'purpose_code': 'purposeCode',  # noqa: E501
-        'purpose_link': 'purposeLink',  # noqa: E501
-        'data_life_unit': 'dataLifeUnit',  # noqa: E501
-        'data_life_value': 'dataLifeValue',  # noqa: E501
-        'data_fetch_frequency_unit': 'dataFetchFrequencyUnit',  # noqa: E501
-        'data_fetch_frequency_unit_value': 'dataFetchFrequencyUnitValue',  # noqa: E501
-        'data_fetch_type': 'dataFetchType',  # noqa: E501
-        'agreement_id': 'agreementId',  # noqa: E501
-        'identity_claims': 'identityClaims',  # noqa: E501
-        'financial_accounts': 'financialAccounts',  # noqa: E501
-        'documents': 'documents',  # noqa: E501
     }
 
     read_only_vars = {
@@ -142,8 +106,11 @@ class DataConsentRequestModel(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, receiver, *args, **kwargs):  # noqa: E501
         """DataConsentRequestModel - a model defined in OpenAPI
+
+        Args:
+            receiver (Receiver):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -176,23 +143,9 @@ class DataConsentRequestModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            organization_id (str): [optional]  # noqa: E501
-            transaction_id (str, none_type): [optional]  # noqa: E501
-            identifiers ({str: (str,)}, none_type): [optional]  # noqa: E501
-            start_date_time (datetime, none_type): [optional]  # noqa: E501
+            consent_template_id (str): [optional]  # noqa: E501
+            start_date_time (datetime): [optional]  # noqa: E501
             expiry_date_time (datetime): [optional]  # noqa: E501
-            description (str, none_type): [optional]  # noqa: E501
-            purpose_code (str, none_type): [optional]  # noqa: E501
-            purpose_link (str, none_type): [optional]  # noqa: E501
-            data_life_unit (DataLifeUnit): [optional]  # noqa: E501
-            data_life_value (int): [optional]  # noqa: E501
-            data_fetch_frequency_unit (DataFetchFrequencyUnit): [optional]  # noqa: E501
-            data_fetch_frequency_unit_value (int): [optional]  # noqa: E501
-            data_fetch_type (DataFetchType): [optional]  # noqa: E501
-            agreement_id (str): [optional]  # noqa: E501
-            identity_claims ([IdentityClaim], none_type): [optional]  # noqa: E501
-            financial_accounts ([DataConsentRequestedFaDto], none_type): [optional]  # noqa: E501
-            documents ([DataConsentRequestedDocumentDto], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -220,6 +173,7 @@ class DataConsentRequestModel(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.receiver = receiver
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -240,8 +194,11 @@ class DataConsentRequestModel(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, receiver, *args, **kwargs):  # noqa: E501
         """DataConsentRequestModel - a model defined in OpenAPI
+
+        Args:
+            receiver (Receiver):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -274,23 +231,9 @@ class DataConsentRequestModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            organization_id (str): [optional]  # noqa: E501
-            transaction_id (str, none_type): [optional]  # noqa: E501
-            identifiers ({str: (str,)}, none_type): [optional]  # noqa: E501
-            start_date_time (datetime, none_type): [optional]  # noqa: E501
+            consent_template_id (str): [optional]  # noqa: E501
+            start_date_time (datetime): [optional]  # noqa: E501
             expiry_date_time (datetime): [optional]  # noqa: E501
-            description (str, none_type): [optional]  # noqa: E501
-            purpose_code (str, none_type): [optional]  # noqa: E501
-            purpose_link (str, none_type): [optional]  # noqa: E501
-            data_life_unit (DataLifeUnit): [optional]  # noqa: E501
-            data_life_value (int): [optional]  # noqa: E501
-            data_fetch_frequency_unit (DataFetchFrequencyUnit): [optional]  # noqa: E501
-            data_fetch_frequency_unit_value (int): [optional]  # noqa: E501
-            data_fetch_type (DataFetchType): [optional]  # noqa: E501
-            agreement_id (str): [optional]  # noqa: E501
-            identity_claims ([IdentityClaim], none_type): [optional]  # noqa: E501
-            financial_accounts ([DataConsentRequestedFaDto], none_type): [optional]  # noqa: E501
-            documents ([DataConsentRequestedDocumentDto], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -316,6 +259,7 @@ class DataConsentRequestModel(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.receiver = receiver
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

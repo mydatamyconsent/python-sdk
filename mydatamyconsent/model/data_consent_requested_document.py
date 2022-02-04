@@ -25,8 +25,8 @@ from mydatamyconsent.model_utils import (  # noqa: F401
     file_type,
     none_type,
     validate_get_composed_info,
+    OpenApiModel
 )
-from ..model_utils import OpenApiModel
 from mydatamyconsent.exceptions import ApiAttributeError
 
 
@@ -76,10 +76,8 @@ class DataConsentRequestedDocument(ModelNormal):
                 and the value is attribute type.
         """
         return {
+            'custom_key': (str, none_type,),  # noqa: E501
             'drn': (str, none_type,),  # noqa: E501
-            'from_datetime': (datetime,),  # noqa: E501
-            'to_datetime': (datetime,),  # noqa: E501
-            'provider_id': (str,),  # noqa: E501
             'document_type_id': (str, none_type,),  # noqa: E501
             'document_identifier': (str, none_type,),  # noqa: E501
         }
@@ -90,10 +88,8 @@ class DataConsentRequestedDocument(ModelNormal):
 
 
     attribute_map = {
+        'custom_key': 'customKey',  # noqa: E501
         'drn': 'drn',  # noqa: E501
-        'from_datetime': 'fromDatetime',  # noqa: E501
-        'to_datetime': 'toDatetime',  # noqa: E501
-        'provider_id': 'providerId',  # noqa: E501
         'document_type_id': 'documentTypeId',  # noqa: E501
         'document_identifier': 'documentIdentifier',  # noqa: E501
     }
@@ -139,10 +135,8 @@ class DataConsentRequestedDocument(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            custom_key (str, none_type): [optional]  # noqa: E501
             drn (str, none_type): [optional]  # noqa: E501
-            from_datetime (datetime): [optional]  # noqa: E501
-            to_datetime (datetime): [optional]  # noqa: E501
-            provider_id (str): [optional]  # noqa: E501
             document_type_id (str, none_type): [optional]  # noqa: E501
             document_identifier (str, none_type): [optional]  # noqa: E501
         """
@@ -226,10 +220,8 @@ class DataConsentRequestedDocument(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            custom_key (str, none_type): [optional]  # noqa: E501
             drn (str, none_type): [optional]  # noqa: E501
-            from_datetime (datetime): [optional]  # noqa: E501
-            to_datetime (datetime): [optional]  # noqa: E501
-            provider_id (str): [optional]  # noqa: E501
             document_type_id (str, none_type): [optional]  # noqa: E501
             document_identifier (str, none_type): [optional]  # noqa: E501
         """

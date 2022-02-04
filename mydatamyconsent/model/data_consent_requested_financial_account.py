@@ -25,16 +25,10 @@ from mydatamyconsent.model_utils import (  # noqa: F401
     file_type,
     none_type,
     validate_get_composed_info,
+    OpenApiModel
 )
-from ..model_utils import OpenApiModel
 from mydatamyconsent.exceptions import ApiAttributeError
 
-
-def lazy_import():
-    from mydatamyconsent.model.data_consent_rfa_filter import DataConsentRfaFilter
-    from mydatamyconsent.model.financial_account_types import FinancialAccountTypes
-    globals()['DataConsentRfaFilter'] = DataConsentRfaFilter
-    globals()['FinancialAccountTypes'] = FinancialAccountTypes
 
 
 class DataConsentRequestedFinancialAccount(ModelNormal):
@@ -81,15 +75,11 @@ class DataConsentRequestedFinancialAccount(ModelNormal):
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
-        lazy_import()
         return {
+            'custom_key': (str, none_type,),  # noqa: E501
             'drn': (str, none_type,),  # noqa: E501
-            'from_datetime': (datetime,),  # noqa: E501
-            'to_datetime': (datetime,),  # noqa: E501
-            'provider_id': (str, none_type,),  # noqa: E501
-            'account_type': (FinancialAccountTypes,),  # noqa: E501
+            'account_type_id': (str, none_type,),  # noqa: E501
             'account_identifier': (str, none_type,),  # noqa: E501
-            'filters': ([DataConsentRfaFilter], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -98,13 +88,10 @@ class DataConsentRequestedFinancialAccount(ModelNormal):
 
 
     attribute_map = {
+        'custom_key': 'customKey',  # noqa: E501
         'drn': 'drn',  # noqa: E501
-        'from_datetime': 'fromDatetime',  # noqa: E501
-        'to_datetime': 'toDatetime',  # noqa: E501
-        'provider_id': 'providerId',  # noqa: E501
-        'account_type': 'accountType',  # noqa: E501
+        'account_type_id': 'accountTypeId',  # noqa: E501
         'account_identifier': 'accountIdentifier',  # noqa: E501
-        'filters': 'filters',  # noqa: E501
     }
 
     read_only_vars = {
@@ -148,13 +135,10 @@ class DataConsentRequestedFinancialAccount(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            custom_key (str, none_type): [optional]  # noqa: E501
             drn (str, none_type): [optional]  # noqa: E501
-            from_datetime (datetime): [optional]  # noqa: E501
-            to_datetime (datetime): [optional]  # noqa: E501
-            provider_id (str, none_type): [optional]  # noqa: E501
-            account_type (FinancialAccountTypes): [optional]  # noqa: E501
+            account_type_id (str, none_type): [optional]  # noqa: E501
             account_identifier (str, none_type): [optional]  # noqa: E501
-            filters ([DataConsentRfaFilter], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -236,13 +220,10 @@ class DataConsentRequestedFinancialAccount(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            custom_key (str, none_type): [optional]  # noqa: E501
             drn (str, none_type): [optional]  # noqa: E501
-            from_datetime (datetime): [optional]  # noqa: E501
-            to_datetime (datetime): [optional]  # noqa: E501
-            provider_id (str, none_type): [optional]  # noqa: E501
-            account_type (FinancialAccountTypes): [optional]  # noqa: E501
+            account_type_id (str, none_type): [optional]  # noqa: E501
             account_identifier (str, none_type): [optional]  # noqa: E501
-            filters ([DataConsentRfaFilter], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

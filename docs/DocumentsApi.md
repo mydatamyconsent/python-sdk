@@ -17,6 +17,7 @@ Issue a new document.
 
 ### Example
 
+
 ```python
 import time
 import mydatamyconsent
@@ -87,6 +88,7 @@ No authorization required
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **500** | Server Error |  -  |
@@ -102,6 +104,7 @@ No authorization required
 Get issued document.
 
 ### Example
+
 
 ```python
 import time
@@ -151,6 +154,7 @@ No authorization required
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **500** | Server Error |  -  |
@@ -163,6 +167,7 @@ No authorization required
 Get issued documents.
 
 ### Example
+
 
 ```python
 import time
@@ -221,6 +226,7 @@ No authorization required
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **500** | Server Error |  -  |
@@ -233,6 +239,7 @@ No authorization required
 Get registered document types.
 
 ### Example
+
 
 ```python
 import time
@@ -250,8 +257,8 @@ configuration = mydatamyconsent.Configuration(
 with mydatamyconsent.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = documents_api.DocumentsApi(api_client)
-    page_size = 1 # int |  (optional)
-    page_no = 1 # int |  (optional)
+    page_size = 25 # int |  (optional) if omitted the server will use the default value of 25
+    page_no = 1 # int |  (optional) if omitted the server will use the default value of 1
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -267,8 +274,8 @@ with mydatamyconsent.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page_size** | **int**|  | [optional]
- **page_no** | **int**|  | [optional]
+ **page_size** | **int**|  | [optional] if omitted the server will use the default value of 25
+ **page_no** | **int**|  | [optional] if omitted the server will use the default value of 1
 
 ### Return type
 
@@ -285,6 +292,7 @@ No authorization required
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **500** | Server Error |  -  |

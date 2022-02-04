@@ -25,8 +25,8 @@ from mydatamyconsent.model_utils import (  # noqa: F401
     file_type,
     none_type,
     validate_get_composed_info,
+    OpenApiModel
 )
-from ..model_utils import OpenApiModel
 from mydatamyconsent.exceptions import ApiAttributeError
 
 
@@ -102,7 +102,7 @@ class DocumentIssueRequest(ModelNormal):
         'name': 'name',  # noqa: E501
         'description': 'description',  # noqa: E501
         'receiver': 'receiver',  # noqa: E501
-        'base64_pdf_document': 'base64PDFDocument',  # noqa: E501
+        'base64_pdf_document': 'base64PdfDocument',  # noqa: E501
         'expires_at_utc': 'expiresAtUtc',  # noqa: E501
         'metadata': 'metadata',  # noqa: E501
     }

@@ -76,11 +76,11 @@ class IdentitySupportedFields(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'icon': (str, none_type,),  # noqa: E501
-            'title': (str, none_type,),  # noqa: E501
+            'icon_code_point': (int,),  # noqa: E501
+            'title': (str,),  # noqa: E501
+            'key': (str,),  # noqa: E501
+            'data_type': (str,),  # noqa: E501
             'description': (str, none_type,),  # noqa: E501
-            'key': (str, none_type,),  # noqa: E501
-            'data_type': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -89,11 +89,11 @@ class IdentitySupportedFields(ModelNormal):
 
 
     attribute_map = {
-        'icon': 'icon',  # noqa: E501
+        'icon_code_point': 'iconCodePoint',  # noqa: E501
         'title': 'title',  # noqa: E501
-        'description': 'description',  # noqa: E501
         'key': 'key',  # noqa: E501
         'data_type': 'dataType',  # noqa: E501
+        'description': 'description',  # noqa: E501
     }
 
     read_only_vars = {
@@ -103,8 +103,14 @@ class IdentitySupportedFields(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, icon_code_point, title, key, data_type, *args, **kwargs):  # noqa: E501
         """IdentitySupportedFields - a model defined in OpenAPI
+
+        Args:
+            icon_code_point (int):
+            title (str):
+            key (str):
+            data_type (str):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -137,11 +143,7 @@ class IdentitySupportedFields(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            icon (str, none_type): [optional]  # noqa: E501
-            title (str, none_type): [optional]  # noqa: E501
             description (str, none_type): [optional]  # noqa: E501
-            key (str, none_type): [optional]  # noqa: E501
-            data_type (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -169,6 +171,10 @@ class IdentitySupportedFields(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.icon_code_point = icon_code_point
+        self.title = title
+        self.key = key
+        self.data_type = data_type
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -189,8 +195,14 @@ class IdentitySupportedFields(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, icon_code_point, title, key, data_type, *args, **kwargs):  # noqa: E501
         """IdentitySupportedFields - a model defined in OpenAPI
+
+        Args:
+            icon_code_point (int):
+            title (str):
+            key (str):
+            data_type (str):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -223,11 +235,7 @@ class IdentitySupportedFields(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            icon (str, none_type): [optional]  # noqa: E501
-            title (str, none_type): [optional]  # noqa: E501
             description (str, none_type): [optional]  # noqa: E501
-            key (str, none_type): [optional]  # noqa: E501
-            data_type (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -253,6 +261,10 @@ class IdentitySupportedFields(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.icon_code_point = icon_code_point
+        self.title = title
+        self.key = key
+        self.data_type = data_type
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

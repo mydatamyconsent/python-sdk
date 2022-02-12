@@ -81,9 +81,9 @@ class Document(ModelNormal):
         """
         lazy_import()
         return {
-            'document_field': (str, none_type,),  # noqa: E501
-            'custom_key': (str, none_type,),  # noqa: E501
-            'drn': ([str], none_type,),  # noqa: E501
+            'field_title': (str,),  # noqa: E501
+            'field_slug': (str,),  # noqa: E501
+            'drn': ([str],),  # noqa: E501
             'requirement': (DocumentsRequired,),  # noqa: E501
         }
 
@@ -93,8 +93,8 @@ class Document(ModelNormal):
 
 
     attribute_map = {
-        'document_field': 'documentField',  # noqa: E501
-        'custom_key': 'customKey',  # noqa: E501
+        'field_title': 'fieldTitle',  # noqa: E501
+        'field_slug': 'fieldSlug',  # noqa: E501
         'drn': 'drn',  # noqa: E501
         'requirement': 'requirement',  # noqa: E501
     }
@@ -106,8 +106,14 @@ class Document(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, field_title, field_slug, drn, requirement, *args, **kwargs):  # noqa: E501
         """Document - a model defined in OpenAPI
+
+        Args:
+            field_title (str):
+            field_slug (str):
+            drn ([str]):
+            requirement (DocumentsRequired):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -140,10 +146,6 @@ class Document(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            document_field (str, none_type): [optional]  # noqa: E501
-            custom_key (str, none_type): [optional]  # noqa: E501
-            drn ([str], none_type): [optional]  # noqa: E501
-            requirement (DocumentsRequired): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -171,6 +173,10 @@ class Document(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.field_title = field_title
+        self.field_slug = field_slug
+        self.drn = drn
+        self.requirement = requirement
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -191,8 +197,14 @@ class Document(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, field_title, field_slug, drn, requirement, *args, **kwargs):  # noqa: E501
         """Document - a model defined in OpenAPI
+
+        Args:
+            field_title (str):
+            field_slug (str):
+            drn ([str]):
+            requirement (DocumentsRequired):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -225,10 +237,6 @@ class Document(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            document_field (str, none_type): [optional]  # noqa: E501
-            custom_key (str, none_type): [optional]  # noqa: E501
-            drn ([str], none_type): [optional]  # noqa: E501
-            requirement (DocumentsRequired): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -254,6 +262,10 @@ class Document(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.field_title = field_title
+        self.field_slug = field_slug
+        self.drn = drn
+        self.requirement = requirement
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

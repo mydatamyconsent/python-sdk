@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**value** | **str** |  |  must be one of ["Health", "Finance", "Education", "Bills", "Tax", "Certificates", "Invoices", ]
+**value** | **str** |  |  must be one of ["Personal", "Education", "Health", "Finance", "Certificates", ]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

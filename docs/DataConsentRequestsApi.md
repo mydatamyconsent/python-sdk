@@ -80,7 +80,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_request**
-> bool create_request()
+> DataConsentRequest create_request()
 
 Create a consent request.
 
@@ -93,6 +93,7 @@ import mydatamyconsent
 from mydatamyconsent.api import data_consent_requests_api
 from mydatamyconsent.model.problem_details import ProblemDetails
 from mydatamyconsent.model.data_consent_request_model import DataConsentRequestModel
+from mydatamyconsent.model.data_consent_request import DataConsentRequest
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
@@ -107,8 +108,6 @@ with mydatamyconsent.ApiClient() as api_client:
     api_instance = data_consent_requests_api.DataConsentRequestsApi(api_client)
     data_consent_request_model = DataConsentRequestModel(
         consent_template_id="consent_template_id_example",
-        start_date_time=dateutil_parser('1970-01-01T00:00:00.00Z'),
-        expiry_date_time=dateutil_parser('1970-01-01T00:00:00.00Z'),
         receiver=Receiver(
             type=ReceiverType("Individual"),
             identifiers=[
@@ -140,7 +139,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**bool**
+[**DataConsentRequest**](DataConsentRequest.md)
 
 ### Authorization
 

@@ -52,6 +52,7 @@ import mydatamyconsent
 from pprint import pprint
 from mydatamyconsent.api import data_consent_requests_api
 from mydatamyconsent.model.data_consent_details_dto import DataConsentDetailsDto
+from mydatamyconsent.model.data_consent_request import DataConsentRequest
 from mydatamyconsent.model.data_consent_request_model import DataConsentRequestModel
 from mydatamyconsent.model.data_consent_status import DataConsentStatus
 from mydatamyconsent.model.problem_details import ProblemDetails
@@ -132,6 +133,7 @@ Class | Method | HTTP request | Description
  - [DataConsentDocumentsDto](docs/DataConsentDocumentsDto.md)
  - [DataConsentFinancialsDto](docs/DataConsentFinancialsDto.md)
  - [DataConsentIdentifier](docs/DataConsentIdentifier.md)
+ - [DataConsentRequest](docs/DataConsentRequest.md)
  - [DataConsentRequestModel](docs/DataConsentRequestModel.md)
  - [DataConsentRequestedDocument](docs/DataConsentRequestedDocument.md)
  - [DataConsentRequestedFinancialAccount](docs/DataConsentRequestedFinancialAccount.md)

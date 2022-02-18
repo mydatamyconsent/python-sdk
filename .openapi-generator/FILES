@@ -12,6 +12,7 @@ docs/DataConsentDetailsDto.md
 docs/DataConsentDocumentsDto.md
 docs/DataConsentFinancialsDto.md
 docs/DataConsentIdentifier.md
+docs/DataConsentRequest.md
 docs/DataConsentRequestModel.md
 docs/DataConsentRequestedDocument.md
 docs/DataConsentRequestedFinancialAccount.md
@@ -89,6 +90,7 @@ mydatamyconsent/model/data_consent_details_dto.py
 mydatamyconsent/model/data_consent_documents_dto.py
 mydatamyconsent/model/data_consent_financials_dto.py
 mydatamyconsent/model/data_consent_identifier.py
+mydatamyconsent/model/data_consent_request.py
 mydatamyconsent/model/data_consent_request_model.py
 mydatamyconsent/model/data_consent_requested_document.py
 mydatamyconsent/model/data_consent_requested_financial_account.py
@@ -145,4 +147,5 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_data_consent_request.py
 tox.ini

@@ -23,6 +23,7 @@ from mydatamyconsent.model_utils import (  # noqa: F401
     validate_and_convert_types
 )
 from mydatamyconsent.model.data_consent_details_dto import DataConsentDetailsDto
+from mydatamyconsent.model.data_consent_request import DataConsentRequest
 from mydatamyconsent.model.data_consent_request_model import DataConsentRequestModel
 from mydatamyconsent.model.data_consent_status import DataConsentStatus
 from mydatamyconsent.model.problem_details import ProblemDetails
@@ -90,7 +91,7 @@ class DataConsentRequestsApi(object):
         )
         self.create_request_endpoint = _Endpoint(
             settings={
-                'response_type': (bool,),
+                'response_type': (DataConsentRequest,),
                 'auth': [],
                 'endpoint_path': '/v1/consent-requests',
                 'operation_id': 'create_request',
@@ -469,7 +470,7 @@ class DataConsentRequestsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            bool
+            DataConsentRequest
                 If the method is called asynchronously, returns the request
                 thread.
         """

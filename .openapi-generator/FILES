@@ -147,5 +147,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_data_consent_request.py
 tox.ini

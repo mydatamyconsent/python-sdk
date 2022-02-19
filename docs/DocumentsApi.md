@@ -38,7 +38,7 @@ with mydatamyconsent.ApiClient() as api_client:
     api_instance = documents_api.DocumentsApi(api_client)
     document_issue_request = DocumentIssueRequest(
         document_type_id="document_type_id_example",
-        identifier="identifier_example",
+        document_identifier="document_identifier_example",
         name="name_example",
         description="description_example",
         receiver=Receiver(

@@ -82,7 +82,7 @@ class FinancialAccounts(ModelNormal):
         lazy_import()
         return {
             'drn': (str, none_type,),  # noqa: E501
-            'financial_account_details_required': ([FinancialAccountDetailsRequired], none_type,),  # noqa: E501
+            'required_details': ([FinancialAccountDetailsRequired], none_type,),  # noqa: E501
             'start_date': (datetime, none_type,),  # noqa: E501
             'end_date': (datetime, none_type,),  # noqa: E501
         }
@@ -94,9 +94,9 @@ class FinancialAccounts(ModelNormal):
 
     attribute_map = {
         'drn': 'drn',  # noqa: E501
-        'financial_account_details_required': 'financialAccountDetailsRequired',  # noqa: E501
-        'start_date': 'startDate',  # noqa: E501
-        'end_date': 'endDate',  # noqa: E501
+        'required_details': 'required_details',  # noqa: E501
+        'start_date': 'start_date',  # noqa: E501
+        'end_date': 'end_date',  # noqa: E501
     }
 
     read_only_vars = {
@@ -141,7 +141,7 @@ class FinancialAccounts(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             drn (str, none_type): [optional]  # noqa: E501
-            financial_account_details_required ([FinancialAccountDetailsRequired], none_type): [optional]  # noqa: E501
+            required_details ([FinancialAccountDetailsRequired], none_type): [optional]  # noqa: E501
             start_date (datetime, none_type): [optional]  # noqa: E501
             end_date (datetime, none_type): [optional]  # noqa: E501
         """
@@ -226,7 +226,7 @@ class FinancialAccounts(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             drn (str, none_type): [optional]  # noqa: E501
-            financial_account_details_required ([FinancialAccountDetailsRequired], none_type): [optional]  # noqa: E501
+            required_details ([FinancialAccountDetailsRequired], none_type): [optional]  # noqa: E501
             start_date (datetime, none_type): [optional]  # noqa: E501
             end_date (datetime, none_type): [optional]  # noqa: E501
         """

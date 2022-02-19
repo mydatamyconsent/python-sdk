@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**icon_code_point** | **int** |  | 
+**icon** | **int** |  | 
 **title** | **str** |  | 
 **key** | **str** |  | 
 **data_type** | **str** |  | 

@@ -93,8 +93,8 @@ class Document(ModelNormal):
 
 
     attribute_map = {
-        'field_title': 'fieldTitle',  # noqa: E501
-        'field_slug': 'fieldSlug',  # noqa: E501
+        'field_title': 'field_title',  # noqa: E501
+        'field_slug': 'field_slug',  # noqa: E501
         'drn': 'drn',  # noqa: E501
         'requirement': 'requirement',  # noqa: E501
     }

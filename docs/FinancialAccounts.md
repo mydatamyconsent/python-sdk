@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **drn** | **str, none_type** |  | [optional] 
-**financial_account_details_required** | [**[FinancialAccountDetailsRequired], none_type**](FinancialAccountDetailsRequired.md) |  | [optional] 
+**required_details** | [**[FinancialAccountDetailsRequired], none_type**](FinancialAccountDetailsRequired.md) |  | [optional] 
 **start_date** | **datetime, none_type** |  | [optional] 
 **end_date** | **datetime, none_type** |  | [optional] 
 

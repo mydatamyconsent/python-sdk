@@ -83,7 +83,7 @@ class Financial(ModelNormal):
         """
         lazy_import()
         return {
-            'account_field': (str, none_type,),  # noqa: E501
+            'field_name': (str, none_type,),  # noqa: E501
             'custom_key': (str, none_type,),  # noqa: E501
             'accounts': ([FinancialAccounts], none_type,),  # noqa: E501
             'requirement': (DocumentsRequired,),  # noqa: E501
@@ -95,8 +95,8 @@ class Financial(ModelNormal):
 
 
     attribute_map = {
-        'account_field': 'accountField',  # noqa: E501
-        'custom_key': 'customKey',  # noqa: E501
+        'field_name': 'field_name',  # noqa: E501
+        'custom_key': 'custom_key',  # noqa: E501
         'accounts': 'accounts',  # noqa: E501
         'requirement': 'requirement',  # noqa: E501
     }
@@ -142,7 +142,7 @@ class Financial(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            account_field (str, none_type): [optional]  # noqa: E501
+            field_name (str, none_type): [optional]  # noqa: E501
             custom_key (str, none_type): [optional]  # noqa: E501
             accounts ([FinancialAccounts], none_type): [optional]  # noqa: E501
             requirement (DocumentsRequired): [optional]  # noqa: E501
@@ -227,7 +227,7 @@ class Financial(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            account_field (str, none_type): [optional]  # noqa: E501
+            field_name (str, none_type): [optional]  # noqa: E501
             custom_key (str, none_type): [optional]  # noqa: E501
             accounts ([FinancialAccounts], none_type): [optional]  # noqa: E501
             requirement (DocumentsRequired): [optional]  # noqa: E501

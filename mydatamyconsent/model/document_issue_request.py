@@ -82,7 +82,7 @@ class DocumentIssueRequest(ModelNormal):
         lazy_import()
         return {
             'document_type_id': (str,),  # noqa: E501
-            'identifier': (str,),  # noqa: E501
+            'document_identifier': (str,),  # noqa: E501
             'name': (str,),  # noqa: E501
             'description': (str,),  # noqa: E501
             'receiver': (Receiver,),  # noqa: E501
@@ -98,7 +98,7 @@ class DocumentIssueRequest(ModelNormal):
 
     attribute_map = {
         'document_type_id': 'documentTypeId',  # noqa: E501
-        'identifier': 'identifier',  # noqa: E501
+        'document_identifier': 'documentIdentifier',  # noqa: E501
         'name': 'name',  # noqa: E501
         'description': 'description',  # noqa: E501
         'receiver': 'receiver',  # noqa: E501
@@ -114,12 +114,12 @@ class DocumentIssueRequest(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, document_type_id, identifier, name, description, receiver, base64_pdf_document, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, document_type_id, document_identifier, name, description, receiver, base64_pdf_document, *args, **kwargs):  # noqa: E501
         """DocumentIssueRequest - a model defined in OpenAPI
 
         Args:
             document_type_id (str):
-            identifier (str):
+            document_identifier (str):
             name (str):
             description (str):
             receiver (Receiver):
@@ -186,7 +186,7 @@ class DocumentIssueRequest(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.document_type_id = document_type_id
-        self.identifier = identifier
+        self.document_identifier = document_identifier
         self.name = name
         self.description = description
         self.receiver = receiver
@@ -211,12 +211,12 @@ class DocumentIssueRequest(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, document_type_id, identifier, name, description, receiver, base64_pdf_document, *args, **kwargs):  # noqa: E501
+    def __init__(self, document_type_id, document_identifier, name, description, receiver, base64_pdf_document, *args, **kwargs):  # noqa: E501
         """DocumentIssueRequest - a model defined in OpenAPI
 
         Args:
             document_type_id (str):
-            identifier (str):
+            document_identifier (str):
             name (str):
             description (str):
             receiver (Receiver):
@@ -281,7 +281,7 @@ class DocumentIssueRequest(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.document_type_id = document_type_id
-        self.identifier = identifier
+        self.document_identifier = document_identifier
         self.name = name
         self.description = description
         self.receiver = receiver

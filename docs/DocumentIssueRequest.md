@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **document_type_id** | **str** |  | 
-**identifier** | **str** |  | 
+**document_identifier** | **str** |  | 
 **name** | **str** |  | 
 **description** | **str** |  | 
 **receiver** | [**Receiver**](Receiver.md) |  | 

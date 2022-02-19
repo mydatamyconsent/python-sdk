@@ -88,7 +88,7 @@ class DataConsentRequestedFinancialAccount(ModelNormal):
 
 
     attribute_map = {
-        'custom_key': 'customKey',  # noqa: E501
+        'custom_key': 'custom_key',  # noqa: E501
         'drn': 'drn',  # noqa: E501
         'account_type_id': 'accountTypeId',  # noqa: E501
         'account_identifier': 'accountIdentifier',  # noqa: E501

@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**account_field** | **str, none_type** |  | [optional] 
+**field_name** | **str, none_type** |  | [optional] 
 **custom_key** | **str, none_type** |  | [optional] 
 **accounts** | [**[FinancialAccounts], none_type**](FinancialAccounts.md) |  | [optional] 
 **requirement** | [**DocumentsRequired**](DocumentsRequired.md) |  | [optional] 

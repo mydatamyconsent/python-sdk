@@ -76,7 +76,7 @@ class IdentitySupportedFields(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'icon_code_point': (int,),  # noqa: E501
+            'icon': (int,),  # noqa: E501
             'title': (str,),  # noqa: E501
             'key': (str,),  # noqa: E501
             'data_type': (str,),  # noqa: E501
@@ -89,7 +89,7 @@ class IdentitySupportedFields(ModelNormal):
 
 
     attribute_map = {
-        'icon_code_point': 'iconCodePoint',  # noqa: E501
+        'icon': 'icon',  # noqa: E501
         'title': 'title',  # noqa: E501
         'key': 'key',  # noqa: E501
         'data_type': 'dataType',  # noqa: E501
@@ -103,11 +103,11 @@ class IdentitySupportedFields(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, icon_code_point, title, key, data_type, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, icon, title, key, data_type, *args, **kwargs):  # noqa: E501
         """IdentitySupportedFields - a model defined in OpenAPI
 
         Args:
-            icon_code_point (int):
+            icon (int):
             title (str):
             key (str):
             data_type (str):
@@ -171,7 +171,7 @@ class IdentitySupportedFields(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.icon_code_point = icon_code_point
+        self.icon = icon
         self.title = title
         self.key = key
         self.data_type = data_type
@@ -195,11 +195,11 @@ class IdentitySupportedFields(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, icon_code_point, title, key, data_type, *args, **kwargs):  # noqa: E501
+    def __init__(self, icon, title, key, data_type, *args, **kwargs):  # noqa: E501
         """IdentitySupportedFields - a model defined in OpenAPI
 
         Args:
-            icon_code_point (int):
+            icon (int):
             title (str):
             key (str):
             data_type (str):
@@ -261,7 +261,7 @@ class IdentitySupportedFields(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.icon_code_point = icon_code_point
+        self.icon = icon
         self.title = title
         self.key = key
         self.data_type = data_type

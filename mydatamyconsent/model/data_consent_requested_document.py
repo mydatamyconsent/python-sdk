@@ -88,7 +88,7 @@ class DataConsentRequestedDocument(ModelNormal):
 
 
     attribute_map = {
-        'custom_key': 'customKey',  # noqa: E501
+        'custom_key': 'custom_key',  # noqa: E501
         'drn': 'drn',  # noqa: E501
         'document_type_id': 'documentTypeId',  # noqa: E501
         'document_identifier': 'documentIdentifier',  # noqa: E501

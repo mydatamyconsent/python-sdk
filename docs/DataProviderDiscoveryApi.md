@@ -4,16 +4,79 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v1_data_providers_get**](DataProviderDiscoveryApi.md#v1_data_providers_get) | **GET** /v1/data-providers | Discover all data providers in My Data My Consent by country and filters.
-[**v1_data_providers_provider_id_get**](DataProviderDiscoveryApi.md#v1_data_providers_provider_id_get) | **GET** /v1/data-providers/{providerId} | Get a Data Provider details.
+[**get_data_provider_by_id**](DataProviderDiscoveryApi.md#get_data_provider_by_id) | **GET** /v1/data-providers/{providerId} | Get a Data Provider details based on provider id.
+[**get_data_providers**](DataProviderDiscoveryApi.md#get_data_providers) | **GET** /v1/data-providers | Discover all data providers in My Data My Consent by country and filters.
 
 
-# **v1_data_providers_get**
-> DataProviderPaginatedList v1_data_providers_get()
+# **get_data_provider_by_id**
+> DataProvider get_data_provider_by_id(provider_id)
+
+Get a Data Provider details based on provider id.
+
+### Example
+
+
+```python
+import time
+import mydatamyconsent
+from mydatamyconsent.api import data_provider_discovery_api
+from mydatamyconsent.model.data_provider import DataProvider
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mydatamyconsent.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with mydatamyconsent.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = data_provider_discovery_api.DataProviderDiscoveryApi(api_client)
+    provider_id = "providerId_example" # str | Provider id.
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Get a Data Provider details based on provider id.
+        api_response = api_instance.get_data_provider_by_id(provider_id)
+        pprint(api_response)
+    except mydatamyconsent.ApiException as e:
+        print("Exception when calling DataProviderDiscoveryApi->get_data_provider_by_id: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **provider_id** | **str**| Provider id. |
+
+### Return type
+
+[**DataProvider**](DataProvider.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_data_providers**
+> DataProviderPaginatedList get_data_providers()
 
 Discover all data providers in My Data My Consent by country and filters.
-
-.
 
 ### Example
 
@@ -46,10 +109,10 @@ with mydatamyconsent.ApiClient() as api_client:
     # and optional values
     try:
         # Discover all data providers in My Data My Consent by country and filters.
-        api_response = api_instance.v1_data_providers_get(account_type=account_type, document_type=document_type, organization_category=organization_category, page_no=page_no, page_size=page_size, country=country)
+        api_response = api_instance.get_data_providers(account_type=account_type, document_type=document_type, organization_category=organization_category, page_no=page_no, page_size=page_size, country=country)
         pprint(api_response)
     except mydatamyconsent.ApiException as e:
-        print("Exception when calling DataProviderDiscoveryApi->v1_data_providers_get: %s\n" % e)
+        print("Exception when calling DataProviderDiscoveryApi->get_data_providers: %s\n" % e)
 ```
 
 
@@ -82,78 +145,7 @@ No authorization required
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK. |  -  |
-**401** | Unauthorized. |  -  |
-**500** | Internal Server Error. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **v1_data_providers_provider_id_get**
-> DataProvider v1_data_providers_provider_id_get(provider_id)
-
-Get a Data Provider details.
-
-.
-
-### Example
-
-
-```python
-import time
-import mydatamyconsent
-from mydatamyconsent.api import data_provider_discovery_api
-from mydatamyconsent.model.data_provider import DataProvider
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
-# See configuration.py for a list of all supported configuration parameters.
-configuration = mydatamyconsent.Configuration(
-    host = "http://localhost"
-)
-
-
-# Enter a context with an instance of the API client
-with mydatamyconsent.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = data_provider_discovery_api.DataProviderDiscoveryApi(api_client)
-    provider_id = "providerId_example" # str | Provider Id.
-
-    # example passing only required values which don't have defaults set
-    try:
-        # Get a Data Provider details.
-        api_response = api_instance.v1_data_providers_provider_id_get(provider_id)
-        pprint(api_response)
-    except mydatamyconsent.ApiException as e:
-        print("Exception when calling DataProviderDiscoveryApi->v1_data_providers_provider_id_get: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **provider_id** | **str**| Provider Id. |
-
-### Return type
-
-[**DataProvider**](DataProvider.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json, application/xml
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK. |  -  |
-**401** | Unauthorized. |  -  |
-**500** | Internal Server Error. |  -  |
+**200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

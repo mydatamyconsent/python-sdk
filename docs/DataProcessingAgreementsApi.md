@@ -4,16 +4,225 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v1_data_agreements_get**](DataProcessingAgreementsApi.md#v1_data_agreements_get) | **GET** /v1/data-agreements | Get all data processing agreements.
-[**v1_data_agreements_id_delete**](DataProcessingAgreementsApi.md#v1_data_agreements_id_delete) | **DELETE** /v1/data-agreements/{id} | Delete a data processing agreement. This will not delete a published or a agreement in use with consents.
-[**v1_data_agreements_id_get**](DataProcessingAgreementsApi.md#v1_data_agreements_id_get) | **GET** /v1/data-agreements/{id} | Get data processing agreement by Id.
-[**v1_data_agreements_id_put**](DataProcessingAgreementsApi.md#v1_data_agreements_id_put) | **PUT** /v1/data-agreements/{id} | Update a data processing agreement.
-[**v1_data_agreements_id_terminate_put**](DataProcessingAgreementsApi.md#v1_data_agreements_id_terminate_put) | **PUT** /v1/data-agreements/{id}/terminate | Terminate a data processing agreement.
-[**v1_data_agreements_post**](DataProcessingAgreementsApi.md#v1_data_agreements_post) | **POST** /v1/data-agreements | Create a data processing agreement.
+[**create_data_processing_agreement**](DataProcessingAgreementsApi.md#create_data_processing_agreement) | **POST** /v1/data-agreements | Create a data processing agreement.
+[**delete_data_processing_agreement_by_id**](DataProcessingAgreementsApi.md#delete_data_processing_agreement_by_id) | **DELETE** /v1/data-agreements/{id} | Delete a data processing agreement. This will not delete a published or a agreement in use with consents.
+[**get_data_processing_agreement_by_id**](DataProcessingAgreementsApi.md#get_data_processing_agreement_by_id) | **GET** /v1/data-agreements/{id} | Get data processing agreement by id.
+[**get_data_processing_agreements**](DataProcessingAgreementsApi.md#get_data_processing_agreements) | **GET** /v1/data-agreements | Get all data processing agreements.
+[**terminate_data_processing_agreement_by_id**](DataProcessingAgreementsApi.md#terminate_data_processing_agreement_by_id) | **PUT** /v1/data-agreements/{id}/terminate | Terminate a data processing agreement.
+[**update_data_processing_agreement**](DataProcessingAgreementsApi.md#update_data_processing_agreement) | **PUT** /v1/data-agreements/{id} | Update a data processing agreement.
 
 
-# **v1_data_agreements_get**
-> DataProcessingAgreementDtoPaginatedList v1_data_agreements_get()
+# **create_data_processing_agreement**
+> DataProcessingAgreementDto create_data_processing_agreement()
+
+Create a data processing agreement.
+
+### Example
+
+
+```python
+import time
+import mydatamyconsent
+from mydatamyconsent.api import data_processing_agreements_api
+from mydatamyconsent.model.create_data_processing_agreement_request_model import CreateDataProcessingAgreementRequestModel
+from mydatamyconsent.model.problem_details import ProblemDetails
+from mydatamyconsent.model.data_processing_agreement_dto import DataProcessingAgreementDto
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mydatamyconsent.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with mydatamyconsent.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = data_processing_agreements_api.DataProcessingAgreementsApi(api_client)
+    create_data_processing_agreement_request_model = CreateDataProcessingAgreementRequestModel(
+        version="version_example",
+        body="body_example",
+        attachment_url="attachment_url_example",
+    ) # CreateDataProcessingAgreementRequestModel | Create data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.CreateDataProcessingAgreementRequestModel. (optional)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Create a data processing agreement.
+        api_response = api_instance.create_data_processing_agreement(create_data_processing_agreement_request_model=create_data_processing_agreement_request_model)
+        pprint(api_response)
+    except mydatamyconsent.ApiException as e:
+        print("Exception when calling DataProcessingAgreementsApi->create_data_processing_agreement: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **create_data_processing_agreement_request_model** | [**CreateDataProcessingAgreementRequestModel**](CreateDataProcessingAgreementRequestModel.md)| Create data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.CreateDataProcessingAgreementRequestModel. | [optional]
+
+### Return type
+
+[**DataProcessingAgreementDto**](DataProcessingAgreementDto.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**500** | Server Error |  -  |
+**0** | Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_data_processing_agreement_by_id**
+> delete_data_processing_agreement_by_id(id)
+
+Delete a data processing agreement. This will not delete a published or a agreement in use with consents.
+
+### Example
+
+
+```python
+import time
+import mydatamyconsent
+from mydatamyconsent.api import data_processing_agreements_api
+from mydatamyconsent.model.problem_details import ProblemDetails
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mydatamyconsent.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with mydatamyconsent.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = data_processing_agreements_api.DataProcessingAgreementsApi(api_client)
+    id = "id_example" # str | Agreement id.
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Delete a data processing agreement. This will not delete a published or a agreement in use with consents.
+        api_instance.delete_data_processing_agreement_by_id(id)
+    except mydatamyconsent.ApiException as e:
+        print("Exception when calling DataProcessingAgreementsApi->delete_data_processing_agreement_by_id: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Agreement id. |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | Success |  -  |
+**404** | Not Found |  -  |
+**500** | Server Error |  -  |
+**0** | Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_data_processing_agreement_by_id**
+> DataProcessingAgreementDto get_data_processing_agreement_by_id(id)
+
+Get data processing agreement by id.
+
+### Example
+
+
+```python
+import time
+import mydatamyconsent
+from mydatamyconsent.api import data_processing_agreements_api
+from mydatamyconsent.model.problem_details import ProblemDetails
+from mydatamyconsent.model.data_processing_agreement_dto import DataProcessingAgreementDto
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mydatamyconsent.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with mydatamyconsent.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = data_processing_agreements_api.DataProcessingAgreementsApi(api_client)
+    id = "id_example" # str | Agreement id.
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Get data processing agreement by id.
+        api_response = api_instance.get_data_processing_agreement_by_id(id)
+        pprint(api_response)
+    except mydatamyconsent.ApiException as e:
+        print("Exception when calling DataProcessingAgreementsApi->get_data_processing_agreement_by_id: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Agreement id. |
+
+### Return type
+
+[**DataProcessingAgreementDto**](DataProcessingAgreementDto.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**500** | Server Error |  -  |
+**0** | Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_data_processing_agreements**
+> DataProcessingAgreementDtoPaginatedList get_data_processing_agreements()
 
 Get all data processing agreements.
 
@@ -45,10 +254,10 @@ with mydatamyconsent.ApiClient() as api_client:
     # and optional values
     try:
         # Get all data processing agreements.
-        api_response = api_instance.v1_data_agreements_get(page_no=page_no, page_size=page_size)
+        api_response = api_instance.get_data_processing_agreements(page_no=page_no, page_size=page_size)
         pprint(api_response)
     except mydatamyconsent.ApiException as e:
-        print("Exception when calling DataProcessingAgreementsApi->v1_data_agreements_get: %s\n" % e)
+        print("Exception when calling DataProcessingAgreementsApi->get_data_processing_agreements: %s\n" % e)
 ```
 
 
@@ -83,10 +292,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **v1_data_agreements_id_delete**
-> v1_data_agreements_id_delete(id)
+# **terminate_data_processing_agreement_by_id**
+> terminate_data_processing_agreement_by_id(id)
 
-Delete a data processing agreement. This will not delete a published or a agreement in use with consents.
+Terminate a data processing agreement.
 
 ### Example
 
@@ -108,14 +317,14 @@ configuration = mydatamyconsent.Configuration(
 with mydatamyconsent.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = data_processing_agreements_api.DataProcessingAgreementsApi(api_client)
-    id = "id_example" # str | 
+    id = "id_example" # str | Agreement id.
 
     # example passing only required values which don't have defaults set
     try:
-        # Delete a data processing agreement. This will not delete a published or a agreement in use with consents.
-        api_instance.v1_data_agreements_id_delete(id)
+        # Terminate a data processing agreement.
+        api_instance.terminate_data_processing_agreement_by_id(id)
     except mydatamyconsent.ApiException as e:
-        print("Exception when calling DataProcessingAgreementsApi->v1_data_agreements_id_delete: %s\n" % e)
+        print("Exception when calling DataProcessingAgreementsApi->terminate_data_processing_agreement_by_id: %s\n" % e)
 ```
 
 
@@ -123,7 +332,7 @@ with mydatamyconsent.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  |
+ **id** | **str**| Agreement id. |
 
 ### Return type
 
@@ -150,76 +359,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **v1_data_agreements_id_get**
-> DataProcessingAgreementDto v1_data_agreements_id_get(id)
-
-Get data processing agreement by Id.
-
-### Example
-
-
-```python
-import time
-import mydatamyconsent
-from mydatamyconsent.api import data_processing_agreements_api
-from mydatamyconsent.model.problem_details import ProblemDetails
-from mydatamyconsent.model.data_processing_agreement_dto import DataProcessingAgreementDto
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
-# See configuration.py for a list of all supported configuration parameters.
-configuration = mydatamyconsent.Configuration(
-    host = "http://localhost"
-)
-
-
-# Enter a context with an instance of the API client
-with mydatamyconsent.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = data_processing_agreements_api.DataProcessingAgreementsApi(api_client)
-    id = "id_example" # str | 
-
-    # example passing only required values which don't have defaults set
-    try:
-        # Get data processing agreement by Id.
-        api_response = api_instance.v1_data_agreements_id_get(id)
-        pprint(api_response)
-    except mydatamyconsent.ApiException as e:
-        print("Exception when calling DataProcessingAgreementsApi->v1_data_agreements_id_get: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **str**|  |
-
-### Return type
-
-[**DataProcessingAgreementDto**](DataProcessingAgreementDto.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-**500** | Server Error |  -  |
-**0** | Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **v1_data_agreements_id_put**
-> DataProcessingAgreementDto v1_data_agreements_id_put(id)
+# **update_data_processing_agreement**
+> DataProcessingAgreementDto update_data_processing_agreement(id)
 
 Update a data processing agreement.
 
@@ -245,29 +386,29 @@ configuration = mydatamyconsent.Configuration(
 with mydatamyconsent.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = data_processing_agreements_api.DataProcessingAgreementsApi(api_client)
-    id = "id_example" # str | 
+    id = "id_example" # str | Agreement id.
     update_data_processing_agreement_request_model = UpdateDataProcessingAgreementRequestModel(
         version="version_example",
         body="body_example",
         attachment_url="attachment_url_example",
-    ) # UpdateDataProcessingAgreementRequestModel |  (optional)
+    ) # UpdateDataProcessingAgreementRequestModel | Updated data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.UpdateDataProcessingAgreementRequestModel. (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Update a data processing agreement.
-        api_response = api_instance.v1_data_agreements_id_put(id)
+        api_response = api_instance.update_data_processing_agreement(id)
         pprint(api_response)
     except mydatamyconsent.ApiException as e:
-        print("Exception when calling DataProcessingAgreementsApi->v1_data_agreements_id_put: %s\n" % e)
+        print("Exception when calling DataProcessingAgreementsApi->update_data_processing_agreement: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Update a data processing agreement.
-        api_response = api_instance.v1_data_agreements_id_put(id, update_data_processing_agreement_request_model=update_data_processing_agreement_request_model)
+        api_response = api_instance.update_data_processing_agreement(id, update_data_processing_agreement_request_model=update_data_processing_agreement_request_model)
         pprint(api_response)
     except mydatamyconsent.ApiException as e:
-        print("Exception when calling DataProcessingAgreementsApi->v1_data_agreements_id_put: %s\n" % e)
+        print("Exception when calling DataProcessingAgreementsApi->update_data_processing_agreement: %s\n" % e)
 ```
 
 
@@ -275,8 +416,8 @@ with mydatamyconsent.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  |
- **update_data_processing_agreement_request_model** | [**UpdateDataProcessingAgreementRequestModel**](UpdateDataProcessingAgreementRequestModel.md)|  | [optional]
+ **id** | **str**| Agreement id. |
+ **update_data_processing_agreement_request_model** | [**UpdateDataProcessingAgreementRequestModel**](UpdateDataProcessingAgreementRequestModel.md)| Updated data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.UpdateDataProcessingAgreementRequestModel. | [optional]
 
 ### Return type
 
@@ -298,147 +439,6 @@ No authorization required
 |-------------|-------------|------------------|
 **200** | Success |  -  |
 **404** | Not Found |  -  |
-**500** | Server Error |  -  |
-**0** | Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **v1_data_agreements_id_terminate_put**
-> v1_data_agreements_id_terminate_put(id)
-
-Terminate a data processing agreement.
-
-### Example
-
-
-```python
-import time
-import mydatamyconsent
-from mydatamyconsent.api import data_processing_agreements_api
-from mydatamyconsent.model.problem_details import ProblemDetails
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
-# See configuration.py for a list of all supported configuration parameters.
-configuration = mydatamyconsent.Configuration(
-    host = "http://localhost"
-)
-
-
-# Enter a context with an instance of the API client
-with mydatamyconsent.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = data_processing_agreements_api.DataProcessingAgreementsApi(api_client)
-    id = "id_example" # str | 
-
-    # example passing only required values which don't have defaults set
-    try:
-        # Terminate a data processing agreement.
-        api_instance.v1_data_agreements_id_terminate_put(id)
-    except mydatamyconsent.ApiException as e:
-        print("Exception when calling DataProcessingAgreementsApi->v1_data_agreements_id_terminate_put: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **str**|  |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**204** | Success |  -  |
-**404** | Not Found |  -  |
-**500** | Server Error |  -  |
-**0** | Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **v1_data_agreements_post**
-> DataProcessingAgreementDto v1_data_agreements_post()
-
-Create a data processing agreement.
-
-### Example
-
-
-```python
-import time
-import mydatamyconsent
-from mydatamyconsent.api import data_processing_agreements_api
-from mydatamyconsent.model.create_data_processing_agreement_request_model import CreateDataProcessingAgreementRequestModel
-from mydatamyconsent.model.problem_details import ProblemDetails
-from mydatamyconsent.model.data_processing_agreement_dto import DataProcessingAgreementDto
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
-# See configuration.py for a list of all supported configuration parameters.
-configuration = mydatamyconsent.Configuration(
-    host = "http://localhost"
-)
-
-
-# Enter a context with an instance of the API client
-with mydatamyconsent.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = data_processing_agreements_api.DataProcessingAgreementsApi(api_client)
-    create_data_processing_agreement_request_model = CreateDataProcessingAgreementRequestModel(
-        version="version_example",
-        body="body_example",
-        attachment_url="attachment_url_example",
-    ) # CreateDataProcessingAgreementRequestModel |  (optional)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Create a data processing agreement.
-        api_response = api_instance.v1_data_agreements_post(create_data_processing_agreement_request_model=create_data_processing_agreement_request_model)
-        pprint(api_response)
-    except mydatamyconsent.ApiException as e:
-        print("Exception when calling DataProcessingAgreementsApi->v1_data_agreements_post: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **create_data_processing_agreement_request_model** | [**CreateDataProcessingAgreementRequestModel**](CreateDataProcessingAgreementRequestModel.md)|  | [optional]
-
-### Return type
-
-[**DataProcessingAgreementDto**](DataProcessingAgreementDto.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
 **500** | Server Error |  -  |
 **0** | Error |  -  |
 

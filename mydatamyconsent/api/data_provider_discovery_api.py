@@ -37,12 +37,62 @@ class DataProviderDiscoveryApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
-        self.v1_data_providers_get_endpoint = _Endpoint(
+        self.get_data_provider_by_id_endpoint = _Endpoint(
+            settings={
+                'response_type': (DataProvider,),
+                'auth': [],
+                'endpoint_path': '/v1/data-providers/{providerId}',
+                'operation_id': 'get_data_provider_by_id',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'provider_id',
+                ],
+                'required': [
+                    'provider_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'provider_id':
+                        (str,),
+                },
+                'attribute_map': {
+                    'provider_id': 'providerId',
+                },
+                'location_map': {
+                    'provider_id': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json',
+                    'application/xml'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.get_data_providers_endpoint = _Endpoint(
             settings={
                 'response_type': (DataProviderPaginatedList,),
                 'auth': [],
                 'endpoint_path': '/v1/data-providers',
-                'operation_id': 'v1_data_providers_get',
+                'operation_id': 'get_data_providers',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -110,68 +160,94 @@ class DataProviderDiscoveryApi(object):
             },
             api_client=api_client
         )
-        self.v1_data_providers_provider_id_get_endpoint = _Endpoint(
-            settings={
-                'response_type': (DataProvider,),
-                'auth': [],
-                'endpoint_path': '/v1/data-providers/{providerId}',
-                'operation_id': 'v1_data_providers_provider_id_get',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'provider_id',
-                ],
-                'required': [
-                    'provider_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'provider_id':
-                        (str,),
-                },
-                'attribute_map': {
-                    'provider_id': 'providerId',
-                },
-                'location_map': {
-                    'provider_id': 'path',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json',
-                    'application/xml'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
 
-    def v1_data_providers_get(
+    def get_data_provider_by_id(
+        self,
+        provider_id,
+        **kwargs
+    ):
+        """Get a Data Provider details based on provider id.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_data_provider_by_id(provider_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            provider_id (str): Provider id.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            DataProvider
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['provider_id'] = \
+            provider_id
+        return self.get_data_provider_by_id_endpoint.call_with_http_info(**kwargs)
+
+    def get_data_providers(
         self,
         **kwargs
     ):
         """Discover all data providers in My Data My Consent by country and filters.  # noqa: E501
 
-        .  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.v1_data_providers_get(async_req=True)
+        >>> thread = api.get_data_providers(async_req=True)
         >>> result = thread.get()
 
 
@@ -238,83 +314,5 @@ class DataProviderDiscoveryApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
-        return self.v1_data_providers_get_endpoint.call_with_http_info(**kwargs)
-
-    def v1_data_providers_provider_id_get(
-        self,
-        provider_id,
-        **kwargs
-    ):
-        """Get a Data Provider details.  # noqa: E501
-
-        .  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.v1_data_providers_provider_id_get(provider_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            provider_id (str): Provider Id.
-
-        Keyword Args:
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            DataProvider
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['provider_id'] = \
-            provider_id
-        return self.v1_data_providers_provider_id_get_endpoint.call_with_http_info(**kwargs)
+        return self.get_data_providers_endpoint.call_with_http_info(**kwargs)
 

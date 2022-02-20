@@ -4,253 +4,26 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v1_consents_individuals_consent_id_accounts_account_id_get**](DataConsentsApi.md#v1_consents_individuals_consent_id_accounts_account_id_get) | **GET** /v1/consents/individuals/{consentId}/accounts/{accountId} | Get individual consented financial account details based on account id.
-[**v1_consents_individuals_consent_id_accounts_account_id_transactions_get**](DataConsentsApi.md#v1_consents_individuals_consent_id_accounts_account_id_transactions_get) | **GET** /v1/consents/individuals/{consentId}/accounts/{accountId}/transactions | Get consented financial account transactions of an individual based on accountId.
-[**v1_consents_individuals_consent_id_accounts_get**](DataConsentsApi.md#v1_consents_individuals_consent_id_accounts_get) | **GET** /v1/consents/individuals/{consentId}/accounts | Get all individual financial accounts in a consent.
-[**v1_consents_individuals_consent_id_documents_document_id_download_get**](DataConsentsApi.md#v1_consents_individuals_consent_id_documents_document_id_download_get) | **GET** /v1/consents/individuals/{consentId}/documents/{documentId}/download | Download a individuals consented document.
-[**v1_consents_individuals_consent_id_documents_document_id_get**](DataConsentsApi.md#v1_consents_individuals_consent_id_documents_document_id_get) | **GET** /v1/consents/individuals/{consentId}/documents/{documentId} | Get individuals consent document based on document id.
-[**v1_consents_individuals_consent_id_documents_get**](DataConsentsApi.md#v1_consents_individuals_consent_id_documents_get) | **GET** /v1/consents/individuals/{consentId}/documents | Get the individual documents based on ConsentId.
-[**v1_consents_individuals_consent_id_get**](DataConsentsApi.md#v1_consents_individuals_consent_id_get) | **GET** /v1/consents/individuals/{consentId} | Get individuals consent details by consent id.
-[**v1_consents_individuals_get**](DataConsentsApi.md#v1_consents_individuals_get) | **GET** /v1/consents/individuals | Get the list of Consents Sent to Individuals.
-[**v1_consents_organizations_consent_id_accounts_account_id_get**](DataConsentsApi.md#v1_consents_organizations_consent_id_accounts_account_id_get) | **GET** /v1/consents/organizations/{consentId}/accounts/{accountId} | Get orgnization consented financial account details based on account id.
-[**v1_consents_organizations_consent_id_accounts_account_id_transactions_get**](DataConsentsApi.md#v1_consents_organizations_consent_id_accounts_account_id_transactions_get) | **GET** /v1/consents/organizations/{consentId}/accounts/{accountId}/transactions | Get consented financial account transactions of an organization based on accountId.
-[**v1_consents_organizations_consent_id_accounts_get**](DataConsentsApi.md#v1_consents_organizations_consent_id_accounts_get) | **GET** /v1/consents/organizations/{consentId}/accounts | Get all organizational financial accounts in a consent.
-[**v1_consents_organizations_consent_id_documents_document_id_download_get**](DataConsentsApi.md#v1_consents_organizations_consent_id_documents_document_id_download_get) | **GET** /v1/consents/organizations/{consentId}/documents/{documentId}/download | Download organizations consented document.
-[**v1_consents_organizations_consent_id_documents_document_id_get**](DataConsentsApi.md#v1_consents_organizations_consent_id_documents_document_id_get) | **GET** /v1/consents/organizations/{consentId}/documents/{documentId} | Get organizations consent document based on document id.
-[**v1_consents_organizations_consent_id_documents_get**](DataConsentsApi.md#v1_consents_organizations_consent_id_documents_get) | **GET** /v1/consents/organizations/{consentId}/documents | Get the organizations documents based on ConsentId.
-[**v1_consents_organizations_consent_id_get**](DataConsentsApi.md#v1_consents_organizations_consent_id_get) | **GET** /v1/consents/organizations/{consentId} | Get organizations consent details by consent id.
-[**v1_consents_organizations_get**](DataConsentsApi.md#v1_consents_organizations_get) | **GET** /v1/consents/organizations | Get the list of data consents sent for organizations.
-
-
-# **v1_consents_individuals_consent_id_accounts_account_id_get**
-> FinancialAccount v1_consents_individuals_consent_id_accounts_account_id_get(consent_id, account_id)
-
-Get individual consented financial account details based on account id.
-
-### Example
-
-
-```python
-import time
-import mydatamyconsent
-from mydatamyconsent.api import data_consents_api
-from mydatamyconsent.model.financial_account import FinancialAccount
-from mydatamyconsent.model.problem_details import ProblemDetails
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
-# See configuration.py for a list of all supported configuration parameters.
-configuration = mydatamyconsent.Configuration(
-    host = "http://localhost"
-)
-
-
-# Enter a context with an instance of the API client
-with mydatamyconsent.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = data_consents_api.DataConsentsApi(api_client)
-    consent_id = "consentId_example" # str | 
-    account_id = "accountId_example" # str | 
-
-    # example passing only required values which don't have defaults set
-    try:
-        # Get individual consented financial account details based on account id.
-        api_response = api_instance.v1_consents_individuals_consent_id_accounts_account_id_get(consent_id, account_id)
-        pprint(api_response)
-    except mydatamyconsent.ApiException as e:
-        print("Exception when calling DataConsentsApi->v1_consents_individuals_consent_id_accounts_account_id_get: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **consent_id** | **str**|  |
- **account_id** | **str**|  |
-
-### Return type
-
-[**FinancialAccount**](FinancialAccount.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-**500** | Server Error |  -  |
-**0** | Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **v1_consents_individuals_consent_id_accounts_account_id_transactions_get**
-> UserAccountFinancialTransactionsDtoPaginatedList v1_consents_individuals_consent_id_accounts_account_id_transactions_get(consent_id, account_id)
-
-Get consented financial account transactions of an individual based on accountId.
-
-### Example
-
-
-```python
-import time
-import mydatamyconsent
-from mydatamyconsent.api import data_consents_api
-from mydatamyconsent.model.problem_details import ProblemDetails
-from mydatamyconsent.model.user_account_financial_transactions_dto_paginated_list import UserAccountFinancialTransactionsDtoPaginatedList
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
-# See configuration.py for a list of all supported configuration parameters.
-configuration = mydatamyconsent.Configuration(
-    host = "http://localhost"
-)
-
-
-# Enter a context with an instance of the API client
-with mydatamyconsent.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = data_consents_api.DataConsentsApi(api_client)
-    consent_id = "consentId_example" # str | 
-    account_id = "accountId_example" # str | 
-    filters = "filters_example" # str |  (optional)
-    page_no = 1 # int |  (optional)
-    page_size = 1 # int |  (optional)
-    from_date = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime |  (optional)
-    to_date = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # Get consented financial account transactions of an individual based on accountId.
-        api_response = api_instance.v1_consents_individuals_consent_id_accounts_account_id_transactions_get(consent_id, account_id)
-        pprint(api_response)
-    except mydatamyconsent.ApiException as e:
-        print("Exception when calling DataConsentsApi->v1_consents_individuals_consent_id_accounts_account_id_transactions_get: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Get consented financial account transactions of an individual based on accountId.
-        api_response = api_instance.v1_consents_individuals_consent_id_accounts_account_id_transactions_get(consent_id, account_id, filters=filters, page_no=page_no, page_size=page_size, from_date=from_date, to_date=to_date)
-        pprint(api_response)
-    except mydatamyconsent.ApiException as e:
-        print("Exception when calling DataConsentsApi->v1_consents_individuals_consent_id_accounts_account_id_transactions_get: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **consent_id** | **str**|  |
- **account_id** | **str**|  |
- **filters** | **str**|  | [optional]
- **page_no** | **int**|  | [optional]
- **page_size** | **int**|  | [optional]
- **from_date** | **datetime**|  | [optional]
- **to_date** | **datetime**|  | [optional]
-
-### Return type
-
-[**UserAccountFinancialTransactionsDtoPaginatedList**](UserAccountFinancialTransactionsDtoPaginatedList.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-**500** | Server Error |  -  |
-**0** | Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **v1_consents_individuals_consent_id_accounts_get**
-> DataConsentFinancialsDto v1_consents_individuals_consent_id_accounts_get(consent_id)
-
-Get all individual financial accounts in a consent.
-
-### Example
-
-
-```python
-import time
-import mydatamyconsent
-from mydatamyconsent.api import data_consents_api
-from mydatamyconsent.model.data_consent_financials_dto import DataConsentFinancialsDto
-from mydatamyconsent.model.problem_details import ProblemDetails
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
-# See configuration.py for a list of all supported configuration parameters.
-configuration = mydatamyconsent.Configuration(
-    host = "http://localhost"
-)
-
-
-# Enter a context with an instance of the API client
-with mydatamyconsent.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = data_consents_api.DataConsentsApi(api_client)
-    consent_id = "consentId_example" # str | 
-
-    # example passing only required values which don't have defaults set
-    try:
-        # Get all individual financial accounts in a consent.
-        api_response = api_instance.v1_consents_individuals_consent_id_accounts_get(consent_id)
-        pprint(api_response)
-    except mydatamyconsent.ApiException as e:
-        print("Exception when calling DataConsentsApi->v1_consents_individuals_consent_id_accounts_get: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **consent_id** | **str**|  |
-
-### Return type
-
-[**DataConsentFinancialsDto**](DataConsentFinancialsDto.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-**500** | Server Error |  -  |
-**0** | Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **v1_consents_individuals_consent_id_documents_document_id_download_get**
-> UserDocumentDownloadDto v1_consents_individuals_consent_id_documents_document_id_download_get(consent_id, document_id)
+[**download_consented_document_by_id**](DataConsentsApi.md#download_consented_document_by_id) | **GET** /v1/consents/individuals/{consentId}/documents/{documentId}/download | Download a individuals consented document.
+[**download_org_consented_document_by_id**](DataConsentsApi.md#download_org_consented_document_by_id) | **GET** /v1/consents/organizations/{consentId}/documents/{documentId}/download | Download a organizations consented document.
+[**get_all_consented_documents**](DataConsentsApi.md#get_all_consented_documents) | **GET** /v1/consents/individuals/{consentId}/documents | Get the individual documents based on ConsentId.
+[**get_all_consented_financial_accounts**](DataConsentsApi.md#get_all_consented_financial_accounts) | **GET** /v1/consents/individuals/{consentId}/accounts | Get all individual consented financial accounts.
+[**get_all_organization_consented_accounts**](DataConsentsApi.md#get_all_organization_consented_accounts) | **GET** /v1/consents/organizations/{consentId}/accounts | Get all organizational consented financial accounts.
+[**get_all_organization_consented_documents**](DataConsentsApi.md#get_all_organization_consented_documents) | **GET** /v1/consents/organizations/{consentId}/documents | Get the organization documents based on ConsentId.
+[**get_consent_details_by_id**](DataConsentsApi.md#get_consent_details_by_id) | **GET** /v1/consents/individuals/{consentId} | Get all individuals consent details by consent id.
+[**get_consented_account_by_id**](DataConsentsApi.md#get_consented_account_by_id) | **GET** /v1/consents/individuals/{consentId}/accounts/{accountId} | Get individual consented financial account details based on account id.
+[**get_consented_document_by_id**](DataConsentsApi.md#get_consented_document_by_id) | **GET** /v1/consents/individuals/{consentId}/documents/{documentId} | Get individuals consent document based on document id.
+[**get_consented_financial_account**](DataConsentsApi.md#get_consented_financial_account) | **GET** /v1/consents/organizations/{consentId}/accounts/{accountId} | Get organization consented financial account details based on account id.
+[**get_consented_financial_account_transactions**](DataConsentsApi.md#get_consented_financial_account_transactions) | **GET** /v1/consents/individuals/{consentId}/accounts/{accountId}/transactions | Get individual consented financial account transactions of an individual based on accountId.
+[**get_consents**](DataConsentsApi.md#get_consents) | **GET** /v1/consents/individuals | Get the list of Consents Sent to Individuals.
+[**get_consents_for_organizations**](DataConsentsApi.md#get_consents_for_organizations) | **GET** /v1/consents/organizations | Get the list of data consents sent for organizations.
+[**get_org_consented_account_transactions**](DataConsentsApi.md#get_org_consented_account_transactions) | **GET** /v1/consents/organizations/{consentId}/accounts/{accountId}/transactions | Get organization consented financial account transactions of an individual based on accountId.
+[**get_organization_consent_details_by_id**](DataConsentsApi.md#get_organization_consent_details_by_id) | **GET** /v1/consents/organizations/{consentId} | Get all organization consent details by consent id.
+[**get_organization_consented_document_by_id**](DataConsentsApi.md#get_organization_consented_document_by_id) | **GET** /v1/consents/organizations/{consentId}/documents/{documentId} | Get organization consent document based on document id.
+
+
+# **download_consented_document_by_id**
+> UserDocumentDownloadDto download_consented_document_by_id(consent_id, document_id)
 
 Download a individuals consented document.
 
@@ -275,16 +48,16 @@ configuration = mydatamyconsent.Configuration(
 with mydatamyconsent.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = data_consents_api.DataConsentsApi(api_client)
-    consent_id = "consentId_example" # str | consentId.
-    document_id = "documentId_example" # str | documentId.
+    consent_id = "consentId_example" # str | Consent id.
+    document_id = "documentId_example" # str | Document id.
 
     # example passing only required values which don't have defaults set
     try:
         # Download a individuals consented document.
-        api_response = api_instance.v1_consents_individuals_consent_id_documents_document_id_download_get(consent_id, document_id)
+        api_response = api_instance.download_consented_document_by_id(consent_id, document_id)
         pprint(api_response)
     except mydatamyconsent.ApiException as e:
-        print("Exception when calling DataConsentsApi->v1_consents_individuals_consent_id_documents_document_id_download_get: %s\n" % e)
+        print("Exception when calling DataConsentsApi->download_consented_document_by_id: %s\n" % e)
 ```
 
 
@@ -292,8 +65,8 @@ with mydatamyconsent.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **consent_id** | **str**| consentId. |
- **document_id** | **str**| documentId. |
+ **consent_id** | **str**| Consent id. |
+ **document_id** | **str**| Document id. |
 
 ### Return type
 
@@ -319,8 +92,488 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **v1_consents_individuals_consent_id_documents_document_id_get**
-> UserDocumentDetailsDto v1_consents_individuals_consent_id_documents_document_id_get(consent_id, document_id)
+# **download_org_consented_document_by_id**
+> OrganizationDocumentDownloadDto download_org_consented_document_by_id(consent_id, document_id)
+
+Download a organizations consented document.
+
+### Example
+
+
+```python
+import time
+import mydatamyconsent
+from mydatamyconsent.api import data_consents_api
+from mydatamyconsent.model.problem_details import ProblemDetails
+from mydatamyconsent.model.organization_document_download_dto import OrganizationDocumentDownloadDto
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mydatamyconsent.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with mydatamyconsent.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = data_consents_api.DataConsentsApi(api_client)
+    consent_id = "consentId_example" # str | Consent id.
+    document_id = "documentId_example" # str | Document id.
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Download a organizations consented document.
+        api_response = api_instance.download_org_consented_document_by_id(consent_id, document_id)
+        pprint(api_response)
+    except mydatamyconsent.ApiException as e:
+        print("Exception when calling DataConsentsApi->download_org_consented_document_by_id: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **consent_id** | **str**| Consent id. |
+ **document_id** | **str**| Document id. |
+
+### Return type
+
+[**OrganizationDocumentDownloadDto**](OrganizationDocumentDownloadDto.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**500** | Server Error |  -  |
+**0** | Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_all_consented_documents**
+> DataConsentDocumentsDto get_all_consented_documents(consent_id)
+
+Get the individual documents based on ConsentId.
+
+### Example
+
+
+```python
+import time
+import mydatamyconsent
+from mydatamyconsent.api import data_consents_api
+from mydatamyconsent.model.data_consent_documents_dto import DataConsentDocumentsDto
+from mydatamyconsent.model.problem_details import ProblemDetails
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mydatamyconsent.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with mydatamyconsent.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = data_consents_api.DataConsentsApi(api_client)
+    consent_id = "consentId_example" # str | Consent id.
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Get the individual documents based on ConsentId.
+        api_response = api_instance.get_all_consented_documents(consent_id)
+        pprint(api_response)
+    except mydatamyconsent.ApiException as e:
+        print("Exception when calling DataConsentsApi->get_all_consented_documents: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **consent_id** | **str**| Consent id. |
+
+### Return type
+
+[**DataConsentDocumentsDto**](DataConsentDocumentsDto.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**500** | Server Error |  -  |
+**0** | Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_all_consented_financial_accounts**
+> DataConsentFinancialsDto get_all_consented_financial_accounts(consent_id)
+
+Get all individual consented financial accounts.
+
+### Example
+
+
+```python
+import time
+import mydatamyconsent
+from mydatamyconsent.api import data_consents_api
+from mydatamyconsent.model.data_consent_financials_dto import DataConsentFinancialsDto
+from mydatamyconsent.model.problem_details import ProblemDetails
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mydatamyconsent.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with mydatamyconsent.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = data_consents_api.DataConsentsApi(api_client)
+    consent_id = "consentId_example" # str | Consent id.
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Get all individual consented financial accounts.
+        api_response = api_instance.get_all_consented_financial_accounts(consent_id)
+        pprint(api_response)
+    except mydatamyconsent.ApiException as e:
+        print("Exception when calling DataConsentsApi->get_all_consented_financial_accounts: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **consent_id** | **str**| Consent id. |
+
+### Return type
+
+[**DataConsentFinancialsDto**](DataConsentFinancialsDto.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**500** | Server Error |  -  |
+**0** | Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_all_organization_consented_accounts**
+> DataConsentFinancialsDto get_all_organization_consented_accounts(consent_id)
+
+Get all organizational consented financial accounts.
+
+### Example
+
+
+```python
+import time
+import mydatamyconsent
+from mydatamyconsent.api import data_consents_api
+from mydatamyconsent.model.data_consent_financials_dto import DataConsentFinancialsDto
+from mydatamyconsent.model.problem_details import ProblemDetails
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mydatamyconsent.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with mydatamyconsent.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = data_consents_api.DataConsentsApi(api_client)
+    consent_id = "consentId_example" # str | Consent id.
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Get all organizational consented financial accounts.
+        api_response = api_instance.get_all_organization_consented_accounts(consent_id)
+        pprint(api_response)
+    except mydatamyconsent.ApiException as e:
+        print("Exception when calling DataConsentsApi->get_all_organization_consented_accounts: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **consent_id** | **str**| Consent id. |
+
+### Return type
+
+[**DataConsentFinancialsDto**](DataConsentFinancialsDto.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**500** | Server Error |  -  |
+**0** | Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_all_organization_consented_documents**
+> DataConsentDocumentsDto get_all_organization_consented_documents(consent_id)
+
+Get the organization documents based on ConsentId.
+
+### Example
+
+
+```python
+import time
+import mydatamyconsent
+from mydatamyconsent.api import data_consents_api
+from mydatamyconsent.model.data_consent_documents_dto import DataConsentDocumentsDto
+from mydatamyconsent.model.problem_details import ProblemDetails
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mydatamyconsent.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with mydatamyconsent.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = data_consents_api.DataConsentsApi(api_client)
+    consent_id = "consentId_example" # str | Consent id.
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Get the organization documents based on ConsentId.
+        api_response = api_instance.get_all_organization_consented_documents(consent_id)
+        pprint(api_response)
+    except mydatamyconsent.ApiException as e:
+        print("Exception when calling DataConsentsApi->get_all_organization_consented_documents: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **consent_id** | **str**| Consent id. |
+
+### Return type
+
+[**DataConsentDocumentsDto**](DataConsentDocumentsDto.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**500** | Server Error |  -  |
+**0** | Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_consent_details_by_id**
+> DataConsentDetailsDto get_consent_details_by_id(consent_id)
+
+Get all individuals consent details by consent id.
+
+### Example
+
+
+```python
+import time
+import mydatamyconsent
+from mydatamyconsent.api import data_consents_api
+from mydatamyconsent.model.data_consent_details_dto import DataConsentDetailsDto
+from mydatamyconsent.model.problem_details import ProblemDetails
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mydatamyconsent.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with mydatamyconsent.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = data_consents_api.DataConsentsApi(api_client)
+    consent_id = "consentId_example" # str | Consent id.
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Get all individuals consent details by consent id.
+        api_response = api_instance.get_consent_details_by_id(consent_id)
+        pprint(api_response)
+    except mydatamyconsent.ApiException as e:
+        print("Exception when calling DataConsentsApi->get_consent_details_by_id: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **consent_id** | **str**| Consent id. |
+
+### Return type
+
+[**DataConsentDetailsDto**](DataConsentDetailsDto.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**500** | Server Error |  -  |
+**0** | Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_consented_account_by_id**
+> FinancialAccount get_consented_account_by_id(consent_id, account_id)
+
+Get individual consented financial account details based on account id.
+
+### Example
+
+
+```python
+import time
+import mydatamyconsent
+from mydatamyconsent.api import data_consents_api
+from mydatamyconsent.model.financial_account import FinancialAccount
+from mydatamyconsent.model.problem_details import ProblemDetails
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mydatamyconsent.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with mydatamyconsent.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = data_consents_api.DataConsentsApi(api_client)
+    consent_id = "consentId_example" # str | Consent id.
+    account_id = "accountId_example" # str | Account id.
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Get individual consented financial account details based on account id.
+        api_response = api_instance.get_consented_account_by_id(consent_id, account_id)
+        pprint(api_response)
+    except mydatamyconsent.ApiException as e:
+        print("Exception when calling DataConsentsApi->get_consented_account_by_id: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **consent_id** | **str**| Consent id. |
+ **account_id** | **str**| Account id. |
+
+### Return type
+
+[**FinancialAccount**](FinancialAccount.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**500** | Server Error |  -  |
+**0** | Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_consented_document_by_id**
+> UserDocumentDetailsDto get_consented_document_by_id(consent_id, document_id)
 
 Get individuals consent document based on document id.
 
@@ -345,16 +598,16 @@ configuration = mydatamyconsent.Configuration(
 with mydatamyconsent.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = data_consents_api.DataConsentsApi(api_client)
-    consent_id = "consentId_example" # str | 
+    consent_id = "consentId_example" # str | Consent id.
     document_id = "documentId_example" # str | Document Id.
 
     # example passing only required values which don't have defaults set
     try:
         # Get individuals consent document based on document id.
-        api_response = api_instance.v1_consents_individuals_consent_id_documents_document_id_get(consent_id, document_id)
+        api_response = api_instance.get_consented_document_by_id(consent_id, document_id)
         pprint(api_response)
     except mydatamyconsent.ApiException as e:
-        print("Exception when calling DataConsentsApi->v1_consents_individuals_consent_id_documents_document_id_get: %s\n" % e)
+        print("Exception when calling DataConsentsApi->get_consented_document_by_id: %s\n" % e)
 ```
 
 
@@ -362,7 +615,7 @@ with mydatamyconsent.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **consent_id** | **str**|  |
+ **consent_id** | **str**| Consent id. |
  **document_id** | **str**| Document Id. |
 
 ### Return type
@@ -389,224 +642,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **v1_consents_individuals_consent_id_documents_get**
-> DataConsentDocumentsDto v1_consents_individuals_consent_id_documents_get(consent_id)
+# **get_consented_financial_account**
+> OrganizationFinancialAccountDto get_consented_financial_account(consent_id, account_id)
 
-Get the individual documents based on ConsentId.
-
-### Example
-
-
-```python
-import time
-import mydatamyconsent
-from mydatamyconsent.api import data_consents_api
-from mydatamyconsent.model.data_consent_documents_dto import DataConsentDocumentsDto
-from mydatamyconsent.model.problem_details import ProblemDetails
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
-# See configuration.py for a list of all supported configuration parameters.
-configuration = mydatamyconsent.Configuration(
-    host = "http://localhost"
-)
-
-
-# Enter a context with an instance of the API client
-with mydatamyconsent.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = data_consents_api.DataConsentsApi(api_client)
-    consent_id = "consentId_example" # str | 
-
-    # example passing only required values which don't have defaults set
-    try:
-        # Get the individual documents based on ConsentId.
-        api_response = api_instance.v1_consents_individuals_consent_id_documents_get(consent_id)
-        pprint(api_response)
-    except mydatamyconsent.ApiException as e:
-        print("Exception when calling DataConsentsApi->v1_consents_individuals_consent_id_documents_get: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **consent_id** | **str**|  |
-
-### Return type
-
-[**DataConsentDocumentsDto**](DataConsentDocumentsDto.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-**500** | Server Error |  -  |
-**0** | Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **v1_consents_individuals_consent_id_get**
-> DataConsentDetailsDto v1_consents_individuals_consent_id_get(consent_id)
-
-Get individuals consent details by consent id.
-
-### Example
-
-
-```python
-import time
-import mydatamyconsent
-from mydatamyconsent.api import data_consents_api
-from mydatamyconsent.model.data_consent_details_dto import DataConsentDetailsDto
-from mydatamyconsent.model.problem_details import ProblemDetails
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
-# See configuration.py for a list of all supported configuration parameters.
-configuration = mydatamyconsent.Configuration(
-    host = "http://localhost"
-)
-
-
-# Enter a context with an instance of the API client
-with mydatamyconsent.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = data_consents_api.DataConsentsApi(api_client)
-    consent_id = "consentId_example" # str | 
-
-    # example passing only required values which don't have defaults set
-    try:
-        # Get individuals consent details by consent id.
-        api_response = api_instance.v1_consents_individuals_consent_id_get(consent_id)
-        pprint(api_response)
-    except mydatamyconsent.ApiException as e:
-        print("Exception when calling DataConsentsApi->v1_consents_individuals_consent_id_get: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **consent_id** | **str**|  |
-
-### Return type
-
-[**DataConsentDetailsDto**](DataConsentDetailsDto.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-**500** | Server Error |  -  |
-**0** | Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **v1_consents_individuals_get**
-> UserDataConsentInfoDtoPaginatedList v1_consents_individuals_get()
-
-Get the list of Consents Sent to Individuals.
-
-### Example
-
-
-```python
-import time
-import mydatamyconsent
-from mydatamyconsent.api import data_consents_api
-from mydatamyconsent.model.user_data_consent_info_dto_paginated_list import UserDataConsentInfoDtoPaginatedList
-from mydatamyconsent.model.problem_details import ProblemDetails
-from mydatamyconsent.model.data_consent_status import DataConsentStatus
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
-# See configuration.py for a list of all supported configuration parameters.
-configuration = mydatamyconsent.Configuration(
-    host = "http://localhost"
-)
-
-
-# Enter a context with an instance of the API client
-with mydatamyconsent.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = data_consents_api.DataConsentsApi(api_client)
-    page_no = 1 # int |  (optional)
-    page_size = 1 # int |  (optional)
-    status = DataConsentStatus("Pending") # DataConsentStatus |  (optional)
-    start_date = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime |  (optional)
-    end_date = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime |  (optional)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Get the list of Consents Sent to Individuals.
-        api_response = api_instance.v1_consents_individuals_get(page_no=page_no, page_size=page_size, status=status, start_date=start_date, end_date=end_date)
-        pprint(api_response)
-    except mydatamyconsent.ApiException as e:
-        print("Exception when calling DataConsentsApi->v1_consents_individuals_get: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **page_no** | **int**|  | [optional]
- **page_size** | **int**|  | [optional]
- **status** | **DataConsentStatus**|  | [optional]
- **start_date** | **datetime**|  | [optional]
- **end_date** | **datetime**|  | [optional]
-
-### Return type
-
-[**UserDataConsentInfoDtoPaginatedList**](UserDataConsentInfoDtoPaginatedList.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-**500** | Server Error |  -  |
-**0** | Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **v1_consents_organizations_consent_id_accounts_account_id_get**
-> OrganizationFinancialAccountDto v1_consents_organizations_consent_id_accounts_account_id_get(consent_id, account_id)
-
-Get orgnization consented financial account details based on account id.
+Get organization consented financial account details based on account id.
 
 ### Example
 
@@ -629,16 +668,16 @@ configuration = mydatamyconsent.Configuration(
 with mydatamyconsent.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = data_consents_api.DataConsentsApi(api_client)
-    consent_id = "consentId_example" # str | 
-    account_id = "accountId_example" # str | 
+    consent_id = "consentId_example" # str | Consent id.
+    account_id = "accountId_example" # str | Account id.
 
     # example passing only required values which don't have defaults set
     try:
-        # Get orgnization consented financial account details based on account id.
-        api_response = api_instance.v1_consents_organizations_consent_id_accounts_account_id_get(consent_id, account_id)
+        # Get organization consented financial account details based on account id.
+        api_response = api_instance.get_consented_financial_account(consent_id, account_id)
         pprint(api_response)
     except mydatamyconsent.ApiException as e:
-        print("Exception when calling DataConsentsApi->v1_consents_organizations_consent_id_accounts_account_id_get: %s\n" % e)
+        print("Exception when calling DataConsentsApi->get_consented_financial_account: %s\n" % e)
 ```
 
 
@@ -646,8 +685,8 @@ with mydatamyconsent.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **consent_id** | **str**|  |
- **account_id** | **str**|  |
+ **consent_id** | **str**| Consent id. |
+ **account_id** | **str**| Account id. |
 
 ### Return type
 
@@ -673,10 +712,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **v1_consents_organizations_consent_id_accounts_account_id_transactions_get**
-> OrganizationFinancialTransactionsDtoPaginatedList v1_consents_organizations_consent_id_accounts_account_id_transactions_get(consent_id, account_id)
+# **get_consented_financial_account_transactions**
+> UserAccountFinancialTransactionsDtoPaginatedList get_consented_financial_account_transactions(consent_id, account_id)
 
-Get consented financial account transactions of an organization based on accountId.
+Get individual consented financial account transactions of an individual based on accountId.
 
 ### Example
 
@@ -685,8 +724,8 @@ Get consented financial account transactions of an organization based on account
 import time
 import mydatamyconsent
 from mydatamyconsent.api import data_consents_api
-from mydatamyconsent.model.organization_financial_transactions_dto_paginated_list import OrganizationFinancialTransactionsDtoPaginatedList
 from mydatamyconsent.model.problem_details import ProblemDetails
+from mydatamyconsent.model.user_account_financial_transactions_dto_paginated_list import UserAccountFinancialTransactionsDtoPaginatedList
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
@@ -699,30 +738,30 @@ configuration = mydatamyconsent.Configuration(
 with mydatamyconsent.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = data_consents_api.DataConsentsApi(api_client)
-    consent_id = "consentId_example" # str | 
-    account_id = "accountId_example" # str | 
-    filters = "filters_example" # str |  (optional)
-    page_no = 1 # int |  (optional)
-    page_size = 1 # int |  (optional)
-    from_date = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime |  (optional)
-    to_date = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime |  (optional)
+    consent_id = "consentId_example" # str | Consent id.
+    account_id = "accountId_example" # str | Account id.
+    filters = "filters_example" # str | Filters. (optional)
+    from_date_time_utc = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | From date time in utc timezone. (optional)
+    to_date_time_utc = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Til date time in utc timezone. (optional)
+    page_no = 10 # int | Page no. (optional) if omitted the server will use the default value of 10
+    page_size = 25 # int | Page size. (optional) if omitted the server will use the default value of 25
 
     # example passing only required values which don't have defaults set
     try:
-        # Get consented financial account transactions of an organization based on accountId.
-        api_response = api_instance.v1_consents_organizations_consent_id_accounts_account_id_transactions_get(consent_id, account_id)
+        # Get individual consented financial account transactions of an individual based on accountId.
+        api_response = api_instance.get_consented_financial_account_transactions(consent_id, account_id)
         pprint(api_response)
     except mydatamyconsent.ApiException as e:
-        print("Exception when calling DataConsentsApi->v1_consents_organizations_consent_id_accounts_account_id_transactions_get: %s\n" % e)
+        print("Exception when calling DataConsentsApi->get_consented_financial_account_transactions: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # Get consented financial account transactions of an organization based on accountId.
-        api_response = api_instance.v1_consents_organizations_consent_id_accounts_account_id_transactions_get(consent_id, account_id, filters=filters, page_no=page_no, page_size=page_size, from_date=from_date, to_date=to_date)
+        # Get individual consented financial account transactions of an individual based on accountId.
+        api_response = api_instance.get_consented_financial_account_transactions(consent_id, account_id, filters=filters, from_date_time_utc=from_date_time_utc, to_date_time_utc=to_date_time_utc, page_no=page_no, page_size=page_size)
         pprint(api_response)
     except mydatamyconsent.ApiException as e:
-        print("Exception when calling DataConsentsApi->v1_consents_organizations_consent_id_accounts_account_id_transactions_get: %s\n" % e)
+        print("Exception when calling DataConsentsApi->get_consented_financial_account_transactions: %s\n" % e)
 ```
 
 
@@ -730,17 +769,17 @@ with mydatamyconsent.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **consent_id** | **str**|  |
- **account_id** | **str**|  |
- **filters** | **str**|  | [optional]
- **page_no** | **int**|  | [optional]
- **page_size** | **int**|  | [optional]
- **from_date** | **datetime**|  | [optional]
- **to_date** | **datetime**|  | [optional]
+ **consent_id** | **str**| Consent id. |
+ **account_id** | **str**| Account id. |
+ **filters** | **str**| Filters. | [optional]
+ **from_date_time_utc** | **datetime**| From date time in utc timezone. | [optional]
+ **to_date_time_utc** | **datetime**| Til date time in utc timezone. | [optional]
+ **page_no** | **int**| Page no. | [optional] if omitted the server will use the default value of 10
+ **page_size** | **int**| Page size. | [optional] if omitted the server will use the default value of 25
 
 ### Return type
 
-[**OrganizationFinancialTransactionsDtoPaginatedList**](OrganizationFinancialTransactionsDtoPaginatedList.md)
+[**UserAccountFinancialTransactionsDtoPaginatedList**](UserAccountFinancialTransactionsDtoPaginatedList.md)
 
 ### Authorization
 
@@ -762,10 +801,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **v1_consents_organizations_consent_id_accounts_get**
-> DataConsentFinancialsDto v1_consents_organizations_consent_id_accounts_get(consent_id)
+# **get_consents**
+> UserDataConsentInfoDtoPaginatedList get_consents()
 
-Get all organizational financial accounts in a consent.
+Get the list of Consents Sent to Individuals.
 
 ### Example
 
@@ -774,8 +813,9 @@ Get all organizational financial accounts in a consent.
 import time
 import mydatamyconsent
 from mydatamyconsent.api import data_consents_api
-from mydatamyconsent.model.data_consent_financials_dto import DataConsentFinancialsDto
+from mydatamyconsent.model.user_data_consent_info_dto_paginated_list import UserDataConsentInfoDtoPaginatedList
 from mydatamyconsent.model.problem_details import ProblemDetails
+from mydatamyconsent.model.data_consent_status import DataConsentStatus
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
@@ -788,15 +828,20 @@ configuration = mydatamyconsent.Configuration(
 with mydatamyconsent.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = data_consents_api.DataConsentsApi(api_client)
-    consent_id = "consentId_example" # str | 
+    status = DataConsentStatus("Pending") # DataConsentStatus | Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus. (optional)
+    _from = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | From date time in utc timezone. (optional)
+    to = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Til date time in utc timezone. (optional)
+    page_no = 1 # int | Page number. (optional) if omitted the server will use the default value of 1
+    page_size = 25 # int | Page size. (optional) if omitted the server will use the default value of 25
 
     # example passing only required values which don't have defaults set
+    # and optional values
     try:
-        # Get all organizational financial accounts in a consent.
-        api_response = api_instance.v1_consents_organizations_consent_id_accounts_get(consent_id)
+        # Get the list of Consents Sent to Individuals.
+        api_response = api_instance.get_consents(status=status, _from=_from, to=to, page_no=page_no, page_size=page_size)
         pprint(api_response)
     except mydatamyconsent.ApiException as e:
-        print("Exception when calling DataConsentsApi->v1_consents_organizations_consent_id_accounts_get: %s\n" % e)
+        print("Exception when calling DataConsentsApi->get_consents: %s\n" % e)
 ```
 
 
@@ -804,11 +849,15 @@ with mydatamyconsent.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **consent_id** | **str**|  |
+ **status** | **DataConsentStatus**| Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus. | [optional]
+ **_from** | **datetime**| From date time in utc timezone. | [optional]
+ **to** | **datetime**| Til date time in utc timezone. | [optional]
+ **page_no** | **int**| Page number. | [optional] if omitted the server will use the default value of 1
+ **page_size** | **int**| Page size. | [optional] if omitted the server will use the default value of 25
 
 ### Return type
 
-[**DataConsentFinancialsDto**](DataConsentFinancialsDto.md)
+[**UserDataConsentInfoDtoPaginatedList**](UserDataConsentInfoDtoPaginatedList.md)
 
 ### Authorization
 
@@ -830,284 +879,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **v1_consents_organizations_consent_id_documents_document_id_download_get**
-> OrganizationDocumentDownloadDto v1_consents_organizations_consent_id_documents_document_id_download_get(consent_id, document_id)
-
-Download organizations consented document.
-
-### Example
-
-
-```python
-import time
-import mydatamyconsent
-from mydatamyconsent.api import data_consents_api
-from mydatamyconsent.model.problem_details import ProblemDetails
-from mydatamyconsent.model.organization_document_download_dto import OrganizationDocumentDownloadDto
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
-# See configuration.py for a list of all supported configuration parameters.
-configuration = mydatamyconsent.Configuration(
-    host = "http://localhost"
-)
-
-
-# Enter a context with an instance of the API client
-with mydatamyconsent.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = data_consents_api.DataConsentsApi(api_client)
-    consent_id = "consentId_example" # str | 
-    document_id = "documentId_example" # str | 
-
-    # example passing only required values which don't have defaults set
-    try:
-        # Download organizations consented document.
-        api_response = api_instance.v1_consents_organizations_consent_id_documents_document_id_download_get(consent_id, document_id)
-        pprint(api_response)
-    except mydatamyconsent.ApiException as e:
-        print("Exception when calling DataConsentsApi->v1_consents_organizations_consent_id_documents_document_id_download_get: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **consent_id** | **str**|  |
- **document_id** | **str**|  |
-
-### Return type
-
-[**OrganizationDocumentDownloadDto**](OrganizationDocumentDownloadDto.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-**500** | Server Error |  -  |
-**0** | Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **v1_consents_organizations_consent_id_documents_document_id_get**
-> OrganizationDocumentDetailsDto v1_consents_organizations_consent_id_documents_document_id_get(consent_id, document_id)
-
-Get organizations consent document based on document id.
-
-### Example
-
-
-```python
-import time
-import mydatamyconsent
-from mydatamyconsent.api import data_consents_api
-from mydatamyconsent.model.organization_document_details_dto import OrganizationDocumentDetailsDto
-from mydatamyconsent.model.problem_details import ProblemDetails
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
-# See configuration.py for a list of all supported configuration parameters.
-configuration = mydatamyconsent.Configuration(
-    host = "http://localhost"
-)
-
-
-# Enter a context with an instance of the API client
-with mydatamyconsent.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = data_consents_api.DataConsentsApi(api_client)
-    consent_id = "consentId_example" # str | 
-    document_id = "documentId_example" # str | 
-
-    # example passing only required values which don't have defaults set
-    try:
-        # Get organizations consent document based on document id.
-        api_response = api_instance.v1_consents_organizations_consent_id_documents_document_id_get(consent_id, document_id)
-        pprint(api_response)
-    except mydatamyconsent.ApiException as e:
-        print("Exception when calling DataConsentsApi->v1_consents_organizations_consent_id_documents_document_id_get: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **consent_id** | **str**|  |
- **document_id** | **str**|  |
-
-### Return type
-
-[**OrganizationDocumentDetailsDto**](OrganizationDocumentDetailsDto.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-**500** | Server Error |  -  |
-**0** | Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **v1_consents_organizations_consent_id_documents_get**
-> DataConsentDocumentsDto v1_consents_organizations_consent_id_documents_get(consent_id)
-
-Get the organizations documents based on ConsentId.
-
-### Example
-
-
-```python
-import time
-import mydatamyconsent
-from mydatamyconsent.api import data_consents_api
-from mydatamyconsent.model.data_consent_documents_dto import DataConsentDocumentsDto
-from mydatamyconsent.model.problem_details import ProblemDetails
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
-# See configuration.py for a list of all supported configuration parameters.
-configuration = mydatamyconsent.Configuration(
-    host = "http://localhost"
-)
-
-
-# Enter a context with an instance of the API client
-with mydatamyconsent.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = data_consents_api.DataConsentsApi(api_client)
-    consent_id = "consentId_example" # str | 
-
-    # example passing only required values which don't have defaults set
-    try:
-        # Get the organizations documents based on ConsentId.
-        api_response = api_instance.v1_consents_organizations_consent_id_documents_get(consent_id)
-        pprint(api_response)
-    except mydatamyconsent.ApiException as e:
-        print("Exception when calling DataConsentsApi->v1_consents_organizations_consent_id_documents_get: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **consent_id** | **str**|  |
-
-### Return type
-
-[**DataConsentDocumentsDto**](DataConsentDocumentsDto.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-**500** | Server Error |  -  |
-**0** | Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **v1_consents_organizations_consent_id_get**
-> DataConsentDetailsDto v1_consents_organizations_consent_id_get(consent_id)
-
-Get organizations consent details by consent id.
-
-### Example
-
-
-```python
-import time
-import mydatamyconsent
-from mydatamyconsent.api import data_consents_api
-from mydatamyconsent.model.data_consent_details_dto import DataConsentDetailsDto
-from mydatamyconsent.model.problem_details import ProblemDetails
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
-# See configuration.py for a list of all supported configuration parameters.
-configuration = mydatamyconsent.Configuration(
-    host = "http://localhost"
-)
-
-
-# Enter a context with an instance of the API client
-with mydatamyconsent.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = data_consents_api.DataConsentsApi(api_client)
-    consent_id = "consentId_example" # str | 
-
-    # example passing only required values which don't have defaults set
-    try:
-        # Get organizations consent details by consent id.
-        api_response = api_instance.v1_consents_organizations_consent_id_get(consent_id)
-        pprint(api_response)
-    except mydatamyconsent.ApiException as e:
-        print("Exception when calling DataConsentsApi->v1_consents_organizations_consent_id_get: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **consent_id** | **str**|  |
-
-### Return type
-
-[**DataConsentDetailsDto**](DataConsentDetailsDto.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-**500** | Server Error |  -  |
-**0** | Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **v1_consents_organizations_get**
-> OrganizationDataConsentInfoDtoPaginatedList v1_consents_organizations_get()
+# **get_consents_for_organizations**
+> OrganizationDataConsentInfoDtoPaginatedList get_consents_for_organizations()
 
 Get the list of data consents sent for organizations.
 
@@ -1133,20 +906,20 @@ configuration = mydatamyconsent.Configuration(
 with mydatamyconsent.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = data_consents_api.DataConsentsApi(api_client)
-    page_no = 1 # int |  (optional)
-    page_size = 1 # int |  (optional)
-    status = DataConsentStatus("Pending") # DataConsentStatus |  (optional)
-    start_date = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime |  (optional)
-    end_date = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime |  (optional)
+    status = DataConsentStatus("Pending") # DataConsentStatus | Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus. (optional)
+    _from = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | From date time in utc timezone. (optional)
+    to = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Til date time in utc timezone. (optional)
+    page_no = 1 # int | Page number. (optional) if omitted the server will use the default value of 1
+    page_size = 25 # int | Page size. (optional) if omitted the server will use the default value of 25
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Get the list of data consents sent for organizations.
-        api_response = api_instance.v1_consents_organizations_get(page_no=page_no, page_size=page_size, status=status, start_date=start_date, end_date=end_date)
+        api_response = api_instance.get_consents_for_organizations(status=status, _from=_from, to=to, page_no=page_no, page_size=page_size)
         pprint(api_response)
     except mydatamyconsent.ApiException as e:
-        print("Exception when calling DataConsentsApi->v1_consents_organizations_get: %s\n" % e)
+        print("Exception when calling DataConsentsApi->get_consents_for_organizations: %s\n" % e)
 ```
 
 
@@ -1154,15 +927,242 @@ with mydatamyconsent.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page_no** | **int**|  | [optional]
- **page_size** | **int**|  | [optional]
- **status** | **DataConsentStatus**|  | [optional]
- **start_date** | **datetime**|  | [optional]
- **end_date** | **datetime**|  | [optional]
+ **status** | **DataConsentStatus**| Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus. | [optional]
+ **_from** | **datetime**| From date time in utc timezone. | [optional]
+ **to** | **datetime**| Til date time in utc timezone. | [optional]
+ **page_no** | **int**| Page number. | [optional] if omitted the server will use the default value of 1
+ **page_size** | **int**| Page size. | [optional] if omitted the server will use the default value of 25
 
 ### Return type
 
 [**OrganizationDataConsentInfoDtoPaginatedList**](OrganizationDataConsentInfoDtoPaginatedList.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**500** | Server Error |  -  |
+**0** | Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_org_consented_account_transactions**
+> OrganizationFinancialTransactionsDtoPaginatedList get_org_consented_account_transactions(consent_id, account_id)
+
+Get organization consented financial account transactions of an individual based on accountId.
+
+### Example
+
+
+```python
+import time
+import mydatamyconsent
+from mydatamyconsent.api import data_consents_api
+from mydatamyconsent.model.organization_financial_transactions_dto_paginated_list import OrganizationFinancialTransactionsDtoPaginatedList
+from mydatamyconsent.model.problem_details import ProblemDetails
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mydatamyconsent.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with mydatamyconsent.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = data_consents_api.DataConsentsApi(api_client)
+    consent_id = "consentId_example" # str | Consent id.
+    account_id = "accountId_example" # str | Account id.
+    filters = "filters_example" # str | Filters. (optional)
+    from_date_time_utc = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | From date time in utc timezone. (optional)
+    to_date_time_utc = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Til date time in utc timezone. (optional)
+    page_no = 1 # int | Page no. (optional) if omitted the server will use the default value of 1
+    page_size = 25 # int | Page size. (optional) if omitted the server will use the default value of 25
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Get organization consented financial account transactions of an individual based on accountId.
+        api_response = api_instance.get_org_consented_account_transactions(consent_id, account_id)
+        pprint(api_response)
+    except mydatamyconsent.ApiException as e:
+        print("Exception when calling DataConsentsApi->get_org_consented_account_transactions: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Get organization consented financial account transactions of an individual based on accountId.
+        api_response = api_instance.get_org_consented_account_transactions(consent_id, account_id, filters=filters, from_date_time_utc=from_date_time_utc, to_date_time_utc=to_date_time_utc, page_no=page_no, page_size=page_size)
+        pprint(api_response)
+    except mydatamyconsent.ApiException as e:
+        print("Exception when calling DataConsentsApi->get_org_consented_account_transactions: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **consent_id** | **str**| Consent id. |
+ **account_id** | **str**| Account id. |
+ **filters** | **str**| Filters. | [optional]
+ **from_date_time_utc** | **datetime**| From date time in utc timezone. | [optional]
+ **to_date_time_utc** | **datetime**| Til date time in utc timezone. | [optional]
+ **page_no** | **int**| Page no. | [optional] if omitted the server will use the default value of 1
+ **page_size** | **int**| Page size. | [optional] if omitted the server will use the default value of 25
+
+### Return type
+
+[**OrganizationFinancialTransactionsDtoPaginatedList**](OrganizationFinancialTransactionsDtoPaginatedList.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**500** | Server Error |  -  |
+**0** | Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_organization_consent_details_by_id**
+> DataConsentDetailsDto get_organization_consent_details_by_id(consent_id)
+
+Get all organization consent details by consent id.
+
+### Example
+
+
+```python
+import time
+import mydatamyconsent
+from mydatamyconsent.api import data_consents_api
+from mydatamyconsent.model.data_consent_details_dto import DataConsentDetailsDto
+from mydatamyconsent.model.problem_details import ProblemDetails
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mydatamyconsent.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with mydatamyconsent.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = data_consents_api.DataConsentsApi(api_client)
+    consent_id = "consentId_example" # str | Consent id.
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Get all organization consent details by consent id.
+        api_response = api_instance.get_organization_consent_details_by_id(consent_id)
+        pprint(api_response)
+    except mydatamyconsent.ApiException as e:
+        print("Exception when calling DataConsentsApi->get_organization_consent_details_by_id: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **consent_id** | **str**| Consent id. |
+
+### Return type
+
+[**DataConsentDetailsDto**](DataConsentDetailsDto.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**500** | Server Error |  -  |
+**0** | Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_organization_consented_document_by_id**
+> OrganizationDocumentDetailsDto get_organization_consented_document_by_id(consent_id, document_id)
+
+Get organization consent document based on document id.
+
+### Example
+
+
+```python
+import time
+import mydatamyconsent
+from mydatamyconsent.api import data_consents_api
+from mydatamyconsent.model.organization_document_details_dto import OrganizationDocumentDetailsDto
+from mydatamyconsent.model.problem_details import ProblemDetails
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mydatamyconsent.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with mydatamyconsent.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = data_consents_api.DataConsentsApi(api_client)
+    consent_id = "consentId_example" # str | Consent id.
+    document_id = "documentId_example" # str | Document Id.
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Get organization consent document based on document id.
+        api_response = api_instance.get_organization_consented_document_by_id(consent_id, document_id)
+        pprint(api_response)
+    except mydatamyconsent.ApiException as e:
+        print("Exception when calling DataConsentsApi->get_organization_consented_document_by_id: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **consent_id** | **str**| Consent id. |
+ **document_id** | **str**| Document Id. |
+
+### Return type
+
+[**OrganizationDocumentDetailsDto**](OrganizationDocumentDetailsDto.md)
 
 ### Authorization
 

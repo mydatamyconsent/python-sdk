@@ -775,10 +775,10 @@ class Endpoint(object):
         Example:
 
         api_instance = DataConsentRequestsApi()
-        api_instance.cancel_consent_request  # this is an instance of the class Endpoint
-        api_instance.cancel_consent_request()  # this invokes api_instance.cancel_consent_request.__call__()
+        api_instance.cancel_individual_data_consent_request  # this is an instance of the class Endpoint
+        api_instance.cancel_individual_data_consent_request()  # this invokes api_instance.cancel_individual_data_consent_request.__call__()
         which then invokes the callable functions stored in that endpoint at
-        api_instance.cancel_consent_request.callable or self.callable in this class
+        api_instance.cancel_individual_data_consent_request.callable or self.callable in this class
 
         """
         return self.callable(self, *args, **kwargs)

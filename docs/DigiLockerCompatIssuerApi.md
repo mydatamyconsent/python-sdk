@@ -4,13 +4,13 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**issuer_issuedoc1_xml_post**](DigiLockerCompatIssuerApi.md#issuer_issuedoc1_xml_post) | **POST** /issuer/issuedoc/1/xml | Digilocker Compatible endpoint to Issue Documents.
+[**digilocker_compat_issue_document**](DigiLockerCompatIssuerApi.md#digilocker_compat_issue_document) | **POST** /issuer/issuedoc/1/xml | Digilocker Compatible endpoint to issue document.
 
 
-# **issuer_issuedoc1_xml_post**
-> PushUriResponse issuer_issuedoc1_xml_post()
+# **digilocker_compat_issue_document**
+> PushUriResponse digilocker_compat_issue_document()
 
-Digilocker Compatible endpoint to Issue Documents.
+Digilocker Compatible endpoint to issue document.
 
 ### Example
 
@@ -53,16 +53,16 @@ with mydatamyconsent.ApiClient() as api_client:
         txn="txn_example",
         org_id="org_id_example",
         keyhash="keyhash_example",
-    ) # PushUriRequest |  (optional)
+    ) # PushUriRequest | Push uri request MyDataMyConsent.Models.DigiLocker.PushUriRequest. (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # Digilocker Compatible endpoint to Issue Documents.
-        api_response = api_instance.issuer_issuedoc1_xml_post(push_uri_request=push_uri_request)
+        # Digilocker Compatible endpoint to issue document.
+        api_response = api_instance.digilocker_compat_issue_document(push_uri_request=push_uri_request)
         pprint(api_response)
     except mydatamyconsent.ApiException as e:
-        print("Exception when calling DigiLockerCompatIssuerApi->issuer_issuedoc1_xml_post: %s\n" % e)
+        print("Exception when calling DigiLockerCompatIssuerApi->digilocker_compat_issue_document: %s\n" % e)
 ```
 
 
@@ -70,7 +70,7 @@ with mydatamyconsent.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **push_uri_request** | [**PushUriRequest**](PushUriRequest.md)|  | [optional]
+ **push_uri_request** | [**PushUriRequest**](PushUriRequest.md)| Push uri request MyDataMyConsent.Models.DigiLocker.PushUriRequest. | [optional]
 
 ### Return type
 

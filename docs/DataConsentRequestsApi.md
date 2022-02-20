@@ -4,18 +4,20 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cancel_consent_request**](DataConsentRequestsApi.md#cancel_consent_request) | **DELETE** /v1/consent-requests/{requestId}/cancel | Revoke / Cancel the ConsentRequest based on Id.
-[**create_request**](DataConsentRequestsApi.md#create_request) | **POST** /v1/consent-requests | Create a consent request.
+[**cancel_individual_data_consent_request**](DataConsentRequestsApi.md#cancel_individual_data_consent_request) | **PUT** /v1/consent-requests/individual/{requestId}/cancel | Cancel the individual data consent request based on Id.
+[**cancel_organization_data_consent_request**](DataConsentRequestsApi.md#cancel_organization_data_consent_request) | **PUT** /v1/consent-requests/organization/{requestId}/cancel | Cancel the Organization data consent request based on Id.
+[**create_individual_data_consent_request**](DataConsentRequestsApi.md#create_individual_data_consent_request) | **POST** /v1/consent-requests/individual | Create a individual data consent request.
+[**create_organization_data_consent_request**](DataConsentRequestsApi.md#create_organization_data_consent_request) | **POST** /v1/consent-requests/organization | Create a organization data consent request.
 [**get_all_consent_requests_to_individuals**](DataConsentRequestsApi.md#get_all_consent_requests_to_individuals) | **GET** /v1/consent-requests/individuals | Get all Consent Requests sent to Individuals.
-[**get_all_consent_requests_to_organizations**](DataConsentRequestsApi.md#get_all_consent_requests_to_organizations) | **GET** /v1/consent-requests/organizations | Get All Consent Requests sent to Organizations
+[**get_all_consent_requests_to_organizations**](DataConsentRequestsApi.md#get_all_consent_requests_to_organizations) | **GET** /v1/consent-requests/organizations | Get All Consent Requests sent to Organizations.
 [**get_individual_consent_request_by_id**](DataConsentRequestsApi.md#get_individual_consent_request_by_id) | **GET** /v1/consent-requests/individuals/{requestId} | Get a Consent Request by ID.
-[**get_organization_consent_request_by_id**](DataConsentRequestsApi.md#get_organization_consent_request_by_id) | **GET** /v1/consent-requests/organizations/{requestId} | Get a OrganizationConsent Request by Id
+[**get_organization_consent_request_by_id**](DataConsentRequestsApi.md#get_organization_consent_request_by_id) | **GET** /v1/consent-requests/organizations/{requestId} | Get a OrganizationConsent Request by Id.
 
 
-# **cancel_consent_request**
-> bool cancel_consent_request(request_id)
+# **cancel_individual_data_consent_request**
+> IndividualDataConsentRequestResponse cancel_individual_data_consent_request(request_id)
 
-Revoke / Cancel the ConsentRequest based on Id.
+Cancel the individual data consent request based on Id.
 
 ### Example
 
@@ -25,6 +27,7 @@ import time
 import mydatamyconsent
 from mydatamyconsent.api import data_consent_requests_api
 from mydatamyconsent.model.problem_details import ProblemDetails
+from mydatamyconsent.model.individual_data_consent_request_response import IndividualDataConsentRequestResponse
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
@@ -37,15 +40,15 @@ configuration = mydatamyconsent.Configuration(
 with mydatamyconsent.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = data_consent_requests_api.DataConsentRequestsApi(api_client)
-    request_id = "requestId_example" # str | 
+    request_id = "requestId_example" # str | Individual consent request id.
 
     # example passing only required values which don't have defaults set
     try:
-        # Revoke / Cancel the ConsentRequest based on Id.
-        api_response = api_instance.cancel_consent_request(request_id)
+        # Cancel the individual data consent request based on Id.
+        api_response = api_instance.cancel_individual_data_consent_request(request_id)
         pprint(api_response)
     except mydatamyconsent.ApiException as e:
-        print("Exception when calling DataConsentRequestsApi->cancel_consent_request: %s\n" % e)
+        print("Exception when calling DataConsentRequestsApi->cancel_individual_data_consent_request: %s\n" % e)
 ```
 
 
@@ -53,11 +56,11 @@ with mydatamyconsent.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request_id** | **str**|  |
+ **request_id** | **str**| Individual consent request id. |
 
 ### Return type
 
-**bool**
+[**IndividualDataConsentRequestResponse**](IndividualDataConsentRequestResponse.md)
 
 ### Authorization
 
@@ -75,14 +78,15 @@ No authorization required
 |-------------|-------------|------------------|
 **200** | Success |  -  |
 **500** | Server Error |  -  |
+**404** | Not Found |  -  |
 **0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create_request**
-> DataConsentRequest create_request()
+# **cancel_organization_data_consent_request**
+> OrganizationDataConsentRequestResponse cancel_organization_data_consent_request(request_id)
 
-Create a consent request.
+Cancel the Organization data consent request based on Id.
 
 ### Example
 
@@ -92,8 +96,7 @@ import time
 import mydatamyconsent
 from mydatamyconsent.api import data_consent_requests_api
 from mydatamyconsent.model.problem_details import ProblemDetails
-from mydatamyconsent.model.data_consent_request_model import DataConsentRequestModel
-from mydatamyconsent.model.data_consent_request import DataConsentRequest
+from mydatamyconsent.model.organization_data_consent_request_response import OrganizationDataConsentRequestResponse
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
@@ -106,7 +109,77 @@ configuration = mydatamyconsent.Configuration(
 with mydatamyconsent.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = data_consent_requests_api.DataConsentRequestsApi(api_client)
-    data_consent_request_model = DataConsentRequestModel(
+    request_id = "requestId_example" # str | Organization consent request id.
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Cancel the Organization data consent request based on Id.
+        api_response = api_instance.cancel_organization_data_consent_request(request_id)
+        pprint(api_response)
+    except mydatamyconsent.ApiException as e:
+        print("Exception when calling DataConsentRequestsApi->cancel_organization_data_consent_request: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request_id** | **str**| Organization consent request id. |
+
+### Return type
+
+[**OrganizationDataConsentRequestResponse**](OrganizationDataConsentRequestResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**500** | Server Error |  -  |
+**404** | Not Found |  -  |
+**0** | Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_individual_data_consent_request**
+> IndividualDataConsentRequestResponse create_individual_data_consent_request(create_individual_data_consent_request)
+
+Create a individual data consent request.
+
+### Example
+
+
+```python
+import time
+import mydatamyconsent
+from mydatamyconsent.api import data_consent_requests_api
+from mydatamyconsent.model.create_individual_data_consent_request import CreateIndividualDataConsentRequest
+from mydatamyconsent.model.problem_details import ProblemDetails
+from mydatamyconsent.model.individual_data_consent_request_response import IndividualDataConsentRequestResponse
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mydatamyconsent.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with mydatamyconsent.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = data_consent_requests_api.DataConsentRequestsApi(api_client)
+    create_individual_data_consent_request = CreateIndividualDataConsentRequest(
         consent_template_id="consent_template_id_example",
         receiver=Receiver(
             type=ReceiverType("Individual"),
@@ -118,16 +191,15 @@ with mydatamyconsent.ApiClient() as api_client:
             ],
             identification_strategy=IdentificationStrategy("MatchAtLeastOneIdentifier"),
         ),
-    ) # DataConsentRequestModel | MyDataMyConsent.Models.Consents.DataConsentRequestModel. (optional)
+    ) # CreateIndividualDataConsentRequest | M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateIndividualDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateIndividualDataConsentRequest).
 
     # example passing only required values which don't have defaults set
-    # and optional values
     try:
-        # Create a consent request.
-        api_response = api_instance.create_request(data_consent_request_model=data_consent_request_model)
+        # Create a individual data consent request.
+        api_response = api_instance.create_individual_data_consent_request(create_individual_data_consent_request)
         pprint(api_response)
     except mydatamyconsent.ApiException as e:
-        print("Exception when calling DataConsentRequestsApi->create_request: %s\n" % e)
+        print("Exception when calling DataConsentRequestsApi->create_individual_data_consent_request: %s\n" % e)
 ```
 
 
@@ -135,11 +207,11 @@ with mydatamyconsent.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data_consent_request_model** | [**DataConsentRequestModel**](DataConsentRequestModel.md)| MyDataMyConsent.Models.Consents.DataConsentRequestModel. | [optional]
+ **create_individual_data_consent_request** | [**CreateIndividualDataConsentRequest**](CreateIndividualDataConsentRequest.md)| M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateIndividualDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateIndividualDataConsentRequest). |
 
 ### Return type
 
-[**DataConsentRequest**](DataConsentRequest.md)
+[**IndividualDataConsentRequestResponse**](IndividualDataConsentRequestResponse.md)
 
 ### Authorization
 
@@ -157,12 +229,97 @@ No authorization required
 |-------------|-------------|------------------|
 **200** | Success |  -  |
 **500** | Server Error |  -  |
+**404** | Not Found |  -  |
+**400** | Bad Request |  -  |
+**0** | Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_organization_data_consent_request**
+> OrganizationDataConsentRequestResponse create_organization_data_consent_request(create_organization_data_consent_request)
+
+Create a organization data consent request.
+
+### Example
+
+
+```python
+import time
+import mydatamyconsent
+from mydatamyconsent.api import data_consent_requests_api
+from mydatamyconsent.model.problem_details import ProblemDetails
+from mydatamyconsent.model.organization_data_consent_request_response import OrganizationDataConsentRequestResponse
+from mydatamyconsent.model.create_organization_data_consent_request import CreateOrganizationDataConsentRequest
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mydatamyconsent.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with mydatamyconsent.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = data_consent_requests_api.DataConsentRequestsApi(api_client)
+    create_organization_data_consent_request = CreateOrganizationDataConsentRequest(
+        consent_template_id="consent_template_id_example",
+        receiver=Receiver(
+            type=ReceiverType("Individual"),
+            identifiers=[
+                IdentifierStringKeyValuePair(
+                    key=Identifier("Email"),
+                    value="value_example",
+                ),
+            ],
+            identification_strategy=IdentificationStrategy("MatchAtLeastOneIdentifier"),
+        ),
+    ) # CreateOrganizationDataConsentRequest | M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateOrganizationDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateOrganizationDataConsentRequest).
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Create a organization data consent request.
+        api_response = api_instance.create_organization_data_consent_request(create_organization_data_consent_request)
+        pprint(api_response)
+    except mydatamyconsent.ApiException as e:
+        print("Exception when calling DataConsentRequestsApi->create_organization_data_consent_request: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **create_organization_data_consent_request** | [**CreateOrganizationDataConsentRequest**](CreateOrganizationDataConsentRequest.md)| M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateOrganizationDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateOrganizationDataConsentRequest). |
+
+### Return type
+
+[**OrganizationDataConsentRequestResponse**](OrganizationDataConsentRequestResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**500** | Server Error |  -  |
+**404** | Not Found |  -  |
+**400** | Bad Request |  -  |
 **0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_all_consent_requests_to_individuals**
-> dict get_all_consent_requests_to_individuals()
+> UserDataConsentInfoDtoPaginatedList get_all_consent_requests_to_individuals()
 
 Get all Consent Requests sent to Individuals.
 
@@ -173,6 +330,7 @@ Get all Consent Requests sent to Individuals.
 import time
 import mydatamyconsent
 from mydatamyconsent.api import data_consent_requests_api
+from mydatamyconsent.model.user_data_consent_info_dto_paginated_list import UserDataConsentInfoDtoPaginatedList
 from mydatamyconsent.model.problem_details import ProblemDetails
 from mydatamyconsent.model.data_consent_status import DataConsentStatus
 from pprint import pprint
@@ -187,15 +345,17 @@ configuration = mydatamyconsent.Configuration(
 with mydatamyconsent.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = data_consent_requests_api.DataConsentRequestsApi(api_client)
-    page_no = 1 # int |  (optional)
-    page_size = 1 # int |  (optional)
-    status = DataConsentStatus("Pending") # DataConsentStatus |  (optional)
+    status = DataConsentStatus("Pending") # DataConsentStatus | Data consent status. (optional)
+    start_date_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Start date time. (optional)
+    end_date_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | End date time. (optional)
+    page_no = 1 # int | Page no. (optional) if omitted the server will use the default value of 1
+    page_size = 25 # int | Page size. (optional) if omitted the server will use the default value of 25
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Get all Consent Requests sent to Individuals.
-        api_response = api_instance.get_all_consent_requests_to_individuals(page_no=page_no, page_size=page_size, status=status)
+        api_response = api_instance.get_all_consent_requests_to_individuals(status=status, start_date_time=start_date_time, end_date_time=end_date_time, page_no=page_no, page_size=page_size)
         pprint(api_response)
     except mydatamyconsent.ApiException as e:
         print("Exception when calling DataConsentRequestsApi->get_all_consent_requests_to_individuals: %s\n" % e)
@@ -206,13 +366,15 @@ with mydatamyconsent.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page_no** | **int**|  | [optional]
- **page_size** | **int**|  | [optional]
- **status** | **DataConsentStatus**|  | [optional]
+ **status** | **DataConsentStatus**| Data consent status. | [optional]
+ **start_date_time** | **datetime**| Start date time. | [optional]
+ **end_date_time** | **datetime**| End date time. | [optional]
+ **page_no** | **int**| Page no. | [optional] if omitted the server will use the default value of 1
+ **page_size** | **int**| Page size. | [optional] if omitted the server will use the default value of 25
 
 ### Return type
 
-**dict**
+[**UserDataConsentInfoDtoPaginatedList**](UserDataConsentInfoDtoPaginatedList.md)
 
 ### Authorization
 
@@ -235,9 +397,9 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_all_consent_requests_to_organizations**
-> dict get_all_consent_requests_to_organizations()
+> OrganizationDataConsentInfoDtoPaginatedList get_all_consent_requests_to_organizations()
 
-Get All Consent Requests sent to Organizations
+Get All Consent Requests sent to Organizations.
 
 ### Example
 
@@ -246,6 +408,7 @@ Get All Consent Requests sent to Organizations
 import time
 import mydatamyconsent
 from mydatamyconsent.api import data_consent_requests_api
+from mydatamyconsent.model.organization_data_consent_info_dto_paginated_list import OrganizationDataConsentInfoDtoPaginatedList
 from mydatamyconsent.model.problem_details import ProblemDetails
 from mydatamyconsent.model.data_consent_status import DataConsentStatus
 from pprint import pprint
@@ -260,15 +423,17 @@ configuration = mydatamyconsent.Configuration(
 with mydatamyconsent.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = data_consent_requests_api.DataConsentRequestsApi(api_client)
-    page_no = 1 # int |  (optional)
-    page_size = 1 # int |  (optional)
-    status = DataConsentStatus("Pending") # DataConsentStatus |  (optional)
+    status = DataConsentStatus("Pending") # DataConsentStatus | Data consent status. (optional)
+    start_date_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Start date time. (optional)
+    end_date_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | End date time. (optional)
+    page_no = 1 # int | Page no. (optional) if omitted the server will use the default value of 1
+    page_size = 25 # int | Page size. (optional) if omitted the server will use the default value of 25
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # Get All Consent Requests sent to Organizations
-        api_response = api_instance.get_all_consent_requests_to_organizations(page_no=page_no, page_size=page_size, status=status)
+        # Get All Consent Requests sent to Organizations.
+        api_response = api_instance.get_all_consent_requests_to_organizations(status=status, start_date_time=start_date_time, end_date_time=end_date_time, page_no=page_no, page_size=page_size)
         pprint(api_response)
     except mydatamyconsent.ApiException as e:
         print("Exception when calling DataConsentRequestsApi->get_all_consent_requests_to_organizations: %s\n" % e)
@@ -279,13 +444,15 @@ with mydatamyconsent.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page_no** | **int**|  | [optional]
- **page_size** | **int**|  | [optional]
- **status** | **DataConsentStatus**|  | [optional]
+ **status** | **DataConsentStatus**| Data consent status. | [optional]
+ **start_date_time** | **datetime**| Start date time. | [optional]
+ **end_date_time** | **datetime**| End date time. | [optional]
+ **page_no** | **int**| Page no. | [optional] if omitted the server will use the default value of 1
+ **page_size** | **int**| Page size. | [optional] if omitted the server will use the default value of 25
 
 ### Return type
 
-**dict**
+[**OrganizationDataConsentInfoDtoPaginatedList**](OrganizationDataConsentInfoDtoPaginatedList.md)
 
 ### Authorization
 
@@ -333,7 +500,7 @@ configuration = mydatamyconsent.Configuration(
 with mydatamyconsent.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = data_consent_requests_api.DataConsentRequestsApi(api_client)
-    request_id = "requestId_example" # str | 
+    request_id = "requestId_example" # str | Individual consent request id.
 
     # example passing only required values which don't have defaults set
     try:
@@ -349,7 +516,7 @@ with mydatamyconsent.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request_id** | **str**|  |
+ **request_id** | **str**| Individual consent request id. |
 
 ### Return type
 
@@ -378,7 +545,7 @@ No authorization required
 # **get_organization_consent_request_by_id**
 > DataConsentDetailsDto get_organization_consent_request_by_id(request_id)
 
-Get a OrganizationConsent Request by Id
+Get a OrganizationConsent Request by Id.
 
 ### Example
 
@@ -401,11 +568,11 @@ configuration = mydatamyconsent.Configuration(
 with mydatamyconsent.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = data_consent_requests_api.DataConsentRequestsApi(api_client)
-    request_id = "requestId_example" # str | 
+    request_id = "requestId_example" # str | Organization consent request id.
 
     # example passing only required values which don't have defaults set
     try:
-        # Get a OrganizationConsent Request by Id
+        # Get a OrganizationConsent Request by Id.
         api_response = api_instance.get_organization_consent_request_by_id(request_id)
         pprint(api_response)
     except mydatamyconsent.ApiException as e:
@@ -417,7 +584,7 @@ with mydatamyconsent.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request_id** | **str**|  |
+ **request_id** | **str**| Organization consent request id. |
 
 ### Return type
 

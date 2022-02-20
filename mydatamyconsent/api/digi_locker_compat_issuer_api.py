@@ -38,12 +38,12 @@ class DigiLockerCompatIssuerApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
-        self.issuer_issuedoc1_xml_post_endpoint = _Endpoint(
+        self.digilocker_compat_issue_document_endpoint = _Endpoint(
             settings={
                 'response_type': (PushUriResponse,),
                 'auth': [],
                 'endpoint_path': '/issuer/issuedoc/1/xml',
-                'operation_id': 'issuer_issuedoc1_xml_post',
+                'operation_id': 'digilocker_compat_issue_document',
                 'http_method': 'POST',
                 'servers': None,
             },
@@ -87,21 +87,21 @@ class DigiLockerCompatIssuerApi(object):
             api_client=api_client
         )
 
-    def issuer_issuedoc1_xml_post(
+    def digilocker_compat_issue_document(
         self,
         **kwargs
     ):
-        """Digilocker Compatible endpoint to Issue Documents.  # noqa: E501
+        """Digilocker Compatible endpoint to issue document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.issuer_issuedoc1_xml_post(async_req=True)
+        >>> thread = api.digilocker_compat_issue_document(async_req=True)
         >>> result = thread.get()
 
 
         Keyword Args:
-            push_uri_request (PushUriRequest): [optional]
+            push_uri_request (PushUriRequest): Push uri request MyDataMyConsent.Models.DigiLocker.PushUriRequest.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -158,5 +158,5 @@ class DigiLockerCompatIssuerApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
-        return self.issuer_issuedoc1_xml_post_endpoint.call_with_http_info(**kwargs)
+        return self.digilocker_compat_issue_document_endpoint.call_with_http_info(**kwargs)
 

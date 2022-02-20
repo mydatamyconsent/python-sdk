@@ -37,60 +37,12 @@ class DocumentsApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
-        self.issue_document_endpoint = _Endpoint(
-            settings={
-                'response_type': (bool,),
-                'auth': [],
-                'endpoint_path': '/v1/documents/issue',
-                'operation_id': 'issue_document',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'document_issue_request',
-                ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'document_issue_request':
-                        (DocumentIssueRequest,),
-                },
-                'attribute_map': {
-                },
-                'location_map': {
-                    'document_issue_request': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client
-        )
-        self.v1_documents_issued_document_id_get_endpoint = _Endpoint(
+        self.get_issued_document_by_id_endpoint = _Endpoint(
             settings={
                 'response_type': None,
                 'auth': [],
                 'endpoint_path': '/v1/documents/issued/{documentId}',
-                'operation_id': 'v1_documents_issued_document_id_get',
+                'operation_id': 'get_issued_document_by_id',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -132,12 +84,12 @@ class DocumentsApi(object):
             },
             api_client=api_client
         )
-        self.v1_documents_issued_get_endpoint = _Endpoint(
+        self.get_issued_documents_endpoint = _Endpoint(
             settings={
                 'response_type': None,
                 'auth': [],
                 'endpoint_path': '/v1/documents/issued',
-                'operation_id': 'v1_documents_issued_get',
+                'operation_id': 'get_issued_documents',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -197,12 +149,12 @@ class DocumentsApi(object):
             },
             api_client=api_client
         )
-        self.v1_documents_types_get_endpoint = _Endpoint(
+        self.get_registered_document_types_endpoint = _Endpoint(
             settings={
                 'response_type': None,
                 'auth': [],
                 'endpoint_path': '/v1/documents/types',
-                'operation_id': 'v1_documents_types_get',
+                'operation_id': 'get_registered_document_types',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -247,81 +199,58 @@ class DocumentsApi(object):
             },
             api_client=api_client
         )
-
-    def issue_document(
-        self,
-        **kwargs
-    ):
-        """Issue a new document.  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.issue_document(async_req=True)
-        >>> result = thread.get()
-
-
-        Keyword Args:
-            document_issue_request (DocumentIssueRequest): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            bool
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
+        self.issue_document_endpoint = _Endpoint(
+            settings={
+                'response_type': (bool,),
+                'auth': [],
+                'endpoint_path': '/v1/documents/issue',
+                'operation_id': 'issue_document',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'document_issue_request',
+                ],
+                'required': [
+                    'document_issue_request',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'document_issue_request':
+                        (DocumentIssueRequest,),
+                },
+                'attribute_map': {
+                },
+                'location_map': {
+                    'document_issue_request': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
         )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        return self.issue_document_endpoint.call_with_http_info(**kwargs)
 
-    def v1_documents_issued_document_id_get(
+    def get_issued_document_by_id(
         self,
         document_id,
         **kwargs
@@ -331,7 +260,7 @@ class DocumentsApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.v1_documents_issued_document_id_get(document_id, async_req=True)
+        >>> thread = api.get_issued_document_by_id(document_id, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -396,9 +325,9 @@ class DocumentsApi(object):
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['document_id'] = \
             document_id
-        return self.v1_documents_issued_document_id_get_endpoint.call_with_http_info(**kwargs)
+        return self.get_issued_document_by_id_endpoint.call_with_http_info(**kwargs)
 
-    def v1_documents_issued_get(
+    def get_issued_documents(
         self,
         **kwargs
     ):
@@ -407,7 +336,7 @@ class DocumentsApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.v1_documents_issued_get(async_req=True)
+        >>> thread = api.get_issued_documents(async_req=True)
         >>> result = thread.get()
 
 
@@ -473,9 +402,9 @@ class DocumentsApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
-        return self.v1_documents_issued_get_endpoint.call_with_http_info(**kwargs)
+        return self.get_issued_documents_endpoint.call_with_http_info(**kwargs)
 
-    def v1_documents_types_get(
+    def get_registered_document_types(
         self,
         **kwargs
     ):
@@ -484,7 +413,7 @@ class DocumentsApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.v1_documents_types_get(async_req=True)
+        >>> thread = api.get_registered_document_types(async_req=True)
         >>> result = thread.get()
 
 
@@ -547,5 +476,82 @@ class DocumentsApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
-        return self.v1_documents_types_get_endpoint.call_with_http_info(**kwargs)
+        return self.get_registered_document_types_endpoint.call_with_http_info(**kwargs)
+
+    def issue_document(
+        self,
+        document_issue_request,
+        **kwargs
+    ):
+        """Issue a new document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.issue_document(document_issue_request, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            document_issue_request (DocumentIssueRequest): Document issue request MyDataMyConsent.Models.Documents.DocumentIssueRequest.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            bool
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['document_issue_request'] = \
+            document_issue_request
+        return self.issue_document_endpoint.call_with_http_info(**kwargs)
 

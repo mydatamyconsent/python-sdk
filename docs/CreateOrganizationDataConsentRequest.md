@@ -1,10 +1,12 @@
-# DataConsentStatus
+# CreateOrganizationDataConsentRequest
 
+Organization Data Consent Request.
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**value** | **str** |  |  must be one of ["Pending", "Approved", "Rejected", "Revoked", "Expired", "Canceled", ]
+**receiver** | [**Receiver**](Receiver.md) |  | 
+**consent_template_id** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -1,5 +1,6 @@
-# DataConsentRequestModel
+# CreateIndividualDataConsentRequest
 
+Individual Data Consent Request.
 
 ## Properties
 Name | Type | Description | Notes

@@ -79,6 +79,7 @@ class DataConsentRequesterDto(ModelNormal):
             'name': (str, none_type,),  # noqa: E501
             'logo_url': (str, none_type,),  # noqa: E501
             'description': (str, none_type,),  # noqa: E501
+            'location': (str, none_type,),  # noqa: E501
             'website': (str, none_type,),  # noqa: E501
             'support_email': (str, none_type,),  # noqa: E501
             'help_line_number': (str, none_type,),  # noqa: E501
@@ -93,6 +94,7 @@ class DataConsentRequesterDto(ModelNormal):
         'name': 'name',  # noqa: E501
         'logo_url': 'logoUrl',  # noqa: E501
         'description': 'description',  # noqa: E501
+        'location': 'location',  # noqa: E501
         'website': 'website',  # noqa: E501
         'support_email': 'supportEmail',  # noqa: E501
         'help_line_number': 'helpLineNumber',  # noqa: E501
@@ -142,6 +144,7 @@ class DataConsentRequesterDto(ModelNormal):
             name (str, none_type): [optional]  # noqa: E501
             logo_url (str, none_type): [optional]  # noqa: E501
             description (str, none_type): [optional]  # noqa: E501
+            location (str, none_type): [optional]  # noqa: E501
             website (str, none_type): [optional]  # noqa: E501
             support_email (str, none_type): [optional]  # noqa: E501
             help_line_number (str, none_type): [optional]  # noqa: E501
@@ -229,6 +232,7 @@ class DataConsentRequesterDto(ModelNormal):
             name (str, none_type): [optional]  # noqa: E501
             logo_url (str, none_type): [optional]  # noqa: E501
             description (str, none_type): [optional]  # noqa: E501
+            location (str, none_type): [optional]  # noqa: E501
             website (str, none_type): [optional]  # noqa: E501
             support_email (str, none_type): [optional]  # noqa: E501
             help_line_number (str, none_type): [optional]  # noqa: E501

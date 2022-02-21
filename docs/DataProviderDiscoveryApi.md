@@ -21,6 +21,7 @@ import time
 import mydatamyconsent
 from mydatamyconsent.api import data_provider_discovery_api
 from mydatamyconsent.model.data_provider import DataProvider
+from mydatamyconsent.model.problem_details import ProblemDetails
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
@@ -70,6 +71,10 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
+**500** | Server Error |  -  |
+**400** | Bad Request |  -  |
+**404** | Not Found |  -  |
+**0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -85,6 +90,7 @@ Discover all data providers in My Data My Consent by country and filters.
 import time
 import mydatamyconsent
 from mydatamyconsent.api import data_provider_discovery_api
+from mydatamyconsent.model.problem_details import ProblemDetails
 from mydatamyconsent.model.data_provider_paginated_list import DataProviderPaginatedList
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost
@@ -102,7 +108,7 @@ with mydatamyconsent.ApiClient() as api_client:
     document_type = "documentType_example" # str | Document type. (optional)
     organization_category = "organizationCategory_example" # str | Organization category. (optional)
     page_no = 1 # int | Page number. (optional) if omitted the server will use the default value of 1
-    page_size = 25 # int | Page size. (optional) if omitted the server will use the default value of 25
+    page_size = 25 # int | Number of items to return. (optional) if omitted the server will use the default value of 25
     country = "IN" # str | ISO2 Country code. (optional) if omitted the server will use the default value of "IN"
 
     # example passing only required values which don't have defaults set
@@ -124,7 +130,7 @@ Name | Type | Description  | Notes
  **document_type** | **str**| Document type. | [optional]
  **organization_category** | **str**| Organization category. | [optional]
  **page_no** | **int**| Page number. | [optional] if omitted the server will use the default value of 1
- **page_size** | **int**| Page size. | [optional] if omitted the server will use the default value of 25
+ **page_size** | **int**| Number of items to return. | [optional] if omitted the server will use the default value of 25
  **country** | **str**| ISO2 Country code. | [optional] if omitted the server will use the default value of "IN"
 
 ### Return type
@@ -146,6 +152,9 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
+**500** | Server Error |  -  |
+**400** | Bad Request |  -  |
+**0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

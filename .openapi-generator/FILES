@@ -32,6 +32,9 @@ docs/DigitalSignature.md
 docs/Document.md
 docs/DocumentCategoryType.md
 docs/DocumentIssueRequest.md
+docs/DocumentSubCategoryType.md
+docs/DocumentTypeDetailsDto.md
+docs/DocumentTypeDetailsDtoPaginatedList.md
 docs/DocumentsApi.md
 docs/DocumentsRequired.md
 docs/FetchTypes.md
@@ -46,6 +49,8 @@ docs/Identifier.md
 docs/IdentifierStringKeyValuePair.md
 docs/IdentitySupportedFields.md
 docs/IndividualDataConsentRequestResponse.md
+docs/IssuedDocument.md
+docs/IssuedDocumentPaginatedList.md
 docs/Life.md
 docs/OrganizationDataConsentInfoDto.md
 docs/OrganizationDataConsentInfoDtoPaginatedList.md
@@ -61,6 +66,7 @@ docs/PushUriResponse.md
 docs/Receiver.md
 docs/ReceiverType.md
 docs/SharedWith.md
+docs/SupportedEntityType.md
 docs/UpdateDataProcessingAgreementRequestModel.md
 docs/UriDetails.md
 docs/UserAccountFinancialTransactionsDto.md
@@ -107,6 +113,9 @@ mydatamyconsent/model/digital_signature.py
 mydatamyconsent/model/document.py
 mydatamyconsent/model/document_category_type.py
 mydatamyconsent/model/document_issue_request.py
+mydatamyconsent/model/document_sub_category_type.py
+mydatamyconsent/model/document_type_details_dto.py
+mydatamyconsent/model/document_type_details_dto_paginated_list.py
 mydatamyconsent/model/documents_required.py
 mydatamyconsent/model/fetch_types.py
 mydatamyconsent/model/file_type.py
@@ -120,6 +129,8 @@ mydatamyconsent/model/identifier.py
 mydatamyconsent/model/identifier_string_key_value_pair.py
 mydatamyconsent/model/identity_supported_fields.py
 mydatamyconsent/model/individual_data_consent_request_response.py
+mydatamyconsent/model/issued_document.py
+mydatamyconsent/model/issued_document_paginated_list.py
 mydatamyconsent/model/life.py
 mydatamyconsent/model/organization_data_consent_info_dto.py
 mydatamyconsent/model/organization_data_consent_info_dto_paginated_list.py
@@ -135,6 +146,7 @@ mydatamyconsent/model/push_uri_response.py
 mydatamyconsent/model/receiver.py
 mydatamyconsent/model/receiver_type.py
 mydatamyconsent/model/shared_with.py
+mydatamyconsent/model/supported_entity_type.py
 mydatamyconsent/model/update_data_processing_agreement_request_model.py
 mydatamyconsent/model/uri_details.py
 mydatamyconsent/model/user_account_financial_transactions_dto.py
@@ -151,8 +163,10 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_create_individual_data_consent_request.py
-test/test_create_organization_data_consent_request.py
-test/test_individual_data_consent_request_response.py
-test/test_organization_data_consent_request_response.py
+test/test_document_sub_category_type.py
+test/test_document_type_details_dto.py
+test/test_document_type_details_dto_paginated_list.py
+test/test_issued_document.py
+test/test_issued_document_paginated_list.py
+test/test_supported_entity_type.py
 tox.ini

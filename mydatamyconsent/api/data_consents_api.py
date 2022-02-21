@@ -1781,8 +1781,8 @@ class DataConsentsApi(object):
             filters (str): Filters.. [optional]
             from_date_time_utc (datetime): From date time in utc timezone.. [optional]
             to_date_time_utc (datetime): Til date time in utc timezone.. [optional]
-            page_no (int): Page no.. [optional] if omitted the server will use the default value of 10
-            page_size (int): Page size.. [optional] if omitted the server will use the default value of 25
+            page_no (int): Page number.. [optional] if omitted the server will use the default value of 10
+            page_size (int): Number of items to return.. [optional] if omitted the server will use the default value of 25
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1863,7 +1863,7 @@ class DataConsentsApi(object):
             _from (datetime): From date time in utc timezone.. [optional]
             to (datetime): Til date time in utc timezone.. [optional]
             page_no (int): Page number.. [optional] if omitted the server will use the default value of 1
-            page_size (int): Page size.. [optional] if omitted the server will use the default value of 25
+            page_size (int): Number of items to return.. [optional] if omitted the server will use the default value of 25
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1940,7 +1940,7 @@ class DataConsentsApi(object):
             _from (datetime): From date time in utc timezone.. [optional]
             to (datetime): Til date time in utc timezone.. [optional]
             page_no (int): Page number.. [optional] if omitted the server will use the default value of 1
-            page_size (int): Page size.. [optional] if omitted the server will use the default value of 25
+            page_size (int): Number of items to return.. [optional] if omitted the server will use the default value of 25
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2021,8 +2021,8 @@ class DataConsentsApi(object):
             filters (str): Filters.. [optional]
             from_date_time_utc (datetime): From date time in utc timezone.. [optional]
             to_date_time_utc (datetime): Til date time in utc timezone.. [optional]
-            page_no (int): Page no.. [optional] if omitted the server will use the default value of 1
-            page_size (int): Page size.. [optional] if omitted the server will use the default value of 25
+            page_no (int): Page number.. [optional] if omitted the server will use the default value of 1
+            page_size (int): Number of items to return.. [optional] if omitted the server will use the default value of 25
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object

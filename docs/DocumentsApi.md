@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **get_issued_document_by_id**
-> get_issued_document_by_id(document_id)
+> IssuedDocument get_issued_document_by_id(document_id)
 
 Get issued document.
 
@@ -22,6 +22,8 @@ Get issued document.
 import time
 import mydatamyconsent
 from mydatamyconsent.api import documents_api
+from mydatamyconsent.model.problem_details import ProblemDetails
+from mydatamyconsent.model.issued_document import IssuedDocument
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
@@ -39,7 +41,8 @@ with mydatamyconsent.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Get issued document.
-        api_instance.get_issued_document_by_id(document_id)
+        api_response = api_instance.get_issued_document_by_id(document_id)
+        pprint(api_response)
     except mydatamyconsent.ApiException as e:
         print("Exception when calling DocumentsApi->get_issued_document_by_id: %s\n" % e)
 ```
@@ -53,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**IssuedDocument**](IssuedDocument.md)
 
 ### Authorization
 
@@ -62,7 +65,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -70,11 +73,15 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **500** | Server Error |  -  |
+**200** | Success |  -  |
+**400** | Bad Request |  -  |
+**404** | Not Found |  -  |
+**0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_issued_documents**
-> get_issued_documents()
+> IssuedDocumentPaginatedList get_issued_documents()
 
 Get issued documents.
 
@@ -85,6 +92,8 @@ Get issued documents.
 import time
 import mydatamyconsent
 from mydatamyconsent.api import documents_api
+from mydatamyconsent.model.issued_document_paginated_list import IssuedDocumentPaginatedList
+from mydatamyconsent.model.problem_details import ProblemDetails
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
@@ -107,7 +116,8 @@ with mydatamyconsent.ApiClient() as api_client:
     # and optional values
     try:
         # Get issued documents.
-        api_instance.get_issued_documents(document_type_id=document_type_id, from_date_time=from_date_time, to_date_time=to_date_time, page_size=page_size, page_no=page_no)
+        api_response = api_instance.get_issued_documents(document_type_id=document_type_id, from_date_time=from_date_time, to_date_time=to_date_time, page_size=page_size, page_no=page_no)
+        pprint(api_response)
     except mydatamyconsent.ApiException as e:
         print("Exception when calling DocumentsApi->get_issued_documents: %s\n" % e)
 ```
@@ -125,7 +135,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**IssuedDocumentPaginatedList**](IssuedDocumentPaginatedList.md)
 
 ### Authorization
 
@@ -134,7 +144,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -142,11 +152,14 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **500** | Server Error |  -  |
+**200** | Success |  -  |
+**400** | Bad Request |  -  |
+**0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_registered_document_types**
-> get_registered_document_types()
+> DocumentTypeDetailsDtoPaginatedList get_registered_document_types()
 
 Get registered document types.
 
@@ -157,6 +170,8 @@ Get registered document types.
 import time
 import mydatamyconsent
 from mydatamyconsent.api import documents_api
+from mydatamyconsent.model.document_type_details_dto_paginated_list import DocumentTypeDetailsDtoPaginatedList
+from mydatamyconsent.model.problem_details import ProblemDetails
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
@@ -169,14 +184,15 @@ configuration = mydatamyconsent.Configuration(
 with mydatamyconsent.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = documents_api.DocumentsApi(api_client)
-    page_size = 25 # int |  (optional) if omitted the server will use the default value of 25
-    page_no = 1 # int |  (optional) if omitted the server will use the default value of 1
+    page_no = 1 # int | Page number. (optional) if omitted the server will use the default value of 1
+    page_size = 25 # int | Number of items to return. (optional) if omitted the server will use the default value of 25
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Get registered document types.
-        api_instance.get_registered_document_types(page_size=page_size, page_no=page_no)
+        api_response = api_instance.get_registered_document_types(page_no=page_no, page_size=page_size)
+        pprint(api_response)
     except mydatamyconsent.ApiException as e:
         print("Exception when calling DocumentsApi->get_registered_document_types: %s\n" % e)
 ```
@@ -186,12 +202,12 @@ with mydatamyconsent.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page_size** | **int**|  | [optional] if omitted the server will use the default value of 25
- **page_no** | **int**|  | [optional] if omitted the server will use the default value of 1
+ **page_no** | **int**| Page number. | [optional] if omitted the server will use the default value of 1
+ **page_size** | **int**| Number of items to return. | [optional] if omitted the server will use the default value of 25
 
 ### Return type
 
-void (empty response body)
+[**DocumentTypeDetailsDtoPaginatedList**](DocumentTypeDetailsDtoPaginatedList.md)
 
 ### Authorization
 
@@ -200,7 +216,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -208,11 +224,14 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **500** | Server Error |  -  |
+**200** | Success |  -  |
+**400** | Bad Request |  -  |
+**0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **issue_document**
-> bool issue_document(document_issue_request)
+> IssuedDocument issue_document(document_issue_request)
 
 Issue a new document.
 
@@ -225,6 +244,7 @@ import mydatamyconsent
 from mydatamyconsent.api import documents_api
 from mydatamyconsent.model.document_issue_request import DocumentIssueRequest
 from mydatamyconsent.model.problem_details import ProblemDetails
+from mydatamyconsent.model.issued_document import IssuedDocument
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
@@ -275,7 +295,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**bool**
+[**IssuedDocument**](IssuedDocument.md)
 
 ### Authorization
 

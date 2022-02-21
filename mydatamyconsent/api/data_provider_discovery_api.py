@@ -24,6 +24,7 @@ from mydatamyconsent.model_utils import (  # noqa: F401
 )
 from mydatamyconsent.model.data_provider import DataProvider
 from mydatamyconsent.model.data_provider_paginated_list import DataProviderPaginatedList
+from mydatamyconsent.model.problem_details import ProblemDetails
 
 
 class DataProviderDiscoveryApi(object):
@@ -256,7 +257,7 @@ class DataProviderDiscoveryApi(object):
             document_type (str): Document type.. [optional]
             organization_category (str): Organization category.. [optional]
             page_no (int): Page number.. [optional] if omitted the server will use the default value of 1
-            page_size (int): Page size.. [optional] if omitted the server will use the default value of 25
+            page_size (int): Number of items to return.. [optional] if omitted the server will use the default value of 25
             country (str): ISO2 Country code.. [optional] if omitted the server will use the default value of "IN"
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.

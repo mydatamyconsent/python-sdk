@@ -800,8 +800,8 @@ class DataConsentRequestsApi(object):
             status (DataConsentStatus): Data consent status.. [optional]
             start_date_time (datetime): Start date time.. [optional]
             end_date_time (datetime): End date time.. [optional]
-            page_no (int): Page no.. [optional] if omitted the server will use the default value of 1
-            page_size (int): Page size.. [optional] if omitted the server will use the default value of 25
+            page_no (int): Page number.. [optional] if omitted the server will use the default value of 1
+            page_size (int): Number of items to return.. [optional] if omitted the server will use the default value of 25
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -877,8 +877,8 @@ class DataConsentRequestsApi(object):
             status (DataConsentStatus): Data consent status.. [optional]
             start_date_time (datetime): Start date time.. [optional]
             end_date_time (datetime): End date time.. [optional]
-            page_no (int): Page no.. [optional] if omitted the server will use the default value of 1
-            page_size (int): Page size.. [optional] if omitted the server will use the default value of 25
+            page_no (int): Page number.. [optional] if omitted the server will use the default value of 1
+            page_size (int): Number of items to return.. [optional] if omitted the server will use the default value of 25
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object

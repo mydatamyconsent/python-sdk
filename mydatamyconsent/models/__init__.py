@@ -34,6 +34,9 @@ from mydatamyconsent.model.digital_signature import DigitalSignature
 from mydatamyconsent.model.document import Document
 from mydatamyconsent.model.document_category_type import DocumentCategoryType
 from mydatamyconsent.model.document_issue_request import DocumentIssueRequest
+from mydatamyconsent.model.document_sub_category_type import DocumentSubCategoryType
+from mydatamyconsent.model.document_type_details_dto import DocumentTypeDetailsDto
+from mydatamyconsent.model.document_type_details_dto_paginated_list import DocumentTypeDetailsDtoPaginatedList
 from mydatamyconsent.model.documents_required import DocumentsRequired
 from mydatamyconsent.model.fetch_types import FetchTypes
 from mydatamyconsent.model.file_type import FileType
@@ -47,6 +50,8 @@ from mydatamyconsent.model.identifier import Identifier
 from mydatamyconsent.model.identifier_string_key_value_pair import IdentifierStringKeyValuePair
 from mydatamyconsent.model.identity_supported_fields import IdentitySupportedFields
 from mydatamyconsent.model.individual_data_consent_request_response import IndividualDataConsentRequestResponse
+from mydatamyconsent.model.issued_document import IssuedDocument
+from mydatamyconsent.model.issued_document_paginated_list import IssuedDocumentPaginatedList
 from mydatamyconsent.model.life import Life
 from mydatamyconsent.model.organization_data_consent_info_dto import OrganizationDataConsentInfoDto
 from mydatamyconsent.model.organization_data_consent_info_dto_paginated_list import OrganizationDataConsentInfoDtoPaginatedList
@@ -62,6 +67,7 @@ from mydatamyconsent.model.push_uri_response import PushUriResponse
 from mydatamyconsent.model.receiver import Receiver
 from mydatamyconsent.model.receiver_type import ReceiverType
 from mydatamyconsent.model.shared_with import SharedWith
+from mydatamyconsent.model.supported_entity_type import SupportedEntityType
 from mydatamyconsent.model.update_data_processing_agreement_request_model import UpdateDataProcessingAgreementRequestModel
 from mydatamyconsent.model.uri_details import UriDetails
 from mydatamyconsent.model.user_account_financial_transactions_dto import UserAccountFinancialTransactionsDto

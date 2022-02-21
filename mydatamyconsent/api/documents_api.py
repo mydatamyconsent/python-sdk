@@ -23,6 +23,9 @@ from mydatamyconsent.model_utils import (  # noqa: F401
     validate_and_convert_types
 )
 from mydatamyconsent.model.document_issue_request import DocumentIssueRequest
+from mydatamyconsent.model.document_type_details_dto_paginated_list import DocumentTypeDetailsDtoPaginatedList
+from mydatamyconsent.model.issued_document import IssuedDocument
+from mydatamyconsent.model.issued_document_paginated_list import IssuedDocumentPaginatedList
 from mydatamyconsent.model.problem_details import ProblemDetails
 
 
@@ -39,7 +42,7 @@ class DocumentsApi(object):
         self.api_client = api_client
         self.get_issued_document_by_id_endpoint = _Endpoint(
             settings={
-                'response_type': None,
+                'response_type': (IssuedDocument,),
                 'auth': [],
                 'endpoint_path': '/v1/documents/issued/{documentId}',
                 'operation_id': 'get_issued_document_by_id',
@@ -79,14 +82,16 @@ class DocumentsApi(object):
                 }
             },
             headers_map={
-                'accept': [],
+                'accept': [
+                    'application/json'
+                ],
                 'content_type': [],
             },
             api_client=api_client
         )
         self.get_issued_documents_endpoint = _Endpoint(
             settings={
-                'response_type': None,
+                'response_type': (IssuedDocumentPaginatedList,),
                 'auth': [],
                 'endpoint_path': '/v1/documents/issued',
                 'operation_id': 'get_issued_documents',
@@ -144,14 +149,16 @@ class DocumentsApi(object):
                 }
             },
             headers_map={
-                'accept': [],
+                'accept': [
+                    'application/json'
+                ],
                 'content_type': [],
             },
             api_client=api_client
         )
         self.get_registered_document_types_endpoint = _Endpoint(
             settings={
-                'response_type': None,
+                'response_type': (DocumentTypeDetailsDtoPaginatedList,),
                 'auth': [],
                 'endpoint_path': '/v1/documents/types',
                 'operation_id': 'get_registered_document_types',
@@ -160,8 +167,8 @@ class DocumentsApi(object):
             },
             params_map={
                 'all': [
-                    'page_size',
                     'page_no',
+                    'page_size',
                 ],
                 'required': [],
                 'nullable': [
@@ -177,31 +184,33 @@ class DocumentsApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'page_size':
-                        (int,),
                     'page_no':
+                        (int,),
+                    'page_size':
                         (int,),
                 },
                 'attribute_map': {
-                    'page_size': 'pageSize',
                     'page_no': 'pageNo',
+                    'page_size': 'pageSize',
                 },
                 'location_map': {
-                    'page_size': 'query',
                     'page_no': 'query',
+                    'page_size': 'query',
                 },
                 'collection_format_map': {
                 }
             },
             headers_map={
-                'accept': [],
+                'accept': [
+                    'application/json'
+                ],
                 'content_type': [],
             },
             api_client=api_client
         )
         self.issue_document_endpoint = _Endpoint(
             settings={
-                'response_type': (bool,),
+                'response_type': (IssuedDocument,),
                 'auth': [],
                 'endpoint_path': '/v1/documents/issue',
                 'operation_id': 'issue_document',
@@ -295,7 +304,7 @@ class DocumentsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            None
+            IssuedDocument
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -374,7 +383,7 @@ class DocumentsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            None
+            IssuedDocumentPaginatedList
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -418,8 +427,8 @@ class DocumentsApi(object):
 
 
         Keyword Args:
-            page_size (int): [optional] if omitted the server will use the default value of 25
-            page_no (int): [optional] if omitted the server will use the default value of 1
+            page_no (int): Page number.. [optional] if omitted the server will use the default value of 1
+            page_size (int): Number of items to return.. [optional] if omitted the server will use the default value of 25
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -448,7 +457,7 @@ class DocumentsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            None
+            DocumentTypeDetailsDtoPaginatedList
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -523,7 +532,7 @@ class DocumentsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            bool
+            IssuedDocument
                 If the method is called asynchronously, returns the request
                 thread.
         """

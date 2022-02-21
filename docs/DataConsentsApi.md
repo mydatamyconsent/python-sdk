@@ -743,8 +743,8 @@ with mydatamyconsent.ApiClient() as api_client:
     filters = "filters_example" # str | Filters. (optional)
     from_date_time_utc = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | From date time in utc timezone. (optional)
     to_date_time_utc = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Til date time in utc timezone. (optional)
-    page_no = 10 # int | Page no. (optional) if omitted the server will use the default value of 10
-    page_size = 25 # int | Page size. (optional) if omitted the server will use the default value of 25
+    page_no = 10 # int | Page number. (optional) if omitted the server will use the default value of 10
+    page_size = 25 # int | Number of items to return. (optional) if omitted the server will use the default value of 25
 
     # example passing only required values which don't have defaults set
     try:
@@ -774,8 +774,8 @@ Name | Type | Description  | Notes
  **filters** | **str**| Filters. | [optional]
  **from_date_time_utc** | **datetime**| From date time in utc timezone. | [optional]
  **to_date_time_utc** | **datetime**| Til date time in utc timezone. | [optional]
- **page_no** | **int**| Page no. | [optional] if omitted the server will use the default value of 10
- **page_size** | **int**| Page size. | [optional] if omitted the server will use the default value of 25
+ **page_no** | **int**| Page number. | [optional] if omitted the server will use the default value of 10
+ **page_size** | **int**| Number of items to return. | [optional] if omitted the server will use the default value of 25
 
 ### Return type
 
@@ -832,7 +832,7 @@ with mydatamyconsent.ApiClient() as api_client:
     _from = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | From date time in utc timezone. (optional)
     to = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Til date time in utc timezone. (optional)
     page_no = 1 # int | Page number. (optional) if omitted the server will use the default value of 1
-    page_size = 25 # int | Page size. (optional) if omitted the server will use the default value of 25
+    page_size = 25 # int | Number of items to return. (optional) if omitted the server will use the default value of 25
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -853,7 +853,7 @@ Name | Type | Description  | Notes
  **_from** | **datetime**| From date time in utc timezone. | [optional]
  **to** | **datetime**| Til date time in utc timezone. | [optional]
  **page_no** | **int**| Page number. | [optional] if omitted the server will use the default value of 1
- **page_size** | **int**| Page size. | [optional] if omitted the server will use the default value of 25
+ **page_size** | **int**| Number of items to return. | [optional] if omitted the server will use the default value of 25
 
 ### Return type
 
@@ -910,7 +910,7 @@ with mydatamyconsent.ApiClient() as api_client:
     _from = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | From date time in utc timezone. (optional)
     to = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Til date time in utc timezone. (optional)
     page_no = 1 # int | Page number. (optional) if omitted the server will use the default value of 1
-    page_size = 25 # int | Page size. (optional) if omitted the server will use the default value of 25
+    page_size = 25 # int | Number of items to return. (optional) if omitted the server will use the default value of 25
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -931,7 +931,7 @@ Name | Type | Description  | Notes
  **_from** | **datetime**| From date time in utc timezone. | [optional]
  **to** | **datetime**| Til date time in utc timezone. | [optional]
  **page_no** | **int**| Page number. | [optional] if omitted the server will use the default value of 1
- **page_size** | **int**| Page size. | [optional] if omitted the server will use the default value of 25
+ **page_size** | **int**| Number of items to return. | [optional] if omitted the server will use the default value of 25
 
 ### Return type
 
@@ -988,8 +988,8 @@ with mydatamyconsent.ApiClient() as api_client:
     filters = "filters_example" # str | Filters. (optional)
     from_date_time_utc = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | From date time in utc timezone. (optional)
     to_date_time_utc = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Til date time in utc timezone. (optional)
-    page_no = 1 # int | Page no. (optional) if omitted the server will use the default value of 1
-    page_size = 25 # int | Page size. (optional) if omitted the server will use the default value of 25
+    page_no = 1 # int | Page number. (optional) if omitted the server will use the default value of 1
+    page_size = 25 # int | Number of items to return. (optional) if omitted the server will use the default value of 25
 
     # example passing only required values which don't have defaults set
     try:
@@ -1019,8 +1019,8 @@ Name | Type | Description  | Notes
  **filters** | **str**| Filters. | [optional]
  **from_date_time_utc** | **datetime**| From date time in utc timezone. | [optional]
  **to_date_time_utc** | **datetime**| Til date time in utc timezone. | [optional]
- **page_no** | **int**| Page no. | [optional] if omitted the server will use the default value of 1
- **page_size** | **int**| Page size. | [optional] if omitted the server will use the default value of 25
+ **page_no** | **int**| Page number. | [optional] if omitted the server will use the default value of 1
+ **page_size** | **int**| Number of items to return. | [optional] if omitted the server will use the default value of 25
 
 ### Return type
 

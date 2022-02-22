@@ -1,13 +1,16 @@
 # mydatamyconsent.DocumentsApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://api.mydatamyconsent.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_issued_document_by_id**](DocumentsApi.md#get_issued_document_by_id) | **GET** /v1/documents/issued/{documentId} | Get issued document.
-[**get_issued_documents**](DocumentsApi.md#get_issued_documents) | **GET** /v1/documents/issued | Get issued documents.
+[**get_issued_documents**](DocumentsApi.md#get_issued_documents) | **GET** /v1/documents/issued/{documentTypeId} | Get paginated list of issued documents of given document type.
 [**get_registered_document_types**](DocumentsApi.md#get_registered_document_types) | **GET** /v1/documents/types | Get registered document types.
-[**issue_document**](DocumentsApi.md#issue_document) | **POST** /v1/documents/issue | Issue a new document.
+[**issue_document_to_individual**](DocumentsApi.md#issue_document_to_individual) | **POST** /v1/documents/issue/individual | Issue a new document to an individual user.
+[**issue_document_to_organization**](DocumentsApi.md#issue_document_to_organization) | **POST** /v1/documents/issue/organization | Issue a new document to an organization.
+[**upload_document_for_individual**](DocumentsApi.md#upload_document_for_individual) | **POST** /v1/documents/issue/individual/upload/{issueRequestId} | Upload a document for issuance request of individual.
+[**upload_document_for_organization**](DocumentsApi.md#upload_document_for_organization) | **POST** /v1/documents/issue/organization/upload/{issueRequestId} | Upload a document for issuance request of organization.
 
 
 # **get_issued_document_by_id**
@@ -25,10 +28,10 @@ from mydatamyconsent.api import documents_api
 from mydatamyconsent.model.problem_details import ProblemDetails
 from mydatamyconsent.model.issued_document import IssuedDocument
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = mydatamyconsent.Configuration(
-    host = "http://localhost"
+    host = "https://api.mydatamyconsent.com"
 )
 
 
@@ -72,8 +75,8 @@ No authorization required
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**500** | Server Error |  -  |
 **200** | Success |  -  |
+**500** | Server Error |  -  |
 **400** | Bad Request |  -  |
 **404** | Not Found |  -  |
 **0** | Error |  -  |
@@ -81,9 +84,9 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_issued_documents**
-> IssuedDocumentPaginatedList get_issued_documents()
+> IssuedDocumentPaginatedList get_issued_documents(document_type_id)
 
-Get issued documents.
+Get paginated list of issued documents of given document type.
 
 ### Example
 
@@ -95,10 +98,10 @@ from mydatamyconsent.api import documents_api
 from mydatamyconsent.model.issued_document_paginated_list import IssuedDocumentPaginatedList
 from mydatamyconsent.model.problem_details import ProblemDetails
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = mydatamyconsent.Configuration(
-    host = "http://localhost"
+    host = "https://api.mydatamyconsent.com"
 )
 
 
@@ -106,17 +109,25 @@ configuration = mydatamyconsent.Configuration(
 with mydatamyconsent.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = documents_api.DocumentsApi(api_client)
-    document_type_id = "documentTypeId_example" # str |  (optional)
-    from_date_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime |  (optional)
-    to_date_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime |  (optional)
-    page_size = 25 # int |  (optional) if omitted the server will use the default value of 25
-    page_no = 1 # int |  (optional) if omitted the server will use the default value of 1
+    document_type_id = "documentTypeId_example" # str | Document type id.
+    from_date_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | From DateTime. (optional)
+    to_date_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | To DateTime. (optional)
+    page_no = 1 # int | Page number. (optional) if omitted the server will use the default value of 1
+    page_size = 25 # int | Number of items to return. (optional) if omitted the server will use the default value of 25
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Get paginated list of issued documents of given document type.
+        api_response = api_instance.get_issued_documents(document_type_id)
+        pprint(api_response)
+    except mydatamyconsent.ApiException as e:
+        print("Exception when calling DocumentsApi->get_issued_documents: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # Get issued documents.
-        api_response = api_instance.get_issued_documents(document_type_id=document_type_id, from_date_time=from_date_time, to_date_time=to_date_time, page_size=page_size, page_no=page_no)
+        # Get paginated list of issued documents of given document type.
+        api_response = api_instance.get_issued_documents(document_type_id, from_date_time=from_date_time, to_date_time=to_date_time, page_no=page_no, page_size=page_size)
         pprint(api_response)
     except mydatamyconsent.ApiException as e:
         print("Exception when calling DocumentsApi->get_issued_documents: %s\n" % e)
@@ -127,11 +138,11 @@ with mydatamyconsent.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **document_type_id** | **str**|  | [optional]
- **from_date_time** | **datetime**|  | [optional]
- **to_date_time** | **datetime**|  | [optional]
- **page_size** | **int**|  | [optional] if omitted the server will use the default value of 25
- **page_no** | **int**|  | [optional] if omitted the server will use the default value of 1
+ **document_type_id** | **str**| Document type id. |
+ **from_date_time** | **datetime**| From DateTime. | [optional]
+ **to_date_time** | **datetime**| To DateTime. | [optional]
+ **page_no** | **int**| Page number. | [optional] if omitted the server will use the default value of 1
+ **page_size** | **int**| Number of items to return. | [optional] if omitted the server will use the default value of 25
 
 ### Return type
 
@@ -151,8 +162,8 @@ No authorization required
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**500** | Server Error |  -  |
 **200** | Success |  -  |
+**500** | Server Error |  -  |
 **400** | Bad Request |  -  |
 **0** | Error |  -  |
 
@@ -173,10 +184,10 @@ from mydatamyconsent.api import documents_api
 from mydatamyconsent.model.problem_details import ProblemDetails
 from mydatamyconsent.model.document_type_paginated_list import DocumentTypePaginatedList
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = mydatamyconsent.Configuration(
-    host = "http://localhost"
+    host = "https://api.mydatamyconsent.com"
 )
 
 
@@ -223,17 +234,17 @@ No authorization required
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**500** | Server Error |  -  |
 **200** | Success |  -  |
+**500** | Server Error |  -  |
 **400** | Bad Request |  -  |
 **0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **issue_document**
-> IssuedDocument issue_document(document_issue_request)
+# **issue_document_to_individual**
+> DocumentIssueRequestDetails issue_document_to_individual(document_issue_request)
 
-Issue a new document.
+Issue a new document to an individual user.
 
 ### Example
 
@@ -242,14 +253,14 @@ Issue a new document.
 import time
 import mydatamyconsent
 from mydatamyconsent.api import documents_api
+from mydatamyconsent.model.document_issue_request_details import DocumentIssueRequestDetails
 from mydatamyconsent.model.document_issue_request import DocumentIssueRequest
 from mydatamyconsent.model.problem_details import ProblemDetails
-from mydatamyconsent.model.issued_document import IssuedDocument
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = mydatamyconsent.Configuration(
-    host = "http://localhost"
+    host = "https://api.mydatamyconsent.com"
 )
 
 
@@ -260,30 +271,29 @@ with mydatamyconsent.ApiClient() as api_client:
     document_issue_request = DocumentIssueRequest(
         document_type_id="document_type_id_example",
         document_identifier="document_identifier_example",
-        name="name_example",
         description="description_example",
-        receiver=Receiver(
-            type=ReceiverType("Individual"),
+        receiver=DocumentReceiver(
             identifiers=[
-                IdentifierStringKeyValuePair(
-                    key=Identifier("Email"),
+                StringStringKeyValuePair(
+                    key="key_example",
                     value="value_example",
                 ),
             ],
             identification_strategy=IdentificationStrategy("MatchAtLeastOneIdentifier"),
         ),
         expires_at_utc=dateutil_parser('1970-01-01T00:00:00.00Z'),
-        base64_pdf_document="base64_pdf_document_example",
-        metadata=None,
-    ) # DocumentIssueRequest | Document issue request MyDataMyConsent.Models.Documents.DocumentIssueRequest.
+        metadata={
+            "key": "key_example",
+        },
+    ) # DocumentIssueRequest | Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.
 
     # example passing only required values which don't have defaults set
     try:
-        # Issue a new document.
-        api_response = api_instance.issue_document(document_issue_request)
+        # Issue a new document to an individual user.
+        api_response = api_instance.issue_document_to_individual(document_issue_request)
         pprint(api_response)
     except mydatamyconsent.ApiException as e:
-        print("Exception when calling DocumentsApi->issue_document: %s\n" % e)
+        print("Exception when calling DocumentsApi->issue_document_to_individual: %s\n" % e)
 ```
 
 
@@ -291,11 +301,11 @@ with mydatamyconsent.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **document_issue_request** | [**DocumentIssueRequest**](DocumentIssueRequest.md)| Document issue request MyDataMyConsent.Models.Documents.DocumentIssueRequest. |
+ **document_issue_request** | [**DocumentIssueRequest**](DocumentIssueRequest.md)| Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest. |
 
 ### Return type
 
-[**IssuedDocument**](IssuedDocument.md)
+[**DocumentIssueRequestDetails**](DocumentIssueRequestDetails.md)
 
 ### Authorization
 
@@ -311,9 +321,254 @@ No authorization required
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**500** | Server Error |  -  |
 **200** | Success |  -  |
 **400** | Bad Request |  -  |
+**500** | Server Error |  -  |
+**0** | Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **issue_document_to_organization**
+> DocumentIssueRequestDetails issue_document_to_organization(document_issue_request)
+
+Issue a new document to an organization.
+
+### Example
+
+
+```python
+import time
+import mydatamyconsent
+from mydatamyconsent.api import documents_api
+from mydatamyconsent.model.document_issue_request_details import DocumentIssueRequestDetails
+from mydatamyconsent.model.document_issue_request import DocumentIssueRequest
+from mydatamyconsent.model.problem_details import ProblemDetails
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.mydatamyconsent.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mydatamyconsent.Configuration(
+    host = "https://api.mydatamyconsent.com"
+)
+
+
+# Enter a context with an instance of the API client
+with mydatamyconsent.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = documents_api.DocumentsApi(api_client)
+    document_issue_request = DocumentIssueRequest(
+        document_type_id="document_type_id_example",
+        document_identifier="document_identifier_example",
+        description="description_example",
+        receiver=DocumentReceiver(
+            identifiers=[
+                StringStringKeyValuePair(
+                    key="key_example",
+                    value="value_example",
+                ),
+            ],
+            identification_strategy=IdentificationStrategy("MatchAtLeastOneIdentifier"),
+        ),
+        expires_at_utc=dateutil_parser('1970-01-01T00:00:00.00Z'),
+        metadata={
+            "key": "key_example",
+        },
+    ) # DocumentIssueRequest | Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Issue a new document to an organization.
+        api_response = api_instance.issue_document_to_organization(document_issue_request)
+        pprint(api_response)
+    except mydatamyconsent.ApiException as e:
+        print("Exception when calling DocumentsApi->issue_document_to_organization: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **document_issue_request** | [**DocumentIssueRequest**](DocumentIssueRequest.md)| Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest. |
+
+### Return type
+
+[**DocumentIssueRequestDetails**](DocumentIssueRequestDetails.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**400** | Bad Request |  -  |
+**500** | Server Error |  -  |
+**0** | Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **upload_document_for_individual**
+> str upload_document_for_individual(issue_request_id)
+
+Upload a document for issuance request of individual.
+
+### Example
+
+
+```python
+import time
+import mydatamyconsent
+from mydatamyconsent.api import documents_api
+from mydatamyconsent.model.problem_details import ProblemDetails
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.mydatamyconsent.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mydatamyconsent.Configuration(
+    host = "https://api.mydatamyconsent.com"
+)
+
+
+# Enter a context with an instance of the API client
+with mydatamyconsent.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = documents_api.DocumentsApi(api_client)
+    issue_request_id = "issueRequestId_example" # str | Issue Request Id System.Guid.
+    form_file = open('/path/to/file', 'rb') # file_type |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Upload a document for issuance request of individual.
+        api_response = api_instance.upload_document_for_individual(issue_request_id)
+        pprint(api_response)
+    except mydatamyconsent.ApiException as e:
+        print("Exception when calling DocumentsApi->upload_document_for_individual: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Upload a document for issuance request of individual.
+        api_response = api_instance.upload_document_for_individual(issue_request_id, form_file=form_file)
+        pprint(api_response)
+    except mydatamyconsent.ApiException as e:
+        print("Exception when calling DocumentsApi->upload_document_for_individual: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **issue_request_id** | **str**| Issue Request Id System.Guid. |
+ **form_file** | **file_type**|  | [optional]
+
+### Return type
+
+**str**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**400** | Bad Request |  -  |
+**500** | Server Error |  -  |
+**0** | Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **upload_document_for_organization**
+> str upload_document_for_organization(issue_request_id)
+
+Upload a document for issuance request of organization.
+
+### Example
+
+
+```python
+import time
+import mydatamyconsent
+from mydatamyconsent.api import documents_api
+from mydatamyconsent.model.problem_details import ProblemDetails
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.mydatamyconsent.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mydatamyconsent.Configuration(
+    host = "https://api.mydatamyconsent.com"
+)
+
+
+# Enter a context with an instance of the API client
+with mydatamyconsent.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = documents_api.DocumentsApi(api_client)
+    issue_request_id = "issueRequestId_example" # str | Issue Request Id System.Guid.
+    form_file = open('/path/to/file', 'rb') # file_type |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Upload a document for issuance request of organization.
+        api_response = api_instance.upload_document_for_organization(issue_request_id)
+        pprint(api_response)
+    except mydatamyconsent.ApiException as e:
+        print("Exception when calling DocumentsApi->upload_document_for_organization: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Upload a document for issuance request of organization.
+        api_response = api_instance.upload_document_for_organization(issue_request_id, form_file=form_file)
+        pprint(api_response)
+    except mydatamyconsent.ApiException as e:
+        print("Exception when calling DocumentsApi->upload_document_for_organization: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **issue_request_id** | **str**| Issue Request Id System.Guid. |
+ **form_file** | **file_type**|  | [optional]
+
+### Return type
+
+**str**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**400** | Bad Request |  -  |
+**500** | Server Error |  -  |
 **0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

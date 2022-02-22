@@ -34,6 +34,8 @@ from mydatamyconsent.model.digital_signature import DigitalSignature
 from mydatamyconsent.model.document import Document
 from mydatamyconsent.model.document_category_type import DocumentCategoryType
 from mydatamyconsent.model.document_issue_request import DocumentIssueRequest
+from mydatamyconsent.model.document_issue_request_details import DocumentIssueRequestDetails
+from mydatamyconsent.model.document_receiver import DocumentReceiver
 from mydatamyconsent.model.document_sub_category_type import DocumentSubCategoryType
 from mydatamyconsent.model.document_type import DocumentType
 from mydatamyconsent.model.document_type_paginated_list import DocumentTypePaginatedList
@@ -67,7 +69,10 @@ from mydatamyconsent.model.push_uri_response import PushUriResponse
 from mydatamyconsent.model.receiver import Receiver
 from mydatamyconsent.model.receiver_type import ReceiverType
 from mydatamyconsent.model.shared_with import SharedWith
+from mydatamyconsent.model.string_string_key_value_pair import StringStringKeyValuePair
 from mydatamyconsent.model.supported_entity_type import SupportedEntityType
+from mydatamyconsent.model.supported_identifier import SupportedIdentifier
+from mydatamyconsent.model.supported_identifiers_by_country import SupportedIdentifiersByCountry
 from mydatamyconsent.model.update_data_processing_agreement_request_model import UpdateDataProcessingAgreementRequestModel
 from mydatamyconsent.model.uri_details import UriDetails
 from mydatamyconsent.model.user_account_financial_transactions_dto import UserAccountFinancialTransactionsDto

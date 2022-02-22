@@ -20,3 +20,4 @@ from mydatamyconsent.api.data_processing_agreements_api import DataProcessingAgr
 from mydatamyconsent.api.data_provider_discovery_api import DataProviderDiscoveryApi
 from mydatamyconsent.api.digi_locker_compat_issuer_api import DigiLockerCompatIssuerApi
 from mydatamyconsent.api.documents_api import DocumentsApi
+from mydatamyconsent.api.supported_identifiers_api import SupportedIdentifiersApi

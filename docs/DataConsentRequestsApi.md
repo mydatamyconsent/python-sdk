@@ -1,6 +1,6 @@
 # mydatamyconsent.DataConsentRequestsApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://api.mydatamyconsent.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -29,10 +29,10 @@ from mydatamyconsent.api import data_consent_requests_api
 from mydatamyconsent.model.problem_details import ProblemDetails
 from mydatamyconsent.model.individual_data_consent_request_response import IndividualDataConsentRequestResponse
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = mydatamyconsent.Configuration(
-    host = "http://localhost"
+    host = "https://api.mydatamyconsent.com"
 )
 
 
@@ -98,10 +98,10 @@ from mydatamyconsent.api import data_consent_requests_api
 from mydatamyconsent.model.problem_details import ProblemDetails
 from mydatamyconsent.model.organization_data_consent_request_response import OrganizationDataConsentRequestResponse
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = mydatamyconsent.Configuration(
-    host = "http://localhost"
+    host = "https://api.mydatamyconsent.com"
 )
 
 
@@ -168,10 +168,10 @@ from mydatamyconsent.model.create_individual_data_consent_request import CreateI
 from mydatamyconsent.model.problem_details import ProblemDetails
 from mydatamyconsent.model.individual_data_consent_request_response import IndividualDataConsentRequestResponse
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = mydatamyconsent.Configuration(
-    host = "http://localhost"
+    host = "https://api.mydatamyconsent.com"
 )
 
 
@@ -251,10 +251,10 @@ from mydatamyconsent.model.problem_details import ProblemDetails
 from mydatamyconsent.model.organization_data_consent_request_response import OrganizationDataConsentRequestResponse
 from mydatamyconsent.model.create_organization_data_consent_request import CreateOrganizationDataConsentRequest
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = mydatamyconsent.Configuration(
-    host = "http://localhost"
+    host = "https://api.mydatamyconsent.com"
 )
 
 
@@ -334,10 +334,10 @@ from mydatamyconsent.model.user_data_consent_info_dto_paginated_list import User
 from mydatamyconsent.model.problem_details import ProblemDetails
 from mydatamyconsent.model.data_consent_status import DataConsentStatus
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = mydatamyconsent.Configuration(
-    host = "http://localhost"
+    host = "https://api.mydatamyconsent.com"
 )
 
 
@@ -412,10 +412,10 @@ from mydatamyconsent.model.organization_data_consent_info_dto_paginated_list imp
 from mydatamyconsent.model.problem_details import ProblemDetails
 from mydatamyconsent.model.data_consent_status import DataConsentStatus
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = mydatamyconsent.Configuration(
-    host = "http://localhost"
+    host = "https://api.mydatamyconsent.com"
 )
 
 
@@ -489,10 +489,10 @@ from mydatamyconsent.api import data_consent_requests_api
 from mydatamyconsent.model.data_consent_details_dto import DataConsentDetailsDto
 from mydatamyconsent.model.problem_details import ProblemDetails
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = mydatamyconsent.Configuration(
-    host = "http://localhost"
+    host = "https://api.mydatamyconsent.com"
 )
 
 
@@ -557,10 +557,10 @@ from mydatamyconsent.api import data_consent_requests_api
 from mydatamyconsent.model.data_consent_details_dto import DataConsentDetailsDto
 from mydatamyconsent.model.problem_details import ProblemDetails
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = mydatamyconsent.Configuration(
-    host = "http://localhost"
+    host = "https://api.mydatamyconsent.com"
 )
 
 

@@ -76,10 +76,10 @@ class IssuedDocument(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'document_id': (str,),  # noqa: E501
-            'identifier': (str, none_type,),  # noqa: E501
-            'document_type': (str, none_type,),  # noqa: E501
-            'issued_to': (str, none_type,),  # noqa: E501
+            'id': (str,),  # noqa: E501
+            'identifier': (str,),  # noqa: E501
+            'document_type': (str,),  # noqa: E501
+            'issued_to': (str,),  # noqa: E501
             'issued_at_utc': (datetime,),  # noqa: E501
         }
 
@@ -89,7 +89,7 @@ class IssuedDocument(ModelNormal):
 
 
     attribute_map = {
-        'document_id': 'documentId',  # noqa: E501
+        'id': 'id',  # noqa: E501
         'identifier': 'identifier',  # noqa: E501
         'document_type': 'documentType',  # noqa: E501
         'issued_to': 'issuedTo',  # noqa: E501
@@ -103,8 +103,15 @@ class IssuedDocument(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, id, identifier, document_type, issued_to, issued_at_utc, *args, **kwargs):  # noqa: E501
         """IssuedDocument - a model defined in OpenAPI
+
+        Args:
+            id (str): Document Identifier.
+            identifier (str): Document Identifier. eg: GJ05FG67866586.
+            document_type (str): Document type name. eg: Driving License.
+            issued_to (str):
+            issued_at_utc (datetime):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -137,11 +144,6 @@ class IssuedDocument(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            document_id (str): [optional]  # noqa: E501
-            identifier (str, none_type): [optional]  # noqa: E501
-            document_type (str, none_type): [optional]  # noqa: E501
-            issued_to (str, none_type): [optional]  # noqa: E501
-            issued_at_utc (datetime): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -169,6 +171,11 @@ class IssuedDocument(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.id = id
+        self.identifier = identifier
+        self.document_type = document_type
+        self.issued_to = issued_to
+        self.issued_at_utc = issued_at_utc
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -189,8 +196,15 @@ class IssuedDocument(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, id, identifier, document_type, issued_to, issued_at_utc, *args, **kwargs):  # noqa: E501
         """IssuedDocument - a model defined in OpenAPI
+
+        Args:
+            id (str): Document Identifier.
+            identifier (str): Document Identifier. eg: GJ05FG67866586.
+            document_type (str): Document type name. eg: Driving License.
+            issued_to (str):
+            issued_at_utc (datetime):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -223,11 +237,6 @@ class IssuedDocument(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            document_id (str): [optional]  # noqa: E501
-            identifier (str, none_type): [optional]  # noqa: E501
-            document_type (str, none_type): [optional]  # noqa: E501
-            issued_to (str, none_type): [optional]  # noqa: E501
-            issued_at_utc (datetime): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -253,6 +262,11 @@ class IssuedDocument(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.id = id
+        self.identifier = identifier
+        self.document_type = document_type
+        self.issued_to = issued_to
+        self.issued_at_utc = issued_at_utc
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

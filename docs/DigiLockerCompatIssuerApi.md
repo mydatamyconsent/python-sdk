@@ -1,6 +1,6 @@
 # mydatamyconsent.DigiLockerCompatIssuerApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://api.mydatamyconsent.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -23,10 +23,10 @@ from mydatamyconsent.model.push_uri_request import PushUriRequest
 from mydatamyconsent.model.problem_details import ProblemDetails
 from mydatamyconsent.model.push_uri_response import PushUriResponse
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = mydatamyconsent.Configuration(
-    host = "http://localhost"
+    host = "https://api.mydatamyconsent.com"
 )
 
 

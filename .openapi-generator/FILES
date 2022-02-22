@@ -32,6 +32,8 @@ docs/DigitalSignature.md
 docs/Document.md
 docs/DocumentCategoryType.md
 docs/DocumentIssueRequest.md
+docs/DocumentIssueRequestDetails.md
+docs/DocumentReceiver.md
 docs/DocumentSubCategoryType.md
 docs/DocumentType.md
 docs/DocumentTypePaginatedList.md
@@ -66,7 +68,11 @@ docs/PushUriResponse.md
 docs/Receiver.md
 docs/ReceiverType.md
 docs/SharedWith.md
+docs/StringStringKeyValuePair.md
 docs/SupportedEntityType.md
+docs/SupportedIdentifier.md
+docs/SupportedIdentifiersApi.md
+docs/SupportedIdentifiersByCountry.md
 docs/UpdateDataProcessingAgreementRequestModel.md
 docs/UriDetails.md
 docs/UserAccountFinancialTransactionsDto.md
@@ -83,6 +89,7 @@ mydatamyconsent/api/data_processing_agreements_api.py
 mydatamyconsent/api/data_provider_discovery_api.py
 mydatamyconsent/api/digi_locker_compat_issuer_api.py
 mydatamyconsent/api/documents_api.py
+mydatamyconsent/api/supported_identifiers_api.py
 mydatamyconsent/api_client.py
 mydatamyconsent/apis/__init__.py
 mydatamyconsent/configuration.py
@@ -113,6 +120,8 @@ mydatamyconsent/model/digital_signature.py
 mydatamyconsent/model/document.py
 mydatamyconsent/model/document_category_type.py
 mydatamyconsent/model/document_issue_request.py
+mydatamyconsent/model/document_issue_request_details.py
+mydatamyconsent/model/document_receiver.py
 mydatamyconsent/model/document_sub_category_type.py
 mydatamyconsent/model/document_type.py
 mydatamyconsent/model/document_type_paginated_list.py
@@ -146,7 +155,10 @@ mydatamyconsent/model/push_uri_response.py
 mydatamyconsent/model/receiver.py
 mydatamyconsent/model/receiver_type.py
 mydatamyconsent/model/shared_with.py
+mydatamyconsent/model/string_string_key_value_pair.py
 mydatamyconsent/model/supported_entity_type.py
+mydatamyconsent/model/supported_identifier.py
+mydatamyconsent/model/supported_identifiers_by_country.py
 mydatamyconsent/model/update_data_processing_agreement_request_model.py
 mydatamyconsent/model/uri_details.py
 mydatamyconsent/model/user_account_financial_transactions_dto.py
@@ -163,6 +175,10 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_document_type.py
-test/test_document_type_paginated_list.py
+test/test_document_issue_request_details.py
+test/test_document_receiver.py
+test/test_string_string_key_value_pair.py
+test/test_supported_identifier.py
+test/test_supported_identifiers_api.py
+test/test_supported_identifiers_by_country.py
 tox.ini

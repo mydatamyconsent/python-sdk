@@ -80,7 +80,6 @@ class ProblemDetails(ModelNormal):
             'title': (str, none_type,),  # noqa: E501
             'status': (int, none_type,),  # noqa: E501
             'detail': (str, none_type,),  # noqa: E501
-            'instance': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -93,7 +92,6 @@ class ProblemDetails(ModelNormal):
         'title': 'title',  # noqa: E501
         'status': 'status',  # noqa: E501
         'detail': 'detail',  # noqa: E501
-        'instance': 'instance',  # noqa: E501
     }
 
     read_only_vars = {
@@ -141,7 +139,6 @@ class ProblemDetails(ModelNormal):
             title (str, none_type): [optional]  # noqa: E501
             status (int, none_type): [optional]  # noqa: E501
             detail (str, none_type): [optional]  # noqa: E501
-            instance (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -227,7 +224,6 @@ class ProblemDetails(ModelNormal):
             title (str, none_type): [optional]  # noqa: E501
             status (int, none_type): [optional]  # noqa: E501
             detail (str, none_type): [optional]  # noqa: E501
-            instance (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -60,10 +60,10 @@ from mydatamyconsent.model.organization_data_consent_info_dto_paginated_list imp
 from mydatamyconsent.model.organization_data_consent_request_response import OrganizationDataConsentRequestResponse
 from mydatamyconsent.model.problem_details import ProblemDetails
 from mydatamyconsent.model.user_data_consent_info_dto_paginated_list import UserDataConsentInfoDtoPaginatedList
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = mydatamyconsent.Configuration(
-    host = "http://localhost"
+    host = "https://api.mydatamyconsent.com"
 )
 
 
@@ -122,9 +122,13 @@ Class | Method | HTTP request | Description
 *DataProviderDiscoveryApi* | [**get_data_providers**](docs/DataProviderDiscoveryApi.md#get_data_providers) | **GET** /v1/data-providers | Discover all data providers in My Data My Consent by country and filters.
 *DigiLockerCompatIssuerApi* | [**digilocker_compat_issue_document**](docs/DigiLockerCompatIssuerApi.md#digilocker_compat_issue_document) | **POST** /issuer/issuedoc/1/xml | Digilocker Compatible endpoint to issue document.
 *DocumentsApi* | [**get_issued_document_by_id**](docs/DocumentsApi.md#get_issued_document_by_id) | **GET** /v1/documents/issued/{documentId} | Get issued document.
-*DocumentsApi* | [**get_issued_documents**](docs/DocumentsApi.md#get_issued_documents) | **GET** /v1/documents/issued | Get issued documents.
+*DocumentsApi* | [**get_issued_documents**](docs/DocumentsApi.md#get_issued_documents) | **GET** /v1/documents/issued/{documentTypeId} | Get paginated list of issued documents of given document type.
 *DocumentsApi* | [**get_registered_document_types**](docs/DocumentsApi.md#get_registered_document_types) | **GET** /v1/documents/types | Get registered document types.
-*DocumentsApi* | [**issue_document**](docs/DocumentsApi.md#issue_document) | **POST** /v1/documents/issue | Issue a new document.
+*DocumentsApi* | [**issue_document_to_individual**](docs/DocumentsApi.md#issue_document_to_individual) | **POST** /v1/documents/issue/individual | Issue a new document to an individual user.
+*DocumentsApi* | [**issue_document_to_organization**](docs/DocumentsApi.md#issue_document_to_organization) | **POST** /v1/documents/issue/organization | Issue a new document to an organization.
+*DocumentsApi* | [**upload_document_for_individual**](docs/DocumentsApi.md#upload_document_for_individual) | **POST** /v1/documents/issue/individual/upload/{issueRequestId} | Upload a document for issuance request of individual.
+*DocumentsApi* | [**upload_document_for_organization**](docs/DocumentsApi.md#upload_document_for_organization) | **POST** /v1/documents/issue/organization/upload/{issueRequestId} | Upload a document for issuance request of organization.
+*SupportedIdentifiersApi* | [**get_all_supported_identifiers**](docs/SupportedIdentifiersApi.md#get_all_supported_identifiers) | **GET** /v1/supported-identifiers/{countryIso2Code} | Get all supported identifiers by country.
 
 
 ## Documentation For Models
@@ -154,6 +158,8 @@ Class | Method | HTTP request | Description
  - [Document](docs/Document.md)
  - [DocumentCategoryType](docs/DocumentCategoryType.md)
  - [DocumentIssueRequest](docs/DocumentIssueRequest.md)
+ - [DocumentIssueRequestDetails](docs/DocumentIssueRequestDetails.md)
+ - [DocumentReceiver](docs/DocumentReceiver.md)
  - [DocumentSubCategoryType](docs/DocumentSubCategoryType.md)
  - [DocumentType](docs/DocumentType.md)
  - [DocumentTypePaginatedList](docs/DocumentTypePaginatedList.md)
@@ -187,7 +193,10 @@ Class | Method | HTTP request | Description
  - [Receiver](docs/Receiver.md)
  - [ReceiverType](docs/ReceiverType.md)
  - [SharedWith](docs/SharedWith.md)
+ - [StringStringKeyValuePair](docs/StringStringKeyValuePair.md)
  - [SupportedEntityType](docs/SupportedEntityType.md)
+ - [SupportedIdentifier](docs/SupportedIdentifier.md)
+ - [SupportedIdentifiersByCountry](docs/SupportedIdentifiersByCountry.md)
  - [UpdateDataProcessingAgreementRequestModel](docs/UpdateDataProcessingAgreementRequestModel.md)
  - [UriDetails](docs/UriDetails.md)
  - [UserAccountFinancialTransactionsDto](docs/UserAccountFinancialTransactionsDto.md)

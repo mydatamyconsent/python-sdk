@@ -35,8 +35,8 @@ from mydatamyconsent.model.document import Document
 from mydatamyconsent.model.document_category_type import DocumentCategoryType
 from mydatamyconsent.model.document_issue_request import DocumentIssueRequest
 from mydatamyconsent.model.document_sub_category_type import DocumentSubCategoryType
-from mydatamyconsent.model.document_type_details_dto import DocumentTypeDetailsDto
-from mydatamyconsent.model.document_type_details_dto_paginated_list import DocumentTypeDetailsDtoPaginatedList
+from mydatamyconsent.model.document_type import DocumentType
+from mydatamyconsent.model.document_type_paginated_list import DocumentTypePaginatedList
 from mydatamyconsent.model.documents_required import DocumentsRequired
 from mydatamyconsent.model.fetch_types import FetchTypes
 from mydatamyconsent.model.file_type import FileType

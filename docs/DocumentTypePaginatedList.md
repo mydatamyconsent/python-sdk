@@ -1,4 +1,4 @@
-# DocumentTypeDetailsDtoPaginatedList
+# DocumentTypePaginatedList
 
 
 ## Properties
@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **page_size** | **int** |  | [optional] 
 **total_pages** | **int** |  | [optional] [readonly] 
 **total_items** | **int** |  | [optional] 
-**items** | [**[DocumentTypeDetailsDto], none_type**](DocumentTypeDetailsDto.md) |  | [optional] 
+**items** | [**[DocumentType], none_type**](DocumentType.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

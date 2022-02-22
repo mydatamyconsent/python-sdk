@@ -159,7 +159,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_registered_document_types**
-> DocumentTypeDetailsDtoPaginatedList get_registered_document_types()
+> DocumentTypePaginatedList get_registered_document_types()
 
 Get registered document types.
 
@@ -170,8 +170,8 @@ Get registered document types.
 import time
 import mydatamyconsent
 from mydatamyconsent.api import documents_api
-from mydatamyconsent.model.document_type_details_dto_paginated_list import DocumentTypeDetailsDtoPaginatedList
 from mydatamyconsent.model.problem_details import ProblemDetails
+from mydatamyconsent.model.document_type_paginated_list import DocumentTypePaginatedList
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
@@ -207,7 +207,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DocumentTypeDetailsDtoPaginatedList**](DocumentTypeDetailsDtoPaginatedList.md)
+[**DocumentTypePaginatedList**](DocumentTypePaginatedList.md)
 
 ### Authorization
 

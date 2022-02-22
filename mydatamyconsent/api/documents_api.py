@@ -23,7 +23,7 @@ from mydatamyconsent.model_utils import (  # noqa: F401
     validate_and_convert_types
 )
 from mydatamyconsent.model.document_issue_request import DocumentIssueRequest
-from mydatamyconsent.model.document_type_details_dto_paginated_list import DocumentTypeDetailsDtoPaginatedList
+from mydatamyconsent.model.document_type_paginated_list import DocumentTypePaginatedList
 from mydatamyconsent.model.issued_document import IssuedDocument
 from mydatamyconsent.model.issued_document_paginated_list import IssuedDocumentPaginatedList
 from mydatamyconsent.model.problem_details import ProblemDetails
@@ -158,7 +158,7 @@ class DocumentsApi(object):
         )
         self.get_registered_document_types_endpoint = _Endpoint(
             settings={
-                'response_type': (DocumentTypeDetailsDtoPaginatedList,),
+                'response_type': (DocumentTypePaginatedList,),
                 'auth': [],
                 'endpoint_path': '/v1/documents/types',
                 'operation_id': 'get_registered_document_types',
@@ -457,7 +457,7 @@ class DocumentsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            DocumentTypeDetailsDtoPaginatedList
+            DocumentTypePaginatedList
                 If the method is called asynchronously, returns the request
                 thread.
         """

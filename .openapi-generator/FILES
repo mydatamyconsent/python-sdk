@@ -33,8 +33,8 @@ docs/Document.md
 docs/DocumentCategoryType.md
 docs/DocumentIssueRequest.md
 docs/DocumentSubCategoryType.md
-docs/DocumentTypeDetailsDto.md
-docs/DocumentTypeDetailsDtoPaginatedList.md
+docs/DocumentType.md
+docs/DocumentTypePaginatedList.md
 docs/DocumentsApi.md
 docs/DocumentsRequired.md
 docs/FetchTypes.md
@@ -114,8 +114,8 @@ mydatamyconsent/model/document.py
 mydatamyconsent/model/document_category_type.py
 mydatamyconsent/model/document_issue_request.py
 mydatamyconsent/model/document_sub_category_type.py
-mydatamyconsent/model/document_type_details_dto.py
-mydatamyconsent/model/document_type_details_dto_paginated_list.py
+mydatamyconsent/model/document_type.py
+mydatamyconsent/model/document_type_paginated_list.py
 mydatamyconsent/model/documents_required.py
 mydatamyconsent/model/fetch_types.py
 mydatamyconsent/model/file_type.py
@@ -163,10 +163,6 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_document_sub_category_type.py
-test/test_document_type_details_dto.py
-test/test_document_type_details_dto_paginated_list.py
-test/test_issued_document.py
-test/test_issued_document_paginated_list.py
-test/test_supported_entity_type.py
+test/test_document_type.py
+test/test_document_type_paginated_list.py
 tox.ini

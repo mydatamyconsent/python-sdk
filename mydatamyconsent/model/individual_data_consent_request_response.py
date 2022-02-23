@@ -144,12 +144,12 @@ class IndividualDataConsentRequestResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str): [optional]  # noqa: E501
-            template_id (str): [optional]  # noqa: E501
-            requested_at_utc (datetime): [optional]  # noqa: E501
-            request_expires_at_utc (datetime): [optional]  # noqa: E501
+            id (str): Consent request id. [optional]  # noqa: E501
+            template_id (str): Consent request template id. [optional]  # noqa: E501
+            requested_at_utc (datetime): Requested date time in utc zone. [optional]  # noqa: E501
+            request_expires_at_utc (datetime): Request expires date time in utc zone. [optional]  # noqa: E501
             status (DataConsentStatus): [optional]  # noqa: E501
-            transaction_id (str, none_type): [optional]  # noqa: E501
+            transaction_id (str, none_type): Requested transaction id. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -231,12 +231,12 @@ class IndividualDataConsentRequestResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str): [optional]  # noqa: E501
-            template_id (str): [optional]  # noqa: E501
-            requested_at_utc (datetime): [optional]  # noqa: E501
-            request_expires_at_utc (datetime): [optional]  # noqa: E501
+            id (str): Consent request id. [optional]  # noqa: E501
+            template_id (str): Consent request template id. [optional]  # noqa: E501
+            requested_at_utc (datetime): Requested date time in utc zone. [optional]  # noqa: E501
+            request_expires_at_utc (datetime): Request expires date time in utc zone. [optional]  # noqa: E501
             status (DataConsentStatus): [optional]  # noqa: E501
-            transaction_id (str, none_type): [optional]  # noqa: E501
+            transaction_id (str, none_type): Requested transaction id. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

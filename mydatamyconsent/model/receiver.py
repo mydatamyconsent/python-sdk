@@ -143,7 +143,7 @@ class Receiver(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             type (ReceiverType): [optional]  # noqa: E501
-            identifiers ([IdentifierStringKeyValuePair], none_type): [optional]  # noqa: E501
+            identifiers ([IdentifierStringKeyValuePair], none_type): Consent request receiver identifiers. [optional]  # noqa: E501
             identification_strategy (IdentificationStrategy): [optional]  # noqa: E501
         """
 
@@ -227,7 +227,7 @@ class Receiver(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             type (ReceiverType): [optional]  # noqa: E501
-            identifiers ([IdentifierStringKeyValuePair], none_type): [optional]  # noqa: E501
+            identifiers ([IdentifierStringKeyValuePair], none_type): Consent request receiver identifiers. [optional]  # noqa: E501
             identification_strategy (IdentificationStrategy): [optional]  # noqa: E501
         """
 

@@ -175,10 +175,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_document_issue_request_details.py
-test/test_document_receiver.py
-test/test_string_string_key_value_pair.py
-test/test_supported_identifier.py
-test/test_supported_identifiers_api.py
-test/test_supported_identifiers_by_country.py
 tox.ini

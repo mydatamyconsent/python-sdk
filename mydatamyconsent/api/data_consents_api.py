@@ -258,55 +258,6 @@ class DataConsentsApi(object):
             },
             api_client=api_client
         )
-        self.get_all_organization_consented_accounts_endpoint = _Endpoint(
-            settings={
-                'response_type': (DataConsentFinancialsDto,),
-                'auth': [],
-                'endpoint_path': '/v1/consents/organizations/{consentId}/accounts',
-                'operation_id': 'get_all_organization_consented_accounts',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'consent_id',
-                ],
-                'required': [
-                    'consent_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'consent_id':
-                        (str,),
-                },
-                'attribute_map': {
-                    'consent_id': 'consentId',
-                },
-                'location_map': {
-                    'consent_id': 'path',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
         self.get_all_organization_consented_documents_endpoint = _Endpoint(
             settings={
                 'response_type': (DataConsentDocumentsDto,),
@@ -362,6 +313,55 @@ class DataConsentsApi(object):
                 'auth': [],
                 'endpoint_path': '/v1/consents/individuals/{consentId}',
                 'operation_id': 'get_consent_details_by_id',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'consent_id',
+                ],
+                'required': [
+                    'consent_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'consent_id':
+                        (str,),
+                },
+                'attribute_map': {
+                    'consent_id': 'consentId',
+                },
+                'location_map': {
+                    'consent_id': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.get_consent_financial_accounts_endpoint = _Endpoint(
+            settings={
+                'response_type': (DataConsentFinancialsDto,),
+                'auth': [],
+                'endpoint_path': '/v1/consents/organizations/{consentId}/accounts',
+                'operation_id': 'get_consent_financial_accounts',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -650,12 +650,12 @@ class DataConsentsApi(object):
             },
             api_client=api_client
         )
-        self.get_consents_endpoint = _Endpoint(
+        self.get_consents_for_organizations_endpoint = _Endpoint(
             settings={
-                'response_type': (UserDataConsentInfoDtoPaginatedList,),
+                'response_type': (OrganizationDataConsentInfoDtoPaginatedList,),
                 'auth': [],
-                'endpoint_path': '/v1/consents/individuals',
-                'operation_id': 'get_consents',
+                'endpoint_path': '/v1/consents/organizations',
+                'operation_id': 'get_consents_for_organizations',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -717,12 +717,12 @@ class DataConsentsApi(object):
             },
             api_client=api_client
         )
-        self.get_consents_for_organizations_endpoint = _Endpoint(
+        self.get_consents_sent_to_individuals_endpoint = _Endpoint(
             settings={
-                'response_type': (OrganizationDataConsentInfoDtoPaginatedList,),
+                'response_type': (UserDataConsentInfoDtoPaginatedList,),
                 'auth': [],
-                'endpoint_path': '/v1/consents/organizations',
-                'operation_id': 'get_consents_for_organizations',
+                'endpoint_path': '/v1/consents/individuals',
+                'operation_id': 'get_consents_sent_to_individuals',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -1285,83 +1285,6 @@ class DataConsentsApi(object):
             consent_id
         return self.get_all_consented_financial_accounts_endpoint.call_with_http_info(**kwargs)
 
-    def get_all_organization_consented_accounts(
-        self,
-        consent_id,
-        **kwargs
-    ):
-        """Get all organizational consented financial accounts.  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.get_all_organization_consented_accounts(consent_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            consent_id (str): Consent id.
-
-        Keyword Args:
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            DataConsentFinancialsDto
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['consent_id'] = \
-            consent_id
-        return self.get_all_organization_consented_accounts_endpoint.call_with_http_info(**kwargs)
-
     def get_all_organization_consented_documents(
         self,
         consent_id,
@@ -1515,6 +1438,83 @@ class DataConsentsApi(object):
         kwargs['consent_id'] = \
             consent_id
         return self.get_consent_details_by_id_endpoint.call_with_http_info(**kwargs)
+
+    def get_consent_financial_accounts(
+        self,
+        consent_id,
+        **kwargs
+    ):
+        """Get all organizational consented financial accounts.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_consent_financial_accounts(consent_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            consent_id (str): Consent id.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            DataConsentFinancialsDto
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['consent_id'] = \
+            consent_id
+        return self.get_consent_financial_accounts_endpoint.call_with_http_info(**kwargs)
 
     def get_consented_account_by_id(
         self,
@@ -1845,83 +1845,6 @@ class DataConsentsApi(object):
             account_id
         return self.get_consented_financial_account_transactions_endpoint.call_with_http_info(**kwargs)
 
-    def get_consents(
-        self,
-        **kwargs
-    ):
-        """Get the list of Consents Sent to Individuals.  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.get_consents(async_req=True)
-        >>> result = thread.get()
-
-
-        Keyword Args:
-            status (DataConsentStatus): Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus.. [optional]
-            _from (datetime): From date time in utc timezone.. [optional]
-            to (datetime): Til date time in utc timezone.. [optional]
-            page_no (int): Page number.. [optional] if omitted the server will use the default value of 1
-            page_size (int): Number of items to return.. [optional] if omitted the server will use the default value of 25
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            UserDataConsentInfoDtoPaginatedList
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        return self.get_consents_endpoint.call_with_http_info(**kwargs)
-
     def get_consents_for_organizations(
         self,
         **kwargs
@@ -1998,6 +1921,83 @@ class DataConsentsApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         return self.get_consents_for_organizations_endpoint.call_with_http_info(**kwargs)
+
+    def get_consents_sent_to_individuals(
+        self,
+        **kwargs
+    ):
+        """Get the list of Consents Sent to Individuals.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_consents_sent_to_individuals(async_req=True)
+        >>> result = thread.get()
+
+
+        Keyword Args:
+            status (DataConsentStatus): Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus.. [optional]
+            _from (datetime): From date time in utc timezone.. [optional]
+            to (datetime): Til date time in utc timezone.. [optional]
+            page_no (int): Page number.. [optional] if omitted the server will use the default value of 1
+            page_size (int): Number of items to return.. [optional] if omitted the server will use the default value of 25
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            UserDataConsentInfoDtoPaginatedList
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        return self.get_consents_sent_to_individuals_endpoint.call_with_http_info(**kwargs)
 
     def get_org_consented_account_transactions(
         self,

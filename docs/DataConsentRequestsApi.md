@@ -26,7 +26,6 @@ Cancel the individual data consent request based on Id.
 import time
 import mydatamyconsent
 from mydatamyconsent.api import data_consent_requests_api
-from mydatamyconsent.model.problem_details import ProblemDetails
 from mydatamyconsent.model.individual_data_consent_request_response import IndividualDataConsentRequestResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
@@ -79,7 +78,6 @@ No authorization required
 **200** | Success |  -  |
 **500** | Server Error |  -  |
 **404** | Not Found |  -  |
-**0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -95,7 +93,6 @@ Cancel the Organization data consent request based on Id.
 import time
 import mydatamyconsent
 from mydatamyconsent.api import data_consent_requests_api
-from mydatamyconsent.model.problem_details import ProblemDetails
 from mydatamyconsent.model.organization_data_consent_request_response import OrganizationDataConsentRequestResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
@@ -148,12 +145,13 @@ No authorization required
 **200** | Success |  -  |
 **500** | Server Error |  -  |
 **404** | Not Found |  -  |
-**0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_individual_data_consent_request**
 > IndividualDataConsentRequestResponse create_individual_data_consent_request(create_individual_data_consent_request)
+
+Create a individual data consent request.
 
 Create a individual data consent request.
 
@@ -165,7 +163,6 @@ import time
 import mydatamyconsent
 from mydatamyconsent.api import data_consent_requests_api
 from mydatamyconsent.model.create_individual_data_consent_request import CreateIndividualDataConsentRequest
-from mydatamyconsent.model.problem_details import ProblemDetails
 from mydatamyconsent.model.individual_data_consent_request_response import IndividualDataConsentRequestResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
@@ -184,14 +181,14 @@ with mydatamyconsent.ApiClient() as api_client:
         receiver=Receiver(
             type=ReceiverType("Individual"),
             identifiers=[
-                IdentifierStringKeyValuePair(
-                    key=Identifier("Email"),
+                StringStringKeyValuePair(
+                    key="key_example",
                     value="value_example",
                 ),
             ],
             identification_strategy=IdentificationStrategy("MatchAtLeastOneIdentifier"),
         ),
-    ) # CreateIndividualDataConsentRequest | M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateIndividualDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateIndividualDataConsentRequest).
+    ) # CreateIndividualDataConsentRequest | The Individual data consent request payload
 
     # example passing only required values which don't have defaults set
     try:
@@ -207,7 +204,7 @@ with mydatamyconsent.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **create_individual_data_consent_request** | [**CreateIndividualDataConsentRequest**](CreateIndividualDataConsentRequest.md)| M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateIndividualDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateIndividualDataConsentRequest). |
+ **create_individual_data_consent_request** | [**CreateIndividualDataConsentRequest**](CreateIndividualDataConsentRequest.md)| The Individual data consent request payload |
 
 ### Return type
 
@@ -231,12 +228,13 @@ No authorization required
 **500** | Server Error |  -  |
 **404** | Not Found |  -  |
 **400** | Bad Request |  -  |
-**0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_organization_data_consent_request**
 > OrganizationDataConsentRequestResponse create_organization_data_consent_request(create_organization_data_consent_request)
+
+Create a organization data consent request.
 
 Create a organization data consent request.
 
@@ -247,7 +245,6 @@ Create a organization data consent request.
 import time
 import mydatamyconsent
 from mydatamyconsent.api import data_consent_requests_api
-from mydatamyconsent.model.problem_details import ProblemDetails
 from mydatamyconsent.model.organization_data_consent_request_response import OrganizationDataConsentRequestResponse
 from mydatamyconsent.model.create_organization_data_consent_request import CreateOrganizationDataConsentRequest
 from pprint import pprint
@@ -267,8 +264,8 @@ with mydatamyconsent.ApiClient() as api_client:
         receiver=Receiver(
             type=ReceiverType("Individual"),
             identifiers=[
-                IdentifierStringKeyValuePair(
-                    key=Identifier("Email"),
+                StringStringKeyValuePair(
+                    key="key_example",
                     value="value_example",
                 ),
             ],
@@ -314,7 +311,6 @@ No authorization required
 **500** | Server Error |  -  |
 **404** | Not Found |  -  |
 **400** | Bad Request |  -  |
-**0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -331,7 +327,6 @@ import time
 import mydatamyconsent
 from mydatamyconsent.api import data_consent_requests_api
 from mydatamyconsent.model.user_data_consent_info_dto_paginated_list import UserDataConsentInfoDtoPaginatedList
-from mydatamyconsent.model.problem_details import ProblemDetails
 from mydatamyconsent.model.data_consent_status import DataConsentStatus
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
@@ -392,7 +387,6 @@ No authorization required
 |-------------|-------------|------------------|
 **200** | Success |  -  |
 **500** | Server Error |  -  |
-**0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -409,7 +403,6 @@ import time
 import mydatamyconsent
 from mydatamyconsent.api import data_consent_requests_api
 from mydatamyconsent.model.organization_data_consent_info_dto_paginated_list import OrganizationDataConsentInfoDtoPaginatedList
-from mydatamyconsent.model.problem_details import ProblemDetails
 from mydatamyconsent.model.data_consent_status import DataConsentStatus
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
@@ -470,7 +463,6 @@ No authorization required
 |-------------|-------------|------------------|
 **200** | Success |  -  |
 **500** | Server Error |  -  |
-**0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -487,7 +479,6 @@ import time
 import mydatamyconsent
 from mydatamyconsent.api import data_consent_requests_api
 from mydatamyconsent.model.data_consent_details_dto import DataConsentDetailsDto
-from mydatamyconsent.model.problem_details import ProblemDetails
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -538,7 +529,6 @@ No authorization required
 |-------------|-------------|------------------|
 **200** | Success |  -  |
 **500** | Server Error |  -  |
-**0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -555,7 +545,6 @@ import time
 import mydatamyconsent
 from mydatamyconsent.api import data_consent_requests_api
 from mydatamyconsent.model.data_consent_details_dto import DataConsentDetailsDto
-from mydatamyconsent.model.problem_details import ProblemDetails
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -606,7 +595,6 @@ No authorization required
 |-------------|-------------|------------------|
 **200** | Success |  -  |
 **500** | Server Error |  -  |
-**0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

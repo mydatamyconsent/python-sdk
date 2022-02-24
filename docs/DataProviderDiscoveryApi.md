@@ -21,7 +21,6 @@ import time
 import mydatamyconsent
 from mydatamyconsent.api import data_provider_discovery_api
 from mydatamyconsent.model.data_provider import DataProvider
-from mydatamyconsent.model.problem_details import ProblemDetails
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -74,7 +73,6 @@ No authorization required
 **500** | Server Error |  -  |
 **400** | Bad Request |  -  |
 **404** | Not Found |  -  |
-**0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -90,7 +88,6 @@ Discover all data providers in My Data My Consent by country and filters.
 import time
 import mydatamyconsent
 from mydatamyconsent.api import data_provider_discovery_api
-from mydatamyconsent.model.problem_details import ProblemDetails
 from mydatamyconsent.model.data_provider_paginated_list import DataProviderPaginatedList
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
@@ -154,7 +151,6 @@ No authorization required
 **200** | Success |  -  |
 **500** | Server Error |  -  |
 **400** | Bad Request |  -  |
-**0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

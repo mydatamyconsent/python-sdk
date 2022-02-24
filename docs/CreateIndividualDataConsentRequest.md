@@ -1,6 +1,6 @@
 # CreateIndividualDataConsentRequest
 
-Individual Data Consent Request.
+Create individual data consent request
 
 ## Properties
 Name | Type | Description | Notes

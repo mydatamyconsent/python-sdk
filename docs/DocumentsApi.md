@@ -25,7 +25,6 @@ Get issued document.
 import time
 import mydatamyconsent
 from mydatamyconsent.api import documents_api
-from mydatamyconsent.model.problem_details import ProblemDetails
 from mydatamyconsent.model.issued_document import IssuedDocument
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
@@ -79,7 +78,6 @@ No authorization required
 **500** | Server Error |  -  |
 **400** | Bad Request |  -  |
 **404** | Not Found |  -  |
-**0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -96,7 +94,6 @@ import time
 import mydatamyconsent
 from mydatamyconsent.api import documents_api
 from mydatamyconsent.model.issued_document_paginated_list import IssuedDocumentPaginatedList
-from mydatamyconsent.model.problem_details import ProblemDetails
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -165,7 +162,6 @@ No authorization required
 **200** | Success |  -  |
 **500** | Server Error |  -  |
 **400** | Bad Request |  -  |
-**0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -181,7 +177,6 @@ Get registered document types.
 import time
 import mydatamyconsent
 from mydatamyconsent.api import documents_api
-from mydatamyconsent.model.problem_details import ProblemDetails
 from mydatamyconsent.model.document_type_paginated_list import DocumentTypePaginatedList
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
@@ -237,7 +232,6 @@ No authorization required
 **200** | Success |  -  |
 **500** | Server Error |  -  |
 **400** | Bad Request |  -  |
-**0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -255,7 +249,6 @@ import mydatamyconsent
 from mydatamyconsent.api import documents_api
 from mydatamyconsent.model.document_issue_request_details import DocumentIssueRequestDetails
 from mydatamyconsent.model.document_issue_request import DocumentIssueRequest
-from mydatamyconsent.model.problem_details import ProblemDetails
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -273,6 +266,7 @@ with mydatamyconsent.ApiClient() as api_client:
         document_identifier="document_identifier_example",
         description="description_example",
         receiver=DocumentReceiver(
+            country_iso2_code="country_iso2_code_example",
             identifiers=[
                 StringStringKeyValuePair(
                     key="key_example",
@@ -323,8 +317,8 @@ No authorization required
 |-------------|-------------|------------------|
 **200** | Success |  -  |
 **400** | Bad Request |  -  |
+**404** | Not Found |  -  |
 **500** | Server Error |  -  |
-**0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -360,6 +354,7 @@ with mydatamyconsent.ApiClient() as api_client:
         document_identifier="document_identifier_example",
         description="description_example",
         receiver=DocumentReceiver(
+            country_iso2_code="country_iso2_code_example",
             identifiers=[
                 StringStringKeyValuePair(
                     key="key_example",
@@ -410,6 +405,7 @@ No authorization required
 |-------------|-------------|------------------|
 **200** | Success |  -  |
 **400** | Bad Request |  -  |
+**404** | Not Found |  -  |
 **500** | Server Error |  -  |
 **0** | Error |  -  |
 
@@ -427,7 +423,6 @@ Upload a document for issuance request of individual.
 import time
 import mydatamyconsent
 from mydatamyconsent.api import documents_api
-from mydatamyconsent.model.problem_details import ProblemDetails
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -490,7 +485,6 @@ No authorization required
 **200** | Success |  -  |
 **400** | Bad Request |  -  |
 **500** | Server Error |  -  |
-**0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -506,7 +500,6 @@ Upload a document for issuance request of organization.
 import time
 import mydatamyconsent
 from mydatamyconsent.api import documents_api
-from mydatamyconsent.model.problem_details import ProblemDetails
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -569,7 +562,6 @@ No authorization required
 **200** | Success |  -  |
 **400** | Bad Request |  -  |
 **500** | Server Error |  -  |
-**0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

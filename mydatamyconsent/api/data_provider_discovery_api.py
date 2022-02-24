@@ -24,7 +24,6 @@ from mydatamyconsent.model_utils import (  # noqa: F401
 )
 from mydatamyconsent.model.data_provider import DataProvider
 from mydatamyconsent.model.data_provider_paginated_list import DataProviderPaginatedList
-from mydatamyconsent.model.problem_details import ProblemDetails
 
 
 class DataProviderDiscoveryApi(object):

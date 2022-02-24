@@ -1,6 +1,6 @@
 # IndividualDataConsentRequestResponse
 
-Individual Data Consent Request Response.
+IndividualDataConsentRequestResponse
 
 ## Properties
 Name | Type | Description | Notes

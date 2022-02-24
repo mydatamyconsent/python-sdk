@@ -22,8 +22,7 @@ from mydatamyconsent.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
-from mydatamyconsent.model.problem_details import ProblemDetails
-from mydatamyconsent.model.supported_identifiers_by_country import SupportedIdentifiersByCountry
+from mydatamyconsent.model.supported_identifier import SupportedIdentifier
 
 
 class SupportedIdentifiersApi(object):
@@ -39,7 +38,7 @@ class SupportedIdentifiersApi(object):
         self.api_client = api_client
         self.get_all_supported_identifiers_endpoint = _Endpoint(
             settings={
-                'response_type': (SupportedIdentifiersByCountry,),
+                'response_type': (SupportedIdentifier,),
                 'auth': [],
                 'endpoint_path': '/v1/supported-identifiers/{countryIso2Code}',
                 'operation_id': 'get_all_supported_identifiers',
@@ -94,6 +93,7 @@ class SupportedIdentifiersApi(object):
     ):
         """Get all supported identifiers by country.  # noqa: E501
 
+        Get all supported identifiers by country.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -132,7 +132,7 @@ class SupportedIdentifiersApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            SupportedIdentifiersByCountry
+            SupportedIdentifier
                 If the method is called asynchronously, returns the request
                 thread.
         """

@@ -32,11 +32,11 @@ from mydatamyconsent.exceptions import ApiAttributeError
 
 def lazy_import():
     from mydatamyconsent.model.identification_strategy import IdentificationStrategy
-    from mydatamyconsent.model.identifier_string_key_value_pair import IdentifierStringKeyValuePair
     from mydatamyconsent.model.receiver_type import ReceiverType
+    from mydatamyconsent.model.string_string_key_value_pair import StringStringKeyValuePair
     globals()['IdentificationStrategy'] = IdentificationStrategy
-    globals()['IdentifierStringKeyValuePair'] = IdentifierStringKeyValuePair
     globals()['ReceiverType'] = ReceiverType
+    globals()['StringStringKeyValuePair'] = StringStringKeyValuePair
 
 
 class Receiver(ModelNormal):
@@ -86,7 +86,7 @@ class Receiver(ModelNormal):
         lazy_import()
         return {
             'type': (ReceiverType,),  # noqa: E501
-            'identifiers': ([IdentifierStringKeyValuePair], none_type,),  # noqa: E501
+            'identifiers': ([StringStringKeyValuePair], none_type,),  # noqa: E501
             'identification_strategy': (IdentificationStrategy,),  # noqa: E501
         }
 
@@ -143,7 +143,7 @@ class Receiver(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             type (ReceiverType): [optional]  # noqa: E501
-            identifiers ([IdentifierStringKeyValuePair], none_type): Consent request receiver identifiers. [optional]  # noqa: E501
+            identifiers ([StringStringKeyValuePair], none_type): Consent request receiver identifiers. [optional]  # noqa: E501
             identification_strategy (IdentificationStrategy): [optional]  # noqa: E501
         """
 
@@ -227,7 +227,7 @@ class Receiver(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             type (ReceiverType): [optional]  # noqa: E501
-            identifiers ([IdentifierStringKeyValuePair], none_type): Consent request receiver identifiers. [optional]  # noqa: E501
+            identifiers ([StringStringKeyValuePair], none_type): Consent request receiver identifiers. [optional]  # noqa: E501
             identification_strategy (IdentificationStrategy): [optional]  # noqa: E501
         """
 

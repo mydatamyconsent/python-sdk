@@ -8,7 +8,9 @@ Method | HTTP request | Description
 
 
 # **get_all_supported_identifiers**
-> SupportedIdentifiersByCountry get_all_supported_identifiers(country_iso2_code)
+> SupportedIdentifier get_all_supported_identifiers(country_iso2_code)
+
+Get all supported identifiers by country.
 
 Get all supported identifiers by country.
 
@@ -19,8 +21,7 @@ Get all supported identifiers by country.
 import time
 import mydatamyconsent
 from mydatamyconsent.api import supported_identifiers_api
-from mydatamyconsent.model.supported_identifiers_by_country import SupportedIdentifiersByCountry
-from mydatamyconsent.model.problem_details import ProblemDetails
+from mydatamyconsent.model.supported_identifier import SupportedIdentifier
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -53,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SupportedIdentifiersByCountry**](SupportedIdentifiersByCountry.md)
+[**SupportedIdentifier**](SupportedIdentifier.md)
 
 ### Authorization
 
@@ -71,7 +72,7 @@ No authorization required
 |-------------|-------------|------------------|
 **200** | Success |  -  |
 **404** | Not Found |  -  |
-**0** | Error |  -  |
+**500** | Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -65,6 +65,10 @@ class DocumentReceiver(ModelNormal):
     }
 
     validations = {
+        ('country_iso2_code',): {
+            'max_length': 2,
+            'min_length': 2,
+        },
     }
 
     additional_properties_type = None
@@ -83,6 +87,7 @@ class DocumentReceiver(ModelNormal):
         """
         lazy_import()
         return {
+            'country_iso2_code': (str,),  # noqa: E501
             'identifiers': ([StringStringKeyValuePair],),  # noqa: E501
             'identification_strategy': (IdentificationStrategy,),  # noqa: E501
         }
@@ -93,6 +98,7 @@ class DocumentReceiver(ModelNormal):
 
 
     attribute_map = {
+        'country_iso2_code': 'countryIso2Code',  # noqa: E501
         'identifiers': 'identifiers',  # noqa: E501
         'identification_strategy': 'identificationStrategy',  # noqa: E501
     }
@@ -104,10 +110,11 @@ class DocumentReceiver(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, identifiers, identification_strategy, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, country_iso2_code, identifiers, identification_strategy, *args, **kwargs):  # noqa: E501
         """DocumentReceiver - a model defined in OpenAPI
 
         Args:
+            country_iso2_code (str):
             identifiers ([StringStringKeyValuePair]):
             identification_strategy (IdentificationStrategy):
 
@@ -169,6 +176,7 @@ class DocumentReceiver(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.country_iso2_code = country_iso2_code
         self.identifiers = identifiers
         self.identification_strategy = identification_strategy
         for var_name, var_value in kwargs.items():
@@ -191,10 +199,11 @@ class DocumentReceiver(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, identifiers, identification_strategy, *args, **kwargs):  # noqa: E501
+    def __init__(self, country_iso2_code, identifiers, identification_strategy, *args, **kwargs):  # noqa: E501
         """DocumentReceiver - a model defined in OpenAPI
 
         Args:
+            country_iso2_code (str):
             identifiers ([StringStringKeyValuePair]):
             identification_strategy (IdentificationStrategy):
 
@@ -254,6 +263,7 @@ class DocumentReceiver(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.country_iso2_code = country_iso2_code
         self.identifiers = identifiers
         self.identification_strategy = identification_strategy
         for var_name, var_value in kwargs.items():

@@ -25,7 +25,6 @@ import time
 import mydatamyconsent
 from mydatamyconsent.api import data_processing_agreements_api
 from mydatamyconsent.model.create_data_processing_agreement_request_model import CreateDataProcessingAgreementRequestModel
-from mydatamyconsent.model.problem_details import ProblemDetails
 from mydatamyconsent.model.data_processing_agreement_dto import DataProcessingAgreementDto
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
@@ -82,7 +81,6 @@ No authorization required
 |-------------|-------------|------------------|
 **200** | Success |  -  |
 **500** | Server Error |  -  |
-**0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -98,7 +96,6 @@ Delete a data processing agreement. This will not delete a published or a agreem
 import time
 import mydatamyconsent
 from mydatamyconsent.api import data_processing_agreements_api
-from mydatamyconsent.model.problem_details import ProblemDetails
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -150,7 +147,6 @@ No authorization required
 **404** | Not Found |  -  |
 **400** | Bad Request |  -  |
 **500** | Server Error |  -  |
-**0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -166,7 +162,6 @@ Get data processing agreement by id.
 import time
 import mydatamyconsent
 from mydatamyconsent.api import data_processing_agreements_api
-from mydatamyconsent.model.problem_details import ProblemDetails
 from mydatamyconsent.model.data_processing_agreement_dto import DataProcessingAgreementDto
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
@@ -220,7 +215,6 @@ No authorization required
 **500** | Server Error |  -  |
 **400** | Bad Request |  -  |
 **404** | Not Found |  -  |
-**0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -236,7 +230,6 @@ Get all data processing agreements.
 import time
 import mydatamyconsent
 from mydatamyconsent.api import data_processing_agreements_api
-from mydatamyconsent.model.problem_details import ProblemDetails
 from mydatamyconsent.model.data_processing_agreement_dto_paginated_list import DataProcessingAgreementDtoPaginatedList
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
@@ -291,7 +284,6 @@ No authorization required
 |-------------|-------------|------------------|
 **200** | Success |  -  |
 **500** | Server Error |  -  |
-**0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -307,7 +299,6 @@ Terminate a data processing agreement.
 import time
 import mydatamyconsent
 from mydatamyconsent.api import data_processing_agreements_api
-from mydatamyconsent.model.problem_details import ProblemDetails
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -359,7 +350,6 @@ No authorization required
 **404** | Not Found |  -  |
 **400** | Bad Request |  -  |
 **500** | Server Error |  -  |
-**0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -375,7 +365,6 @@ Update a data processing agreement.
 import time
 import mydatamyconsent
 from mydatamyconsent.api import data_processing_agreements_api
-from mydatamyconsent.model.problem_details import ProblemDetails
 from mydatamyconsent.model.update_data_processing_agreement_request_model import UpdateDataProcessingAgreementRequestModel
 from mydatamyconsent.model.data_processing_agreement_dto import DataProcessingAgreementDto
 from pprint import pprint
@@ -445,7 +434,6 @@ No authorization required
 **404** | Not Found |  -  |
 **400** | Bad Request |  -  |
 **500** | Server Error |  -  |
-**0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

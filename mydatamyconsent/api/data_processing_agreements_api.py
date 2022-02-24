@@ -25,7 +25,6 @@ from mydatamyconsent.model_utils import (  # noqa: F401
 from mydatamyconsent.model.create_data_processing_agreement_request_model import CreateDataProcessingAgreementRequestModel
 from mydatamyconsent.model.data_processing_agreement_dto import DataProcessingAgreementDto
 from mydatamyconsent.model.data_processing_agreement_dto_paginated_list import DataProcessingAgreementDtoPaginatedList
-from mydatamyconsent.model.problem_details import ProblemDetails
 from mydatamyconsent.model.update_data_processing_agreement_request_model import UpdateDataProcessingAgreementRequestModel
 
 

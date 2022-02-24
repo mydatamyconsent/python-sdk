@@ -29,7 +29,6 @@ from mydatamyconsent.model.data_consent_status import DataConsentStatus
 from mydatamyconsent.model.individual_data_consent_request_response import IndividualDataConsentRequestResponse
 from mydatamyconsent.model.organization_data_consent_info_dto_paginated_list import OrganizationDataConsentInfoDtoPaginatedList
 from mydatamyconsent.model.organization_data_consent_request_response import OrganizationDataConsentRequestResponse
-from mydatamyconsent.model.problem_details import ProblemDetails
 from mydatamyconsent.model.user_data_consent_info_dto_paginated_list import UserDataConsentInfoDtoPaginatedList
 
 
@@ -636,6 +635,7 @@ class DataConsentRequestsApi(object):
     ):
         """Create a individual data consent request.  # noqa: E501
 
+        Create a individual data consent request.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -643,7 +643,7 @@ class DataConsentRequestsApi(object):
         >>> result = thread.get()
 
         Args:
-            create_individual_data_consent_request (CreateIndividualDataConsentRequest): M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateIndividualDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateIndividualDataConsentRequest).
+            create_individual_data_consent_request (CreateIndividualDataConsentRequest): The Individual data consent request payload
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -713,6 +713,7 @@ class DataConsentRequestsApi(object):
     ):
         """Create a organization data consent request.  # noqa: E501
 
+        Create a organization data consent request.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

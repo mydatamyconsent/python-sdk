@@ -31,18 +31,12 @@ from mydatamyconsent.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from mydatamyconsent.model.data_consent_identifier import DataConsentIdentifier
-    from mydatamyconsent.model.data_consent_requested_document import DataConsentRequestedDocument
-    from mydatamyconsent.model.data_consent_requested_financial_account import DataConsentRequestedFinancialAccount
-    from mydatamyconsent.model.data_consent_requester_dto import DataConsentRequesterDto
     from mydatamyconsent.model.data_consent_status import DataConsentStatus
-    from mydatamyconsent.model.get_consent_template_details_dto import GetConsentTemplateDetailsDto
-    globals()['DataConsentIdentifier'] = DataConsentIdentifier
-    globals()['DataConsentRequestedDocument'] = DataConsentRequestedDocument
-    globals()['DataConsentRequestedFinancialAccount'] = DataConsentRequestedFinancialAccount
-    globals()['DataConsentRequesterDto'] = DataConsentRequesterDto
+    from mydatamyconsent.model.json_schema import JsonSchema
+    from mydatamyconsent.model.life import Life
     globals()['DataConsentStatus'] = DataConsentStatus
-    globals()['GetConsentTemplateDetailsDto'] = GetConsentTemplateDetailsDto
+    globals()['JsonSchema'] = JsonSchema
+    globals()['Life'] = Life
 
 
 class DataConsentDetailsDto(ModelNormal):
@@ -92,16 +86,21 @@ class DataConsentDetailsDto(ModelNormal):
         lazy_import()
         return {
             'id': (str,),  # noqa: E501
+            'title': (str, none_type,),  # noqa: E501
+            'description': (str, none_type,),  # noqa: E501
+            'data_life': (Life,),  # noqa: E501
+            'requester_name': (str, none_type,),  # noqa: E501
+            'requester_logo': (str, none_type,),  # noqa: E501
+            'location': (str, none_type,),  # noqa: E501
             'status': (DataConsentStatus,),  # noqa: E501
             'approved_at_utc': (datetime, none_type,),  # noqa: E501
             'rejected_at_utc': (datetime, none_type,),  # noqa: E501
             'expires_at_utc': (datetime,),  # noqa: E501
             'requested_at_utc': (datetime,),  # noqa: E501
-            'requester': (DataConsentRequesterDto,),  # noqa: E501
-            'consent_details': (GetConsentTemplateDetailsDto,),  # noqa: E501
-            'identifiers': ([DataConsentIdentifier], none_type,),  # noqa: E501
-            'approved_documents': ([DataConsentRequestedDocument], none_type,),  # noqa: E501
-            'approved_financials': ([DataConsentRequestedFinancialAccount], none_type,),  # noqa: E501
+            'identifiers': (JsonSchema,),  # noqa: E501
+            'documents': (str, none_type,),  # noqa: E501
+            'financials': (str, none_type,),  # noqa: E501
+            'health_records': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -111,16 +110,21 @@ class DataConsentDetailsDto(ModelNormal):
 
     attribute_map = {
         'id': 'id',  # noqa: E501
+        'title': 'title',  # noqa: E501
+        'description': 'description',  # noqa: E501
+        'data_life': 'dataLife',  # noqa: E501
+        'requester_name': 'requesterName',  # noqa: E501
+        'requester_logo': 'requesterLogo',  # noqa: E501
+        'location': 'location',  # noqa: E501
         'status': 'status',  # noqa: E501
         'approved_at_utc': 'approvedAtUtc',  # noqa: E501
         'rejected_at_utc': 'rejectedAtUtc',  # noqa: E501
         'expires_at_utc': 'expiresAtUtc',  # noqa: E501
         'requested_at_utc': 'requestedAtUtc',  # noqa: E501
-        'requester': 'requester',  # noqa: E501
-        'consent_details': 'consentDetails',  # noqa: E501
         'identifiers': 'identifiers',  # noqa: E501
-        'approved_documents': 'approvedDocuments',  # noqa: E501
-        'approved_financials': 'approvedFinancials',  # noqa: E501
+        'documents': 'documents',  # noqa: E501
+        'financials': 'financials',  # noqa: E501
+        'health_records': 'healthRecords',  # noqa: E501
     }
 
     read_only_vars = {
@@ -130,8 +134,11 @@ class DataConsentDetailsDto(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, id, *args, **kwargs):  # noqa: E501
         """DataConsentDetailsDto - a model defined in OpenAPI
+
+        Args:
+            id (str):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -164,17 +171,21 @@ class DataConsentDetailsDto(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str): [optional]  # noqa: E501
+            title (str, none_type): [optional]  # noqa: E501
+            description (str, none_type): [optional]  # noqa: E501
+            data_life (Life): [optional]  # noqa: E501
+            requester_name (str, none_type): [optional]  # noqa: E501
+            requester_logo (str, none_type): [optional]  # noqa: E501
+            location (str, none_type): [optional]  # noqa: E501
             status (DataConsentStatus): [optional]  # noqa: E501
             approved_at_utc (datetime, none_type): [optional]  # noqa: E501
             rejected_at_utc (datetime, none_type): [optional]  # noqa: E501
             expires_at_utc (datetime): [optional]  # noqa: E501
             requested_at_utc (datetime): [optional]  # noqa: E501
-            requester (DataConsentRequesterDto): [optional]  # noqa: E501
-            consent_details (GetConsentTemplateDetailsDto): [optional]  # noqa: E501
-            identifiers ([DataConsentIdentifier], none_type): [optional]  # noqa: E501
-            approved_documents ([DataConsentRequestedDocument], none_type): [optional]  # noqa: E501
-            approved_financials ([DataConsentRequestedFinancialAccount], none_type): [optional]  # noqa: E501
+            identifiers (JsonSchema): [optional]  # noqa: E501
+            documents (str, none_type): [optional]  # noqa: E501
+            financials (str, none_type): [optional]  # noqa: E501
+            health_records (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -202,6 +213,7 @@ class DataConsentDetailsDto(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.id = id
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -222,8 +234,11 @@ class DataConsentDetailsDto(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, id, *args, **kwargs):  # noqa: E501
         """DataConsentDetailsDto - a model defined in OpenAPI
+
+        Args:
+            id (str):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -256,17 +271,21 @@ class DataConsentDetailsDto(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str): [optional]  # noqa: E501
+            title (str, none_type): [optional]  # noqa: E501
+            description (str, none_type): [optional]  # noqa: E501
+            data_life (Life): [optional]  # noqa: E501
+            requester_name (str, none_type): [optional]  # noqa: E501
+            requester_logo (str, none_type): [optional]  # noqa: E501
+            location (str, none_type): [optional]  # noqa: E501
             status (DataConsentStatus): [optional]  # noqa: E501
             approved_at_utc (datetime, none_type): [optional]  # noqa: E501
             rejected_at_utc (datetime, none_type): [optional]  # noqa: E501
             expires_at_utc (datetime): [optional]  # noqa: E501
             requested_at_utc (datetime): [optional]  # noqa: E501
-            requester (DataConsentRequesterDto): [optional]  # noqa: E501
-            consent_details (GetConsentTemplateDetailsDto): [optional]  # noqa: E501
-            identifiers ([DataConsentIdentifier], none_type): [optional]  # noqa: E501
-            approved_documents ([DataConsentRequestedDocument], none_type): [optional]  # noqa: E501
-            approved_financials ([DataConsentRequestedFinancialAccount], none_type): [optional]  # noqa: E501
+            identifiers (JsonSchema): [optional]  # noqa: E501
+            documents (str, none_type): [optional]  # noqa: E501
+            financials (str, none_type): [optional]  # noqa: E501
+            health_records (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -292,6 +311,7 @@ class DataConsentDetailsDto(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.id = id
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

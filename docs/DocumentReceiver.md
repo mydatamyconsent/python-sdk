@@ -4,6 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**country_iso2_code** | **str** |  | 
 **identifiers** | [**[StringStringKeyValuePair]**](StringStringKeyValuePair.md) |  | 
 **identification_strategy** | [**IdentificationStrategy**](IdentificationStrategy.md) |  | 
 

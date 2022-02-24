@@ -5,12 +5,14 @@ Document issue request details.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**id** | **str** | Request Id. | 
 **document_type_id** | **str** |  | 
 **document_type_name** | **str** |  | 
 **document_identifier** | **str** |  | 
 **description** | **str** |  | 
 **receiver** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | 
 **created_at_utc** | **datetime** |  | 
+**status** | [**DocumentIssueRequestStatus**](DocumentIssueRequestStatus.md) |  | [optional] 
 **expires_at_utc** | **datetime, none_type** |  | [optional] 
 **metadata** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
 

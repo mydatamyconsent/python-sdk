@@ -1,6 +1,6 @@
 # OrganizationDataConsentRequestResponse
 
-Organization Data Consent Request Response.
+OrganizationDataConsentRequestResponse
 
 ## Properties
 Name | Type | Description | Notes

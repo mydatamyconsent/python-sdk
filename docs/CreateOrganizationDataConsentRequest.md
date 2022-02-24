@@ -1,6 +1,6 @@
 # CreateOrganizationDataConsentRequest
 
-Organization Data Consent Request.
+Create organization data consent request
 
 ## Properties
 Name | Type | Description | Notes

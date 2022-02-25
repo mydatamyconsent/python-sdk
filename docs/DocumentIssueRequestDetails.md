@@ -7,14 +7,16 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** | Request Id. | 
 **document_type_id** | **str** |  | 
-**document_type_name** | **str** |  | 
-**document_identifier** | **str** |  | 
+**type_name** | **str** |  | 
+**identifier** | **str** |  | 
+**status** | [**DocumentIssueRequestStatus**](DocumentIssueRequestStatus.md) |  | 
 **description** | **str** |  | 
 **receiver** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | 
+**issued_at_utc** | **datetime** |  | 
+**valid_from_utc** | **datetime** |  | 
 **created_at_utc** | **datetime** |  | 
-**status** | [**DocumentIssueRequestStatus**](DocumentIssueRequestStatus.md) |  | [optional] 
 **expires_at_utc** | **datetime, none_type** |  | [optional] 
-**metadata** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
+**meta_data** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

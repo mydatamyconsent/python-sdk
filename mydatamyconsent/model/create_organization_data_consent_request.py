@@ -31,8 +31,8 @@ from mydatamyconsent.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from mydatamyconsent.model.receiver import Receiver
-    globals()['Receiver'] = Receiver
+    from mydatamyconsent.model.consent_request_receiver import ConsentRequestReceiver
+    globals()['ConsentRequestReceiver'] = ConsentRequestReceiver
 
 
 class CreateOrganizationDataConsentRequest(ModelNormal):
@@ -81,7 +81,7 @@ class CreateOrganizationDataConsentRequest(ModelNormal):
         """
         lazy_import()
         return {
-            'receiver': (Receiver,),  # noqa: E501
+            'receiver': (ConsentRequestReceiver,),  # noqa: E501
             'consent_template_id': (str,),  # noqa: E501
         }
 
@@ -106,7 +106,7 @@ class CreateOrganizationDataConsentRequest(ModelNormal):
         """CreateOrganizationDataConsentRequest - a model defined in OpenAPI
 
         Args:
-            receiver (Receiver):
+            receiver (ConsentRequestReceiver):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -192,7 +192,7 @@ class CreateOrganizationDataConsentRequest(ModelNormal):
         """CreateOrganizationDataConsentRequest - a model defined in OpenAPI
 
         Args:
-            receiver (Receiver):
+            receiver (ConsentRequestReceiver):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types

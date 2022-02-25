@@ -12,6 +12,7 @@
 from mydatamyconsent.model.activity import Activity
 from mydatamyconsent.model.approved_consent_request import ApprovedConsentRequest
 from mydatamyconsent.model.bank_account_type import BankAccountType
+from mydatamyconsent.model.consent_request_receiver import ConsentRequestReceiver
 from mydatamyconsent.model.create_data_processing_agreement_request_model import CreateDataProcessingAgreementRequestModel
 from mydatamyconsent.model.create_individual_data_consent_request import CreateIndividualDataConsentRequest
 from mydatamyconsent.model.create_organization_data_consent_request import CreateOrganizationDataConsentRequest
@@ -60,8 +61,6 @@ from mydatamyconsent.model.organization_financial_transactions_dto_paginated_lis
 from mydatamyconsent.model.problem_details import ProblemDetails
 from mydatamyconsent.model.push_uri_request import PushUriRequest
 from mydatamyconsent.model.push_uri_response import PushUriResponse
-from mydatamyconsent.model.receiver import Receiver
-from mydatamyconsent.model.receiver_type import ReceiverType
 from mydatamyconsent.model.shared_with import SharedWith
 from mydatamyconsent.model.string_string_key_value_pair import StringStringKeyValuePair
 from mydatamyconsent.model.supported_entity_type import SupportedEntityType

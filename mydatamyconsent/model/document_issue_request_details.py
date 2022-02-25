@@ -83,14 +83,16 @@ class DocumentIssueRequestDetails(ModelNormal):
         return {
             'id': (str,),  # noqa: E501
             'document_type_id': (str,),  # noqa: E501
-            'document_type_name': (str,),  # noqa: E501
-            'document_identifier': (str,),  # noqa: E501
+            'type_name': (str,),  # noqa: E501
+            'identifier': (str,),  # noqa: E501
+            'status': (DocumentIssueRequestStatus,),  # noqa: E501
             'description': (str,),  # noqa: E501
             'receiver': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
+            'issued_at_utc': (datetime,),  # noqa: E501
+            'valid_from_utc': (datetime,),  # noqa: E501
             'created_at_utc': (datetime,),  # noqa: E501
-            'status': (DocumentIssueRequestStatus,),  # noqa: E501
             'expires_at_utc': (datetime, none_type,),  # noqa: E501
-            'metadata': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
+            'meta_data': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -101,14 +103,16 @@ class DocumentIssueRequestDetails(ModelNormal):
     attribute_map = {
         'id': 'id',  # noqa: E501
         'document_type_id': 'documentTypeId',  # noqa: E501
-        'document_type_name': 'documentTypeName',  # noqa: E501
-        'document_identifier': 'documentIdentifier',  # noqa: E501
+        'type_name': 'typeName',  # noqa: E501
+        'identifier': 'identifier',  # noqa: E501
+        'status': 'status',  # noqa: E501
         'description': 'description',  # noqa: E501
         'receiver': 'receiver',  # noqa: E501
+        'issued_at_utc': 'issuedAtUtc',  # noqa: E501
+        'valid_from_utc': 'validFromUtc',  # noqa: E501
         'created_at_utc': 'createdAtUtc',  # noqa: E501
-        'status': 'status',  # noqa: E501
         'expires_at_utc': 'expiresAtUtc',  # noqa: E501
-        'metadata': 'metadata',  # noqa: E501
+        'meta_data': 'metaData',  # noqa: E501
     }
 
     read_only_vars = {
@@ -118,16 +122,19 @@ class DocumentIssueRequestDetails(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, id, document_type_id, document_type_name, document_identifier, description, receiver, created_at_utc, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, id, document_type_id, type_name, identifier, status, description, receiver, issued_at_utc, valid_from_utc, created_at_utc, *args, **kwargs):  # noqa: E501
         """DocumentIssueRequestDetails - a model defined in OpenAPI
 
         Args:
             id (str): Request Id.
             document_type_id (str):
-            document_type_name (str):
-            document_identifier (str):
+            type_name (str):
+            identifier (str):
+            status (DocumentIssueRequestStatus):
             description (str):
             receiver (bool, date, datetime, dict, float, int, list, str, none_type):
+            issued_at_utc (datetime):
+            valid_from_utc (datetime):
             created_at_utc (datetime):
 
         Keyword Args:
@@ -161,9 +168,8 @@ class DocumentIssueRequestDetails(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            status (DocumentIssueRequestStatus): [optional]  # noqa: E501
             expires_at_utc (datetime, none_type): [optional]  # noqa: E501
-            metadata (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
+            meta_data (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -193,10 +199,13 @@ class DocumentIssueRequestDetails(ModelNormal):
 
         self.id = id
         self.document_type_id = document_type_id
-        self.document_type_name = document_type_name
-        self.document_identifier = document_identifier
+        self.type_name = type_name
+        self.identifier = identifier
+        self.status = status
         self.description = description
         self.receiver = receiver
+        self.issued_at_utc = issued_at_utc
+        self.valid_from_utc = valid_from_utc
         self.created_at_utc = created_at_utc
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
@@ -218,16 +227,19 @@ class DocumentIssueRequestDetails(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, id, document_type_id, document_type_name, document_identifier, description, receiver, created_at_utc, *args, **kwargs):  # noqa: E501
+    def __init__(self, id, document_type_id, type_name, identifier, status, description, receiver, issued_at_utc, valid_from_utc, created_at_utc, *args, **kwargs):  # noqa: E501
         """DocumentIssueRequestDetails - a model defined in OpenAPI
 
         Args:
             id (str): Request Id.
             document_type_id (str):
-            document_type_name (str):
-            document_identifier (str):
+            type_name (str):
+            identifier (str):
+            status (DocumentIssueRequestStatus):
             description (str):
             receiver (bool, date, datetime, dict, float, int, list, str, none_type):
+            issued_at_utc (datetime):
+            valid_from_utc (datetime):
             created_at_utc (datetime):
 
         Keyword Args:
@@ -261,9 +273,8 @@ class DocumentIssueRequestDetails(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            status (DocumentIssueRequestStatus): [optional]  # noqa: E501
             expires_at_utc (datetime, none_type): [optional]  # noqa: E501
-            metadata (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
+            meta_data (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -291,10 +302,13 @@ class DocumentIssueRequestDetails(ModelNormal):
 
         self.id = id
         self.document_type_id = document_type_id
-        self.document_type_name = document_type_name
-        self.document_identifier = document_identifier
+        self.type_name = type_name
+        self.identifier = identifier
+        self.status = status
         self.description = description
         self.receiver = receiver
+        self.issued_at_utc = issued_at_utc
+        self.valid_from_utc = valid_from_utc
         self.created_at_utc = created_at_utc
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \

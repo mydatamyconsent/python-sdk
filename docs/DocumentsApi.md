@@ -263,7 +263,7 @@ with mydatamyconsent.ApiClient() as api_client:
     api_instance = documents_api.DocumentsApi(api_client)
     document_issue_request = DocumentIssueRequest(
         document_type_id="document_type_id_example",
-        document_identifier="document_identifier_example",
+        identifier="identifier_example",
         description="description_example",
         receiver=DocumentReceiver(
             country_iso2_code="country_iso2_code_example",
@@ -275,6 +275,8 @@ with mydatamyconsent.ApiClient() as api_client:
             ],
             identification_strategy=IdentificationStrategy("MatchAtLeastOneIdentifier"),
         ),
+        issued_at_utc=dateutil_parser('1970-01-01T00:00:00.00Z'),
+        valid_from_utc=dateutil_parser('1970-01-01T00:00:00.00Z'),
         expires_at_utc=dateutil_parser('1970-01-01T00:00:00.00Z'),
         metadata={
             "key": "key_example",
@@ -351,7 +353,7 @@ with mydatamyconsent.ApiClient() as api_client:
     api_instance = documents_api.DocumentsApi(api_client)
     document_issue_request = DocumentIssueRequest(
         document_type_id="document_type_id_example",
-        document_identifier="document_identifier_example",
+        identifier="identifier_example",
         description="description_example",
         receiver=DocumentReceiver(
             country_iso2_code="country_iso2_code_example",
@@ -363,6 +365,8 @@ with mydatamyconsent.ApiClient() as api_client:
             ],
             identification_strategy=IdentificationStrategy("MatchAtLeastOneIdentifier"),
         ),
+        issued_at_utc=dateutil_parser('1970-01-01T00:00:00.00Z'),
+        valid_from_utc=dateutil_parser('1970-01-01T00:00:00.00Z'),
         expires_at_utc=dateutil_parser('1970-01-01T00:00:00.00Z'),
         metadata={
             "key": "key_example",

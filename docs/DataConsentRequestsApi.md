@@ -178,8 +178,7 @@ with mydatamyconsent.ApiClient() as api_client:
     api_instance = data_consent_requests_api.DataConsentRequestsApi(api_client)
     create_individual_data_consent_request = CreateIndividualDataConsentRequest(
         consent_template_id="consent_template_id_example",
-        receiver=Receiver(
-            type=ReceiverType("Individual"),
+        receiver=ConsentRequestReceiver(
             identifiers=[
                 StringStringKeyValuePair(
                     key="key_example",
@@ -261,8 +260,7 @@ with mydatamyconsent.ApiClient() as api_client:
     api_instance = data_consent_requests_api.DataConsentRequestsApi(api_client)
     create_organization_data_consent_request = CreateOrganizationDataConsentRequest(
         consent_template_id="consent_template_id_example",
-        receiver=Receiver(
-            type=ReceiverType("Individual"),
+        receiver=ConsentRequestReceiver(
             identifiers=[
                 StringStringKeyValuePair(
                     key="key_example",

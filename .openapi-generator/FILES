@@ -5,6 +5,7 @@ README.md
 docs/Activity.md
 docs/ApprovedConsentRequest.md
 docs/BankAccountType.md
+docs/ConsentRequestReceiver.md
 docs/CreateDataProcessingAgreementRequestModel.md
 docs/CreateIndividualDataConsentRequest.md
 docs/CreateOrganizationDataConsentRequest.md
@@ -59,8 +60,6 @@ docs/OrganizationFinancialTransactionsDtoPaginatedList.md
 docs/ProblemDetails.md
 docs/PushUriRequest.md
 docs/PushUriResponse.md
-docs/Receiver.md
-docs/ReceiverType.md
 docs/SharedWith.md
 docs/StringStringKeyValuePair.md
 docs/SupportedEntityType.md
@@ -91,6 +90,7 @@ mydatamyconsent/model/__init__.py
 mydatamyconsent/model/activity.py
 mydatamyconsent/model/approved_consent_request.py
 mydatamyconsent/model/bank_account_type.py
+mydatamyconsent/model/consent_request_receiver.py
 mydatamyconsent/model/create_data_processing_agreement_request_model.py
 mydatamyconsent/model/create_individual_data_consent_request.py
 mydatamyconsent/model/create_organization_data_consent_request.py
@@ -139,8 +139,6 @@ mydatamyconsent/model/organization_financial_transactions_dto_paginated_list.py
 mydatamyconsent/model/problem_details.py
 mydatamyconsent/model/push_uri_request.py
 mydatamyconsent/model/push_uri_response.py
-mydatamyconsent/model/receiver.py
-mydatamyconsent/model/receiver_type.py
 mydatamyconsent/model/shared_with.py
 mydatamyconsent/model/string_string_key_value_pair.py
 mydatamyconsent/model/supported_entity_type.py
@@ -161,5 +159,5 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_document_issue_request_status.py
+test/test_consent_request_receiver.py
 tox.ini

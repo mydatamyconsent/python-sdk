@@ -6,9 +6,11 @@ Document Issue Request.
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **document_type_id** | **str** |  | 
-**document_identifier** | **str** |  | 
+**identifier** | **str** |  | 
 **description** | **str** |  | 
 **receiver** | [**DocumentReceiver**](DocumentReceiver.md) |  | 
+**issued_at_utc** | **datetime** |  | 
+**valid_from_utc** | **datetime** |  | 
 **expires_at_utc** | **datetime, none_type** |  | [optional] 
 **metadata** | **{str: (str,)}, none_type** |  | [optional] 
 

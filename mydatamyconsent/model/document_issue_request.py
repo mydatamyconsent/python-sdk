@@ -82,9 +82,11 @@ class DocumentIssueRequest(ModelNormal):
         lazy_import()
         return {
             'document_type_id': (str,),  # noqa: E501
-            'document_identifier': (str,),  # noqa: E501
+            'identifier': (str,),  # noqa: E501
             'description': (str,),  # noqa: E501
             'receiver': (DocumentReceiver,),  # noqa: E501
+            'issued_at_utc': (datetime,),  # noqa: E501
+            'valid_from_utc': (datetime,),  # noqa: E501
             'expires_at_utc': (datetime, none_type,),  # noqa: E501
             'metadata': ({str: (str,)}, none_type,),  # noqa: E501
         }
@@ -96,9 +98,11 @@ class DocumentIssueRequest(ModelNormal):
 
     attribute_map = {
         'document_type_id': 'documentTypeId',  # noqa: E501
-        'document_identifier': 'documentIdentifier',  # noqa: E501
+        'identifier': 'identifier',  # noqa: E501
         'description': 'description',  # noqa: E501
         'receiver': 'receiver',  # noqa: E501
+        'issued_at_utc': 'issuedAtUtc',  # noqa: E501
+        'valid_from_utc': 'validFromUtc',  # noqa: E501
         'expires_at_utc': 'expiresAtUtc',  # noqa: E501
         'metadata': 'metadata',  # noqa: E501
     }
@@ -110,14 +114,16 @@ class DocumentIssueRequest(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, document_type_id, document_identifier, description, receiver, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, document_type_id, identifier, description, receiver, issued_at_utc, valid_from_utc, *args, **kwargs):  # noqa: E501
         """DocumentIssueRequest - a model defined in OpenAPI
 
         Args:
             document_type_id (str):
-            document_identifier (str):
+            identifier (str):
             description (str):
             receiver (DocumentReceiver):
+            issued_at_utc (datetime):
+            valid_from_utc (datetime):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -180,9 +186,11 @@ class DocumentIssueRequest(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.document_type_id = document_type_id
-        self.document_identifier = document_identifier
+        self.identifier = identifier
         self.description = description
         self.receiver = receiver
+        self.issued_at_utc = issued_at_utc
+        self.valid_from_utc = valid_from_utc
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -203,14 +211,16 @@ class DocumentIssueRequest(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, document_type_id, document_identifier, description, receiver, *args, **kwargs):  # noqa: E501
+    def __init__(self, document_type_id, identifier, description, receiver, issued_at_utc, valid_from_utc, *args, **kwargs):  # noqa: E501
         """DocumentIssueRequest - a model defined in OpenAPI
 
         Args:
             document_type_id (str):
-            document_identifier (str):
+            identifier (str):
             description (str):
             receiver (DocumentReceiver):
+            issued_at_utc (datetime):
+            valid_from_utc (datetime):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -271,9 +281,11 @@ class DocumentIssueRequest(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.document_type_id = document_type_id
-        self.document_identifier = document_identifier
+        self.identifier = identifier
         self.description = description
         self.receiver = receiver
+        self.issued_at_utc = issued_at_utc
+        self.valid_from_utc = valid_from_utc
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

@@ -1,11 +1,10 @@
-# Receiver
+# ConsentRequestReceiver
 
 Consent request receiver details
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | [**ReceiverType**](ReceiverType.md) |  | [optional] 
 **identifiers** | [**[StringStringKeyValuePair], none_type**](StringStringKeyValuePair.md) | Consent request receiver identifiers | [optional] 
 **identification_strategy** | [**IdentificationStrategy**](IdentificationStrategy.md) |  | [optional] 
 

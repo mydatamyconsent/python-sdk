@@ -7,23 +7,23 @@ Method | HTTP request | Description
 [**download_consented_document_by_id**](DataConsentsApi.md#download_consented_document_by_id) | **GET** /v1/consents/individuals/{consentId}/documents/{documentId}/download | Download a individuals consented document.
 [**download_org_consented_document_by_id**](DataConsentsApi.md#download_org_consented_document_by_id) | **GET** /v1/consents/organizations/{consentId}/documents/{documentId}/download | Download a organizations consented document.
 [**get_all_consented_documents**](DataConsentsApi.md#get_all_consented_documents) | **GET** /v1/consents/individuals/{consentId}/documents | Get the individual documents based on ConsentId.
-[**get_all_consented_financial_accounts**](DataConsentsApi.md#get_all_consented_financial_accounts) | **GET** /v1/consents/individuals/{consentId}/accounts | Get all individual consented financial accounts.
+[**get_all_consented_financial_accounts**](DataConsentsApi.md#get_all_consented_financial_accounts) | **GET** /v1/consents/individuals/{consentId}/financial-accounts | Get all individual consented financial accounts.
 [**get_all_organization_consented_documents**](DataConsentsApi.md#get_all_organization_consented_documents) | **GET** /v1/consents/organizations/{consentId}/documents | Get the organization documents based on ConsentId.
 [**get_consent_details_by_id**](DataConsentsApi.md#get_consent_details_by_id) | **GET** /v1/consents/individuals/{consentId} | Get all individuals consent details by consent id.
-[**get_consent_financial_accounts**](DataConsentsApi.md#get_consent_financial_accounts) | **GET** /v1/consents/organizations/{consentId}/accounts | Get all organizational consented financial accounts.
-[**get_consented_account_by_id**](DataConsentsApi.md#get_consented_account_by_id) | **GET** /v1/consents/individuals/{consentId}/accounts/{accountId} | Get individual consented financial account details based on account id.
+[**get_consent_financial_accounts**](DataConsentsApi.md#get_consent_financial_accounts) | **GET** /v1/consents/organizations/{consentId}/financial-accounts | Get all organizational consented financial accounts.
+[**get_consented_account_by_id**](DataConsentsApi.md#get_consented_account_by_id) | **GET** /v1/consents/individuals/{consentId}/financial-accounts/{accountId} | Get individual consented financial account details based on account id.
 [**get_consented_document_by_id**](DataConsentsApi.md#get_consented_document_by_id) | **GET** /v1/consents/individuals/{consentId}/documents/{documentId} | Get individuals consent document based on document id.
-[**get_consented_financial_account**](DataConsentsApi.md#get_consented_financial_account) | **GET** /v1/consents/organizations/{consentId}/accounts/{accountId} | Get organization consented financial account details based on account id.
-[**get_consented_financial_account_transactions**](DataConsentsApi.md#get_consented_financial_account_transactions) | **GET** /v1/consents/individuals/{consentId}/accounts/{accountId}/transactions | Get individual consented financial account transactions of an individual based on accountId.
+[**get_consented_financial_account**](DataConsentsApi.md#get_consented_financial_account) | **GET** /v1/consents/organizations/{consentId}/financial-accounts/{accountId} | Get organization consented financial account details based on account id.
+[**get_consented_financial_account_transactions**](DataConsentsApi.md#get_consented_financial_account_transactions) | **GET** /v1/consents/individuals/{consentId}/financial-accounts/{accountId}/transactions | Get individual consented financial account transactions of an individual based on accountId.
 [**get_consents_for_organizations**](DataConsentsApi.md#get_consents_for_organizations) | **GET** /v1/consents/organizations | Get the list of data consents sent for organizations.
 [**get_consents_sent_to_individuals**](DataConsentsApi.md#get_consents_sent_to_individuals) | **GET** /v1/consents/individuals | Get the list of Consents Sent to Individuals.
-[**get_org_consented_account_transactions**](DataConsentsApi.md#get_org_consented_account_transactions) | **GET** /v1/consents/organizations/{consentId}/accounts/{accountId}/transactions | Get organization consented financial account transactions of an individual based on accountId.
+[**get_org_consented_account_transactions**](DataConsentsApi.md#get_org_consented_account_transactions) | **GET** /v1/consents/organizations/{consentId}/financial-accounts/{accountId}/transactions | Get organization consented financial account transactions of an individual based on accountId.
 [**get_organization_consent_details_by_id**](DataConsentsApi.md#get_organization_consent_details_by_id) | **GET** /v1/consents/organizations/{consentId} | Get all organization consent details by consent id.
 [**get_organization_consented_document_by_id**](DataConsentsApi.md#get_organization_consented_document_by_id) | **GET** /v1/consents/organizations/{consentId}/documents/{documentId} | Get organization consent document based on document id.
 
 
 # **download_consented_document_by_id**
-> UserDocumentDownloadDto download_consented_document_by_id(consent_id, document_id)
+> UserDocumentDownload download_consented_document_by_id(consent_id, document_id)
 
 Download a individuals consented document.
 
@@ -34,7 +34,7 @@ Download a individuals consented document.
 import time
 import mydatamyconsent
 from mydatamyconsent.api import data_consents_api
-from mydatamyconsent.model.user_document_download_dto import UserDocumentDownloadDto
+from mydatamyconsent.model.user_document_download import UserDocumentDownload
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UserDocumentDownloadDto**](UserDocumentDownloadDto.md)
+[**UserDocumentDownload**](UserDocumentDownload.md)
 
 ### Authorization
 
@@ -557,7 +557,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_consented_document_by_id**
-> UserDocumentDetailsDto get_consented_document_by_id(consent_id, document_id)
+> UserDocumentDetails get_consented_document_by_id(consent_id, document_id)
 
 Get individuals consent document based on document id.
 
@@ -568,7 +568,7 @@ Get individuals consent document based on document id.
 import time
 import mydatamyconsent
 from mydatamyconsent.api import data_consents_api
-from mydatamyconsent.model.user_document_details_dto import UserDocumentDetailsDto
+from mydatamyconsent.model.user_document_details import UserDocumentDetails
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -603,7 +603,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UserDocumentDetailsDto**](UserDocumentDetailsDto.md)
+[**UserDocumentDetails**](UserDocumentDetails.md)
 
 ### Authorization
 
@@ -1085,7 +1085,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_organization_consented_document_by_id**
-> OrganizationDocumentDetailsDto get_organization_consented_document_by_id(consent_id, document_id)
+> OrganizationDocumentDetails get_organization_consented_document_by_id(consent_id, document_id)
 
 Get organization consent document based on document id.
 
@@ -1096,7 +1096,7 @@ Get organization consent document based on document id.
 import time
 import mydatamyconsent
 from mydatamyconsent.api import data_consents_api
-from mydatamyconsent.model.organization_document_details_dto import OrganizationDocumentDetailsDto
+from mydatamyconsent.model.organization_document_details import OrganizationDocumentDetails
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1131,7 +1131,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OrganizationDocumentDetailsDto**](OrganizationDocumentDetailsDto.md)
+[**OrganizationDocumentDetails**](OrganizationDocumentDetails.md)
 
 ### Authorization
 

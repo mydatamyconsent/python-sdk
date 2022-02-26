@@ -327,6 +327,7 @@ class DocumentsApi(object):
                 ],
                 'required': [
                     'issue_request_id',
+                    'form_file',
                 ],
                 'nullable': [
                 ],
@@ -813,6 +814,7 @@ class DocumentsApi(object):
     def upload_document_for_individual(
         self,
         issue_request_id,
+        form_file,
         **kwargs
     ):
         """Upload a document for issuance request of individual.  # noqa: E501
@@ -820,14 +822,14 @@ class DocumentsApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.upload_document_for_individual(issue_request_id, async_req=True)
+        >>> thread = api.upload_document_for_individual(issue_request_id, form_file, async_req=True)
         >>> result = thread.get()
 
         Args:
             issue_request_id (str): Issue Request Id System.Guid.
+            form_file (file_type):
 
         Keyword Args:
-            form_file (file_type): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -886,6 +888,8 @@ class DocumentsApi(object):
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['issue_request_id'] = \
             issue_request_id
+        kwargs['form_file'] = \
+            form_file
         return self.upload_document_for_individual_endpoint.call_with_http_info(**kwargs)
 
     def upload_document_for_organization(

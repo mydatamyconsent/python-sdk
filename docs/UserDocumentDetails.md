@@ -1,4 +1,4 @@
-# UserDocumentDetailsDto
+# UserDocumentDetails
 
 
 ## Properties

@@ -52,7 +52,7 @@ docs/Life.md
 docs/OrganizationDataConsentInfoDto.md
 docs/OrganizationDataConsentInfoDtoPaginatedList.md
 docs/OrganizationDataConsentRequestResponse.md
-docs/OrganizationDocumentDetailsDto.md
+docs/OrganizationDocumentDetails.md
 docs/OrganizationDocumentDownloadDto.md
 docs/OrganizationFinancialAccountDto.md
 docs/OrganizationFinancialTransactionsDto.md
@@ -71,8 +71,8 @@ docs/UserAccountFinancialTransactionsDto.md
 docs/UserAccountFinancialTransactionsDtoPaginatedList.md
 docs/UserDataConsentInfoDto.md
 docs/UserDataConsentInfoDtoPaginatedList.md
-docs/UserDocumentDetailsDto.md
-docs/UserDocumentDownloadDto.md
+docs/UserDocumentDetails.md
+docs/UserDocumentDownload.md
 mydatamyconsent/__init__.py
 mydatamyconsent/api/__init__.py
 mydatamyconsent/api/data_consent_requests_api.py
@@ -131,7 +131,7 @@ mydatamyconsent/model/life.py
 mydatamyconsent/model/organization_data_consent_info_dto.py
 mydatamyconsent/model/organization_data_consent_info_dto_paginated_list.py
 mydatamyconsent/model/organization_data_consent_request_response.py
-mydatamyconsent/model/organization_document_details_dto.py
+mydatamyconsent/model/organization_document_details.py
 mydatamyconsent/model/organization_document_download_dto.py
 mydatamyconsent/model/organization_financial_account_dto.py
 mydatamyconsent/model/organization_financial_transactions_dto.py
@@ -149,8 +149,8 @@ mydatamyconsent/model/user_account_financial_transactions_dto.py
 mydatamyconsent/model/user_account_financial_transactions_dto_paginated_list.py
 mydatamyconsent/model/user_data_consent_info_dto.py
 mydatamyconsent/model/user_data_consent_info_dto_paginated_list.py
-mydatamyconsent/model/user_document_details_dto.py
-mydatamyconsent/model/user_document_download_dto.py
+mydatamyconsent/model/user_document_details.py
+mydatamyconsent/model/user_document_download.py
 mydatamyconsent/model_utils.py
 mydatamyconsent/models/__init__.py
 mydatamyconsent/rest.py
@@ -159,5 +159,7 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_consent_request_receiver.py
+test/test_organization_document_details.py
+test/test_user_document_details.py
+test/test_user_document_download.py
 tox.ini

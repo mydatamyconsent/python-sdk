@@ -416,7 +416,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **upload_document_for_individual**
-> str upload_document_for_individual(issue_request_id)
+> str upload_document_for_individual(issue_request_id, form_file)
 
 Upload a document for issuance request of individual.
 
@@ -440,21 +440,12 @@ with mydatamyconsent.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = documents_api.DocumentsApi(api_client)
     issue_request_id = "issueRequestId_example" # str | Issue Request Id System.Guid.
-    form_file = open('/path/to/file', 'rb') # file_type |  (optional)
+    form_file = open('/path/to/file', 'rb') # file_type | 
 
     # example passing only required values which don't have defaults set
     try:
         # Upload a document for issuance request of individual.
-        api_response = api_instance.upload_document_for_individual(issue_request_id)
-        pprint(api_response)
-    except mydatamyconsent.ApiException as e:
-        print("Exception when calling DocumentsApi->upload_document_for_individual: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Upload a document for issuance request of individual.
-        api_response = api_instance.upload_document_for_individual(issue_request_id, form_file=form_file)
+        api_response = api_instance.upload_document_for_individual(issue_request_id, form_file)
         pprint(api_response)
     except mydatamyconsent.ApiException as e:
         print("Exception when calling DocumentsApi->upload_document_for_individual: %s\n" % e)
@@ -466,7 +457,7 @@ with mydatamyconsent.ApiClient() as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **issue_request_id** | **str**| Issue Request Id System.Guid. |
- **form_file** | **file_type**|  | [optional]
+ **form_file** | **file_type**|  |
 
 ### Return type
 

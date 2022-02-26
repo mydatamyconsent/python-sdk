@@ -28,14 +28,14 @@ from mydatamyconsent.model.data_consent_financials_dto import DataConsentFinanci
 from mydatamyconsent.model.data_consent_status import DataConsentStatus
 from mydatamyconsent.model.financial_account import FinancialAccount
 from mydatamyconsent.model.organization_data_consent_info_dto_paginated_list import OrganizationDataConsentInfoDtoPaginatedList
-from mydatamyconsent.model.organization_document_details_dto import OrganizationDocumentDetailsDto
+from mydatamyconsent.model.organization_document_details import OrganizationDocumentDetails
 from mydatamyconsent.model.organization_document_download_dto import OrganizationDocumentDownloadDto
 from mydatamyconsent.model.organization_financial_account_dto import OrganizationFinancialAccountDto
 from mydatamyconsent.model.organization_financial_transactions_dto_paginated_list import OrganizationFinancialTransactionsDtoPaginatedList
 from mydatamyconsent.model.user_account_financial_transactions_dto_paginated_list import UserAccountFinancialTransactionsDtoPaginatedList
 from mydatamyconsent.model.user_data_consent_info_dto_paginated_list import UserDataConsentInfoDtoPaginatedList
-from mydatamyconsent.model.user_document_details_dto import UserDocumentDetailsDto
-from mydatamyconsent.model.user_document_download_dto import UserDocumentDownloadDto
+from mydatamyconsent.model.user_document_details import UserDocumentDetails
+from mydatamyconsent.model.user_document_download import UserDocumentDownload
 
 
 class DataConsentsApi(object):
@@ -51,7 +51,7 @@ class DataConsentsApi(object):
         self.api_client = api_client
         self.download_consented_document_by_id_endpoint = _Endpoint(
             settings={
-                'response_type': (UserDocumentDownloadDto,),
+                'response_type': (UserDocumentDownload,),
                 'auth': [],
                 'endpoint_path': '/v1/consents/individuals/{consentId}/documents/{documentId}/download',
                 'operation_id': 'download_consented_document_by_id',
@@ -212,7 +212,7 @@ class DataConsentsApi(object):
             settings={
                 'response_type': (DataConsentFinancialsDto,),
                 'auth': [],
-                'endpoint_path': '/v1/consents/individuals/{consentId}/accounts',
+                'endpoint_path': '/v1/consents/individuals/{consentId}/financial-accounts',
                 'operation_id': 'get_all_consented_financial_accounts',
                 'http_method': 'GET',
                 'servers': None,
@@ -359,7 +359,7 @@ class DataConsentsApi(object):
             settings={
                 'response_type': (DataConsentFinancialsDto,),
                 'auth': [],
-                'endpoint_path': '/v1/consents/organizations/{consentId}/accounts',
+                'endpoint_path': '/v1/consents/organizations/{consentId}/financial-accounts',
                 'operation_id': 'get_consent_financial_accounts',
                 'http_method': 'GET',
                 'servers': None,
@@ -408,7 +408,7 @@ class DataConsentsApi(object):
             settings={
                 'response_type': (FinancialAccount,),
                 'auth': [],
-                'endpoint_path': '/v1/consents/individuals/{consentId}/accounts/{accountId}',
+                'endpoint_path': '/v1/consents/individuals/{consentId}/financial-accounts/{accountId}',
                 'operation_id': 'get_consented_account_by_id',
                 'http_method': 'GET',
                 'servers': None,
@@ -461,7 +461,7 @@ class DataConsentsApi(object):
         )
         self.get_consented_document_by_id_endpoint = _Endpoint(
             settings={
-                'response_type': (UserDocumentDetailsDto,),
+                'response_type': (UserDocumentDetails,),
                 'auth': [],
                 'endpoint_path': '/v1/consents/individuals/{consentId}/documents/{documentId}',
                 'operation_id': 'get_consented_document_by_id',
@@ -518,7 +518,7 @@ class DataConsentsApi(object):
             settings={
                 'response_type': (OrganizationFinancialAccountDto,),
                 'auth': [],
-                'endpoint_path': '/v1/consents/organizations/{consentId}/accounts/{accountId}',
+                'endpoint_path': '/v1/consents/organizations/{consentId}/financial-accounts/{accountId}',
                 'operation_id': 'get_consented_financial_account',
                 'http_method': 'GET',
                 'servers': None,
@@ -573,7 +573,7 @@ class DataConsentsApi(object):
             settings={
                 'response_type': (UserAccountFinancialTransactionsDtoPaginatedList,),
                 'auth': [],
-                'endpoint_path': '/v1/consents/individuals/{consentId}/accounts/{accountId}/transactions',
+                'endpoint_path': '/v1/consents/individuals/{consentId}/financial-accounts/{accountId}/transactions',
                 'operation_id': 'get_consented_financial_account_transactions',
                 'http_method': 'GET',
                 'servers': None,
@@ -787,7 +787,7 @@ class DataConsentsApi(object):
             settings={
                 'response_type': (OrganizationFinancialTransactionsDtoPaginatedList,),
                 'auth': [],
-                'endpoint_path': '/v1/consents/organizations/{consentId}/accounts/{accountId}/transactions',
+                'endpoint_path': '/v1/consents/organizations/{consentId}/financial-accounts/{accountId}/transactions',
                 'operation_id': 'get_org_consented_account_transactions',
                 'http_method': 'GET',
                 'servers': None,
@@ -914,7 +914,7 @@ class DataConsentsApi(object):
         )
         self.get_organization_consented_document_by_id_endpoint = _Endpoint(
             settings={
-                'response_type': (OrganizationDocumentDetailsDto,),
+                'response_type': (OrganizationDocumentDetails,),
                 'auth': [],
                 'endpoint_path': '/v1/consents/organizations/{consentId}/documents/{documentId}',
                 'operation_id': 'get_organization_consented_document_by_id',
@@ -1015,7 +1015,7 @@ class DataConsentsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            UserDocumentDownloadDto
+            UserDocumentDownload
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1643,7 +1643,7 @@ class DataConsentsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            UserDocumentDetailsDto
+            UserDocumentDetails
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2208,7 +2208,7 @@ class DataConsentsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            OrganizationDocumentDetailsDto
+            OrganizationDocumentDetails
                 If the method is called asynchronously, returns the request
                 thread.
         """

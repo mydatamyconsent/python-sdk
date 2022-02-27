@@ -159,7 +159,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_organization_document_details.py
-test/test_user_document_details.py
-test/test_user_document_download.py
 tox.ini

@@ -54,20 +54,28 @@ class DocumentSubCategoryType(ModelSimple):
     allowed_values = {
         ('value',): {
             'IDENTITY': "Identity",
-            'HOUSE': "House",
+            'PROPERTY': "Property",
             'VEHICLE': "Vehicle",
-            'MARKSMEMOS': "MarksMemos",
+            'ADMITANDIDCARDS': "AdmitAndIdCards",
+            'MARKSHEETS': "Marksheets",
             'TRANSCRIPTS': "Transcripts",
             'CERTIFICATES': "Certificates",
             'PRESCRIPTIONS': "Prescriptions",
             'MEDICALREPORTS': "MedicalReports",
             'DISCHARGESUMMARY': "DischargeSummary",
-            'BILLS': "Bills",
-            'INVOICES': "Invoices",
+            'ACCOUNTANDCERTIFICATES': "AccountAndCertificates",
+            'BILLSANDINVOICES': "BillsAndInvoices",
+            'INSURANCE': "Insurance",
+            'RECEIPTSANDSUBSCRIPTIONS': "ReceiptsAndSubscriptions",
             'TAXES': "Taxes",
+            'LICENCESANDCERTIFICATES': "LicencesAndCertificates",
             'CORPORATES': "Corporates",
             'COMPETITIONS': "Competitions",
             'INTELLECTUALPROPERTIES': "IntellectualProperties",
+            'OTHERS': "Others",
+            'APPLICATIONSANDCERTIFICATES': "ApplicationsAndCertificates",
+            'LICENSES': "Licenses",
+            'ORGANIZATIONIDS': "OrganizationIds",
         },
     }
 
@@ -119,10 +127,10 @@ class DocumentSubCategoryType(ModelSimple):
         Note that value can be passed either in args or in kwargs, but not in both.
 
         Args:
-            args[0] (str):, must be one of ["Identity", "House", "Vehicle", "MarksMemos", "Transcripts", "Certificates", "Prescriptions", "MedicalReports", "DischargeSummary", "Bills", "Invoices", "Taxes", "Corporates", "Competitions", "IntellectualProperties", ]  # noqa: E501
+            args[0] (str):, must be one of ["Identity", "Property", "Vehicle", "AdmitAndIdCards", "Marksheets", "Transcripts", "Certificates", "Prescriptions", "MedicalReports", "DischargeSummary", "AccountAndCertificates", "BillsAndInvoices", "Insurance", "ReceiptsAndSubscriptions", "Taxes", "LicencesAndCertificates", "Corporates", "Competitions", "IntellectualProperties", "Others", "ApplicationsAndCertificates", "Licenses", "OrganizationIds", ]  # noqa: E501
 
         Keyword Args:
-            value (str):, must be one of ["Identity", "House", "Vehicle", "MarksMemos", "Transcripts", "Certificates", "Prescriptions", "MedicalReports", "DischargeSummary", "Bills", "Invoices", "Taxes", "Corporates", "Competitions", "IntellectualProperties", ]  # noqa: E501
+            value (str):, must be one of ["Identity", "Property", "Vehicle", "AdmitAndIdCards", "Marksheets", "Transcripts", "Certificates", "Prescriptions", "MedicalReports", "DischargeSummary", "AccountAndCertificates", "BillsAndInvoices", "Insurance", "ReceiptsAndSubscriptions", "Taxes", "LicencesAndCertificates", "Corporates", "Competitions", "IntellectualProperties", "Others", "ApplicationsAndCertificates", "Licenses", "OrganizationIds", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -209,10 +217,10 @@ class DocumentSubCategoryType(ModelSimple):
         Note that value can be passed either in args or in kwargs, but not in both.
 
         Args:
-            args[0] (str):, must be one of ["Identity", "House", "Vehicle", "MarksMemos", "Transcripts", "Certificates", "Prescriptions", "MedicalReports", "DischargeSummary", "Bills", "Invoices", "Taxes", "Corporates", "Competitions", "IntellectualProperties", ]  # noqa: E501
+            args[0] (str):, must be one of ["Identity", "Property", "Vehicle", "AdmitAndIdCards", "Marksheets", "Transcripts", "Certificates", "Prescriptions", "MedicalReports", "DischargeSummary", "AccountAndCertificates", "BillsAndInvoices", "Insurance", "ReceiptsAndSubscriptions", "Taxes", "LicencesAndCertificates", "Corporates", "Competitions", "IntellectualProperties", "Others", "ApplicationsAndCertificates", "Licenses", "OrganizationIds", ]  # noqa: E501
 
         Keyword Args:
-            value (str):, must be one of ["Identity", "House", "Vehicle", "MarksMemos", "Transcripts", "Certificates", "Prescriptions", "MedicalReports", "DischargeSummary", "Bills", "Invoices", "Taxes", "Corporates", "Competitions", "IntellectualProperties", ]  # noqa: E501
+            value (str):, must be one of ["Identity", "Property", "Vehicle", "AdmitAndIdCards", "Marksheets", "Transcripts", "Certificates", "Prescriptions", "MedicalReports", "DischargeSummary", "AccountAndCertificates", "BillsAndInvoices", "Insurance", "ReceiptsAndSubscriptions", "Taxes", "LicencesAndCertificates", "Corporates", "Competitions", "IntellectualProperties", "Others", "ApplicationsAndCertificates", "Licenses", "OrganizationIds", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.

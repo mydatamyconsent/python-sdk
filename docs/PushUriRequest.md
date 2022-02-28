@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**uri_details** | [**UriDetails**](UriDetails.md) |  | [optional] 
+**uri_details** | [**UriDetails**](UriDetails.md) |  | 
 **ns2** | **str, none_type** |  | [optional] 
 **ver** | **str, none_type** |  | [optional] 
 **ts** | **str, none_type** |  | [optional] 

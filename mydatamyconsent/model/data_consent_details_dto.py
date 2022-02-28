@@ -31,9 +31,11 @@ from mydatamyconsent.exceptions import ApiAttributeError
 
 
 def lazy_import():
+    from mydatamyconsent.model.data_consent_document_details_dto import DataConsentDocumentDetailsDto
     from mydatamyconsent.model.data_consent_status import DataConsentStatus
     from mydatamyconsent.model.json_schema import JsonSchema
     from mydatamyconsent.model.life import Life
+    globals()['DataConsentDocumentDetailsDto'] = DataConsentDocumentDetailsDto
     globals()['DataConsentStatus'] = DataConsentStatus
     globals()['JsonSchema'] = JsonSchema
     globals()['Life'] = Life
@@ -98,7 +100,7 @@ class DataConsentDetailsDto(ModelNormal):
             'expires_at_utc': (datetime,),  # noqa: E501
             'requested_at_utc': (datetime,),  # noqa: E501
             'identifiers': (JsonSchema,),  # noqa: E501
-            'documents': (str, none_type,),  # noqa: E501
+            'documents': ([DataConsentDocumentDetailsDto], none_type,),  # noqa: E501
             'financials': (str, none_type,),  # noqa: E501
             'health_records': (str, none_type,),  # noqa: E501
         }
@@ -183,7 +185,7 @@ class DataConsentDetailsDto(ModelNormal):
             expires_at_utc (datetime): [optional]  # noqa: E501
             requested_at_utc (datetime): [optional]  # noqa: E501
             identifiers (JsonSchema): [optional]  # noqa: E501
-            documents (str, none_type): [optional]  # noqa: E501
+            documents ([DataConsentDocumentDetailsDto], none_type): [optional]  # noqa: E501
             financials (str, none_type): [optional]  # noqa: E501
             health_records (str, none_type): [optional]  # noqa: E501
         """
@@ -283,7 +285,7 @@ class DataConsentDetailsDto(ModelNormal):
             expires_at_utc (datetime): [optional]  # noqa: E501
             requested_at_utc (datetime): [optional]  # noqa: E501
             identifiers (JsonSchema): [optional]  # noqa: E501
-            documents (str, none_type): [optional]  # noqa: E501
+            documents ([DataConsentDocumentDetailsDto], none_type): [optional]  # noqa: E501
             financials (str, none_type): [optional]  # noqa: E501
             health_records (str, none_type): [optional]  # noqa: E501
         """

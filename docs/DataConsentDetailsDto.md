@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **expires_at_utc** | **datetime** |  | [optional] 
 **requested_at_utc** | **datetime** |  | [optional] 
 **identifiers** | [**JsonSchema**](JsonSchema.md) |  | [optional] 
-**documents** | **str, none_type** |  | [optional] 
+**documents** | [**[DataConsentDocumentDetailsDto], none_type**](DataConsentDocumentDetailsDto.md) |  | [optional] 
 **financials** | **str, none_type** |  | [optional] 
 **health_records** | **str, none_type** |  | [optional] 
 

@@ -10,6 +10,7 @@ docs/CreateDataProcessingAgreementRequestModel.md
 docs/CreateIndividualDataConsentRequest.md
 docs/CreateOrganizationDataConsentRequest.md
 docs/DataConsentDetailsDto.md
+docs/DataConsentDocumentDetailsDto.md
 docs/DataConsentDocumentsDto.md
 docs/DataConsentFinancialsDto.md
 docs/DataConsentRequestedDocument.md
@@ -62,6 +63,9 @@ docs/PushUriRequest.md
 docs/PushUriResponse.md
 docs/SharedWith.md
 docs/StringStringKeyValuePair.md
+docs/SupportedDocumentDetailsDto.md
+docs/SupportedDocumentProviderDetailsDto.md
+docs/SupportedDocumentTypeCategoryDetailsDto.md
 docs/SupportedEntityType.md
 docs/SupportedIdentifier.md
 docs/SupportedIdentifiersApi.md
@@ -95,6 +99,7 @@ mydatamyconsent/model/create_data_processing_agreement_request_model.py
 mydatamyconsent/model/create_individual_data_consent_request.py
 mydatamyconsent/model/create_organization_data_consent_request.py
 mydatamyconsent/model/data_consent_details_dto.py
+mydatamyconsent/model/data_consent_document_details_dto.py
 mydatamyconsent/model/data_consent_documents_dto.py
 mydatamyconsent/model/data_consent_financials_dto.py
 mydatamyconsent/model/data_consent_requested_document.py
@@ -141,6 +146,9 @@ mydatamyconsent/model/push_uri_request.py
 mydatamyconsent/model/push_uri_response.py
 mydatamyconsent/model/shared_with.py
 mydatamyconsent/model/string_string_key_value_pair.py
+mydatamyconsent/model/supported_document_details_dto.py
+mydatamyconsent/model/supported_document_provider_details_dto.py
+mydatamyconsent/model/supported_document_type_category_details_dto.py
 mydatamyconsent/model/supported_entity_type.py
 mydatamyconsent/model/supported_identifier.py
 mydatamyconsent/model/update_data_processing_agreement_request_model.py
@@ -159,4 +167,8 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_data_consent_document_details_dto.py
+test/test_supported_document_details_dto.py
+test/test_supported_document_provider_details_dto.py
+test/test_supported_document_type_category_details_dto.py
 tox.ini

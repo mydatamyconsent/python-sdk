@@ -48,7 +48,6 @@ docs/Identifier.md
 docs/IndividualDataConsentRequestResponse.md
 docs/IssuedDocument.md
 docs/IssuedDocumentPaginatedList.md
-docs/JsonSchema.md
 docs/Life.md
 docs/OrganizationDataConsentInfoDto.md
 docs/OrganizationDataConsentInfoDtoPaginatedList.md
@@ -61,6 +60,7 @@ docs/OrganizationFinancialTransactionsDtoPaginatedList.md
 docs/ProblemDetails.md
 docs/PushUriRequest.md
 docs/PushUriResponse.md
+docs/Requester.md
 docs/SharedWith.md
 docs/StringStringKeyValuePair.md
 docs/SupportedDocumentDetailsDto.md
@@ -131,7 +131,6 @@ mydatamyconsent/model/identifier.py
 mydatamyconsent/model/individual_data_consent_request_response.py
 mydatamyconsent/model/issued_document.py
 mydatamyconsent/model/issued_document_paginated_list.py
-mydatamyconsent/model/json_schema.py
 mydatamyconsent/model/life.py
 mydatamyconsent/model/organization_data_consent_info_dto.py
 mydatamyconsent/model/organization_data_consent_info_dto_paginated_list.py
@@ -144,6 +143,7 @@ mydatamyconsent/model/organization_financial_transactions_dto_paginated_list.py
 mydatamyconsent/model/problem_details.py
 mydatamyconsent/model/push_uri_request.py
 mydatamyconsent/model/push_uri_response.py
+mydatamyconsent/model/requester.py
 mydatamyconsent/model/shared_with.py
 mydatamyconsent/model/string_string_key_value_pair.py
 mydatamyconsent/model/supported_document_details_dto.py
@@ -167,8 +167,5 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_data_consent_document_details_dto.py
-test/test_supported_document_details_dto.py
-test/test_supported_document_provider_details_dto.py
-test/test_supported_document_type_category_details_dto.py
+test/test_requester.py
 tox.ini

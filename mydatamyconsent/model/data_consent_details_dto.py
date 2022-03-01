@@ -33,12 +33,12 @@ from mydatamyconsent.exceptions import ApiAttributeError
 def lazy_import():
     from mydatamyconsent.model.data_consent_document_details_dto import DataConsentDocumentDetailsDto
     from mydatamyconsent.model.data_consent_status import DataConsentStatus
-    from mydatamyconsent.model.json_schema import JsonSchema
     from mydatamyconsent.model.life import Life
+    from mydatamyconsent.model.requester import Requester
     globals()['DataConsentDocumentDetailsDto'] = DataConsentDocumentDetailsDto
     globals()['DataConsentStatus'] = DataConsentStatus
-    globals()['JsonSchema'] = JsonSchema
     globals()['Life'] = Life
+    globals()['Requester'] = Requester
 
 
 class DataConsentDetailsDto(ModelNormal):
@@ -91,15 +91,13 @@ class DataConsentDetailsDto(ModelNormal):
             'title': (str, none_type,),  # noqa: E501
             'description': (str, none_type,),  # noqa: E501
             'data_life': (Life,),  # noqa: E501
-            'requester_name': (str, none_type,),  # noqa: E501
-            'requester_logo': (str, none_type,),  # noqa: E501
-            'location': (str, none_type,),  # noqa: E501
+            'requested_by_org': (Requester,),  # noqa: E501
             'status': (DataConsentStatus,),  # noqa: E501
             'approved_at_utc': (datetime, none_type,),  # noqa: E501
             'rejected_at_utc': (datetime, none_type,),  # noqa: E501
             'expires_at_utc': (datetime,),  # noqa: E501
             'requested_at_utc': (datetime,),  # noqa: E501
-            'identifiers': (JsonSchema,),  # noqa: E501
+            'identifiers': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'documents': ([DataConsentDocumentDetailsDto], none_type,),  # noqa: E501
             'financials': (str, none_type,),  # noqa: E501
             'health_records': (str, none_type,),  # noqa: E501
@@ -115,9 +113,7 @@ class DataConsentDetailsDto(ModelNormal):
         'title': 'title',  # noqa: E501
         'description': 'description',  # noqa: E501
         'data_life': 'dataLife',  # noqa: E501
-        'requester_name': 'requesterName',  # noqa: E501
-        'requester_logo': 'requesterLogo',  # noqa: E501
-        'location': 'location',  # noqa: E501
+        'requested_by_org': 'requestedByOrg',  # noqa: E501
         'status': 'status',  # noqa: E501
         'approved_at_utc': 'approvedAtUtc',  # noqa: E501
         'rejected_at_utc': 'rejectedAtUtc',  # noqa: E501
@@ -176,15 +172,13 @@ class DataConsentDetailsDto(ModelNormal):
             title (str, none_type): [optional]  # noqa: E501
             description (str, none_type): [optional]  # noqa: E501
             data_life (Life): [optional]  # noqa: E501
-            requester_name (str, none_type): [optional]  # noqa: E501
-            requester_logo (str, none_type): [optional]  # noqa: E501
-            location (str, none_type): [optional]  # noqa: E501
+            requested_by_org (Requester): [optional]  # noqa: E501
             status (DataConsentStatus): [optional]  # noqa: E501
             approved_at_utc (datetime, none_type): [optional]  # noqa: E501
             rejected_at_utc (datetime, none_type): [optional]  # noqa: E501
             expires_at_utc (datetime): [optional]  # noqa: E501
             requested_at_utc (datetime): [optional]  # noqa: E501
-            identifiers (JsonSchema): [optional]  # noqa: E501
+            identifiers (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             documents ([DataConsentDocumentDetailsDto], none_type): [optional]  # noqa: E501
             financials (str, none_type): [optional]  # noqa: E501
             health_records (str, none_type): [optional]  # noqa: E501
@@ -276,15 +270,13 @@ class DataConsentDetailsDto(ModelNormal):
             title (str, none_type): [optional]  # noqa: E501
             description (str, none_type): [optional]  # noqa: E501
             data_life (Life): [optional]  # noqa: E501
-            requester_name (str, none_type): [optional]  # noqa: E501
-            requester_logo (str, none_type): [optional]  # noqa: E501
-            location (str, none_type): [optional]  # noqa: E501
+            requested_by_org (Requester): [optional]  # noqa: E501
             status (DataConsentStatus): [optional]  # noqa: E501
             approved_at_utc (datetime, none_type): [optional]  # noqa: E501
             rejected_at_utc (datetime, none_type): [optional]  # noqa: E501
             expires_at_utc (datetime): [optional]  # noqa: E501
             requested_at_utc (datetime): [optional]  # noqa: E501
-            identifiers (JsonSchema): [optional]  # noqa: E501
+            identifiers (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             documents ([DataConsentDocumentDetailsDto], none_type): [optional]  # noqa: E501
             financials (str, none_type): [optional]  # noqa: E501
             health_records (str, none_type): [optional]  # noqa: E501

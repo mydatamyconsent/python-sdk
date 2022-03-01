@@ -49,7 +49,6 @@ from mydatamyconsent.model.identifier import Identifier
 from mydatamyconsent.model.individual_data_consent_request_response import IndividualDataConsentRequestResponse
 from mydatamyconsent.model.issued_document import IssuedDocument
 from mydatamyconsent.model.issued_document_paginated_list import IssuedDocumentPaginatedList
-from mydatamyconsent.model.json_schema import JsonSchema
 from mydatamyconsent.model.life import Life
 from mydatamyconsent.model.organization_data_consent_info_dto import OrganizationDataConsentInfoDto
 from mydatamyconsent.model.organization_data_consent_info_dto_paginated_list import OrganizationDataConsentInfoDtoPaginatedList
@@ -62,6 +61,7 @@ from mydatamyconsent.model.organization_financial_transactions_dto_paginated_lis
 from mydatamyconsent.model.problem_details import ProblemDetails
 from mydatamyconsent.model.push_uri_request import PushUriRequest
 from mydatamyconsent.model.push_uri_response import PushUriResponse
+from mydatamyconsent.model.requester import Requester
 from mydatamyconsent.model.shared_with import SharedWith
 from mydatamyconsent.model.string_string_key_value_pair import StringStringKeyValuePair
 from mydatamyconsent.model.supported_document_details_dto import SupportedDocumentDetailsDto

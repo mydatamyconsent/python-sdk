@@ -87,7 +87,7 @@ class DataConsentDetailsDto(ModelNormal):
         """
         lazy_import()
         return {
-            'id': (str,),  # noqa: E501
+            'consent_request_id': (str,),  # noqa: E501
             'title': (str, none_type,),  # noqa: E501
             'description': (str, none_type,),  # noqa: E501
             'data_life': (Life,),  # noqa: E501
@@ -95,12 +95,11 @@ class DataConsentDetailsDto(ModelNormal):
             'status': (DataConsentStatus,),  # noqa: E501
             'approved_at_utc': (datetime, none_type,),  # noqa: E501
             'rejected_at_utc': (datetime, none_type,),  # noqa: E501
-            'expires_at_utc': (datetime,),  # noqa: E501
+            'revoked_at_utc': (datetime, none_type,),  # noqa: E501
+            'requested_expires_at_utc': (datetime,),  # noqa: E501
             'requested_at_utc': (datetime,),  # noqa: E501
             'identifiers': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'documents': ([DataConsentDocumentDetailsDto], none_type,),  # noqa: E501
-            'financials': (str, none_type,),  # noqa: E501
-            'health_records': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -109,7 +108,7 @@ class DataConsentDetailsDto(ModelNormal):
 
 
     attribute_map = {
-        'id': 'id',  # noqa: E501
+        'consent_request_id': 'consentRequestId',  # noqa: E501
         'title': 'title',  # noqa: E501
         'description': 'description',  # noqa: E501
         'data_life': 'dataLife',  # noqa: E501
@@ -117,12 +116,11 @@ class DataConsentDetailsDto(ModelNormal):
         'status': 'status',  # noqa: E501
         'approved_at_utc': 'approvedAtUtc',  # noqa: E501
         'rejected_at_utc': 'rejectedAtUtc',  # noqa: E501
-        'expires_at_utc': 'expiresAtUtc',  # noqa: E501
+        'revoked_at_utc': 'revokedAtUtc',  # noqa: E501
+        'requested_expires_at_utc': 'requestedExpiresAtUtc',  # noqa: E501
         'requested_at_utc': 'requestedAtUtc',  # noqa: E501
         'identifiers': 'identifiers',  # noqa: E501
         'documents': 'documents',  # noqa: E501
-        'financials': 'financials',  # noqa: E501
-        'health_records': 'healthRecords',  # noqa: E501
     }
 
     read_only_vars = {
@@ -132,11 +130,11 @@ class DataConsentDetailsDto(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, id, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, consent_request_id, *args, **kwargs):  # noqa: E501
         """DataConsentDetailsDto - a model defined in OpenAPI
 
         Args:
-            id (str):
+            consent_request_id (str):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -176,12 +174,11 @@ class DataConsentDetailsDto(ModelNormal):
             status (DataConsentStatus): [optional]  # noqa: E501
             approved_at_utc (datetime, none_type): [optional]  # noqa: E501
             rejected_at_utc (datetime, none_type): [optional]  # noqa: E501
-            expires_at_utc (datetime): [optional]  # noqa: E501
+            revoked_at_utc (datetime, none_type): [optional]  # noqa: E501
+            requested_expires_at_utc (datetime): [optional]  # noqa: E501
             requested_at_utc (datetime): [optional]  # noqa: E501
             identifiers (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             documents ([DataConsentDocumentDetailsDto], none_type): [optional]  # noqa: E501
-            financials (str, none_type): [optional]  # noqa: E501
-            health_records (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -209,7 +206,7 @@ class DataConsentDetailsDto(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.id = id
+        self.consent_request_id = consent_request_id
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -230,11 +227,11 @@ class DataConsentDetailsDto(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, id, *args, **kwargs):  # noqa: E501
+    def __init__(self, consent_request_id, *args, **kwargs):  # noqa: E501
         """DataConsentDetailsDto - a model defined in OpenAPI
 
         Args:
-            id (str):
+            consent_request_id (str):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -274,12 +271,11 @@ class DataConsentDetailsDto(ModelNormal):
             status (DataConsentStatus): [optional]  # noqa: E501
             approved_at_utc (datetime, none_type): [optional]  # noqa: E501
             rejected_at_utc (datetime, none_type): [optional]  # noqa: E501
-            expires_at_utc (datetime): [optional]  # noqa: E501
+            revoked_at_utc (datetime, none_type): [optional]  # noqa: E501
+            requested_expires_at_utc (datetime): [optional]  # noqa: E501
             requested_at_utc (datetime): [optional]  # noqa: E501
             identifiers (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             documents ([DataConsentDocumentDetailsDto], none_type): [optional]  # noqa: E501
-            financials (str, none_type): [optional]  # noqa: E501
-            health_records (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -305,7 +301,7 @@ class DataConsentDetailsDto(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.id = id
+        self.consent_request_id = consent_request_id
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

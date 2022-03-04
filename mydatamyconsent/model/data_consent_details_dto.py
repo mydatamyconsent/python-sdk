@@ -94,6 +94,7 @@ class DataConsentDetailsDto(ModelNormal):
             'requested_by_org': (Requester,),  # noqa: E501
             'status': (DataConsentStatus,),  # noqa: E501
             'approved_at_utc': (datetime, none_type,),  # noqa: E501
+            'approved_expires_at_utc': (datetime, none_type,),  # noqa: E501
             'rejected_at_utc': (datetime, none_type,),  # noqa: E501
             'revoked_at_utc': (datetime, none_type,),  # noqa: E501
             'requested_expires_at_utc': (datetime,),  # noqa: E501
@@ -115,6 +116,7 @@ class DataConsentDetailsDto(ModelNormal):
         'requested_by_org': 'requestedByOrg',  # noqa: E501
         'status': 'status',  # noqa: E501
         'approved_at_utc': 'approvedAtUtc',  # noqa: E501
+        'approved_expires_at_utc': 'approvedExpiresAtUtc',  # noqa: E501
         'rejected_at_utc': 'rejectedAtUtc',  # noqa: E501
         'revoked_at_utc': 'revokedAtUtc',  # noqa: E501
         'requested_expires_at_utc': 'requestedExpiresAtUtc',  # noqa: E501
@@ -173,6 +175,7 @@ class DataConsentDetailsDto(ModelNormal):
             requested_by_org (Requester): [optional]  # noqa: E501
             status (DataConsentStatus): [optional]  # noqa: E501
             approved_at_utc (datetime, none_type): [optional]  # noqa: E501
+            approved_expires_at_utc (datetime, none_type): [optional]  # noqa: E501
             rejected_at_utc (datetime, none_type): [optional]  # noqa: E501
             revoked_at_utc (datetime, none_type): [optional]  # noqa: E501
             requested_expires_at_utc (datetime): [optional]  # noqa: E501
@@ -270,6 +273,7 @@ class DataConsentDetailsDto(ModelNormal):
             requested_by_org (Requester): [optional]  # noqa: E501
             status (DataConsentStatus): [optional]  # noqa: E501
             approved_at_utc (datetime, none_type): [optional]  # noqa: E501
+            approved_expires_at_utc (datetime, none_type): [optional]  # noqa: E501
             rejected_at_utc (datetime, none_type): [optional]  # noqa: E501
             revoked_at_utc (datetime, none_type): [optional]  # noqa: E501
             requested_expires_at_utc (datetime): [optional]  # noqa: E501

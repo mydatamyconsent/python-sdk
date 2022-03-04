@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **requested_by_org** | [**Requester**](Requester.md) |  | [optional] 
 **status** | [**DataConsentStatus**](DataConsentStatus.md) |  | [optional] 
 **approved_at_utc** | **datetime, none_type** |  | [optional] 
+**approved_expires_at_utc** | **datetime, none_type** |  | [optional] 
 **rejected_at_utc** | **datetime, none_type** |  | [optional] 
 **revoked_at_utc** | **datetime, none_type** |  | [optional] 
 **requested_expires_at_utc** | **datetime** |  | [optional] 

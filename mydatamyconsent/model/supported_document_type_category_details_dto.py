@@ -86,7 +86,7 @@ class SupportedDocumentTypeCategoryDetailsDto(ModelNormal):
             'document_type_category_id': (str,),  # noqa: E501
             'document_type_category_name': (str,),  # noqa: E501
             'supported_documents': ([SupportedDocumentDetailsDto],),  # noqa: E501
-            'supported_document_provider_details': ([SupportedDocumentProviderDetailsDto],),  # noqa: E501
+            'supported_document_provider_details': ([SupportedDocumentProviderDetailsDto], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -108,14 +108,13 @@ class SupportedDocumentTypeCategoryDetailsDto(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, document_type_category_id, document_type_category_name, supported_documents, supported_document_provider_details, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, document_type_category_id, document_type_category_name, supported_documents, *args, **kwargs):  # noqa: E501
         """SupportedDocumentTypeCategoryDetailsDto - a model defined in OpenAPI
 
         Args:
             document_type_category_id (str):
             document_type_category_name (str):
             supported_documents ([SupportedDocumentDetailsDto]):
-            supported_document_provider_details ([SupportedDocumentProviderDetailsDto]):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -148,6 +147,7 @@ class SupportedDocumentTypeCategoryDetailsDto(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            supported_document_provider_details ([SupportedDocumentProviderDetailsDto], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -178,7 +178,6 @@ class SupportedDocumentTypeCategoryDetailsDto(ModelNormal):
         self.document_type_category_id = document_type_category_id
         self.document_type_category_name = document_type_category_name
         self.supported_documents = supported_documents
-        self.supported_document_provider_details = supported_document_provider_details
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -199,14 +198,13 @@ class SupportedDocumentTypeCategoryDetailsDto(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, document_type_category_id, document_type_category_name, supported_documents, supported_document_provider_details, *args, **kwargs):  # noqa: E501
+    def __init__(self, document_type_category_id, document_type_category_name, supported_documents, *args, **kwargs):  # noqa: E501
         """SupportedDocumentTypeCategoryDetailsDto - a model defined in OpenAPI
 
         Args:
             document_type_category_id (str):
             document_type_category_name (str):
             supported_documents ([SupportedDocumentDetailsDto]):
-            supported_document_provider_details ([SupportedDocumentProviderDetailsDto]):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -239,6 +237,7 @@ class SupportedDocumentTypeCategoryDetailsDto(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            supported_document_provider_details ([SupportedDocumentProviderDetailsDto], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -267,7 +266,6 @@ class SupportedDocumentTypeCategoryDetailsDto(ModelNormal):
         self.document_type_category_id = document_type_category_id
         self.document_type_category_name = document_type_category_name
         self.supported_documents = supported_documents
-        self.supported_document_provider_details = supported_document_provider_details
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

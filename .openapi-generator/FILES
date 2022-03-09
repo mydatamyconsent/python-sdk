@@ -5,6 +5,7 @@ README.md
 docs/Activity.md
 docs/ApprovedConsentRequest.md
 docs/BankAccountType.md
+docs/CollectibleTypes.md
 docs/ConsentRequestReceiver.md
 docs/CreateDataProcessingAgreementRequestModel.md
 docs/CreateIndividualDataConsentRequest.md
@@ -94,6 +95,7 @@ mydatamyconsent/model/__init__.py
 mydatamyconsent/model/activity.py
 mydatamyconsent/model/approved_consent_request.py
 mydatamyconsent/model/bank_account_type.py
+mydatamyconsent/model/collectible_types.py
 mydatamyconsent/model/consent_request_receiver.py
 mydatamyconsent/model/create_data_processing_agreement_request_model.py
 mydatamyconsent/model/create_individual_data_consent_request.py

@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **consent_request_id** | **str** |  | 
+**collectables** | [**[CollectibleTypes]**](CollectibleTypes.md) |  | 
 **title** | **str, none_type** |  | [optional] 
 **description** | **str, none_type** |  | [optional] 
 **data_life** | [**Life**](Life.md) |  | [optional] 

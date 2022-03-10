@@ -4,6 +4,7 @@ All URIs are relative to *https://api.mydatamyconsent.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**download_consented_document_analysis**](DataConsentsApi.md#download_consented_document_analysis) | **GET** /v1/consents/{consentId}/documents/{documentId}/analysis | Get analysis of a consented document.
 [**download_consented_document_by_id**](DataConsentsApi.md#download_consented_document_by_id) | **GET** /v1/consents/individuals/{consentId}/documents/{documentId}/download | Download a individuals consented document.
 [**download_org_consented_document_by_id**](DataConsentsApi.md#download_org_consented_document_by_id) | **GET** /v1/consents/organizations/{consentId}/documents/{documentId}/download | Download a organizations consented document.
 [**get_all_consented_documents**](DataConsentsApi.md#get_all_consented_documents) | **GET** /v1/consents/individuals/{consentId}/documents | Get the individual documents based on ConsentId.
@@ -14,6 +15,7 @@ Method | HTTP request | Description
 [**get_consented_account_by_id**](DataConsentsApi.md#get_consented_account_by_id) | **GET** /v1/consents/individuals/{consentId}/financial-accounts/{accountId} | Get individual consented financial account details based on account id.
 [**get_consented_document_by_id**](DataConsentsApi.md#get_consented_document_by_id) | **GET** /v1/consents/individuals/{consentId}/documents/{documentId} | Get individuals consent document based on document id.
 [**get_consented_financial_account**](DataConsentsApi.md#get_consented_financial_account) | **GET** /v1/consents/organizations/{consentId}/financial-accounts/{accountId} | Get organization consented financial account details based on account id.
+[**get_consented_financial_account_insights**](DataConsentsApi.md#get_consented_financial_account_insights) | **GET** /v1/consents/{consentId}/financial-accounts/{accountId}/insights | Get consented financial account insights.
 [**get_consented_financial_account_transactions**](DataConsentsApi.md#get_consented_financial_account_transactions) | **GET** /v1/consents/individuals/{consentId}/financial-accounts/{accountId}/transactions | Get individual consented financial account transactions of an individual based on accountId.
 [**get_consents_for_organizations**](DataConsentsApi.md#get_consents_for_organizations) | **GET** /v1/consents/organizations | Get the list of data consents sent for organizations.
 [**get_consents_sent_to_individuals**](DataConsentsApi.md#get_consents_sent_to_individuals) | **GET** /v1/consents/individuals | Get the list of Consents Sent to Individuals.
@@ -21,6 +23,72 @@ Method | HTTP request | Description
 [**get_organization_consent_details_by_id**](DataConsentsApi.md#get_organization_consent_details_by_id) | **GET** /v1/consents/organizations/{consentId} | Get all organization consent details by consent id.
 [**get_organization_consented_document_by_id**](DataConsentsApi.md#get_organization_consented_document_by_id) | **GET** /v1/consents/organizations/{consentId}/documents/{documentId} | Get organization consent document based on document id.
 
+
+# **download_consented_document_analysis**
+> download_consented_document_analysis(consent_id, document_id)
+
+Get analysis of a consented document.
+
+### Example
+
+
+```python
+import time
+import mydatamyconsent
+from mydatamyconsent.api import data_consents_api
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.mydatamyconsent.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mydatamyconsent.Configuration(
+    host = "https://api.mydatamyconsent.com"
+)
+
+
+# Enter a context with an instance of the API client
+with mydatamyconsent.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = data_consents_api.DataConsentsApi(api_client)
+    consent_id = "consentId_example" # str | 
+    document_id = "documentId_example" # str | Document Id.
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Get analysis of a consented document.
+        api_instance.download_consented_document_analysis(consent_id, document_id)
+    except mydatamyconsent.ApiException as e:
+        print("Exception when calling DataConsentsApi->download_consented_document_analysis: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **consent_id** | **str**|  |
+ **document_id** | **str**| Document Id. |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**500** | Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **download_consented_document_by_id**
 > UserDocumentDownload download_consented_document_by_id(consent_id, document_id)
@@ -672,6 +740,72 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OrganizationFinancialAccountDto**](OrganizationFinancialAccountDto.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**500** | Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_consented_financial_account_insights**
+> get_consented_financial_account_insights(consent_id, account_id)
+
+Get consented financial account insights.
+
+### Example
+
+
+```python
+import time
+import mydatamyconsent
+from mydatamyconsent.api import data_consents_api
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.mydatamyconsent.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mydatamyconsent.Configuration(
+    host = "https://api.mydatamyconsent.com"
+)
+
+
+# Enter a context with an instance of the API client
+with mydatamyconsent.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = data_consents_api.DataConsentsApi(api_client)
+    consent_id = "consentId_example" # str | 
+    account_id = "accountId_example" # str | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Get consented financial account insights.
+        api_instance.get_consented_financial_account_insights(consent_id, account_id)
+    except mydatamyconsent.ApiException as e:
+        print("Exception when calling DataConsentsApi->get_consented_financial_account_insights: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **consent_id** | **str**|  |
+ **account_id** | **str**|  |
+
+### Return type
+
+void (empty response body)
 
 ### Authorization
 

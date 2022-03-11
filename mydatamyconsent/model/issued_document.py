@@ -107,11 +107,11 @@ class IssuedDocument(ModelNormal):
         """IssuedDocument - a model defined in OpenAPI
 
         Args:
-            id (str): Document Identifier.
-            identifier (str): Document Identifier. eg: GJ05FG67866586.
-            document_type (str): Document type name. eg: Driving License.
-            issued_to (str):
-            issued_at_utc (datetime):
+            id (str): Document Id.
+            identifier (str): Document Identifier.
+            document_type (str): Document type name.
+            issued_to (str): User name.
+            issued_at_utc (datetime): Issued datetime in UTC timezone.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -200,11 +200,11 @@ class IssuedDocument(ModelNormal):
         """IssuedDocument - a model defined in OpenAPI
 
         Args:
-            id (str): Document Identifier.
-            identifier (str): Document Identifier. eg: GJ05FG67866586.
-            document_type (str): Document type name. eg: Driving License.
-            issued_to (str):
-            issued_at_utc (datetime):
+            id (str): Document Id.
+            identifier (str): Document Identifier.
+            document_type (str): Document type name.
+            issued_to (str): User name.
+            issued_at_utc (datetime): Issued datetime in UTC timezone.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types

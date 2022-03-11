@@ -5,11 +5,11 @@ Issued Document Identifier.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** | Document Identifier. | 
-**identifier** | **str** | Document Identifier. eg: GJ05FG67866586. | 
-**document_type** | **str** | Document type name. eg: Driving License. | 
-**issued_to** | **str** |  | 
-**issued_at_utc** | **datetime** |  | 
+**id** | **str** | Document Id. | 
+**identifier** | **str** | Document Identifier. | 
+**document_type** | **str** | Document type name. | 
+**issued_to** | **str** | User name. | 
+**issued_at_utc** | **datetime** | Issued datetime in UTC timezone. | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

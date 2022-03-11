@@ -101,7 +101,7 @@ class DigiLockerCompatIssuerApi(object):
 
 
         Keyword Args:
-            push_uri_request (PushUriRequest): Push uri request MyDataMyConsent.Models.DigiLocker.PushUriRequest.. [optional]
+            push_uri_request (PushUriRequest): Push uri request MyDataMyConsent.DeveloperApi.Models.DigiLocker.PushUriRequest.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object

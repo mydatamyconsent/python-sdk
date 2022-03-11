@@ -5,18 +5,18 @@ Document issue request details.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** | Request Id. | 
-**document_type_id** | **str** |  | 
-**type_name** | **str** |  | 
-**identifier** | **str** |  | 
+**id** | **str** | Document issue request Id. | 
+**document_type_id** | **str** | Document type Id. | 
+**type_name** | **str** | Document type name. | 
+**identifier** | **str** | Document identifier. | 
 **status** | [**DocumentIssueRequestStatus**](DocumentIssueRequestStatus.md) |  | 
-**description** | **str** |  | 
-**receiver** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | 
-**issued_at_utc** | **datetime** |  | 
-**valid_from_utc** | **datetime** |  | 
-**created_at_utc** | **datetime** |  | 
-**expires_at_utc** | **datetime, none_type** |  | [optional] 
-**meta_data** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
+**description** | **str** | Document description. | 
+**receiver** | **bool, date, datetime, dict, float, int, list, str, none_type** | Document receiver details. | 
+**issued_at_utc** | **datetime** | Datetime of issue in UTC timezone. | 
+**valid_from_utc** | **datetime** | Valid from datetime in UTC timezone. | 
+**created_at_utc** | **datetime** | Creation datetime of issue request in UTC timezone. | 
+**expires_at_utc** | **datetime, none_type** | Datetime of expiry in UTC timezone. | [optional] 
+**meta_data** | **bool, date, datetime, dict, float, int, list, str, none_type** | Metadata. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

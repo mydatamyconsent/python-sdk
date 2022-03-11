@@ -53,7 +53,7 @@ with mydatamyconsent.ApiClient() as api_client:
         txn="txn_example",
         org_id="org_id_example",
         keyhash="keyhash_example",
-    ) # PushUriRequest | Push uri request MyDataMyConsent.Models.DigiLocker.PushUriRequest. (optional)
+    ) # PushUriRequest | Push uri request MyDataMyConsent.DeveloperApi.Models.DigiLocker.PushUriRequest. (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -70,7 +70,7 @@ with mydatamyconsent.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **push_uri_request** | [**PushUriRequest**](PushUriRequest.md)| Push uri request MyDataMyConsent.Models.DigiLocker.PushUriRequest. | [optional]
+ **push_uri_request** | [**PushUriRequest**](PushUriRequest.md)| Push uri request MyDataMyConsent.DeveloperApi.Models.DigiLocker.PushUriRequest. | [optional]
 
 ### Return type
 

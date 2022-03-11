@@ -126,16 +126,16 @@ class DocumentIssueRequestDetails(ModelNormal):
         """DocumentIssueRequestDetails - a model defined in OpenAPI
 
         Args:
-            id (str): Request Id.
-            document_type_id (str):
-            type_name (str):
-            identifier (str):
+            id (str): Document issue request Id.
+            document_type_id (str): Document type Id.
+            type_name (str): Document type name.
+            identifier (str): Document identifier.
             status (DocumentIssueRequestStatus):
-            description (str):
-            receiver (bool, date, datetime, dict, float, int, list, str, none_type):
-            issued_at_utc (datetime):
-            valid_from_utc (datetime):
-            created_at_utc (datetime):
+            description (str): Document description.
+            receiver (bool, date, datetime, dict, float, int, list, str, none_type): Document receiver details.
+            issued_at_utc (datetime): Datetime of issue in UTC timezone.
+            valid_from_utc (datetime): Valid from datetime in UTC timezone.
+            created_at_utc (datetime): Creation datetime of issue request in UTC timezone.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -168,8 +168,8 @@ class DocumentIssueRequestDetails(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            expires_at_utc (datetime, none_type): [optional]  # noqa: E501
-            meta_data (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
+            expires_at_utc (datetime, none_type): Datetime of expiry in UTC timezone.. [optional]  # noqa: E501
+            meta_data (bool, date, datetime, dict, float, int, list, str, none_type): Metadata.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -231,16 +231,16 @@ class DocumentIssueRequestDetails(ModelNormal):
         """DocumentIssueRequestDetails - a model defined in OpenAPI
 
         Args:
-            id (str): Request Id.
-            document_type_id (str):
-            type_name (str):
-            identifier (str):
+            id (str): Document issue request Id.
+            document_type_id (str): Document type Id.
+            type_name (str): Document type name.
+            identifier (str): Document identifier.
             status (DocumentIssueRequestStatus):
-            description (str):
-            receiver (bool, date, datetime, dict, float, int, list, str, none_type):
-            issued_at_utc (datetime):
-            valid_from_utc (datetime):
-            created_at_utc (datetime):
+            description (str): Document description.
+            receiver (bool, date, datetime, dict, float, int, list, str, none_type): Document receiver details.
+            issued_at_utc (datetime): Datetime of issue in UTC timezone.
+            valid_from_utc (datetime): Valid from datetime in UTC timezone.
+            created_at_utc (datetime): Creation datetime of issue request in UTC timezone.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -273,8 +273,8 @@ class DocumentIssueRequestDetails(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            expires_at_utc (datetime, none_type): [optional]  # noqa: E501
-            meta_data (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
+            expires_at_utc (datetime, none_type): Datetime of expiry in UTC timezone.. [optional]  # noqa: E501
+            meta_data (bool, date, datetime, dict, float, int, list, str, none_type): Metadata.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

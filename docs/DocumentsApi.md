@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_issued_document_by_id**](DocumentsApi.md#get_issued_document_by_id) | **GET** /v1/documents/issued/{documentId} | Get issued document.
 [**get_issued_documents**](DocumentsApi.md#get_issued_documents) | **GET** /v1/documents/issued/{documentTypeId} | Get paginated list of issued documents of given document type.
-[**get_registered_document_types**](DocumentsApi.md#get_registered_document_types) | **GET** /v1/documents/types | Get registered document types.
+[**get_registered_document_types**](DocumentsApi.md#get_registered_document_types) | **GET** /v1/documents/types | Get paginated list of registered document types.
 [**issue_document_to_individual**](DocumentsApi.md#issue_document_to_individual) | **POST** /v1/documents/issue/individual | Issue a new document to an individual user.
 [**issue_document_to_organization**](DocumentsApi.md#issue_document_to_organization) | **POST** /v1/documents/issue/organization | Issue a new document to an organization.
 [**upload_document_for_individual**](DocumentsApi.md#upload_document_for_individual) | **POST** /v1/documents/issue/individual/upload/{issueRequestId} | Upload a document for issuance request of individual.
@@ -107,8 +107,8 @@ with mydatamyconsent.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = documents_api.DocumentsApi(api_client)
     document_type_id = "documentTypeId_example" # str | Document type id.
-    from_date_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | From DateTime. (optional)
-    to_date_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | To DateTime. (optional)
+    from_date_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | From DateTime in UTC timezone. (optional)
+    to_date_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | To DateTime in UTC timezone. (optional)
     page_no = 1 # int | Page number. (optional) if omitted the server will use the default value of 1
     page_size = 25 # int | Number of items to return. (optional) if omitted the server will use the default value of 25
 
@@ -136,8 +136,8 @@ with mydatamyconsent.ApiClient() as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **document_type_id** | **str**| Document type id. |
- **from_date_time** | **datetime**| From DateTime. | [optional]
- **to_date_time** | **datetime**| To DateTime. | [optional]
+ **from_date_time** | **datetime**| From DateTime in UTC timezone. | [optional]
+ **to_date_time** | **datetime**| To DateTime in UTC timezone. | [optional]
  **page_no** | **int**| Page number. | [optional] if omitted the server will use the default value of 1
  **page_size** | **int**| Number of items to return. | [optional] if omitted the server will use the default value of 25
 
@@ -168,7 +168,7 @@ No authorization required
 # **get_registered_document_types**
 > DocumentTypePaginatedList get_registered_document_types()
 
-Get registered document types.
+Get paginated list of registered document types.
 
 ### Example
 
@@ -196,7 +196,7 @@ with mydatamyconsent.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # Get registered document types.
+        # Get paginated list of registered document types.
         api_response = api_instance.get_registered_document_types(page_no=page_no, page_size=page_size)
         pprint(api_response)
     except mydatamyconsent.ApiException as e:
@@ -263,7 +263,7 @@ with mydatamyconsent.ApiClient() as api_client:
     api_instance = documents_api.DocumentsApi(api_client)
     document_issue_request = DocumentIssueRequest(
         document_type_id="document_type_id_example",
-        identifier="identifier_example",
+        identifier="GJ05FG67866586.",
         description="description_example",
         receiver=DocumentReceiver(
             country_iso2_code="country_iso2_code_example",
@@ -353,7 +353,7 @@ with mydatamyconsent.ApiClient() as api_client:
     api_instance = documents_api.DocumentsApi(api_client)
     document_issue_request = DocumentIssueRequest(
         document_type_id="document_type_id_example",
-        identifier="identifier_example",
+        identifier="GJ05FG67866586.",
         description="description_example",
         receiver=DocumentReceiver(
             country_iso2_code="country_iso2_code_example",
@@ -416,7 +416,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **upload_document_for_individual**
-> str upload_document_for_individual(issue_request_id, form_file)
+> upload_document_for_individual(issue_request_id, form_file)
 
 Upload a document for issuance request of individual.
 
@@ -439,14 +439,13 @@ configuration = mydatamyconsent.Configuration(
 with mydatamyconsent.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = documents_api.DocumentsApi(api_client)
-    issue_request_id = "issueRequestId_example" # str | Issue Request Id System.Guid.
+    issue_request_id = "issueRequestId_example" # str | Document issue request id.
     form_file = open('/path/to/file', 'rb') # file_type | 
 
     # example passing only required values which don't have defaults set
     try:
         # Upload a document for issuance request of individual.
-        api_response = api_instance.upload_document_for_individual(issue_request_id, form_file)
-        pprint(api_response)
+        api_instance.upload_document_for_individual(issue_request_id, form_file)
     except mydatamyconsent.ApiException as e:
         print("Exception when calling DocumentsApi->upload_document_for_individual: %s\n" % e)
 ```
@@ -456,12 +455,12 @@ with mydatamyconsent.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **issue_request_id** | **str**| Issue Request Id System.Guid. |
+ **issue_request_id** | **str**| Document issue request id. |
  **form_file** | **file_type**|  |
 
 ### Return type
 
-**str**
+void (empty response body)
 
 ### Authorization
 
@@ -484,7 +483,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **upload_document_for_organization**
-> str upload_document_for_organization(issue_request_id, form_file)
+> upload_document_for_organization(issue_request_id, form_file)
 
 Upload a document for issuance request of organization.
 
@@ -507,14 +506,13 @@ configuration = mydatamyconsent.Configuration(
 with mydatamyconsent.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = documents_api.DocumentsApi(api_client)
-    issue_request_id = "issueRequestId_example" # str | Issue Request Id System.Guid.
+    issue_request_id = "issueRequestId_example" # str | Document issue request id System.Guid.
     form_file = open('/path/to/file', 'rb') # file_type | 
 
     # example passing only required values which don't have defaults set
     try:
         # Upload a document for issuance request of organization.
-        api_response = api_instance.upload_document_for_organization(issue_request_id, form_file)
-        pprint(api_response)
+        api_instance.upload_document_for_organization(issue_request_id, form_file)
     except mydatamyconsent.ApiException as e:
         print("Exception when calling DocumentsApi->upload_document_for_organization: %s\n" % e)
 ```
@@ -524,12 +522,12 @@ with mydatamyconsent.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **issue_request_id** | **str**| Issue Request Id System.Guid. |
+ **issue_request_id** | **str**| Document issue request id System.Guid. |
  **form_file** | **file_type**|  |
 
 ### Return type
 
-**str**
+void (empty response body)
 
 ### Authorization
 

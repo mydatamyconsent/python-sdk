@@ -313,7 +313,7 @@ class DocumentsApi(object):
         )
         self.upload_document_for_individual_endpoint = _Endpoint(
             settings={
-                'response_type': (str,),
+                'response_type': None,
                 'auth': [],
                 'endpoint_path': '/v1/documents/issue/individual/upload/{issueRequestId}',
                 'operation_id': 'upload_document_for_individual',
@@ -370,7 +370,7 @@ class DocumentsApi(object):
         )
         self.upload_document_for_organization_endpoint = _Endpoint(
             settings={
-                'response_type': (str,),
+                'response_type': None,
                 'auth': [],
                 'endpoint_path': '/v1/documents/issue/organization/upload/{issueRequestId}',
                 'operation_id': 'upload_document_for_organization',
@@ -520,8 +520,8 @@ class DocumentsApi(object):
             document_type_id (str): Document type id.
 
         Keyword Args:
-            from_date_time (datetime): From DateTime.. [optional]
-            to_date_time (datetime): To DateTime.. [optional]
+            from_date_time (datetime): From DateTime in UTC timezone.. [optional]
+            to_date_time (datetime): To DateTime in UTC timezone.. [optional]
             page_no (int): Page number.. [optional] if omitted the server will use the default value of 1
             page_size (int): Number of items to return.. [optional] if omitted the server will use the default value of 25
             _return_http_data_only (bool): response data without head status
@@ -588,7 +588,7 @@ class DocumentsApi(object):
         self,
         **kwargs
     ):
-        """Get registered document types.  # noqa: E501
+        """Get paginated list of registered document types.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -827,7 +827,7 @@ class DocumentsApi(object):
         >>> result = thread.get()
 
         Args:
-            issue_request_id (str): Issue Request Id System.Guid.
+            issue_request_id (str): Document issue request id.
             form_file (file_type):
 
         Keyword Args:
@@ -859,7 +859,7 @@ class DocumentsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            str
+            None
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -908,7 +908,7 @@ class DocumentsApi(object):
         >>> result = thread.get()
 
         Args:
-            issue_request_id (str): Issue Request Id System.Guid.
+            issue_request_id (str): Document issue request id System.Guid.
             form_file (file_type):
 
         Keyword Args:
@@ -940,7 +940,7 @@ class DocumentsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            str
+            None
                 If the method is called asynchronously, returns the request
                 thread.
         """

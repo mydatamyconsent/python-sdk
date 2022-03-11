@@ -118,12 +118,12 @@ class DocumentIssueRequest(ModelNormal):
         """DocumentIssueRequest - a model defined in OpenAPI
 
         Args:
-            document_type_id (str):
-            identifier (str):
-            description (str):
+            document_type_id (str): Document type id.
+            identifier (str): Document identifier.
+            description (str): Document description.
             receiver (DocumentReceiver):
-            issued_at_utc (datetime):
-            valid_from_utc (datetime):
+            issued_at_utc (datetime): Datetime of issue in UTC timezone.
+            valid_from_utc (datetime): Valid from datetime in UTC timezone.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -156,8 +156,8 @@ class DocumentIssueRequest(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            expires_at_utc (datetime, none_type): [optional]  # noqa: E501
-            metadata ({str: (str,)}, none_type): [optional]  # noqa: E501
+            expires_at_utc (datetime, none_type): Datetime of expiry in UTC timezone.. [optional]  # noqa: E501
+            metadata ({str: (str,)}, none_type): Metadata.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -215,12 +215,12 @@ class DocumentIssueRequest(ModelNormal):
         """DocumentIssueRequest - a model defined in OpenAPI
 
         Args:
-            document_type_id (str):
-            identifier (str):
-            description (str):
+            document_type_id (str): Document type id.
+            identifier (str): Document identifier.
+            description (str): Document description.
             receiver (DocumentReceiver):
-            issued_at_utc (datetime):
-            valid_from_utc (datetime):
+            issued_at_utc (datetime): Datetime of issue in UTC timezone.
+            valid_from_utc (datetime): Valid from datetime in UTC timezone.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -253,8 +253,8 @@ class DocumentIssueRequest(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            expires_at_utc (datetime, none_type): [optional]  # noqa: E501
-            metadata ({str: (str,)}, none_type): [optional]  # noqa: E501
+            expires_at_utc (datetime, none_type): Datetime of expiry in UTC timezone.. [optional]  # noqa: E501
+            metadata ({str: (str,)}, none_type): Metadata.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

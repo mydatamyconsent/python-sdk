@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **digilocker_compat_issue_document**
-> PushUriResponse digilocker_compat_issue_document()
+> PushUriResponse digilocker_compat_issue_document(push_uri_request)
 
 Digilocker Compatible endpoint to issue document.
 
@@ -53,13 +53,12 @@ with mydatamyconsent.ApiClient() as api_client:
         txn="txn_example",
         org_id="org_id_example",
         keyhash="keyhash_example",
-    ) # PushUriRequest | Push uri request MyDataMyConsent.DeveloperApi.Models.DigiLocker.PushUriRequest. (optional)
+    ) # PushUriRequest | Push URI request payload
 
     # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Digilocker Compatible endpoint to issue document.
-        api_response = api_instance.digilocker_compat_issue_document(push_uri_request=push_uri_request)
+        api_response = api_instance.digilocker_compat_issue_document(push_uri_request)
         pprint(api_response)
     except mydatamyconsent.ApiException as e:
         print("Exception when calling DigiLockerCompatIssuerApi->digilocker_compat_issue_document: %s\n" % e)
@@ -70,7 +69,7 @@ with mydatamyconsent.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **push_uri_request** | [**PushUriRequest**](PushUriRequest.md)| Push uri request MyDataMyConsent.DeveloperApi.Models.DigiLocker.PushUriRequest. | [optional]
+ **push_uri_request** | [**PushUriRequest**](PushUriRequest.md)| Push URI request payload |
 
 ### Return type
 

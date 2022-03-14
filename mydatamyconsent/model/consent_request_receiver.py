@@ -65,6 +65,10 @@ class ConsentRequestReceiver(ModelNormal):
     }
 
     validations = {
+        ('country_iso2_code',): {
+            'max_length': 2,
+            'min_length': 2,
+        },
     }
 
     additional_properties_type = None
@@ -83,7 +87,8 @@ class ConsentRequestReceiver(ModelNormal):
         """
         lazy_import()
         return {
-            'identifiers': ([StringStringKeyValuePair], none_type,),  # noqa: E501
+            'country_iso2_code': (str,),  # noqa: E501
+            'identifiers': ([StringStringKeyValuePair],),  # noqa: E501
             'identification_strategy': (IdentificationStrategy,),  # noqa: E501
         }
 
@@ -93,6 +98,7 @@ class ConsentRequestReceiver(ModelNormal):
 
 
     attribute_map = {
+        'country_iso2_code': 'countryIso2Code',  # noqa: E501
         'identifiers': 'identifiers',  # noqa: E501
         'identification_strategy': 'identificationStrategy',  # noqa: E501
     }
@@ -104,8 +110,13 @@ class ConsentRequestReceiver(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, country_iso2_code, identifiers, identification_strategy, *args, **kwargs):  # noqa: E501
         """ConsentRequestReceiver - a model defined in OpenAPI
+
+        Args:
+            country_iso2_code (str): Consent request receiver country ISO 2 code
+            identifiers ([StringStringKeyValuePair]): Consent request receiver identifiers
+            identification_strategy (IdentificationStrategy):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -138,8 +149,6 @@ class ConsentRequestReceiver(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            identifiers ([StringStringKeyValuePair], none_type): Consent request receiver identifiers. [optional]  # noqa: E501
-            identification_strategy (IdentificationStrategy): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -167,6 +176,9 @@ class ConsentRequestReceiver(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.country_iso2_code = country_iso2_code
+        self.identifiers = identifiers
+        self.identification_strategy = identification_strategy
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -187,8 +199,13 @@ class ConsentRequestReceiver(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, country_iso2_code, identifiers, identification_strategy, *args, **kwargs):  # noqa: E501
         """ConsentRequestReceiver - a model defined in OpenAPI
+
+        Args:
+            country_iso2_code (str): Consent request receiver country ISO 2 code
+            identifiers ([StringStringKeyValuePair]): Consent request receiver identifiers
+            identification_strategy (IdentificationStrategy):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -221,8 +238,6 @@ class ConsentRequestReceiver(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            identifiers ([StringStringKeyValuePair], none_type): Consent request receiver identifiers. [optional]  # noqa: E501
-            identification_strategy (IdentificationStrategy): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -248,6 +263,9 @@ class ConsentRequestReceiver(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.country_iso2_code = country_iso2_code
+        self.identifiers = identifiers
+        self.identification_strategy = identification_strategy
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

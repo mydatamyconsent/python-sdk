@@ -672,7 +672,7 @@ class DocumentsApi(object):
         >>> result = thread.get()
 
         Args:
-            document_issue_request (DocumentIssueRequest): Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.
+            document_issue_request (DocumentIssueRequest): Document issue request payload
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -749,7 +749,7 @@ class DocumentsApi(object):
         >>> result = thread.get()
 
         Args:
-            document_issue_request (DocumentIssueRequest): Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.
+            document_issue_request (DocumentIssueRequest): Document issue request payload
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status

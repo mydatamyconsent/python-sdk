@@ -22,14 +22,14 @@ from mydatamyconsent.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
-from mydatamyconsent.model.create_individual_data_consent_request import CreateIndividualDataConsentRequest
-from mydatamyconsent.model.create_organization_data_consent_request import CreateOrganizationDataConsentRequest
-from mydatamyconsent.model.data_consent_details_dto import DataConsentDetailsDto
+from mydatamyconsent.model.create_data_consent_request import CreateDataConsentRequest
+from mydatamyconsent.model.data_consent_request import DataConsentRequest
 from mydatamyconsent.model.data_consent_status import DataConsentStatus
-from mydatamyconsent.model.individual_data_consent_request_response import IndividualDataConsentRequestResponse
-from mydatamyconsent.model.organization_data_consent_info_dto_paginated_list import OrganizationDataConsentInfoDtoPaginatedList
-from mydatamyconsent.model.organization_data_consent_request_response import OrganizationDataConsentRequestResponse
-from mydatamyconsent.model.user_data_consent_info_dto_paginated_list import UserDataConsentInfoDtoPaginatedList
+from mydatamyconsent.model.individual_data_consent_request_details import IndividualDataConsentRequestDetails
+from mydatamyconsent.model.individual_data_consent_request_details_paginated_list import IndividualDataConsentRequestDetailsPaginatedList
+from mydatamyconsent.model.organization_data_consent_request_details import OrganizationDataConsentRequestDetails
+from mydatamyconsent.model.organization_data_consent_request_details_paginated_list import OrganizationDataConsentRequestDetailsPaginatedList
+from mydatamyconsent.model.problem_details import ProblemDetails
 
 
 class DataConsentRequestsApi(object):
@@ -45,7 +45,7 @@ class DataConsentRequestsApi(object):
         self.api_client = api_client
         self.cancel_individual_data_consent_request_endpoint = _Endpoint(
             settings={
-                'response_type': (IndividualDataConsentRequestResponse,),
+                'response_type': None,
                 'auth': [],
                 'endpoint_path': '/v1/consent-requests/individual/{requestId}/cancel',
                 'operation_id': 'cancel_individual_data_consent_request',
@@ -94,7 +94,7 @@ class DataConsentRequestsApi(object):
         )
         self.cancel_organization_data_consent_request_endpoint = _Endpoint(
             settings={
-                'response_type': (OrganizationDataConsentRequestResponse,),
+                'response_type': None,
                 'auth': [],
                 'endpoint_path': '/v1/consent-requests/organization/{requestId}/cancel',
                 'operation_id': 'cancel_organization_data_consent_request',
@@ -143,7 +143,7 @@ class DataConsentRequestsApi(object):
         )
         self.create_individual_data_consent_request_endpoint = _Endpoint(
             settings={
-                'response_type': (IndividualDataConsentRequestResponse,),
+                'response_type': (IndividualDataConsentRequestDetails,),
                 'auth': [],
                 'endpoint_path': '/v1/consent-requests/individual',
                 'operation_id': 'create_individual_data_consent_request',
@@ -152,10 +152,10 @@ class DataConsentRequestsApi(object):
             },
             params_map={
                 'all': [
-                    'create_individual_data_consent_request',
+                    'create_data_consent_request',
                 ],
                 'required': [
-                    'create_individual_data_consent_request',
+                    'create_data_consent_request',
                 ],
                 'nullable': [
                 ],
@@ -170,13 +170,13 @@ class DataConsentRequestsApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'create_individual_data_consent_request':
-                        (CreateIndividualDataConsentRequest,),
+                    'create_data_consent_request':
+                        (CreateDataConsentRequest,),
                 },
                 'attribute_map': {
                 },
                 'location_map': {
-                    'create_individual_data_consent_request': 'body',
+                    'create_data_consent_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -193,7 +193,7 @@ class DataConsentRequestsApi(object):
         )
         self.create_organization_data_consent_request_endpoint = _Endpoint(
             settings={
-                'response_type': (OrganizationDataConsentRequestResponse,),
+                'response_type': (OrganizationDataConsentRequestDetails,),
                 'auth': [],
                 'endpoint_path': '/v1/consent-requests/organization',
                 'operation_id': 'create_organization_data_consent_request',
@@ -202,10 +202,10 @@ class DataConsentRequestsApi(object):
             },
             params_map={
                 'all': [
-                    'create_organization_data_consent_request',
+                    'create_data_consent_request',
                 ],
                 'required': [
-                    'create_organization_data_consent_request',
+                    'create_data_consent_request',
                 ],
                 'nullable': [
                 ],
@@ -220,13 +220,13 @@ class DataConsentRequestsApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'create_organization_data_consent_request':
-                        (CreateOrganizationDataConsentRequest,),
+                    'create_data_consent_request':
+                        (CreateDataConsentRequest,),
                 },
                 'attribute_map': {
                 },
                 'location_map': {
-                    'create_organization_data_consent_request': 'body',
+                    'create_data_consent_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -243,7 +243,7 @@ class DataConsentRequestsApi(object):
         )
         self.get_all_consent_requests_to_individuals_endpoint = _Endpoint(
             settings={
-                'response_type': (UserDataConsentInfoDtoPaginatedList,),
+                'response_type': (IndividualDataConsentRequestDetailsPaginatedList,),
                 'auth': [],
                 'endpoint_path': '/v1/consent-requests/individuals',
                 'operation_id': 'get_all_consent_requests_to_individuals',
@@ -310,7 +310,7 @@ class DataConsentRequestsApi(object):
         )
         self.get_all_consent_requests_to_organizations_endpoint = _Endpoint(
             settings={
-                'response_type': (OrganizationDataConsentInfoDtoPaginatedList,),
+                'response_type': (OrganizationDataConsentRequestDetailsPaginatedList,),
                 'auth': [],
                 'endpoint_path': '/v1/consent-requests/organizations',
                 'operation_id': 'get_all_consent_requests_to_organizations',
@@ -377,7 +377,7 @@ class DataConsentRequestsApi(object):
         )
         self.get_individual_consent_request_by_id_endpoint = _Endpoint(
             settings={
-                'response_type': (DataConsentDetailsDto,),
+                'response_type': (DataConsentRequest,),
                 'auth': [],
                 'endpoint_path': '/v1/consent-requests/individuals/{requestId}',
                 'operation_id': 'get_individual_consent_request_by_id',
@@ -426,7 +426,7 @@ class DataConsentRequestsApi(object):
         )
         self.get_organization_consent_request_by_id_endpoint = _Endpoint(
             settings={
-                'response_type': (DataConsentDetailsDto,),
+                'response_type': (DataConsentRequest,),
                 'auth': [],
                 'endpoint_path': '/v1/consent-requests/organizations/{requestId}',
                 'operation_id': 'get_organization_consent_request_by_id',
@@ -479,7 +479,7 @@ class DataConsentRequestsApi(object):
         request_id,
         **kwargs
     ):
-        """Cancel the individual data consent request based on Id.  # noqa: E501
+        """Cancel the individual data consent request by Id.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -519,7 +519,7 @@ class DataConsentRequestsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            IndividualDataConsentRequestResponse
+            None
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -556,7 +556,7 @@ class DataConsentRequestsApi(object):
         request_id,
         **kwargs
     ):
-        """Cancel the Organization data consent request based on Id.  # noqa: E501
+        """Cancel the organization data consent request by Id.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -596,7 +596,7 @@ class DataConsentRequestsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            OrganizationDataConsentRequestResponse
+            None
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -630,20 +630,20 @@ class DataConsentRequestsApi(object):
 
     def create_individual_data_consent_request(
         self,
-        create_individual_data_consent_request,
+        create_data_consent_request,
         **kwargs
     ):
-        """Create a individual data consent request.  # noqa: E501
+        """Create data consent request for an individual.  # noqa: E501
 
-        Create a individual data consent request.  # noqa: E501
+        Create data consent request for an individual.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.create_individual_data_consent_request(create_individual_data_consent_request, async_req=True)
+        >>> thread = api.create_individual_data_consent_request(create_data_consent_request, async_req=True)
         >>> result = thread.get()
 
         Args:
-            create_individual_data_consent_request (CreateIndividualDataConsentRequest): The Individual data consent request payload
+            create_data_consent_request (CreateDataConsentRequest): The Individual data consent request payload
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -674,7 +674,7 @@ class DataConsentRequestsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            IndividualDataConsentRequestResponse
+            IndividualDataConsentRequestDetails
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -702,26 +702,26 @@ class DataConsentRequestsApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['create_individual_data_consent_request'] = \
-            create_individual_data_consent_request
+        kwargs['create_data_consent_request'] = \
+            create_data_consent_request
         return self.create_individual_data_consent_request_endpoint.call_with_http_info(**kwargs)
 
     def create_organization_data_consent_request(
         self,
-        create_organization_data_consent_request,
+        create_data_consent_request,
         **kwargs
     ):
-        """Create a organization data consent request.  # noqa: E501
+        """Create data consent request for an organization.  # noqa: E501
 
-        Create a organization data consent request.  # noqa: E501
+        Create data consent request for an organization.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.create_organization_data_consent_request(create_organization_data_consent_request, async_req=True)
+        >>> thread = api.create_organization_data_consent_request(create_data_consent_request, async_req=True)
         >>> result = thread.get()
 
         Args:
-            create_organization_data_consent_request (CreateOrganizationDataConsentRequest): M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateOrganizationDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateOrganizationDataConsentRequest).
+            create_data_consent_request (CreateDataConsentRequest): The Organization data consent request payload
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -752,7 +752,7 @@ class DataConsentRequestsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            OrganizationDataConsentRequestResponse
+            OrganizationDataConsentRequestDetails
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -780,15 +780,15 @@ class DataConsentRequestsApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['create_organization_data_consent_request'] = \
-            create_organization_data_consent_request
+        kwargs['create_data_consent_request'] = \
+            create_data_consent_request
         return self.create_organization_data_consent_request_endpoint.call_with_http_info(**kwargs)
 
     def get_all_consent_requests_to_individuals(
         self,
         **kwargs
     ):
-        """Get all Consent Requests sent to Individuals.  # noqa: E501
+        """Get all Consent Requests sent to individuals.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -799,8 +799,8 @@ class DataConsentRequestsApi(object):
 
         Keyword Args:
             status (DataConsentStatus): Data consent status.. [optional]
-            start_date_time (datetime): Start date time.. [optional]
-            end_date_time (datetime): End date time.. [optional]
+            start_date_time (datetime): Start datetime in UTC timezone.. [optional]
+            end_date_time (datetime): End datetime in UTC timezone.. [optional]
             page_no (int): Page number.. [optional] if omitted the server will use the default value of 1
             page_size (int): Number of items to return.. [optional] if omitted the server will use the default value of 25
             _return_http_data_only (bool): response data without head status
@@ -831,7 +831,7 @@ class DataConsentRequestsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            UserDataConsentInfoDtoPaginatedList
+            IndividualDataConsentRequestDetailsPaginatedList
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -865,7 +865,7 @@ class DataConsentRequestsApi(object):
         self,
         **kwargs
     ):
-        """Get All Consent Requests sent to Organizations.  # noqa: E501
+        """Get all Consent Requests sent to organizations.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -876,8 +876,8 @@ class DataConsentRequestsApi(object):
 
         Keyword Args:
             status (DataConsentStatus): Data consent status.. [optional]
-            start_date_time (datetime): Start date time.. [optional]
-            end_date_time (datetime): End date time.. [optional]
+            start_date_time (datetime): Start datetime in UTC timezone.. [optional]
+            end_date_time (datetime): End datetime in UTC timezone.. [optional]
             page_no (int): Page number.. [optional] if omitted the server will use the default value of 1
             page_size (int): Number of items to return.. [optional] if omitted the server will use the default value of 25
             _return_http_data_only (bool): response data without head status
@@ -908,7 +908,7 @@ class DataConsentRequestsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            OrganizationDataConsentInfoDtoPaginatedList
+            OrganizationDataConsentRequestDetailsPaginatedList
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -943,7 +943,7 @@ class DataConsentRequestsApi(object):
         request_id,
         **kwargs
     ):
-        """Get a Consent Request by ID.  # noqa: E501
+        """Get individual data consent request by id.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -952,7 +952,7 @@ class DataConsentRequestsApi(object):
         >>> result = thread.get()
 
         Args:
-            request_id (str): Individual consent request id.
+            request_id (str): Individual data consent request id.
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -983,7 +983,7 @@ class DataConsentRequestsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            DataConsentDetailsDto
+            DataConsentRequest
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1060,7 +1060,7 @@ class DataConsentRequestsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            DataConsentDetailsDto
+            DataConsentRequest
                 If the method is called asynchronously, returns the request
                 thread.
         """

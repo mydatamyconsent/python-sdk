@@ -22,10 +22,10 @@ from mydatamyconsent.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
-from mydatamyconsent.model.create_data_processing_agreement_request_model import CreateDataProcessingAgreementRequestModel
-from mydatamyconsent.model.data_processing_agreement_dto import DataProcessingAgreementDto
-from mydatamyconsent.model.data_processing_agreement_dto_paginated_list import DataProcessingAgreementDtoPaginatedList
-from mydatamyconsent.model.update_data_processing_agreement_request_model import UpdateDataProcessingAgreementRequestModel
+from mydatamyconsent.model.create_data_processing_agreement import CreateDataProcessingAgreement
+from mydatamyconsent.model.data_processing_agreement import DataProcessingAgreement
+from mydatamyconsent.model.data_processing_agreement_paginated_list import DataProcessingAgreementPaginatedList
+from mydatamyconsent.model.update_data_processing_agreement import UpdateDataProcessingAgreement
 
 
 class DataProcessingAgreementsApi(object):
@@ -41,7 +41,7 @@ class DataProcessingAgreementsApi(object):
         self.api_client = api_client
         self.create_data_processing_agreement_endpoint = _Endpoint(
             settings={
-                'response_type': (DataProcessingAgreementDto,),
+                'response_type': (DataProcessingAgreement,),
                 'auth': [],
                 'endpoint_path': '/v1/data-agreements',
                 'operation_id': 'create_data_processing_agreement',
@@ -50,9 +50,11 @@ class DataProcessingAgreementsApi(object):
             },
             params_map={
                 'all': [
-                    'create_data_processing_agreement_request_model',
+                    'create_data_processing_agreement',
                 ],
-                'required': [],
+                'required': [
+                    'create_data_processing_agreement',
+                ],
                 'nullable': [
                 ],
                 'enum': [
@@ -66,13 +68,13 @@ class DataProcessingAgreementsApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'create_data_processing_agreement_request_model':
-                        (CreateDataProcessingAgreementRequestModel,),
+                    'create_data_processing_agreement':
+                        (CreateDataProcessingAgreement,),
                 },
                 'attribute_map': {
                 },
                 'location_map': {
-                    'create_data_processing_agreement_request_model': 'body',
+                    'create_data_processing_agreement': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -138,7 +140,7 @@ class DataProcessingAgreementsApi(object):
         )
         self.get_data_processing_agreement_by_id_endpoint = _Endpoint(
             settings={
-                'response_type': (DataProcessingAgreementDto,),
+                'response_type': (DataProcessingAgreement,),
                 'auth': [],
                 'endpoint_path': '/v1/data-agreements/{id}',
                 'operation_id': 'get_data_processing_agreement_by_id',
@@ -187,7 +189,7 @@ class DataProcessingAgreementsApi(object):
         )
         self.get_data_processing_agreements_endpoint = _Endpoint(
             settings={
-                'response_type': (DataProcessingAgreementDtoPaginatedList,),
+                'response_type': (DataProcessingAgreementPaginatedList,),
                 'auth': [],
                 'endpoint_path': '/v1/data-agreements',
                 'operation_id': 'get_data_processing_agreements',
@@ -288,7 +290,7 @@ class DataProcessingAgreementsApi(object):
         )
         self.update_data_processing_agreement_endpoint = _Endpoint(
             settings={
-                'response_type': (DataProcessingAgreementDto,),
+                'response_type': (DataProcessingAgreement,),
                 'auth': [],
                 'endpoint_path': '/v1/data-agreements/{id}',
                 'operation_id': 'update_data_processing_agreement',
@@ -298,10 +300,11 @@ class DataProcessingAgreementsApi(object):
             params_map={
                 'all': [
                     'id',
-                    'update_data_processing_agreement_request_model',
+                    'update_data_processing_agreement',
                 ],
                 'required': [
                     'id',
+                    'update_data_processing_agreement',
                 ],
                 'nullable': [
                 ],
@@ -318,15 +321,15 @@ class DataProcessingAgreementsApi(object):
                 'openapi_types': {
                     'id':
                         (str,),
-                    'update_data_processing_agreement_request_model':
-                        (UpdateDataProcessingAgreementRequestModel,),
+                    'update_data_processing_agreement':
+                        (UpdateDataProcessingAgreement,),
                 },
                 'attribute_map': {
                     'id': 'id',
                 },
                 'location_map': {
                     'id': 'path',
-                    'update_data_processing_agreement_request_model': 'body',
+                    'update_data_processing_agreement': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -344,6 +347,7 @@ class DataProcessingAgreementsApi(object):
 
     def create_data_processing_agreement(
         self,
+        create_data_processing_agreement,
         **kwargs
     ):
         """Create a data processing agreement.  # noqa: E501
@@ -351,12 +355,13 @@ class DataProcessingAgreementsApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.create_data_processing_agreement(async_req=True)
+        >>> thread = api.create_data_processing_agreement(create_data_processing_agreement, async_req=True)
         >>> result = thread.get()
 
+        Args:
+            create_data_processing_agreement (CreateDataProcessingAgreement): Create data processing agreement payload
 
         Keyword Args:
-            create_data_processing_agreement_request_model (CreateDataProcessingAgreementRequestModel): Create data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.CreateDataProcessingAgreementRequestModel.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -385,7 +390,7 @@ class DataProcessingAgreementsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            DataProcessingAgreementDto
+            DataProcessingAgreement
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -413,6 +418,8 @@ class DataProcessingAgreementsApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['create_data_processing_agreement'] = \
+            create_data_processing_agreement
         return self.create_data_processing_agreement_endpoint.call_with_http_info(**kwargs)
 
     def delete_data_processing_agreement_by_id(
@@ -537,7 +544,7 @@ class DataProcessingAgreementsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            DataProcessingAgreementDto
+            DataProcessingAgreement
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -573,7 +580,7 @@ class DataProcessingAgreementsApi(object):
         self,
         **kwargs
     ):
-        """Get all data processing agreements.  # noqa: E501
+        """Get paginated data processing agreements.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -613,7 +620,7 @@ class DataProcessingAgreementsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            DataProcessingAgreementDtoPaginatedList
+            DataProcessingAgreementPaginatedList
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -723,6 +730,7 @@ class DataProcessingAgreementsApi(object):
     def update_data_processing_agreement(
         self,
         id,
+        update_data_processing_agreement,
         **kwargs
     ):
         """Update a data processing agreement.  # noqa: E501
@@ -730,14 +738,14 @@ class DataProcessingAgreementsApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_data_processing_agreement(id, async_req=True)
+        >>> thread = api.update_data_processing_agreement(id, update_data_processing_agreement, async_req=True)
         >>> result = thread.get()
 
         Args:
             id (str): Agreement id.
+            update_data_processing_agreement (UpdateDataProcessingAgreement): Update data processing agreement payload
 
         Keyword Args:
-            update_data_processing_agreement_request_model (UpdateDataProcessingAgreementRequestModel): Updated data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.UpdateDataProcessingAgreementRequestModel.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -766,7 +774,7 @@ class DataProcessingAgreementsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            DataProcessingAgreementDto
+            DataProcessingAgreement
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -796,5 +804,7 @@ class DataProcessingAgreementsApi(object):
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['id'] = \
             id
+        kwargs['update_data_processing_agreement'] = \
+            update_data_processing_agreement
         return self.update_data_processing_agreement_endpoint.call_with_http_info(**kwargs)
 

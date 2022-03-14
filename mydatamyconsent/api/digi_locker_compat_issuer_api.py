@@ -51,7 +51,9 @@ class DigiLockerCompatIssuerApi(object):
                 'all': [
                     'push_uri_request',
                 ],
-                'required': [],
+                'required': [
+                    'push_uri_request',
+                ],
                 'nullable': [
                 ],
                 'enum': [
@@ -89,6 +91,7 @@ class DigiLockerCompatIssuerApi(object):
 
     def digilocker_compat_issue_document(
         self,
+        push_uri_request,
         **kwargs
     ):
         """Digilocker Compatible endpoint to issue document.  # noqa: E501
@@ -96,12 +99,13 @@ class DigiLockerCompatIssuerApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.digilocker_compat_issue_document(async_req=True)
+        >>> thread = api.digilocker_compat_issue_document(push_uri_request, async_req=True)
         >>> result = thread.get()
 
+        Args:
+            push_uri_request (PushUriRequest): Push URI request payload
 
         Keyword Args:
-            push_uri_request (PushUriRequest): Push uri request MyDataMyConsent.DeveloperApi.Models.DigiLocker.PushUriRequest.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -158,5 +162,7 @@ class DigiLockerCompatIssuerApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['push_uri_request'] = \
+            push_uri_request
         return self.digilocker_compat_issue_document_endpoint.call_with_http_info(**kwargs)
 

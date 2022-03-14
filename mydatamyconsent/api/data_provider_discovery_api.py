@@ -103,7 +103,7 @@ class DataProviderDiscoveryApi(object):
                     'organization_category',
                     'page_no',
                     'page_size',
-                    'country',
+                    'country_iso2_code',
                 ],
                 'required': [],
                 'nullable': [
@@ -129,7 +129,7 @@ class DataProviderDiscoveryApi(object):
                         (int,),
                     'page_size':
                         (int,),
-                    'country':
+                    'country_iso2_code':
                         (str,),
                 },
                 'attribute_map': {
@@ -138,7 +138,7 @@ class DataProviderDiscoveryApi(object):
                     'organization_category': 'organizationCategory',
                     'page_no': 'pageNo',
                     'page_size': 'pageSize',
-                    'country': 'country',
+                    'country_iso2_code': 'countryIso2Code',
                 },
                 'location_map': {
                     'account_type': 'query',
@@ -146,7 +146,7 @@ class DataProviderDiscoveryApi(object):
                     'organization_category': 'query',
                     'page_no': 'query',
                     'page_size': 'query',
-                    'country': 'query',
+                    'country_iso2_code': 'query',
                 },
                 'collection_format_map': {
                 }
@@ -166,7 +166,7 @@ class DataProviderDiscoveryApi(object):
         provider_id,
         **kwargs
     ):
-        """Get a Data Provider details based on provider id.  # noqa: E501
+        """Get a Data Provider details by provider id.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -175,7 +175,7 @@ class DataProviderDiscoveryApi(object):
         >>> result = thread.get()
 
         Args:
-            provider_id (str): Provider id.
+            provider_id (str): Data provider id.
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -257,7 +257,7 @@ class DataProviderDiscoveryApi(object):
             organization_category (str): Organization category.. [optional]
             page_no (int): Page number.. [optional] if omitted the server will use the default value of 1
             page_size (int): Number of items to return.. [optional] if omitted the server will use the default value of 25
-            country (str): ISO2 Country code.. [optional] if omitted the server will use the default value of "IN"
+            country_iso2_code (str): ISO2 Country code.. [optional] if omitted the server will use the default value of "IN"
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object

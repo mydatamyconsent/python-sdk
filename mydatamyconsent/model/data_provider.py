@@ -81,18 +81,18 @@ class DataProvider(ModelNormal):
         """
         lazy_import()
         return {
-            'id': (str, none_type,),  # noqa: E501
-            'name': (str, none_type,),  # noqa: E501
+            'id': (str,),  # noqa: E501
+            'name': (str,),  # noqa: E501
+            'category': (str,),  # noqa: E501
+            'supported_document_types': ([str],),  # noqa: E501
             'logo_url': (str, none_type,),  # noqa: E501
             'website': (str, none_type,),  # noqa: E501
-            'email': (str, none_type,),  # noqa: E501
-            'support_phone_number': (str, none_type,),  # noqa: E501
+            'support_email': (str, none_type,),  # noqa: E501
+            'help_line_number': (str, none_type,),  # noqa: E501
             'privacy_policy': (str, none_type,),  # noqa: E501
             'term_of_service': (str, none_type,),  # noqa: E501
-            'category': (str, none_type,),  # noqa: E501
             'data_protection_officer': (DataProtectionOfficer,),  # noqa: E501
             'supported_account_types': ([str], none_type,),  # noqa: E501
-            'supported_document_types': ([str], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -103,16 +103,16 @@ class DataProvider(ModelNormal):
     attribute_map = {
         'id': 'id',  # noqa: E501
         'name': 'name',  # noqa: E501
+        'category': 'category',  # noqa: E501
+        'supported_document_types': 'supportedDocumentTypes',  # noqa: E501
         'logo_url': 'logoUrl',  # noqa: E501
         'website': 'website',  # noqa: E501
-        'email': 'email',  # noqa: E501
-        'support_phone_number': 'supportPhoneNumber',  # noqa: E501
+        'support_email': 'supportEmail',  # noqa: E501
+        'help_line_number': 'helpLineNumber',  # noqa: E501
         'privacy_policy': 'privacyPolicy',  # noqa: E501
         'term_of_service': 'termOfService',  # noqa: E501
-        'category': 'category',  # noqa: E501
         'data_protection_officer': 'dataProtectionOfficer',  # noqa: E501
         'supported_account_types': 'supportedAccountTypes',  # noqa: E501
-        'supported_document_types': 'supportedDocumentTypes',  # noqa: E501
     }
 
     read_only_vars = {
@@ -122,8 +122,14 @@ class DataProvider(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, id, name, category, supported_document_types, *args, **kwargs):  # noqa: E501
         """DataProvider - a model defined in OpenAPI
+
+        Args:
+            id (str):
+            name (str):
+            category (str):
+            supported_document_types ([str]):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -156,18 +162,14 @@ class DataProvider(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str, none_type): [optional]  # noqa: E501
-            name (str, none_type): [optional]  # noqa: E501
             logo_url (str, none_type): [optional]  # noqa: E501
             website (str, none_type): [optional]  # noqa: E501
-            email (str, none_type): [optional]  # noqa: E501
-            support_phone_number (str, none_type): [optional]  # noqa: E501
+            support_email (str, none_type): [optional]  # noqa: E501
+            help_line_number (str, none_type): [optional]  # noqa: E501
             privacy_policy (str, none_type): [optional]  # noqa: E501
             term_of_service (str, none_type): [optional]  # noqa: E501
-            category (str, none_type): [optional]  # noqa: E501
             data_protection_officer (DataProtectionOfficer): [optional]  # noqa: E501
             supported_account_types ([str], none_type): [optional]  # noqa: E501
-            supported_document_types ([str], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -195,6 +197,10 @@ class DataProvider(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.id = id
+        self.name = name
+        self.category = category
+        self.supported_document_types = supported_document_types
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -215,8 +221,14 @@ class DataProvider(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, id, name, category, supported_document_types, *args, **kwargs):  # noqa: E501
         """DataProvider - a model defined in OpenAPI
+
+        Args:
+            id (str):
+            name (str):
+            category (str):
+            supported_document_types ([str]):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -249,18 +261,14 @@ class DataProvider(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str, none_type): [optional]  # noqa: E501
-            name (str, none_type): [optional]  # noqa: E501
             logo_url (str, none_type): [optional]  # noqa: E501
             website (str, none_type): [optional]  # noqa: E501
-            email (str, none_type): [optional]  # noqa: E501
-            support_phone_number (str, none_type): [optional]  # noqa: E501
+            support_email (str, none_type): [optional]  # noqa: E501
+            help_line_number (str, none_type): [optional]  # noqa: E501
             privacy_policy (str, none_type): [optional]  # noqa: E501
             term_of_service (str, none_type): [optional]  # noqa: E501
-            category (str, none_type): [optional]  # noqa: E501
             data_protection_officer (DataProtectionOfficer): [optional]  # noqa: E501
             supported_account_types ([str], none_type): [optional]  # noqa: E501
-            supported_document_types ([str], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -286,6 +294,10 @@ class DataProvider(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.id = id
+        self.name = name
+        self.category = category
+        self.supported_document_types = supported_document_types
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

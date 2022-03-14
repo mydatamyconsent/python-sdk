@@ -281,7 +281,7 @@ with mydatamyconsent.ApiClient() as api_client:
         metadata={
             "key": "key_example",
         },
-    ) # DocumentIssueRequest | Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.
+    ) # DocumentIssueRequest | Document issue request payload
 
     # example passing only required values which don't have defaults set
     try:
@@ -297,7 +297,7 @@ with mydatamyconsent.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **document_issue_request** | [**DocumentIssueRequest**](DocumentIssueRequest.md)| Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest. |
+ **document_issue_request** | [**DocumentIssueRequest**](DocumentIssueRequest.md)| Document issue request payload |
 
 ### Return type
 
@@ -371,7 +371,7 @@ with mydatamyconsent.ApiClient() as api_client:
         metadata={
             "key": "key_example",
         },
-    ) # DocumentIssueRequest | Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.
+    ) # DocumentIssueRequest | Document issue request payload
 
     # example passing only required values which don't have defaults set
     try:
@@ -387,7 +387,7 @@ with mydatamyconsent.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **document_issue_request** | [**DocumentIssueRequest**](DocumentIssueRequest.md)| Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest. |
+ **document_issue_request** | [**DocumentIssueRequest**](DocumentIssueRequest.md)| Document issue request payload |
 
 ### Return type
 

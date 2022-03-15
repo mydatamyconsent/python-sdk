@@ -25,7 +25,7 @@ Method | HTTP request | Description
 
 
 # **download_consented_document_analysis**
-> download_consented_document_analysis(consent_id, document_id)
+> dict download_consented_document_analysis(consent_id, document_id)
 
 Get analysis of a consented document.
 
@@ -54,7 +54,8 @@ with mydatamyconsent.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Get analysis of a consented document.
-        api_instance.download_consented_document_analysis(consent_id, document_id)
+        api_response = api_instance.download_consented_document_analysis(consent_id, document_id)
+        pprint(api_response)
     except mydatamyconsent.ApiException as e:
         print("Exception when calling DataConsentsApi->download_consented_document_analysis: %s\n" % e)
 ```
@@ -69,7 +70,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**dict**
 
 ### Authorization
 
@@ -86,12 +87,14 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
+**400** | Bad Request |  -  |
+**404** | Not Found |  -  |
 **500** | Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **download_individual_consented_document_by_id**
-> download_individual_consented_document_by_id(consent_id, document_id)
+> dict download_individual_consented_document_by_id(consent_id, document_id)
 
 Download individual consented document by document id.
 
@@ -120,7 +123,8 @@ with mydatamyconsent.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Download individual consented document by document id.
-        api_instance.download_individual_consented_document_by_id(consent_id, document_id)
+        api_response = api_instance.download_individual_consented_document_by_id(consent_id, document_id)
+        pprint(api_response)
     except mydatamyconsent.ApiException as e:
         print("Exception when calling DataConsentsApi->download_individual_consented_document_by_id: %s\n" % e)
 ```
@@ -135,7 +139,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**dict**
 
 ### Authorization
 
@@ -152,12 +156,14 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
+**400** | Bad Request |  -  |
+**404** | Not Found |  -  |
 **500** | Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **download_organization_consented_document_by_id**
-> download_organization_consented_document_by_id(consent_id, document_id)
+> dict download_organization_consented_document_by_id(consent_id, document_id)
 
 Download organization consent document based on document id.
 
@@ -186,7 +192,8 @@ with mydatamyconsent.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Download organization consent document based on document id.
-        api_instance.download_organization_consented_document_by_id(consent_id, document_id)
+        api_response = api_instance.download_organization_consented_document_by_id(consent_id, document_id)
+        pprint(api_response)
     except mydatamyconsent.ApiException as e:
         print("Exception when calling DataConsentsApi->download_organization_consented_document_by_id: %s\n" % e)
 ```
@@ -201,7 +208,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**dict**
 
 ### Authorization
 
@@ -218,6 +225,8 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
+**400** | Bad Request |  -  |
+**404** | Not Found |  -  |
 **500** | Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -423,7 +432,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_consented_document_by_id**
-> IndividualDataConsentDocument get_consented_document_by_id(consent_id, document_id)
+> dict get_consented_document_by_id(consent_id, document_id)
 
 Get individual consented document by document id.
 
@@ -434,7 +443,6 @@ Get individual consented document by document id.
 import time
 import mydatamyconsent
 from mydatamyconsent.api import data_consents_api
-from mydatamyconsent.model.individual_data_consent_document import IndividualDataConsentDocument
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -469,7 +477,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**IndividualDataConsentDocument**](IndividualDataConsentDocument.md)
+**dict**
 
 ### Authorization
 
@@ -486,6 +494,8 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
+**400** | Bad Request |  -  |
+**404** | Not Found |  -  |
 **500** | Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -712,7 +722,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_consents**
-> IndividualDataConsentDetailsPaginatedList get_consents()
+> dict get_consents()
 
 Get the paginated list of individual data consents.
 
@@ -726,7 +736,6 @@ import time
 import mydatamyconsent
 from mydatamyconsent.api import data_consents_api
 from mydatamyconsent.model.data_consent_status import DataConsentStatus
-from mydatamyconsent.model.individual_data_consent_details_paginated_list import IndividualDataConsentDetailsPaginatedList
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -768,7 +777,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**IndividualDataConsentDetailsPaginatedList**](IndividualDataConsentDetailsPaginatedList.md)
+**dict**
 
 ### Authorization
 
@@ -785,12 +794,13 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
+**400** | Bad Request |  -  |
 **500** | Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_individual_consented_documents**
-> [IndividualDataConsentDocument] get_individual_consented_documents(consent_id)
+> dict get_individual_consented_documents(consent_id)
 
 Get individual consented documents by consent id.
 
@@ -801,7 +811,6 @@ Get individual consented documents by consent id.
 import time
 import mydatamyconsent
 from mydatamyconsent.api import data_consents_api
-from mydatamyconsent.model.individual_data_consent_document import IndividualDataConsentDocument
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -834,7 +843,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[IndividualDataConsentDocument]**](IndividualDataConsentDocument.md)
+**dict**
 
 ### Authorization
 
@@ -851,12 +860,14 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
+**400** | Bad Request |  -  |
+**404** | Not Found |  -  |
 **500** | Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_individual_data_consent_by_id**
-> bool, date, datetime, dict, float, int, list, str, none_type get_individual_data_consent_by_id(consent_id)
+> dict get_individual_data_consent_by_id(consent_id)
 
 Get individuals data consent details by consent id.
 
@@ -867,9 +878,6 @@ Get individuals data consent details by consent id.
 import time
 import mydatamyconsent
 from mydatamyconsent.api import data_consents_api
-from mydatamyconsent.model.organization_data_consent import OrganizationDataConsent
-from mydatamyconsent.model.data_consent import DataConsent
-from mydatamyconsent.model.individual_data_consent import IndividualDataConsent
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -902,7 +910,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**bool, date, datetime, dict, float, int, list, str, none_type**
+**dict**
 
 ### Authorization
 
@@ -919,6 +927,8 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
+**400** | Bad Request |  -  |
+**404** | Not Found |  -  |
 **500** | Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1011,7 +1021,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_organization_consented_document_by_id**
-> OrganizationDataConsentDocument get_organization_consented_document_by_id(consent_id, document_id)
+> dict get_organization_consented_document_by_id(consent_id, document_id)
 
 Get organization consent document based on document id.
 
@@ -1022,7 +1032,6 @@ Get organization consent document based on document id.
 import time
 import mydatamyconsent
 from mydatamyconsent.api import data_consents_api
-from mydatamyconsent.model.organization_data_consent_document import OrganizationDataConsentDocument
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1057,7 +1066,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OrganizationDataConsentDocument**](OrganizationDataConsentDocument.md)
+**dict**
 
 ### Authorization
 
@@ -1074,12 +1083,14 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
+**400** | Bad Request |  -  |
+**404** | Not Found |  -  |
 **500** | Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_organization_consented_documents**
-> [OrganizationDataConsentDocument] get_organization_consented_documents(consent_id)
+> dict get_organization_consented_documents(consent_id)
 
 Get organization consented documents by consent id.
 
@@ -1090,7 +1101,6 @@ Get organization consented documents by consent id.
 import time
 import mydatamyconsent
 from mydatamyconsent.api import data_consents_api
-from mydatamyconsent.model.organization_data_consent_document import OrganizationDataConsentDocument
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1123,7 +1133,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[OrganizationDataConsentDocument]**](OrganizationDataConsentDocument.md)
+**dict**
 
 ### Authorization
 
@@ -1140,12 +1150,14 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
+**400** | Bad Request |  -  |
+**404** | Not Found |  -  |
 **500** | Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_organization_data_consent_by_id**
-> bool, date, datetime, dict, float, int, list, str, none_type get_organization_data_consent_by_id(consent_id)
+> dict get_organization_data_consent_by_id(consent_id)
 
 Get organizations data consent details by consent id.
 
@@ -1156,9 +1168,6 @@ Get organizations data consent details by consent id.
 import time
 import mydatamyconsent
 from mydatamyconsent.api import data_consents_api
-from mydatamyconsent.model.organization_data_consent import OrganizationDataConsent
-from mydatamyconsent.model.data_consent import DataConsent
-from mydatamyconsent.model.individual_data_consent import IndividualDataConsent
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1191,7 +1200,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**bool, date, datetime, dict, float, int, list, str, none_type**
+**dict**
 
 ### Authorization
 
@@ -1208,13 +1217,14 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
-**500** | Server Error |  -  |
 **400** | Bad Request |  -  |
+**404** | Not Found |  -  |
+**500** | Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_organization_data_consents**
-> OrganizationDataConsentDetailsPaginatedList get_organization_data_consents()
+> dict get_organization_data_consents()
 
 Get the paginated list of organization data consents.
 
@@ -1225,7 +1235,6 @@ Get the paginated list of organization data consents.
 import time
 import mydatamyconsent
 from mydatamyconsent.api import data_consents_api
-from mydatamyconsent.model.organization_data_consent_details_paginated_list import OrganizationDataConsentDetailsPaginatedList
 from mydatamyconsent.model.data_consent_status import DataConsentStatus
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
@@ -1268,7 +1277,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OrganizationDataConsentDetailsPaginatedList**](OrganizationDataConsentDetailsPaginatedList.md)
+**dict**
 
 ### Authorization
 
@@ -1285,6 +1294,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
+**400** | Bad Request |  -  |
 **500** | Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

@@ -476,7 +476,8 @@ No authorization required
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
+**204** | No Content |  -  |
+**404** | Not Found |  -  |
 **400** | Bad Request |  -  |
 **500** | Server Error |  -  |
 
@@ -494,6 +495,7 @@ Upload a document for issuance request of organization.
 import time
 import mydatamyconsent
 from mydatamyconsent.api import documents_api
+from mydatamyconsent.model.problem_details import ProblemDetails
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -543,9 +545,11 @@ No authorization required
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
+**204** | No Content |  -  |
+**404** | Not Found |  -  |
 **400** | Bad Request |  -  |
 **500** | Server Error |  -  |
+**0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

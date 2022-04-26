@@ -22,6 +22,9 @@ from mydatamyconsent.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
+from mydatamyconsent.model.data_consent import DataConsent
+from mydatamyconsent.model.data_consent_details_paginated_list import DataConsentDetailsPaginatedList
+from mydatamyconsent.model.data_consent_document import DataConsentDocument
 from mydatamyconsent.model.data_consent_financials_dto import DataConsentFinancialsDto
 from mydatamyconsent.model.data_consent_status import DataConsentStatus
 from mydatamyconsent.model.financial_account import FinancialAccount
@@ -43,7 +46,7 @@ class DataConsentsApi(object):
         self.api_client = api_client
         self.download_consented_document_analysis_endpoint = _Endpoint(
             settings={
-                'response_type': (dict,),
+                'response_type': None,
                 'auth': [],
                 'endpoint_path': '/v1/consents/{consentId}/documents/{documentId}/analysis',
                 'operation_id': 'download_consented_document_analysis',
@@ -98,7 +101,7 @@ class DataConsentsApi(object):
         )
         self.download_individual_consented_document_by_id_endpoint = _Endpoint(
             settings={
-                'response_type': (dict,),
+                'response_type': None,
                 'auth': [],
                 'endpoint_path': '/v1/consents/individuals/{consentId}/documents/{documentId}/download',
                 'operation_id': 'download_individual_consented_document_by_id',
@@ -153,7 +156,7 @@ class DataConsentsApi(object):
         )
         self.download_organization_consented_document_by_id_endpoint = _Endpoint(
             settings={
-                'response_type': (dict,),
+                'response_type': None,
                 'auth': [],
                 'endpoint_path': '/v1/consents/organizations/{consentId}/documents/{documentId}/download',
                 'operation_id': 'download_organization_consented_document_by_id',
@@ -361,7 +364,7 @@ class DataConsentsApi(object):
         )
         self.get_consented_document_by_id_endpoint = _Endpoint(
             settings={
-                'response_type': (dict,),
+                'response_type': (DataConsentDocument,),
                 'auth': [],
                 'endpoint_path': '/v1/consents/individuals/{consentId}/documents/{documentId}',
                 'operation_id': 'get_consented_document_by_id',
@@ -606,7 +609,7 @@ class DataConsentsApi(object):
         )
         self.get_consents_endpoint = _Endpoint(
             settings={
-                'response_type': (dict,),
+                'response_type': (DataConsentDetailsPaginatedList,),
                 'auth': [],
                 'endpoint_path': '/v1/consents/individuals',
                 'operation_id': 'get_consents',
@@ -673,7 +676,7 @@ class DataConsentsApi(object):
         )
         self.get_individual_consented_documents_endpoint = _Endpoint(
             settings={
-                'response_type': (dict,),
+                'response_type': ([DataConsentDocument],),
                 'auth': [],
                 'endpoint_path': '/v1/consents/individuals/{consentId}/documents',
                 'operation_id': 'get_individual_consented_documents',
@@ -722,7 +725,7 @@ class DataConsentsApi(object):
         )
         self.get_individual_data_consent_by_id_endpoint = _Endpoint(
             settings={
-                'response_type': (dict,),
+                'response_type': (DataConsent,),
                 'auth': [],
                 'endpoint_path': '/v1/consents/individuals/{consentId}',
                 'operation_id': 'get_individual_data_consent_by_id',
@@ -851,7 +854,7 @@ class DataConsentsApi(object):
         )
         self.get_organization_consented_document_by_id_endpoint = _Endpoint(
             settings={
-                'response_type': (dict,),
+                'response_type': (DataConsentDocument,),
                 'auth': [],
                 'endpoint_path': '/v1/consents/organizations/{consentId}/documents/{documentId}',
                 'operation_id': 'get_organization_consented_document_by_id',
@@ -906,7 +909,7 @@ class DataConsentsApi(object):
         )
         self.get_organization_consented_documents_endpoint = _Endpoint(
             settings={
-                'response_type': (dict,),
+                'response_type': ([DataConsentDocument],),
                 'auth': [],
                 'endpoint_path': '/v1/consents/organizations/{consentId}/documents',
                 'operation_id': 'get_organization_consented_documents',
@@ -955,7 +958,7 @@ class DataConsentsApi(object):
         )
         self.get_organization_data_consent_by_id_endpoint = _Endpoint(
             settings={
-                'response_type': (dict,),
+                'response_type': (DataConsent,),
                 'auth': [],
                 'endpoint_path': '/v1/consents/organizations/{consentId}',
                 'operation_id': 'get_organization_data_consent_by_id',
@@ -1004,7 +1007,7 @@ class DataConsentsApi(object):
         )
         self.get_organization_data_consents_endpoint = _Endpoint(
             settings={
-                'response_type': (dict,),
+                'response_type': (DataConsentDetailsPaginatedList,),
                 'auth': [],
                 'endpoint_path': '/v1/consents/organizations',
                 'operation_id': 'get_organization_data_consents',
@@ -1117,7 +1120,7 @@ class DataConsentsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            dict
+            None
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1198,7 +1201,7 @@ class DataConsentsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            dict
+            None
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1279,7 +1282,7 @@ class DataConsentsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            dict
+            None
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1595,7 +1598,7 @@ class DataConsentsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            dict
+            DataConsentDocument
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1892,7 +1895,7 @@ class DataConsentsApi(object):
 
 
         Keyword Args:
-            status (DataConsentStatus): Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus.. [optional]
+            status (DataConsentStatus): Data consent status.. [optional]
             from_date_time (datetime): From datetime in UTC timezone.. [optional]
             to_date_time (datetime): To datetime in UTC timezone.. [optional]
             page_no (int): Page number.. [optional] if omitted the server will use the default value of 1
@@ -1925,7 +1928,7 @@ class DataConsentsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            dict
+            DataConsentDetailsPaginatedList
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2000,7 +2003,7 @@ class DataConsentsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            dict
+            [DataConsentDocument]
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2077,7 +2080,7 @@ class DataConsentsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            dict
+            DataConsent
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2242,7 +2245,7 @@ class DataConsentsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            dict
+            DataConsentDocument
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2321,7 +2324,7 @@ class DataConsentsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            dict
+            [DataConsentDocument]
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2398,7 +2401,7 @@ class DataConsentsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            dict
+            DataConsent
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2444,7 +2447,7 @@ class DataConsentsApi(object):
 
 
         Keyword Args:
-            status (DataConsentStatus): Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus.. [optional]
+            status (DataConsentStatus): Data consent status.. [optional]
             from_date_time (datetime): From datetime in UTC timezone.. [optional]
             to_date_time (datetime): To datetime in UTC timezone.. [optional]
             page_no (int): Page number.. [optional] if omitted the server will use the default value of 1
@@ -2477,7 +2480,7 @@ class DataConsentsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            dict
+            DataConsentDetailsPaginatedList
                 If the method is called asynchronously, returns the request
                 thread.
         """

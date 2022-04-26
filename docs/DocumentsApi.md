@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **get_issued_document_by_id**
-> IssuedDocument get_issued_document_by_id(document_id)
+> bool, date, datetime, dict, float, int, list, str, none_type get_issued_document_by_id(document_id)
 
 Get issued document.
 
@@ -25,6 +25,7 @@ Get issued document.
 import time
 import mydatamyconsent
 from mydatamyconsent.api import documents_api
+from mydatamyconsent.model.issued_document_details import IssuedDocumentDetails
 from mydatamyconsent.model.issued_document import IssuedDocument
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
@@ -58,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**IssuedDocument**](IssuedDocument.md)
+**bool, date, datetime, dict, float, int, list, str, none_type**
 
 ### Authorization
 

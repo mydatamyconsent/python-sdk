@@ -13,7 +13,6 @@ Name | Type | Description | Notes
 **logo_url** | **str** | Logo URL of document type. | 
 **supported_entity_types** | [**[SupportedEntityType]**](SupportedEntityType.md) | Supported entity types. eg: Individual, Organization. | 
 **added_by** | **str** | Name of the document type creator. | 
-**approved** | **bool** | Document type approval status. | 
 **description** | **str, none_type** | Document Type description. eg: Gujarat State Driving License. | [optional] 
 **search_service_name** | **str, none_type** | Document search repository service name. | [optional] 
 **repository_service_name** | **str, none_type** | Document repository service name. | [optional] 

@@ -81,6 +81,8 @@ class IssuedDocument(ModelNormal):
             'document_type': (str,),  # noqa: E501
             'issued_to': (str,),  # noqa: E501
             'issued_at_utc': (datetime,),  # noqa: E501
+            'expires_at_utc': (datetime, none_type,),  # noqa: E501
+            'accepted_at_utc': (datetime, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -94,6 +96,8 @@ class IssuedDocument(ModelNormal):
         'document_type': 'documentType',  # noqa: E501
         'issued_to': 'issuedTo',  # noqa: E501
         'issued_at_utc': 'issuedAtUtc',  # noqa: E501
+        'expires_at_utc': 'expiresAtUtc',  # noqa: E501
+        'accepted_at_utc': 'acceptedAtUtc',  # noqa: E501
     }
 
     read_only_vars = {
@@ -144,6 +148,8 @@ class IssuedDocument(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            expires_at_utc (datetime, none_type): Expires datetime in UTC timezone.. [optional]  # noqa: E501
+            accepted_at_utc (datetime, none_type): Accepted datetime in UTC timezone.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -237,6 +243,8 @@ class IssuedDocument(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            expires_at_utc (datetime, none_type): Expires datetime in UTC timezone.. [optional]  # noqa: E501
+            accepted_at_utc (datetime, none_type): Accepted datetime in UTC timezone.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

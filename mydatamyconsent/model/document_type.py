@@ -93,7 +93,6 @@ class DocumentType(ModelNormal):
             'logo_url': (str,),  # noqa: E501
             'supported_entity_types': ([SupportedEntityType],),  # noqa: E501
             'added_by': (str,),  # noqa: E501
-            'approved': (bool,),  # noqa: E501
             'description': (str, none_type,),  # noqa: E501
             'search_service_name': (str, none_type,),  # noqa: E501
             'repository_service_name': (str, none_type,),  # noqa: E501
@@ -116,7 +115,6 @@ class DocumentType(ModelNormal):
         'logo_url': 'logoUrl',  # noqa: E501
         'supported_entity_types': 'supportedEntityTypes',  # noqa: E501
         'added_by': 'addedBy',  # noqa: E501
-        'approved': 'approved',  # noqa: E501
         'description': 'description',  # noqa: E501
         'search_service_name': 'searchServiceName',  # noqa: E501
         'repository_service_name': 'repositoryServiceName',  # noqa: E501
@@ -132,7 +130,7 @@ class DocumentType(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, id, category_type, sub_category_type, name, slug, logo_url, supported_entity_types, added_by, approved, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, id, category_type, sub_category_type, name, slug, logo_url, supported_entity_types, added_by, *args, **kwargs):  # noqa: E501
         """DocumentType - a model defined in OpenAPI
 
         Args:
@@ -144,7 +142,6 @@ class DocumentType(ModelNormal):
             logo_url (str): Logo URL of document type.
             supported_entity_types ([SupportedEntityType]): Supported entity types. eg: Individual, Organization.
             added_by (str): Name of the document type creator.
-            approved (bool): Document type approval status.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -218,7 +215,6 @@ class DocumentType(ModelNormal):
         self.logo_url = logo_url
         self.supported_entity_types = supported_entity_types
         self.added_by = added_by
-        self.approved = approved
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -239,7 +235,7 @@ class DocumentType(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, id, category_type, sub_category_type, name, slug, logo_url, supported_entity_types, added_by, approved, *args, **kwargs):  # noqa: E501
+    def __init__(self, id, category_type, sub_category_type, name, slug, logo_url, supported_entity_types, added_by, *args, **kwargs):  # noqa: E501
         """DocumentType - a model defined in OpenAPI
 
         Args:
@@ -251,7 +247,6 @@ class DocumentType(ModelNormal):
             logo_url (str): Logo URL of document type.
             supported_entity_types ([SupportedEntityType]): Supported entity types. eg: Individual, Organization.
             added_by (str): Name of the document type creator.
-            approved (bool): Document type approval status.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -323,7 +318,6 @@ class DocumentType(ModelNormal):
         self.logo_url = logo_url
         self.supported_entity_types = supported_entity_types
         self.added_by = added_by
-        self.approved = approved
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

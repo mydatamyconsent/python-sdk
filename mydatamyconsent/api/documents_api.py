@@ -26,6 +26,7 @@ from mydatamyconsent.model.document_issue_request import DocumentIssueRequest
 from mydatamyconsent.model.document_issue_request_details import DocumentIssueRequestDetails
 from mydatamyconsent.model.document_type_paginated_list import DocumentTypePaginatedList
 from mydatamyconsent.model.issued_document import IssuedDocument
+from mydatamyconsent.model.issued_document_details import IssuedDocumentDetails
 from mydatamyconsent.model.issued_document_paginated_list import IssuedDocumentPaginatedList
 from mydatamyconsent.model.problem_details import ProblemDetails
 
@@ -43,7 +44,7 @@ class DocumentsApi(object):
         self.api_client = api_client
         self.get_issued_document_by_id_endpoint = _Endpoint(
             settings={
-                'response_type': (IssuedDocument,),
+                'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
                 'auth': [],
                 'endpoint_path': '/v1/documents/issued/{documentId}',
                 'operation_id': 'get_issued_document_by_id',
@@ -471,7 +472,7 @@ class DocumentsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            IssuedDocument
+            bool, date, datetime, dict, float, int, list, str, none_type
                 If the method is called asynchronously, returns the request
                 thread.
         """

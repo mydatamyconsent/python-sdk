@@ -89,7 +89,9 @@ class IndividualDataConsentRequestDetails(ModelComposed):
             'description': (str,),  # noqa: E501
             'status': (DataConsentStatus,),  # noqa: E501
             'created_at_utc': (datetime,),  # noqa: E501
+            'expires_at_utc': (datetime,),  # noqa: E501
             'template_id': (str, none_type,),  # noqa: E501
+            'consent_id': (str, none_type,),  # noqa: E501
             'purpose': (str, none_type,),  # noqa: E501
             'transaction_id': (str, none_type,),  # noqa: E501
         }
@@ -106,7 +108,9 @@ class IndividualDataConsentRequestDetails(ModelComposed):
         'description': 'description',  # noqa: E501
         'status': 'status',  # noqa: E501
         'created_at_utc': 'createdAtUtc',  # noqa: E501
+        'expires_at_utc': 'expiresAtUtc',  # noqa: E501
         'template_id': 'templateId',  # noqa: E501
+        'consent_id': 'consentId',  # noqa: E501
         'purpose': 'purpose',  # noqa: E501
         'transaction_id': 'transactionId',  # noqa: E501
     }
@@ -126,6 +130,7 @@ class IndividualDataConsentRequestDetails(ModelComposed):
             description (str): Consent request description.
             status (DataConsentStatus):
             created_at_utc (datetime): Request creation datetime in UTC timezone
+            expires_at_utc (datetime): Request expiration datetime in UTC timezone
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -157,6 +162,7 @@ class IndividualDataConsentRequestDetails(ModelComposed):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             template_id (str, none_type): Consent request template id. [optional]  # noqa: E501
+            consent_id (str, none_type): Data Consent id. [optional]  # noqa: E501
             purpose (str, none_type): Consent request purpose.. [optional]  # noqa: E501
             transaction_id (str, none_type): Transaction id. [optional]  # noqa: E501
         """
@@ -234,6 +240,7 @@ class IndividualDataConsentRequestDetails(ModelComposed):
             description (str): Consent request description.
             status (DataConsentStatus):
             created_at_utc (datetime): Request creation datetime in UTC timezone
+            expires_at_utc (datetime): Request expiration datetime in UTC timezone
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -265,6 +272,7 @@ class IndividualDataConsentRequestDetails(ModelComposed):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             template_id (str, none_type): Consent request template id. [optional]  # noqa: E501
+            consent_id (str, none_type): Data Consent id. [optional]  # noqa: E501
             purpose (str, none_type): Consent request purpose.. [optional]  # noqa: E501
             transaction_id (str, none_type): Transaction id. [optional]  # noqa: E501
         """

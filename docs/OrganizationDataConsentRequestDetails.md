@@ -11,7 +11,9 @@ Name | Type | Description | Notes
 **description** | **str** | Consent request description. | 
 **status** | [**DataConsentStatus**](DataConsentStatus.md) |  | 
 **created_at_utc** | **datetime** | Request creation datetime in UTC timezone | 
+**expires_at_utc** | **datetime** | Request expiration datetime in UTC timezone | 
 **template_id** | **str, none_type** | Consent request template id | [optional] 
+**consent_id** | **str, none_type** | Data Consent id | [optional] 
 **purpose** | **str, none_type** | Consent request purpose. | [optional] 
 **transaction_id** | **str, none_type** | Transaction id | [optional] 
 

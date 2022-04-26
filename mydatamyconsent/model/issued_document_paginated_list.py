@@ -32,7 +32,9 @@ from mydatamyconsent.exceptions import ApiAttributeError
 
 def lazy_import():
     from mydatamyconsent.model.issued_document import IssuedDocument
+    from mydatamyconsent.model.issued_document_details import IssuedDocumentDetails
     globals()['IssuedDocument'] = IssuedDocument
+    globals()['IssuedDocumentDetails'] = IssuedDocumentDetails
 
 
 class IssuedDocumentPaginatedList(ModelNormal):
@@ -85,7 +87,7 @@ class IssuedDocumentPaginatedList(ModelNormal):
             'page_size': (int,),  # noqa: E501
             'total_pages': (int,),  # noqa: E501
             'total_items': (int,),  # noqa: E501
-            'items': ([IssuedDocument], none_type,),  # noqa: E501
+            'items': ([bool, date, datetime, dict, float, int, list, str, none_type], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -147,7 +149,7 @@ class IssuedDocumentPaginatedList(ModelNormal):
             page_size (int): [optional]  # noqa: E501
             total_pages (int): [optional]  # noqa: E501
             total_items (int): [optional]  # noqa: E501
-            items ([IssuedDocument], none_type): [optional]  # noqa: E501
+            items ([bool, date, datetime, dict, float, int, list, str, none_type], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -233,7 +235,7 @@ class IssuedDocumentPaginatedList(ModelNormal):
             page_size (int): [optional]  # noqa: E501
             total_pages (int): [optional]  # noqa: E501
             total_items (int): [optional]  # noqa: E501
-            items ([IssuedDocument], none_type): [optional]  # noqa: E501
+            items ([bool, date, datetime, dict, float, int, list, str, none_type], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

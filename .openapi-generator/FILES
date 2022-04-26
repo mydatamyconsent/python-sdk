@@ -9,6 +9,11 @@ docs/CollectibleTypes.md
 docs/ConsentRequestReceiver.md
 docs/CreateDataConsentRequest.md
 docs/CreateDataProcessingAgreement.md
+docs/DataConsent.md
+docs/DataConsentDetails.md
+docs/DataConsentDetailsPaginatedList.md
+docs/DataConsentDocument.md
+docs/DataConsentDocumentIssuer.md
 docs/DataConsentFinancialsDto.md
 docs/DataConsentRequest.md
 docs/DataConsentRequestDetails.md
@@ -26,6 +31,7 @@ docs/DataProviderDiscoveryApi.md
 docs/DataProviderPaginatedList.md
 docs/DigiLockerCompatIssuerApi.md
 docs/DocumentCategoryType.md
+docs/DocumentDigitalSignature.md
 docs/DocumentIssueRequest.md
 docs/DocumentIssueRequestDetails.md
 docs/DocumentIssueRequestStatus.md
@@ -45,6 +51,7 @@ docs/Identifier.md
 docs/IndividualDataConsentRequestDetails.md
 docs/IndividualDataConsentRequestDetailsPaginatedList.md
 docs/IssuedDocument.md
+docs/IssuedDocumentDetails.md
 docs/IssuedDocumentPaginatedList.md
 docs/Life.md
 docs/OrganizationDataConsentRequestDetails.md
@@ -85,6 +92,11 @@ mydatamyconsent/model/collectible_types.py
 mydatamyconsent/model/consent_request_receiver.py
 mydatamyconsent/model/create_data_consent_request.py
 mydatamyconsent/model/create_data_processing_agreement.py
+mydatamyconsent/model/data_consent.py
+mydatamyconsent/model/data_consent_details.py
+mydatamyconsent/model/data_consent_details_paginated_list.py
+mydatamyconsent/model/data_consent_document.py
+mydatamyconsent/model/data_consent_document_issuer.py
 mydatamyconsent/model/data_consent_financials_dto.py
 mydatamyconsent/model/data_consent_request.py
 mydatamyconsent/model/data_consent_request_details.py
@@ -97,6 +109,7 @@ mydatamyconsent/model/data_protection_officer.py
 mydatamyconsent/model/data_provider.py
 mydatamyconsent/model/data_provider_paginated_list.py
 mydatamyconsent/model/document_category_type.py
+mydatamyconsent/model/document_digital_signature.py
 mydatamyconsent/model/document_issue_request.py
 mydatamyconsent/model/document_issue_request_details.py
 mydatamyconsent/model/document_issue_request_status.py
@@ -115,6 +128,7 @@ mydatamyconsent/model/identifier.py
 mydatamyconsent/model/individual_data_consent_request_details.py
 mydatamyconsent/model/individual_data_consent_request_details_paginated_list.py
 mydatamyconsent/model/issued_document.py
+mydatamyconsent/model/issued_document_details.py
 mydatamyconsent/model/issued_document_paginated_list.py
 mydatamyconsent/model/life.py
 mydatamyconsent/model/organization_data_consent_request_details.py
@@ -141,4 +155,8 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_data_consent_details_paginated_list.py
+test/test_data_consent_document_issuer.py
+test/test_document_digital_signature.py
+test/test_issued_document_details.py
 tox.ini

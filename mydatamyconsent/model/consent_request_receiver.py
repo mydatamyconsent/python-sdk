@@ -114,8 +114,8 @@ class ConsentRequestReceiver(ModelNormal):
         """ConsentRequestReceiver - a model defined in OpenAPI
 
         Args:
-            country_iso2_code (str): Consent request receiver country ISO 2 code
-            identifiers ([StringStringKeyValuePair]): Consent request receiver identifiers
+            country_iso2_code (str):
+            identifiers ([StringStringKeyValuePair]):
             identification_strategy (IdentificationStrategy):
 
         Keyword Args:
@@ -203,8 +203,8 @@ class ConsentRequestReceiver(ModelNormal):
         """ConsentRequestReceiver - a model defined in OpenAPI
 
         Args:
-            country_iso2_code (str): Consent request receiver country ISO 2 code
-            identifiers ([StringStringKeyValuePair]): Consent request receiver identifiers
+            country_iso2_code (str):
+            identifiers ([StringStringKeyValuePair]):
             identification_strategy (IdentificationStrategy):
 
         Keyword Args:

@@ -25,10 +25,10 @@ from mydatamyconsent.model_utils import (  # noqa: F401
 from mydatamyconsent.model.document_issue_request import DocumentIssueRequest
 from mydatamyconsent.model.document_issue_request_details import DocumentIssueRequestDetails
 from mydatamyconsent.model.document_type_paginated_list import DocumentTypePaginatedList
-from mydatamyconsent.model.issued_document import IssuedDocument
 from mydatamyconsent.model.issued_document_details import IssuedDocumentDetails
 from mydatamyconsent.model.issued_document_paginated_list import IssuedDocumentPaginatedList
 from mydatamyconsent.model.problem_details import ProblemDetails
+from mydatamyconsent.model.supported_entity_type import SupportedEntityType
 
 
 class DocumentsApi(object):
@@ -44,7 +44,7 @@ class DocumentsApi(object):
         self.api_client = api_client
         self.get_issued_document_by_id_endpoint = _Endpoint(
             settings={
-                'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
+                'response_type': (IssuedDocumentDetails,),
                 'auth': [],
                 'endpoint_path': '/v1/documents/issued/{documentId}',
                 'operation_id': 'get_issued_document_by_id',
@@ -95,7 +95,7 @@ class DocumentsApi(object):
             settings={
                 'response_type': (IssuedDocumentPaginatedList,),
                 'auth': [],
-                'endpoint_path': '/v1/documents/issued/{documentTypeId}',
+                'endpoint_path': '/v1/documents/issued',
                 'operation_id': 'get_issued_documents',
                 'http_method': 'GET',
                 'servers': None,
@@ -108,9 +108,7 @@ class DocumentsApi(object):
                     'page_no',
                     'page_size',
                 ],
-                'required': [
-                    'document_type_id',
-                ],
+                'required': [],
                 'nullable': [
                 ],
                 'enum': [
@@ -143,7 +141,7 @@ class DocumentsApi(object):
                     'page_size': 'pageSize',
                 },
                 'location_map': {
-                    'document_type_id': 'path',
+                    'document_type_id': 'query',
                     'from_date_time': 'query',
                     'to_date_time': 'query',
                     'page_no': 'query',
@@ -171,6 +169,7 @@ class DocumentsApi(object):
             },
             params_map={
                 'all': [
+                    'supported_entity_type',
                     'page_no',
                     'page_size',
                 ],
@@ -188,16 +187,20 @@ class DocumentsApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
+                    'supported_entity_type':
+                        (SupportedEntityType,),
                     'page_no':
                         (int,),
                     'page_size':
                         (int,),
                 },
                 'attribute_map': {
+                    'supported_entity_type': 'supportedEntityType',
                     'page_no': 'pageNo',
                     'page_size': 'pageSize',
                 },
                 'location_map': {
+                    'supported_entity_type': 'query',
                     'page_no': 'query',
                     'page_size': 'query',
                 },
@@ -472,7 +475,7 @@ class DocumentsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            bool, date, datetime, dict, float, int, list, str, none_type
+            IssuedDocumentDetails
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -506,7 +509,6 @@ class DocumentsApi(object):
 
     def get_issued_documents(
         self,
-        document_type_id,
         **kwargs
     ):
         """Get paginated list of issued documents of given document type.  # noqa: E501
@@ -514,13 +516,12 @@ class DocumentsApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_issued_documents(document_type_id, async_req=True)
+        >>> thread = api.get_issued_documents(async_req=True)
         >>> result = thread.get()
 
-        Args:
-            document_type_id (str): Document type id.
 
         Keyword Args:
+            document_type_id (str): Document type id.. [optional]
             from_date_time (datetime): From DateTime in UTC timezone.. [optional]
             to_date_time (datetime): To DateTime in UTC timezone.. [optional]
             page_no (int): Page number.. [optional] if omitted the server will use the default value of 1
@@ -581,8 +582,6 @@ class DocumentsApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['document_type_id'] = \
-            document_type_id
         return self.get_issued_documents_endpoint.call_with_http_info(**kwargs)
 
     def get_registered_document_types(
@@ -599,6 +598,7 @@ class DocumentsApi(object):
 
 
         Keyword Args:
+            supported_entity_type (SupportedEntityType): Supported entity type.. [optional]
             page_no (int): Page number.. [optional] if omitted the server will use the default value of 1
             page_size (int): Number of items to return.. [optional] if omitted the server will use the default value of 25
             _return_http_data_only (bool): response data without head status

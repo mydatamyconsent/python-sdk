@@ -5,7 +5,7 @@ All URIs are relative to *https://api.mydatamyconsent.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_issued_document_by_id**](DocumentsApi.md#get_issued_document_by_id) | **GET** /v1/documents/issued/{documentId} | Get issued document.
-[**get_issued_documents**](DocumentsApi.md#get_issued_documents) | **GET** /v1/documents/issued/{documentTypeId} | Get paginated list of issued documents of given document type.
+[**get_issued_documents**](DocumentsApi.md#get_issued_documents) | **GET** /v1/documents/issued | Get paginated list of issued documents of given document type.
 [**get_registered_document_types**](DocumentsApi.md#get_registered_document_types) | **GET** /v1/documents/types | Get paginated list of registered document types.
 [**issue_document_to_individual**](DocumentsApi.md#issue_document_to_individual) | **POST** /v1/documents/issue/individual | Issue a new document to an individual user.
 [**issue_document_to_organization**](DocumentsApi.md#issue_document_to_organization) | **POST** /v1/documents/issue/organization | Issue a new document to an organization.
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **get_issued_document_by_id**
-> bool, date, datetime, dict, float, int, list, str, none_type get_issued_document_by_id(document_id)
+> IssuedDocumentDetails get_issued_document_by_id(document_id)
 
 Get issued document.
 
@@ -26,7 +26,6 @@ import time
 import mydatamyconsent
 from mydatamyconsent.api import documents_api
 from mydatamyconsent.model.issued_document_details import IssuedDocumentDetails
-from mydatamyconsent.model.issued_document import IssuedDocument
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -59,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**bool, date, datetime, dict, float, int, list, str, none_type**
+[**IssuedDocumentDetails**](IssuedDocumentDetails.md)
 
 ### Authorization
 
@@ -83,7 +82,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_issued_documents**
-> IssuedDocumentPaginatedList get_issued_documents(document_type_id)
+> IssuedDocumentPaginatedList get_issued_documents()
 
 Get paginated list of issued documents of given document type.
 
@@ -107,25 +106,17 @@ configuration = mydatamyconsent.Configuration(
 with mydatamyconsent.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = documents_api.DocumentsApi(api_client)
-    document_type_id = "documentTypeId_example" # str | Document type id.
+    document_type_id = "documentTypeId_example" # str | Document type id. (optional)
     from_date_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | From DateTime in UTC timezone. (optional)
     to_date_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | To DateTime in UTC timezone. (optional)
     page_no = 1 # int | Page number. (optional) if omitted the server will use the default value of 1
     page_size = 25 # int | Number of items to return. (optional) if omitted the server will use the default value of 25
 
     # example passing only required values which don't have defaults set
-    try:
-        # Get paginated list of issued documents of given document type.
-        api_response = api_instance.get_issued_documents(document_type_id)
-        pprint(api_response)
-    except mydatamyconsent.ApiException as e:
-        print("Exception when calling DocumentsApi->get_issued_documents: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Get paginated list of issued documents of given document type.
-        api_response = api_instance.get_issued_documents(document_type_id, from_date_time=from_date_time, to_date_time=to_date_time, page_no=page_no, page_size=page_size)
+        api_response = api_instance.get_issued_documents(document_type_id=document_type_id, from_date_time=from_date_time, to_date_time=to_date_time, page_no=page_no, page_size=page_size)
         pprint(api_response)
     except mydatamyconsent.ApiException as e:
         print("Exception when calling DocumentsApi->get_issued_documents: %s\n" % e)
@@ -136,7 +127,7 @@ with mydatamyconsent.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **document_type_id** | **str**| Document type id. |
+ **document_type_id** | **str**| Document type id. | [optional]
  **from_date_time** | **datetime**| From DateTime in UTC timezone. | [optional]
  **to_date_time** | **datetime**| To DateTime in UTC timezone. | [optional]
  **page_no** | **int**| Page number. | [optional] if omitted the server will use the default value of 1
@@ -178,6 +169,7 @@ Get paginated list of registered document types.
 import time
 import mydatamyconsent
 from mydatamyconsent.api import documents_api
+from mydatamyconsent.model.supported_entity_type import SupportedEntityType
 from mydatamyconsent.model.document_type_paginated_list import DocumentTypePaginatedList
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
@@ -191,6 +183,7 @@ configuration = mydatamyconsent.Configuration(
 with mydatamyconsent.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = documents_api.DocumentsApi(api_client)
+    supported_entity_type = SupportedEntityType("Individual") # SupportedEntityType | Supported entity type. (optional)
     page_no = 1 # int | Page number. (optional) if omitted the server will use the default value of 1
     page_size = 25 # int | Number of items to return. (optional) if omitted the server will use the default value of 25
 
@@ -198,7 +191,7 @@ with mydatamyconsent.ApiClient() as api_client:
     # and optional values
     try:
         # Get paginated list of registered document types.
-        api_response = api_instance.get_registered_document_types(page_no=page_no, page_size=page_size)
+        api_response = api_instance.get_registered_document_types(supported_entity_type=supported_entity_type, page_no=page_no, page_size=page_size)
         pprint(api_response)
     except mydatamyconsent.ApiException as e:
         print("Exception when calling DocumentsApi->get_registered_document_types: %s\n" % e)
@@ -209,6 +202,7 @@ with mydatamyconsent.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **supported_entity_type** | **SupportedEntityType**| Supported entity type. | [optional]
  **page_no** | **int**| Page number. | [optional] if omitted the server will use the default value of 1
  **page_size** | **int**| Number of items to return. | [optional] if omitted the server will use the default value of 25
 

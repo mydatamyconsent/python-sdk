@@ -155,8 +155,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_data_consent_details_paginated_list.py
-test/test_data_consent_document_issuer.py
-test/test_document_digital_signature.py
-test/test_issued_document_details.py
 tox.ini

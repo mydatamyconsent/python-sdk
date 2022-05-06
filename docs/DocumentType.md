@@ -13,10 +13,10 @@ Name | Type | Description | Notes
 **logo_url** | **str** | Logo URL of document type. | 
 **supported_entity_types** | [**[SupportedEntityType]**](SupportedEntityType.md) | Supported entity types. eg: Individual, Organization. | 
 **added_by** | **str** | Name of the document type creator. | 
+**payable_amount** | **float** | Payable amount if document is chargeable. eg: 10.25. | 
 **description** | **str, none_type** | Document Type description. eg: Gujarat State Driving License. | [optional] 
 **search_service_name** | **str, none_type** | Document search repository service name. | [optional] 
 **repository_service_name** | **str, none_type** | Document repository service name. | [optional] 
-**payable_amount** | **float, none_type** | Payable amount if document is chargeable. eg: 10.25. | [optional] 
 **payable_amount_currency** | **str, none_type** | Payable amount currency. eg: INR, USD etc.,. | [optional] 
 **approved_at_utc** | **datetime, none_type** | DateTime of approval in UTC timezone. | [optional] 
 

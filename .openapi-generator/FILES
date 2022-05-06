@@ -59,6 +59,7 @@ docs/OrganizationDataConsentRequestDetailsPaginatedList.md
 docs/OrganizationFinancialAccountDto.md
 docs/OrganizationFinancialTransactionsDto.md
 docs/OrganizationFinancialTransactionsDtoPaginatedList.md
+docs/PaymentRequest.md
 docs/ProblemDetails.md
 docs/PushUriRequest.md
 docs/PushUriResponse.md
@@ -136,6 +137,7 @@ mydatamyconsent/model/organization_data_consent_request_details_paginated_list.p
 mydatamyconsent/model/organization_financial_account_dto.py
 mydatamyconsent/model/organization_financial_transactions_dto.py
 mydatamyconsent/model/organization_financial_transactions_dto_paginated_list.py
+mydatamyconsent/model/payment_request.py
 mydatamyconsent/model/problem_details.py
 mydatamyconsent/model/push_uri_request.py
 mydatamyconsent/model/push_uri_response.py
@@ -155,4 +157,5 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_payment_request.py
 tox.ini

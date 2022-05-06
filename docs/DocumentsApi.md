@@ -273,6 +273,14 @@ with mydatamyconsent.ApiClient() as api_client:
         issued_at_utc=dateutil_parser('1970-01-01T00:00:00.00Z'),
         valid_from_utc=dateutil_parser('1970-01-01T00:00:00.00Z'),
         expires_at_utc=dateutil_parser('1970-01-01T00:00:00.00Z'),
+        payment_request=PaymentRequest(
+            identifier="identifier_example",
+            amount="amount_example",
+            currency_code="currency_code_example",
+            payment_url="payment_url_example",
+            description="description_example",
+            due_by_utc=dateutil_parser('1970-01-01T00:00:00.00Z'),
+        ),
         metadata={
             "key": "key_example",
         },
@@ -363,6 +371,14 @@ with mydatamyconsent.ApiClient() as api_client:
         issued_at_utc=dateutil_parser('1970-01-01T00:00:00.00Z'),
         valid_from_utc=dateutil_parser('1970-01-01T00:00:00.00Z'),
         expires_at_utc=dateutil_parser('1970-01-01T00:00:00.00Z'),
+        payment_request=PaymentRequest(
+            identifier="identifier_example",
+            amount="amount_example",
+            currency_code="currency_code_example",
+            payment_url="payment_url_example",
+            description="description_example",
+            due_by_utc=dateutil_parser('1970-01-01T00:00:00.00Z'),
+        ),
         metadata={
             "key": "key_example",
         },

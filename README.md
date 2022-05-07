@@ -136,6 +136,7 @@ Class | Method | HTTP request | Description
  - [Activity](docs/Activity.md)
  - [ApprovedConsentRequest](docs/ApprovedConsentRequest.md)
  - [BankAccountType](docs/BankAccountType.md)
+ - [BillPaymentOrderItem](docs/BillPaymentOrderItem.md)
  - [CollectibleTypes](docs/CollectibleTypes.md)
  - [ConsentRequestReceiver](docs/ConsentRequestReceiver.md)
  - [CreateDataConsentRequest](docs/CreateDataConsentRequest.md)

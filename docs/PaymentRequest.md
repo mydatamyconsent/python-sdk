@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **identifier** | **str, none_type** |  | [optional] 
-**amount** | **str, none_type** |  | [optional] 
+**items** | [**[BillPaymentOrderItem], none_type**](BillPaymentOrderItem.md) |  | [optional] 
 **currency_code** | **str, none_type** |  | [optional] 
 **payment_url** | **str, none_type** |  | [optional] 
 **description** | **str, none_type** |  | [optional] 

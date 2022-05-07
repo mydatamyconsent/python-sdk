@@ -5,6 +5,7 @@ README.md
 docs/Activity.md
 docs/ApprovedConsentRequest.md
 docs/BankAccountType.md
+docs/BillPaymentOrderItem.md
 docs/CollectibleTypes.md
 docs/ConsentRequestReceiver.md
 docs/CreateDataConsentRequest.md
@@ -89,6 +90,7 @@ mydatamyconsent/model/__init__.py
 mydatamyconsent/model/activity.py
 mydatamyconsent/model/approved_consent_request.py
 mydatamyconsent/model/bank_account_type.py
+mydatamyconsent/model/bill_payment_order_item.py
 mydatamyconsent/model/collectible_types.py
 mydatamyconsent/model/consent_request_receiver.py
 mydatamyconsent/model/create_data_consent_request.py
@@ -157,5 +159,5 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_payment_request.py
+test/test_bill_payment_order_item.py
 tox.ini

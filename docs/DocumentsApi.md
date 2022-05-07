@@ -275,7 +275,12 @@ with mydatamyconsent.ApiClient() as api_client:
         expires_at_utc=dateutil_parser('1970-01-01T00:00:00.00Z'),
         payment_request=PaymentRequest(
             identifier="identifier_example",
-            amount="amount_example",
+            items=[
+                BillPaymentOrderItem(
+                    name="name_example",
+                    amount=3.14,
+                ),
+            ],
             currency_code="currency_code_example",
             payment_url="payment_url_example",
             description="description_example",
@@ -373,7 +378,12 @@ with mydatamyconsent.ApiClient() as api_client:
         expires_at_utc=dateutil_parser('1970-01-01T00:00:00.00Z'),
         payment_request=PaymentRequest(
             identifier="identifier_example",
-            amount="amount_example",
+            items=[
+                BillPaymentOrderItem(
+                    name="name_example",
+                    amount=3.14,
+                ),
+            ],
             currency_code="currency_code_example",
             payment_url="payment_url_example",
             description="description_example",

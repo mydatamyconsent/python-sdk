@@ -12,6 +12,7 @@
 from mydatamyconsent.model.activity import Activity
 from mydatamyconsent.model.approved_consent_request import ApprovedConsentRequest
 from mydatamyconsent.model.bank_account_type import BankAccountType
+from mydatamyconsent.model.bill_payment_order_item import BillPaymentOrderItem
 from mydatamyconsent.model.collectible_types import CollectibleTypes
 from mydatamyconsent.model.consent_request_receiver import ConsentRequestReceiver
 from mydatamyconsent.model.create_data_consent_request import CreateDataConsentRequest

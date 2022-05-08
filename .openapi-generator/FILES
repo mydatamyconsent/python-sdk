@@ -159,5 +159,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_bill_payment_order_item.py
 tox.ini

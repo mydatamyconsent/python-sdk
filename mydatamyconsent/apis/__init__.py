@@ -6,7 +6,7 @@
 # raise a `RecursionError`.
 # In order to avoid this, import only the API that you directly need like:
 #
-#   from .api.data_consent_requests_api import DataConsentRequestsApi
+#   from mydatamyconsent.api.data_consent_requests_api import DataConsentRequestsApi
 #
 # or import this package, but before doing it, use:
 #

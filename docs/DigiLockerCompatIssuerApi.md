@@ -21,6 +21,7 @@ import mydatamyconsent
 from mydatamyconsent.api import digi_locker_compat_issuer_api
 from mydatamyconsent.model.push_uri_request import PushUriRequest
 from mydatamyconsent.model.problem_details import ProblemDetails
+from mydatamyconsent.model.error import Error
 from mydatamyconsent.model.push_uri_response import PushUriResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com

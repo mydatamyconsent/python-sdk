@@ -21,6 +21,7 @@ Get all supported identifiers by country.
 import time
 import mydatamyconsent
 from mydatamyconsent.api import supported_identifiers_api
+from mydatamyconsent.model.error import Error
 from mydatamyconsent.model.supported_identifier import SupportedIdentifier
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com

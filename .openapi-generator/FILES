@@ -42,7 +42,8 @@ docs/DocumentType.md
 docs/DocumentTypePaginatedList.md
 docs/DocumentsApi.md
 docs/DocumentsRequired.md
-docs/FileType.md
+docs/Error.md
+docs/ErrorType.md
 docs/Financial.md
 docs/FinancialAccount.md
 docs/FinancialAccountDetailsRequired.md
@@ -121,7 +122,8 @@ mydatamyconsent/model/document_sub_category_type.py
 mydatamyconsent/model/document_type.py
 mydatamyconsent/model/document_type_paginated_list.py
 mydatamyconsent/model/documents_required.py
-mydatamyconsent/model/file_type.py
+mydatamyconsent/model/error.py
+mydatamyconsent/model/error_type.py
 mydatamyconsent/model/financial.py
 mydatamyconsent/model/financial_account.py
 mydatamyconsent/model/financial_account_details_required.py
@@ -159,4 +161,6 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_error.py
+test/test_error_type.py
 tox.ini

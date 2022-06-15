@@ -26,6 +26,7 @@ import mydatamyconsent
 from mydatamyconsent.api import data_processing_agreements_api
 from mydatamyconsent.model.create_data_processing_agreement import CreateDataProcessingAgreement
 from mydatamyconsent.model.data_processing_agreement import DataProcessingAgreement
+from mydatamyconsent.model.error import Error
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -92,6 +93,7 @@ Delete a data processing agreement. This will not delete a published or a agreem
 import time
 import mydatamyconsent
 from mydatamyconsent.api import data_processing_agreements_api
+from mydatamyconsent.model.error import Error
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -159,6 +161,7 @@ import time
 import mydatamyconsent
 from mydatamyconsent.api import data_processing_agreements_api
 from mydatamyconsent.model.data_processing_agreement import DataProcessingAgreement
+from mydatamyconsent.model.error import Error
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -227,6 +230,7 @@ import time
 import mydatamyconsent
 from mydatamyconsent.api import data_processing_agreements_api
 from mydatamyconsent.model.data_processing_agreement_paginated_list import DataProcessingAgreementPaginatedList
+from mydatamyconsent.model.error import Error
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -296,6 +300,7 @@ Terminate a data processing agreement.
 import time
 import mydatamyconsent
 from mydatamyconsent.api import data_processing_agreements_api
+from mydatamyconsent.model.error import Error
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -363,6 +368,7 @@ import time
 import mydatamyconsent
 from mydatamyconsent.api import data_processing_agreements_api
 from mydatamyconsent.model.data_processing_agreement import DataProcessingAgreement
+from mydatamyconsent.model.error import Error
 from mydatamyconsent.model.update_data_processing_agreement import UpdateDataProcessingAgreement
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com

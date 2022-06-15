@@ -26,6 +26,7 @@ import time
 import mydatamyconsent
 from mydatamyconsent.api import documents_api
 from mydatamyconsent.model.issued_document_details import IssuedDocumentDetails
+from mydatamyconsent.model.error import Error
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -94,6 +95,7 @@ import time
 import mydatamyconsent
 from mydatamyconsent.api import documents_api
 from mydatamyconsent.model.issued_document_paginated_list import IssuedDocumentPaginatedList
+from mydatamyconsent.model.error import Error
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -169,6 +171,7 @@ Get paginated list of registered document types.
 import time
 import mydatamyconsent
 from mydatamyconsent.api import documents_api
+from mydatamyconsent.model.error import Error
 from mydatamyconsent.model.supported_entity_type import SupportedEntityType
 from mydatamyconsent.model.document_type_paginated_list import DocumentTypePaginatedList
 from pprint import pprint
@@ -244,6 +247,7 @@ import mydatamyconsent
 from mydatamyconsent.api import documents_api
 from mydatamyconsent.model.document_issue_request_details import DocumentIssueRequestDetails
 from mydatamyconsent.model.document_issue_request import DocumentIssueRequest
+from mydatamyconsent.model.error import Error
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -347,6 +351,7 @@ from mydatamyconsent.api import documents_api
 from mydatamyconsent.model.document_issue_request_details import DocumentIssueRequestDetails
 from mydatamyconsent.model.document_issue_request import DocumentIssueRequest
 from mydatamyconsent.model.problem_details import ProblemDetails
+from mydatamyconsent.model.error import Error
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -448,6 +453,7 @@ Upload a document for issuance request of individual.
 import time
 import mydatamyconsent
 from mydatamyconsent.api import documents_api
+from mydatamyconsent.model.error import Error
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -517,6 +523,7 @@ import time
 import mydatamyconsent
 from mydatamyconsent.api import documents_api
 from mydatamyconsent.model.problem_details import ProblemDetails
+from mydatamyconsent.model.error import Error
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.

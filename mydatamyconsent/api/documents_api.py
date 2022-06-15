@@ -25,6 +25,7 @@ from mydatamyconsent.model_utils import (  # noqa: F401
 from mydatamyconsent.model.document_issue_request import DocumentIssueRequest
 from mydatamyconsent.model.document_issue_request_details import DocumentIssueRequestDetails
 from mydatamyconsent.model.document_type_paginated_list import DocumentTypePaginatedList
+from mydatamyconsent.model.error import Error
 from mydatamyconsent.model.issued_document_details import IssuedDocumentDetails
 from mydatamyconsent.model.issued_document_paginated_list import IssuedDocumentPaginatedList
 from mydatamyconsent.model.problem_details import ProblemDetails

@@ -27,6 +27,7 @@ import time
 import mydatamyconsent
 from mydatamyconsent.api import data_consent_requests_api
 from mydatamyconsent.model.problem_details import ProblemDetails
+from mydatamyconsent.model.error import Error
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -95,6 +96,7 @@ import time
 import mydatamyconsent
 from mydatamyconsent.api import data_consent_requests_api
 from mydatamyconsent.model.problem_details import ProblemDetails
+from mydatamyconsent.model.error import Error
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -164,6 +166,7 @@ Create data consent request for an individual.
 import time
 import mydatamyconsent
 from mydatamyconsent.api import data_consent_requests_api
+from mydatamyconsent.model.error import Error
 from mydatamyconsent.model.individual_data_consent_request_details import IndividualDataConsentRequestDetails
 from mydatamyconsent.model.create_data_consent_request import CreateDataConsentRequest
 from pprint import pprint
@@ -248,6 +251,7 @@ import time
 import mydatamyconsent
 from mydatamyconsent.api import data_consent_requests_api
 from mydatamyconsent.model.organization_data_consent_request_details import OrganizationDataConsentRequestDetails
+from mydatamyconsent.model.error import Error
 from mydatamyconsent.model.create_data_consent_request import CreateDataConsentRequest
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
@@ -330,6 +334,7 @@ import mydatamyconsent
 from mydatamyconsent.api import data_consent_requests_api
 from mydatamyconsent.model.problem_details import ProblemDetails
 from mydatamyconsent.model.data_consent_status import DataConsentStatus
+from mydatamyconsent.model.error import Error
 from mydatamyconsent.model.individual_data_consent_request_details_paginated_list import IndividualDataConsentRequestDetailsPaginatedList
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
@@ -410,6 +415,7 @@ from mydatamyconsent.api import data_consent_requests_api
 from mydatamyconsent.model.problem_details import ProblemDetails
 from mydatamyconsent.model.organization_data_consent_request_details_paginated_list import OrganizationDataConsentRequestDetailsPaginatedList
 from mydatamyconsent.model.data_consent_status import DataConsentStatus
+from mydatamyconsent.model.error import Error
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -487,6 +493,7 @@ import time
 import mydatamyconsent
 from mydatamyconsent.api import data_consent_requests_api
 from mydatamyconsent.model.problem_details import ProblemDetails
+from mydatamyconsent.model.error import Error
 from mydatamyconsent.model.data_consent_request import DataConsentRequest
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
@@ -557,6 +564,7 @@ import time
 import mydatamyconsent
 from mydatamyconsent.api import data_consent_requests_api
 from mydatamyconsent.model.problem_details import ProblemDetails
+from mydatamyconsent.model.error import Error
 from mydatamyconsent.model.data_consent_request import DataConsentRequest
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com

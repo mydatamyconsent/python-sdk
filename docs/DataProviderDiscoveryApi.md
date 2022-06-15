@@ -21,6 +21,7 @@ import time
 import mydatamyconsent
 from mydatamyconsent.api import data_provider_discovery_api
 from mydatamyconsent.model.data_provider import DataProvider
+from mydatamyconsent.model.error import Error
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -88,6 +89,7 @@ Discover all data providers in My Data My Consent by country and filters.
 import time
 import mydatamyconsent
 from mydatamyconsent.api import data_provider_discovery_api
+from mydatamyconsent.model.error import Error
 from mydatamyconsent.model.data_provider_paginated_list import DataProviderPaginatedList
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com

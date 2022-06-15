@@ -43,7 +43,8 @@ from mydatamyconsent.model.document_sub_category_type import DocumentSubCategory
 from mydatamyconsent.model.document_type import DocumentType
 from mydatamyconsent.model.document_type_paginated_list import DocumentTypePaginatedList
 from mydatamyconsent.model.documents_required import DocumentsRequired
-from mydatamyconsent.model.file_type import FileType
+from mydatamyconsent.model.error import Error
+from mydatamyconsent.model.error_type import ErrorType
 from mydatamyconsent.model.financial import Financial
 from mydatamyconsent.model.financial_account import FinancialAccount
 from mydatamyconsent.model.financial_account_details_required import FinancialAccountDetailsRequired

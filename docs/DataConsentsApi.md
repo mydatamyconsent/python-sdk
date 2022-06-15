@@ -36,6 +36,7 @@ Get analysis of a consented document.
 import time
 import mydatamyconsent
 from mydatamyconsent.api import data_consents_api
+from mydatamyconsent.model.error import Error
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -104,6 +105,7 @@ Download individual consented document by document id.
 import time
 import mydatamyconsent
 from mydatamyconsent.api import data_consents_api
+from mydatamyconsent.model.error import Error
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -172,6 +174,7 @@ Download organization consent document based on document id.
 import time
 import mydatamyconsent
 from mydatamyconsent.api import data_consents_api
+from mydatamyconsent.model.error import Error
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -241,6 +244,7 @@ import time
 import mydatamyconsent
 from mydatamyconsent.api import data_consents_api
 from mydatamyconsent.model.data_consent_financials_dto import DataConsentFinancialsDto
+from mydatamyconsent.model.error import Error
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -307,6 +311,7 @@ import time
 import mydatamyconsent
 from mydatamyconsent.api import data_consents_api
 from mydatamyconsent.model.data_consent_financials_dto import DataConsentFinancialsDto
+from mydatamyconsent.model.error import Error
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -373,6 +378,7 @@ import time
 import mydatamyconsent
 from mydatamyconsent.api import data_consents_api
 from mydatamyconsent.model.financial_account import FinancialAccount
+from mydatamyconsent.model.error import Error
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -441,6 +447,7 @@ import time
 import mydatamyconsent
 from mydatamyconsent.api import data_consents_api
 from mydatamyconsent.model.data_consent_document import DataConsentDocument
+from mydatamyconsent.model.error import Error
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -511,6 +518,7 @@ import time
 import mydatamyconsent
 from mydatamyconsent.api import data_consents_api
 from mydatamyconsent.model.organization_financial_account_dto import OrganizationFinancialAccountDto
+from mydatamyconsent.model.error import Error
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -578,6 +586,7 @@ Get consented financial account insights.
 import time
 import mydatamyconsent
 from mydatamyconsent.api import data_consents_api
+from mydatamyconsent.model.error import Error
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -645,6 +654,7 @@ import time
 import mydatamyconsent
 from mydatamyconsent.api import data_consents_api
 from mydatamyconsent.model.user_account_financial_transactions_dto_paginated_list import UserAccountFinancialTransactionsDtoPaginatedList
+from mydatamyconsent.model.error import Error
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -735,6 +745,7 @@ import mydatamyconsent
 from mydatamyconsent.api import data_consents_api
 from mydatamyconsent.model.data_consent_details_paginated_list import DataConsentDetailsPaginatedList
 from mydatamyconsent.model.data_consent_status import DataConsentStatus
+from mydatamyconsent.model.error import Error
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -811,6 +822,7 @@ import time
 import mydatamyconsent
 from mydatamyconsent.api import data_consents_api
 from mydatamyconsent.model.data_consent_document import DataConsentDocument
+from mydatamyconsent.model.error import Error
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -879,6 +891,7 @@ import time
 import mydatamyconsent
 from mydatamyconsent.api import data_consents_api
 from mydatamyconsent.model.data_consent import DataConsent
+from mydatamyconsent.model.error import Error
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -947,6 +960,7 @@ import time
 import mydatamyconsent
 from mydatamyconsent.api import data_consents_api
 from mydatamyconsent.model.organization_financial_transactions_dto_paginated_list import OrganizationFinancialTransactionsDtoPaginatedList
+from mydatamyconsent.model.error import Error
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1034,6 +1048,7 @@ import time
 import mydatamyconsent
 from mydatamyconsent.api import data_consents_api
 from mydatamyconsent.model.data_consent_document import DataConsentDocument
+from mydatamyconsent.model.error import Error
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1104,6 +1119,7 @@ import time
 import mydatamyconsent
 from mydatamyconsent.api import data_consents_api
 from mydatamyconsent.model.data_consent_document import DataConsentDocument
+from mydatamyconsent.model.error import Error
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1172,6 +1188,7 @@ import time
 import mydatamyconsent
 from mydatamyconsent.api import data_consents_api
 from mydatamyconsent.model.data_consent import DataConsent
+from mydatamyconsent.model.error import Error
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1241,6 +1258,7 @@ import mydatamyconsent
 from mydatamyconsent.api import data_consents_api
 from mydatamyconsent.model.data_consent_details_paginated_list import DataConsentDetailsPaginatedList
 from mydatamyconsent.model.data_consent_status import DataConsentStatus
+from mydatamyconsent.model.error import Error
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.mydatamyconsent.com
 # See configuration.py for a list of all supported configuration parameters.

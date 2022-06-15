@@ -54,6 +54,7 @@ from mydatamyconsent.api import data_consent_requests_api
 from mydatamyconsent.model.create_data_consent_request import CreateDataConsentRequest
 from mydatamyconsent.model.data_consent_request import DataConsentRequest
 from mydatamyconsent.model.data_consent_status import DataConsentStatus
+from mydatamyconsent.model.error import Error
 from mydatamyconsent.model.individual_data_consent_request_details import IndividualDataConsentRequestDetails
 from mydatamyconsent.model.individual_data_consent_request_details_paginated_list import IndividualDataConsentRequestDetailsPaginatedList
 from mydatamyconsent.model.organization_data_consent_request_details import OrganizationDataConsentRequestDetails
@@ -167,7 +168,8 @@ Class | Method | HTTP request | Description
  - [DocumentType](docs/DocumentType.md)
  - [DocumentTypePaginatedList](docs/DocumentTypePaginatedList.md)
  - [DocumentsRequired](docs/DocumentsRequired.md)
- - [FileType](docs/FileType.md)
+ - [Error](docs/Error.md)
+ - [ErrorType](docs/ErrorType.md)
  - [Financial](docs/Financial.md)
  - [FinancialAccount](docs/FinancialAccount.md)
  - [FinancialAccountDetailsRequired](docs/FinancialAccountDetailsRequired.md)

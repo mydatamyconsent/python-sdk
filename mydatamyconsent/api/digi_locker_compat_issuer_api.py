@@ -22,6 +22,7 @@ from mydatamyconsent.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
+from mydatamyconsent.model.error import Error
 from mydatamyconsent.model.problem_details import ProblemDetails
 from mydatamyconsent.model.push_uri_request import PushUriRequest
 from mydatamyconsent.model.push_uri_response import PushUriResponse

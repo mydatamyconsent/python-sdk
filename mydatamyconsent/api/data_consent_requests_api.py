@@ -25,6 +25,7 @@ from mydatamyconsent.model_utils import (  # noqa: F401
 from mydatamyconsent.model.create_data_consent_request import CreateDataConsentRequest
 from mydatamyconsent.model.data_consent_request import DataConsentRequest
 from mydatamyconsent.model.data_consent_status import DataConsentStatus
+from mydatamyconsent.model.error import Error
 from mydatamyconsent.model.individual_data_consent_request_details import IndividualDataConsentRequestDetails
 from mydatamyconsent.model.individual_data_consent_request_details_paginated_list import IndividualDataConsentRequestDetailsPaginatedList
 from mydatamyconsent.model.organization_data_consent_request_details import OrganizationDataConsentRequestDetails
